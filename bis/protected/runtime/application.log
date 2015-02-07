@@ -1,0 +1,508 @@
+2015/02/03 17:03:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event
+---
+2015/02/03 17:06:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event
+---
+2015/02/03 17:11:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event
+---
+2015/02/04 15:06:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event
+---
+2015/02/04 15:20:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event
+---
+2015/02/04 15:20:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement
+---
+2015/02/04 15:21:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 15:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=site/links
+---
+2015/02/04 15:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event
+---
+2015/02/04 15:37:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement
+---
+2015/02/04 15:37:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 15:47:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event/index
+---
+2015/02/04 15:47:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement
+---
+2015/02/04 15:48:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 15:48:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=event
+---
+2015/02/04 15:48:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement
+---
+2015/02/04 15:49:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 15:51:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 15:51:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=site/links
+---
+2015/02/04 15:51:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=site/links
+---
+2015/02/04 15:55:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=site/links
+---
+2015/02/04 15:55:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('links')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('links')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=site/links
+HTTP_REFERER=http://localhost/bis/index.php?r=site/links
+---
+2015/02/04 15:55:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\xampp\htdocs\yii\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('index')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/bis/index.php?r=site/page&0%5Bmodel%5D=links
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 15:56:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\xampp\htdocs\yii\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('index')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/bis/index.php?r=site/page&0%5Bmodel%5D=links
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 15:56:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\xampp\htdocs\yii\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('index')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/bis/index.php?r=site/page&0%5Bview%5D=links
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&0%5Bmodel%5D=links
+---
+2015/02/04 15:57:09 [error] [php] Use of undefined constant view - assumed 'view' (C:\xampp\htdocs\bis\protected\views\layouts\main.php:35)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
+#5 C:\xampp\htdocs\bis\protected\views\layouts\column1.php(6): SiteController->endContent()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(784): SiteController->renderFile()
+#9 C:\xampp\htdocs\yii\framework\web\actions\CViewAction.php(140): SiteController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CViewAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=site/page&view=links
+in C:\xampp\htdocs\bis\protected\views\layouts\main.php (35)
+in C:\xampp\htdocs\bis\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\bis\index.php (13)
+2015/02/04 15:58:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/04 16:00:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/04 16:00:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/04 16:00:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=event/calendar
+---
+2015/02/04 16:00:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/04 16:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/dashboard
+---
+2015/02/04 16:00:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/04 16:00:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=event/calendar
+---
+2015/02/04 16:00:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/04 16:01:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 16:01:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=event/calendar
+---
+2015/02/04 16:01:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 16:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=site/index
+---
+2015/02/04 16:01:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=event/calendar
+---
+2015/02/04 16:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/04 16:05:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/04 16:05:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/04 16:05:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/admin
+---
+2015/02/04 16:06:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=site/index
+---
+2015/02/04 16:10:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=site/index
+---
+2015/02/04 16:10:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=event/calendar
+---

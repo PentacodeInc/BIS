@@ -8,7 +8,7 @@
  * @property string $name
  *
  * The followings are the available model relations:
- * @property Role[] $roles
+ * @property Access[] $accesses
  */
 class Module extends CActiveRecord
 {
@@ -29,7 +29,7 @@ class Module extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('name', 'length', 'max'=>45),
+			array('name', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name', 'safe', 'on'=>'search'),
@@ -44,7 +44,7 @@ class Module extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'roles' => array(self::MANY_MANY, 'Role', 'access(module_id, role_id)'),
+			'accesses' => array(self::HAS_MANY, 'Access', 'module_id'),
 		);
 	}
 

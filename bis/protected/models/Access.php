@@ -4,8 +4,13 @@
  * This is the model class for table "access".
  *
  * The followings are the available columns in table 'access':
- * @property integer $role_id
+ * @property integer $id
  * @property integer $module_id
+ * @property integer $user_id
+ *
+ * The followings are the available model relations:
+ * @property Module $module
+ * @property User $user
  */
 class Access extends CActiveRecord
 {
@@ -25,10 +30,11 @@ class Access extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('role_id, module_id', 'numerical', 'integerOnly'=>true),
+			array('module_id, user_id', 'required'),
+			array('module_id, user_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('role_id, module_id', 'safe', 'on'=>'search'),
+			array('id, module_id, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -40,6 +46,8 @@ class Access extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'module' => array(self::BELONGS_TO, 'Module', 'module_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -49,8 +57,9 @@ class Access extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'role_id' => 'Role',
+			'id' => 'ID',
 			'module_id' => 'Module',
+			'user_id' => 'User',
 		);
 	}
 
@@ -72,8 +81,9 @@ class Access extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('role_id',$this->role_id);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('module_id',$this->module_id);
+		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

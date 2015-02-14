@@ -5,11 +5,14 @@
  *
  * The followings are the available columns in table 'event':
  * @property integer $id
- * @property string $title
+ * @property string $name
  * @property string $description
- * @property integer $type
  * @property string $start_datetime
  * @property string $end_datetime
+ * @property integer $user_id
+ *
+ * The followings are the available model relations:
+ * @property User $user
  */
 class Event extends CActiveRecord
 {
@@ -29,13 +32,13 @@ class Event extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, type, start_datetime, end_datetime', 'required'),
-			array('type', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>200),
-			array('description', 'length', 'max'=>500),
+			array('name, start_datetime, end_datetime, user_id', 'required'),
+			array('user_id', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>100),
+			array('description', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, description, type, start_datetime, end_datetime', 'safe', 'on'=>'search'),
+			array('id, name, description, start_datetime, end_datetime, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,6 +50,7 @@ class Event extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -57,11 +61,11 @@ class Event extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'name' => 'Name',
 			'description' => 'Description',
-			'type' => 'Type',
 			'start_datetime' => 'Start Datetime',
 			'end_datetime' => 'End Datetime',
+			'user_id' => 'User',
 		);
 	}
 
@@ -84,11 +88,11 @@ class Event extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
+		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('type',$this->type);
 		$criteria->compare('start_datetime',$this->start_datetime,true);
 		$criteria->compare('end_datetime',$this->end_datetime,true);
+		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

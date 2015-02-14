@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Events'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
+	$model->name=>array('view','id'=>$model->id),
 	'Update',
 );
 

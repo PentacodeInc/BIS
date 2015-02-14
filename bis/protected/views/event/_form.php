@@ -20,21 +20,15 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'title'); ?>
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>500)); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'description'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type'); ?>
-		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
@@ -47,6 +41,12 @@
 		<?php echo $form->labelEx($model,'end_datetime'); ?>
 		<?php echo $form->textField($model,'end_datetime'); ?>
 		<?php echo $form->error($model,'end_datetime'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
+		<?php echo $form->error($model,'user_id'); ?>
 	</div>
 
 	<div class="row buttons">

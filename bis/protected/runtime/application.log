@@ -506,3 +506,257 @@ Stack trace:
 REQUEST_URI=/bis/index.php?r=announcement/showAll
 HTTP_REFERER=http://localhost/bis/index.php?r=event/calendar
 ---
+2015/02/08 07:53:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/
+---
+2015/02/08 07:53:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/
+---
+2015/02/08 07:54:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=site/index
+---
+2015/02/08 07:54:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "announcement/showAll".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=event/calendar
+---
+2015/02/08 09:08:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.citizen' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `citizen`.
+in C:\xampp\htdocs\bis\protected\controllers\CitizenController.php (136)
+in C:\xampp\htdocs\bis\index.php (13)
+2015/02/08 09:08:01 [error] [exception.CDbException] exception 'CDbException' with message 'The table "citizen" for active record class "Citizen" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Citizen))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\bis\protected\controllers\CitizenController.php(136): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CitizenController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/admin')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bis/index.php?r=citizen/admin
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/08 09:12:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/dashboa...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=citizen/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/08 09:12:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "showAll".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('showAll')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('showAll')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/dashboard
+---
+2015/02/08 09:12:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.citizen' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `citizen`.
+in C:\xampp\htdocs\bis\protected\controllers\CitizenController.php (136)
+in C:\xampp\htdocs\bis\index.php (13)
+2015/02/08 09:12:37 [error] [exception.CDbException] exception 'CDbException' with message 'The table "citizen" for active record class "Citizen" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Citizen))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\bis\protected\controllers\CitizenController.php(136): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CitizenController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/admin')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bis/index.php?r=citizen/admin
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/08 09:13:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.citizen' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `citizen`.
+in C:\xampp\htdocs\bis\protected\controllers\CitizenController.php (136)
+in C:\xampp\htdocs\bis\index.php (13)
+2015/02/08 09:13:41 [error] [exception.CDbException] exception 'CDbException' with message 'The table "citizen" for active record class "Citizen" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Citizen))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\bis\protected\controllers\CitizenController.php(136): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CitizenController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('citizen/admin')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bis/index.php?r=citizen/admin
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/08 09:13:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "showAll".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('showAll')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('showAll')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=citizen/dashboard
+---
+2015/02/08 09:13:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
+---
+2015/02/08 09:14:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/08 09:19:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
+---
+2015/02/08 09:19:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "showAll".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('showAll')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('showAll')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/sh...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=announcement/showAll
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
+---
+2015/02/08 09:19:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=announcement/showAll
+---
+2015/02/08 10:29:27 [error] [php] Array to string conversion (C:\xampp\htdocs\bis\protected\views\layouts\main.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): PersonalInfoController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): PersonalInfoController->endWidget()
+#5 C:\xampp\htdocs\bis\protected\views\layouts\column2.php(17): PersonalInfoController->endContent()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): PersonalInfoController->renderInternal()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(784): PersonalInfoController->renderFile()
+#9 C:\xampp\htdocs\bis\protected\controllers\PersonalInfoController.php(79): PersonalInfoController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionCreate()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/create
+in C:\xampp\htdocs\bis\protected\views\layouts\main.php (41)
+in C:\xampp\htdocs\bis\protected\views\layouts\column2.php (17)
+in C:\xampp\htdocs\bis\protected\controllers\PersonalInfoController.php (79)
+2015/02/08 10:30:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/create
+---
+2015/02/08 10:30:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "calendar".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('calendar')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calendar')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('event/calendar')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=event/calendar
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/create
+---

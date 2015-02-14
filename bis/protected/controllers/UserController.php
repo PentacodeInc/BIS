@@ -170,4 +170,9 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
+	private function generateUsernameAngPassword($fname,$mname,$lname){
+		return $lname.$fname[0].$mname[0];
+	}
 }

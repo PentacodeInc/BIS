@@ -86,10 +86,11 @@ body
         }
 
 #slideshow{
-    width: auto;
+    width: 100%;
     margin:-20px -40px;
     padding-bottom: 40px;
     text-align: center;
+    margin:auto;
 }
 
 #content{

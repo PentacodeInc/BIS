@@ -44,21 +44,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'first_name'); ?>
-		<?php echo $form->textField($model,'first_name',array('size'=>35,'maxlength'=>35)); ?>
-		<?php echo $form->error($model,'first_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'middle_name'); ?>
-		<?php echo $form->textField($model,'middle_name',array('size'=>35,'maxlength'=>35)); ?>
-		<?php echo $form->error($model,'middle_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_name'); ?>
-		<?php echo $form->textField($model,'last_name',array('size'=>35,'maxlength'=>35)); ?>
-		<?php echo $form->error($model,'last_name'); ?>
+		<?php echo $form->labelEx($model,'role_id'); ?>
+		<?php echo $form->textField($model,'role_id'); ?>
+		<?php echo $form->error($model,'role_id'); ?>
 	</div>
 
 	<div class="row buttons">

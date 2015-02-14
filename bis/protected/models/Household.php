@@ -7,7 +7,7 @@
  * @property integer $id
  *
  * The followings are the available model relations:
- * @property PersonalInfo[] $personalInfos
+ * @property Citizen[] $citizens
  */
 class Household extends CActiveRecord
 {
@@ -41,7 +41,7 @@ class Household extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'personalInfos' => array(self::HAS_MANY, 'PersonalInfo', 'household_id'),
+			'citizens' => array(self::HAS_MANY, 'Citizen', 'household_id'),
 		);
 	}
 

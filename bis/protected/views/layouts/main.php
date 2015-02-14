@@ -30,14 +30,15 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
                 array('label'=>'Event', 'url'=>array('/event/calendar')),
                 array('label'=>'Announcements', 'url'=>array('/announcement/showAll')),
-                array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Search', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Dashboard', 'url'=>array('/citizen/dashboard'),'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Search', 'url'=>array('/citizen/admin'),'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Maintenance', 'url'=>array('/site/page', 'view'=>'links'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+    
     <?php echo $content; ?>
         
 	<div class="clear"></div>

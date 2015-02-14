@@ -26,8 +26,6 @@ $this->menu=array(
 		'password',
 		'salt',
 		'is_active',
-		'first_name',
-		'middle_name',
-		'last_name',
+		'role_id',
 	),
 )); ?>

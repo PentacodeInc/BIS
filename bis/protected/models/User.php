@@ -9,15 +9,10 @@
  * @property string $password
  * @property string $salt
  * @property integer $is_active
- * @property string $first_name
- * @property string $middle_name
- * @property string $last_name
+ * @property integer $role_id
  *
  * The followings are the available model relations:
- * @property Access[] $accesses
- * @property Announcement[] $announcements
- * @property Event[] $events
- * @property SliderImages[] $sliderImages
+ * @property Role $role
  */
 class User extends CActiveRecord
 {
@@ -37,14 +32,13 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, salt, first_name, middle_name, last_name', 'required'),
-			array('is_active', 'numerical', 'integerOnly'=>true),
+			array('username, password, salt, role_id', 'required'),
+			array('is_active, role_id', 'numerical', 'integerOnly'=>true),
 			array('username', 'length', 'max'=>20),
 			array('password, salt', 'length', 'max'=>50),
-			array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, salt, is_active, first_name, middle_name, last_name', 'safe', 'on'=>'search'),
+			array('id, username, password, salt, is_active, role_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,10 +50,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'accesses' => array(self::HAS_MANY, 'Access', 'user_id'),
-			'announcements' => array(self::HAS_MANY, 'Announcement', 'user_id'),
-			'events' => array(self::HAS_MANY, 'Event', 'user_id'),
-			'sliderImages' => array(self::HAS_MANY, 'SliderImages', 'user_id'),
+			'role' => array(self::BELONGS_TO, 'Role', 'role_id'),
 		);
 	}
 
@@ -74,9 +65,7 @@ class User extends CActiveRecord
 			'password' => 'Password',
 			'salt' => 'Salt',
 			'is_active' => 'Is Active',
-			'first_name' => 'First Name',
-			'middle_name' => 'Middle Name',
-			'last_name' => 'Last Name',
+			'role_id' => 'Role',
 		);
 	}
 
@@ -103,9 +92,7 @@ class User extends CActiveRecord
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('salt',$this->salt,true);
 		$criteria->compare('is_active',$this->is_active);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('middle_name',$this->middle_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
+		$criteria->compare('role_id',$this->role_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -121,9 +108,5 @@ class User extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	public function getFullname(){
-		return $last_name.', '.$first_name.' '.$middle_name;
 	}
 }

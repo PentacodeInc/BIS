@@ -25,19 +25,9 @@
 	<?php echo CHtml::encode($data->is_active); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('first_name')); ?>:</b>
-	<?php echo CHtml::encode($data->first_name); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('role_id')); ?>:</b>
+	<?php echo CHtml::encode($data->role_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('middle_name')); ?>:</b>
-	<?php echo CHtml::encode($data->middle_name); ?>
-	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('last_name')); ?>:</b>
-	<?php echo CHtml::encode($data->last_name); ?>
-	<br />
-
-	*/ ?>
 
 </div>

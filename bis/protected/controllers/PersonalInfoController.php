@@ -139,7 +139,12 @@ class PersonalInfoController extends Controller
 	{
 		$model=new PersonalInfo('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['PersonalInfo']))
+        
+        if (isset($_GET['keyword']) && $_GET['keyword'] != ""){
+            $keyword = trim($_GET['keyword']);
+        } // get keyword wala pang code
+        
+        if(isset($_GET['PersonalInfo']))
 			$model->attributes=$_GET['PersonalInfo'];
 
 		$this->render('admin',array(

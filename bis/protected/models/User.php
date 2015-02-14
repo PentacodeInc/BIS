@@ -124,6 +124,6 @@ class User extends CActiveRecord
 	}
 
 	public function getFullname(){
-		return $last_name.', '.$first_name.' '.$middle_name;
+		return $this->last_name.', '.$this->first_name.' '.$this->middle_name;
 	}
 }

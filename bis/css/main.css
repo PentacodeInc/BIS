@@ -79,9 +79,9 @@ body
             padding:15px 15px;
         }
 
-        #mainmenu ul li a:hover, #mainmenu ul li.active a
+        #mainmenu ul li a:hover
         {
-            color: #fff;
+            color:#cfcfcf;
             text-decoration:none;
         }
 
@@ -99,8 +99,27 @@ body
     padding:20px 40px 5px 40px;
     font-family: 'Open Sans', sans-serif;
 }
+    
+    #home{
+        padding:50px;
+    }
 
-    #homepage{
+    #home .main{
+        
+        margin-top:40px;
+        height: 500px;
+        width: 70%;
+        float: left;
+    }
+
+    #home .sidebar{
+        margin-top:40px;
+        height: 500px;
+        width: 29%;
+        float: right;
+    }
+
+    #about, #home{
         font-size: 14px;
         line-height: 30px;
         margin:-40px;
@@ -108,50 +127,81 @@ body
         padding-top:20px;
     }
 
-    #homepage p{
+    #about p{
         text-indent: 20px;
         margin: 10px 0px 10px 0px;
     }
 
-    #homepage #white,
-    #homepage #gray{
+    #about #white,
+    #about #gray{
         padding:40px;    
     }
 
-    #homepage #gray{
+    #about #gray{
         background: #eee;
     }
         
-        #homepage .homeTitle{
+        #about .aboutTitle{
             color:#333ea7;
             font-weight: bold;
             font-size: 60px;
             line-height: 80px;
         }
 
-        #homepage .homeDesc b{
+        #about .aboutDesc b{
             font-size: 18px;
             font-weight: 600;
         }
 
-        #homepage .homeDesc ol{
+        #about .aboutDesc ol{
             padding:0px;
             margin:0px;
             padding-left: 65px;
         }
 
-        #homepage .homeDesc blockquote{
+        #about .aboutDesc blockquote{
             font-size: 18px;
             line-height: 80px;
             text-align: center;
             color:inherit;
         }
 
-h1{
+h1, h2{
     color:#333ea7;
     font-weight: bold;
     font-size: 60px;
-    line-height: 40px;
+    line-height: 60px;
+}
+
+h2{
+    font-size: 30px!important;
+    line-height: 30px!important;
+}
+
+div.view
+{
+	padding: 10px;
+	margin: 10px 0;
+    font-size:14px;
+}
+
+.annoucement .information{
+    font-size: 8px;
+    opacity: 0.7;    
+}
+
+.annoucement .title,
+.event .title,
+.user .title{
+    color:#333ea7;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.annoucement .text{
+    text-indent: 50px;
+    text-align: justify;
 }
         
 
@@ -206,12 +256,7 @@ div.form .rememberMe label
 	display: inline;
 }
 
-div.view
-{
-	padding: 10px;
-	margin: 10px 0;
-	border: 1px solid #C9E0ED;
-}
+
 
 div.breadcrumbs
 {

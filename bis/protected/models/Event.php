@@ -63,9 +63,9 @@ class Event extends CActiveRecord
 			'id' => 'ID',
 			'name' => 'Name',
 			'description' => 'Description',
-			'start_datetime' => 'Start Datetime',
-			'end_datetime' => 'End Datetime',
-			'user_id' => 'User',
+			'start_datetime' => 'Start Date',
+			'end_datetime' => 'End Date',
+			'user_id' => 'Created By',
 		);
 	}
 

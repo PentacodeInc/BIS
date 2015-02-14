@@ -71,7 +71,7 @@ class AnnouncementController extends Controller
 		{
 			$model->attributes=$_POST['Announcement'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('/announcement'));
 		}
 
 		$this->render('create',array(
@@ -122,9 +122,14 @@ class AnnouncementController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Announcement');
+		$dataProvider=new CActiveDataProvider('Announcement', array(
+            'criteria'=>new CDbCriteria(array(
+                'order'=>'posted_datetime DESC',
+            )),
+        ));
+        
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'dataProvider'=>$dataProvider
 		));
 	}
 

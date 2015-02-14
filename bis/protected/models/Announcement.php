@@ -62,8 +62,8 @@ class Announcement extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'description' => 'Description',
-			'posted_datetime' => 'Posted Datetime',
-			'user_id' => 'User',
+			'posted_datetime' => 'Created',
+			'user_id' => 'Created By',
 		);
 	}
 

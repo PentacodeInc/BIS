@@ -28,8 +28,10 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-                array('label'=>'Event', 'url'=>array('/event/calendar')),
-                array('label'=>'Announcements', 'url'=>array('/announcement/showAll')),
+                array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
+                array('label'=>'Officials', 'url'=>array('/site/page', 'view'=>'officials')),
+                array('label'=>'Photo Gallery', 'url'=>array('/')),
+                array('label'=>'Downloadble Files', 'url'=>array('/site/page', 'view'=>'download')),
                 array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Search', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Maintenance', 'url'=>array('/site/page', 'view'=>'links'),'visible'=>!Yii::app()->user->isGuest),

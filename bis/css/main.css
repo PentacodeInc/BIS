@@ -87,8 +87,6 @@ body
 
 #slideshow{
     width: 100%;
-    margin:-20px -40px;
-    padding-bottom: 40px;
     text-align: center;
     margin:auto;
 }
@@ -166,6 +164,11 @@ body
             color:inherit;
         }
 
+        #about .googlemap{
+            padding:10px;
+            background-color: #eee;
+        }
+
 h1, h2{
     color:#333ea7;
     font-weight: bold;
@@ -177,6 +180,8 @@ h2{
     font-size: 30px!important;
     line-height: 30px!important;
 }
+
+.center{text-align: center;}
 
 div.view
 {

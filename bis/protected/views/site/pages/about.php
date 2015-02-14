@@ -37,11 +37,22 @@
         <div class="aboutTitle">Contanct Us.</div>
 
         <div class="aboutDesc">
-            <b>Barangay 730, Zone 79</b><br/>
-            996 Pablo Ocampo Sr. Street Malate Manila<br/>
-            <b>Landline:</b> (02) 785 - 1451<br/>
-            <b>Email:</b> barangay730@gmail.com<br/>
-            <b>Facebook:</b> link
+            
+            <div class="floatleft">
+                <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.jpg" width="100px" height="100px"/><br/>-->
+                <b>Barangay 730, Zone 79</b><br/>
+                996 Pablo Ocampo Sr. Street Malate Manila<br/>
+                <b>Landline:</b> (02) 785 - 1451<br/>
+                <b>Email:</b> barangay730@gmail.com<br/>
+                <b>Facebook:</b> <a href="https://www.facebook.com/pages/Barangay730zone79/515313718511386?sk=timeline">https://www.facebook.com/Barangay730zone79/</a> <br/>
+            </div>
+        
+            <div class="floatright">
+                <b>Google Map:</b>
+                <div class="googlemap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15446.226573761074!2d120.98955099999998!3d14.567327800000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c979b8008ba3%3A0x946d2a44ca803470!2sBarangay+730+Hall!5e0!3m2!1sen!2sph!4v1423921543153" width="400" height="150" frameborder="0" style="border:0"></iframe>
+                </div>
+            </div>
         </div>
 
         

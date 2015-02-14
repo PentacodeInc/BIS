@@ -4,7 +4,7 @@ $(function () {
         auto: true,
         pager: false,
         nav: true,
-        speed: 500,
+        speed: 1000,
         namespace: "callbacks",
       });
 
@@ -14,9 +14,9 @@ $(function () {
 <div id="slideshow">
 <div class="callbacks_container">
 <ul class="rslides">
-  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/blue.jpg" alt=""></li>
-  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/red.jpg" alt=""></li>
-  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/purple.jpg" alt=""></li>
+  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/1.jpg" alt=""></li>
+  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/2.png" alt=""></li>
+  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/3.jpg" alt=""></li>
 </ul>
 </div>
     

@@ -12,6 +12,7 @@ $this->breadcrumbs=array(
         array('label'=>'Slide Show', 'url'=>array('/sliderImages')),
         array('label'=>'Event', 'url'=>array('/event')),
         array('label'=>'Announcements', 'url'=>array('/announcement')),
+        array('label'=>'Downloadable Files', 'url'=>array('/downloadFiles')),
     ),
     'htmlOptions'=>array('class'=>'link'),
 )); ?>

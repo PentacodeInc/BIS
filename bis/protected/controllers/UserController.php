@@ -71,7 +71,7 @@ class UserController extends Controller
 		{
 			$model->attributes=$_POST['User'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class UserController extends Controller
 		{
 			$model->attributes=$_POST['User'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(
@@ -137,7 +137,7 @@ class UserController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['User']))
 			$model->attributes=$_GET['User'];
-
+        
 		$this->render('admin',array(
 			'model'=>$model,
 		));
@@ -171,8 +171,7 @@ class UserController extends Controller
 		}
 	}
 
-
-	private function generateUsernameAngPassword($fname,$mname,$lname){
+	private function generateUsernameAndPassword($fname,$mname,$lname){
 		return $lname.$fname[0].$mname[0];
 	}
 }

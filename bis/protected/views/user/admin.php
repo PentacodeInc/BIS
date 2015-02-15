@@ -8,50 +8,39 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
+	//array('label'=>'List User', 'url'=>array('index')),
 	array('label'=>'Create User', 'url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#user-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Manage Users</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+        array(
+            'name'=>'FullName',
+            'value'=>'$data->getFullName()',
+        ),
 		'username',
-        'is_active',
-		'first_name',
-		'middle_name',
-		'last_name',
+        array(
+            'name'=>'is_active',
+            'value' => '$data->is_active?Yii::t(\'app\',\'Active\'):Yii::t(\'app\', \'Inactive\')',
+            'filter' => array('0' => Yii::t('app', 'Inactive'), '1' => Yii::t('app', 'Active')),
+        ),
 		array(
 			'class'=>'CButtonColumn',
+            'template'=>'{update} {reset}',
+            'buttons' => array(
+               'reset' => array( //the name {reply} must be same
+                 'label' => 'Reset Password', // text label of the button
+                   'url' => 'CHtml::normalizeUrl(array("user/resetPassword/".$data->id))', 
+                      'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
+                   ),
+               ),
 		),
 	),
 )); ?>

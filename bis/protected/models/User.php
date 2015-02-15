@@ -73,7 +73,7 @@ class User extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'salt' => 'Salt',
-			'is_active' => 'Is Active',
+			'is_active' => 'Status',
 			'first_name' => 'First Name',
 			'middle_name' => 'Middle Name',
 			'last_name' => 'Last Name',
@@ -124,6 +124,10 @@ class User extends CActiveRecord
 	}
 
 	public function getFullname(){
-		return $this->last_name.', '.$this->first_name.' '.$this->middle_name;
+        if ($this->last_name && $this->first_name){
+            return ucwords($this->last_name).', '.ucwords($this->first_name).' '.ucwords($this->middle_name);
+        }else{
+            return "";
+        }
 	}
 }

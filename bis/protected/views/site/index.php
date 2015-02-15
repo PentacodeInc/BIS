@@ -14,15 +14,19 @@ $(function () {
 <div id="slideshow">
 <div class="callbacks_container">
 <ul class="rslides">
-  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/1.jpg" alt=""></li>
-  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/2.png" alt=""></li>
-  <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/3.jpg" alt=""></li>
+    <?php $rows=SliderImages::model()->findAll(array('condition'=>'is_active=1'));
+    foreach($rows as $row){ ?>
+        <li><img src="<?php echo $row->filename?>" alt=""></li>
+    <?php }?>
+  
 </ul>
 </div>
     
 </div>
 
 <div id="home">
+    
+    
     
     <div class="main">
         <h1>Announcements</h1>

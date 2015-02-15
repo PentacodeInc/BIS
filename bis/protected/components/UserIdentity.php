@@ -15,6 +15,9 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+    
+    private $id;
+    
 	public function authenticate()
 	{
 		/*$users=array(
@@ -22,6 +25,7 @@ class UserIdentity extends CUserIdentity
 			'demo'=>'demo',
 			'admin'=>'admin',
 		);*/
+        
 		$record=User::model()->findByAttributes(array('username'=>$this->username));
         $salt = openssl_random_pseudo_bytes(22);
         $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
@@ -34,7 +38,11 @@ class UserIdentity extends CUserIdentity
         {
        		$this->errorCode=self::ERROR_NONE;
    		}
-
+        $this->id=$record->id;;
 		return !$this->errorCode;
 	}
+    
+    public function getId(){
+        return $this->id;
+    }
 }

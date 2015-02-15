@@ -8,7 +8,7 @@
 	<div class="title"><?php echo CHtml::encode($data->title); ?></div>
 	<br />
 
-	<div class="text"><?php echo CHtml::encode($data->description); ?></div>
+	<div class="text"><?php echo CHtml::decode($data->description); ?></div>
 	<br />
 
     <div class="information">

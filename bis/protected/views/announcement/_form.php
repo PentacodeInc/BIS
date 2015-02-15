@@ -27,20 +27,18 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'description'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'posted_datetime'); ?>
-		<?php echo $form->textField($model,'posted_datetime'); ?>
-		<?php echo $form->error($model,'posted_datetime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
-		<?php echo $form->error($model,'user_id'); ?>
+		<?php //echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+        <?php $this->widget('application.extensions.cleditor.ECLEditor', array(
+                'model'=>$model,
+                'attribute'=>'description',
+                'options'=>array(
+                    'width'=>'600',
+                    'height'=>250,
+                    'useCSS'=>true,
+                )
+            ));
+        ?>
+        <?php echo $form->error($model,'description'); ?>
 	</div>
 
 	<div class="row buttons">

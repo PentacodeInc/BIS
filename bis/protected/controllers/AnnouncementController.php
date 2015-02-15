@@ -28,7 +28,7 @@ class AnnouncementController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'admin'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -70,8 +70,10 @@ class AnnouncementController extends Controller
 		if(isset($_POST['Announcement']))
 		{
 			$model->attributes=$_POST['Announcement'];
+            $model->posted_datetime=date('Y-m-d H:i:s'); //iba ung date, lagay mo na lang sa before save
+            $model->user_id=Yii::app()->user->getId();
 			if($model->save())
-				$this->redirect(array('/announcement'));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('create',array(
@@ -95,7 +97,7 @@ class AnnouncementController extends Controller
 		{
 			$model->attributes=$_POST['Announcement'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('update',array(

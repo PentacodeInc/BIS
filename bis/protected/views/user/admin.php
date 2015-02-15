@@ -36,8 +36,8 @@ $this->menu=array(
 			'class'=>'CButtonColumn',
             'template'=>'{reset}',
             'buttons' => array(
-               'reset' => array( //the name {reply} must be same
-                 'label' => 'Reset Password', // text label of the button
+               'reset' => array(
+                 'label' => 'Reset Password', 
                    'url' => 'CHtml::normalizeUrl(array("user/changePassword", "id"=>$data->id))', 
                       'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
                    ),

@@ -13,12 +13,11 @@
 
     <div class="information">
         <b><?php echo CHtml::encode($data->getAttributeLabel('posted_datetime')); ?>:</b>
-        <?php echo CHtml::encode($data->posted_datetime); ?>
+        <?php echo CHtml::encode(Yii::app()->dateFormatter->format("MM-dd-yyyy",strtotime($data->posted_datetime))); ?>
         <br />
 
         <b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
         <?php echo CHtml::encode($data->user->username); ?>
     </div>
-
 
 </div>

@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Announcement', 'url'=>array('index')),
-	array('label'=>'Create Announcement', 'url'=>array('create')),
+	//array('label'=>'List Announcement', 'url'=>array('index')),
+	//array('label'=>'Create Announcement', 'url'=>array('create')),
 	array('label'=>'View Announcement', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Announcement', 'url'=>array('admin')),
+	//array('label'=>'Manage Announcement', 'url'=>array('admin')),
 );
 ?>
 

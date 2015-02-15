@@ -84,12 +84,18 @@ class Announcement extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+        
+        $criteria->with= array('user');
+        
 		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('posted_datetime',$this->posted_datetime,true);
-		$criteria->compare('user_id',$this->user_id);
+        if ($this->posted_datetime){
+            $fromdate =  new DateTime($this->posted_datetime);
+            $search = $fromdate->format('Y-m-d');
+            $criteria->compare('posted_datetime',$search,true);
+        }
+		$criteria->compare('user.username',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -70,8 +70,6 @@ class AnnouncementController extends Controller
 		if(isset($_POST['Announcement']))
 		{
 			$model->attributes=$_POST['Announcement'];
-            $model->posted_datetime=date('Y-m-d H:i:s'); //iba ung date, lagay mo na lang sa before save
-            $model->user_id=Yii::app()->user->getId();
 			if($model->save())
 				$this->redirect(array('index'));
 		}

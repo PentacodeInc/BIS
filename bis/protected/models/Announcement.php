@@ -62,8 +62,8 @@ class Announcement extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'description' => 'Description',
-			'posted_datetime' => 'Created',
-			'user_id' => 'Created By',
+			'posted_datetime' => 'Date Posted',
+			'user_id' => 'Posted By',
 		);
 	}
 
@@ -106,4 +106,15 @@ class Announcement extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    
+    public function beforeValidate()
+    {           
+        if(parent::beforeValidate())
+        {
+            $this->posted_datetime=date('YmdHis'); //iba ung date????
+            $this->user_id=Yii::app()->user->getId();
+            return true;
+        }
+        return false; 
+    }
 }

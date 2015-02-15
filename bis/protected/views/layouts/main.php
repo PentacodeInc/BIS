@@ -34,7 +34,7 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
                 array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                 array('label'=>'Officials', 'url'=>array('/site/page', 'view'=>'officials')),
-                array('label'=>'Photo Gallery', 'url'=>'https://www.facebook.com/pages/Barangay730zone79/515313718511386?sk=photos_stream&tab=photos_albums'),
+                array('label'=>'Photo Gallery', 'url'=>'https://www.facebook.com/pages/Barangay730zone79/515313718511386?sk=photos_stream&tab=photos_albums','linkOptions' => array('target'=>'_blank')),
                 array('label'=>'Downloadble Files', 'url'=>array('/site/page', 'view'=>'download')),
                 array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Search', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),

@@ -164,9 +164,13 @@ body
             color:inherit;
         }
 
-        #about .googlemap{
-            padding:10px;
-            background-color: #eee;
+        #about .contact{
+            margin-left: 20px;
+        }
+        
+        #about .fa{
+            font-size: 20px!important;
+            margin-right: 10px;
         }
 
 h1, h2{

@@ -24,6 +24,7 @@ class User extends CActiveRecord
     public $old_password;
     public $new_password;
     public $repeat_password;
+    public $fullName;
     
 	/**
 	 * @return string the associated database table name
@@ -49,13 +50,13 @@ class User extends CActiveRecord
 			// array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			// array('id, username, password, salt, is_active, first_name, middle_name, last_name', 'safe', 'on'=>'search'),
+			 array('username, is_active, first_name, middle_name, last_name, fullName', 'safe', 'on'=>'search'),
             array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
             array('old_password', 'findPasswords', 'on' => 'changePwd'),
             array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
 		);
 	}
-    
+        
     public function findPasswords($attribute, $params)
     {
         $user = User::model()->findByPk(Yii::app()->user->id);
@@ -113,14 +114,13 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('salt',$this->salt,true);
 		$criteria->compare('is_active',$this->is_active);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('middle_name',$this->middle_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
+		$criteria->compare('first_name',$this->fullName,false, 'OR');
+		$criteria->compare('middle_name',$this->fullName,false, 'OR');
+		$criteria->compare('last_name',$this->fullName,false, 'OR');
+        $criteria->compare('concat(first_name, " ", last_name)', $this->fullName,false, 'OR');
+        $criteria->compare('concat(last_name, " ", first_name)', $this->fullName,false, 'OR');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

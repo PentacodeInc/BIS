@@ -22,8 +22,10 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
         array(
-            'name'=>'FullName',
-            'value'=>'$data->getFullName()',
+            'name'=>'fullName',
+            'header'=>'Full Name',
+            'value' => 'CHtml::link($data->getFullName(),array("user/update", "id"=>$data->id))',
+            'type' => 'raw',
         ),
 		'username',
         array(
@@ -33,11 +35,11 @@ $this->menu=array(
         ),
 		array(
 			'class'=>'CButtonColumn',
-            'template'=>'{update} {reset}',
+            'template'=>'{reset}',
             'buttons' => array(
                'reset' => array( //the name {reply} must be same
                  'label' => 'Reset Password', // text label of the button
-                   'url' => 'CHtml::normalizeUrl(array("user/resetPassword/".$data->id))', 
+                   'url' => 'CHtml::normalizeUrl(array("user/changePassword/".$data->id))', 
                       'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
                    ),
                ),

@@ -11,6 +11,7 @@ $this->menu=array(
 	//array('label'=>'List User', 'url'=>array('index')),
 	array('label'=>'Create User', 'url'=>array('create')),
 );
+
 ?>
 
 <h1>Manage Users</h1>
@@ -37,11 +38,14 @@ $this->menu=array(
             'template'=>'{reset}',
             'buttons' => array(
                'reset' => array(
-                 'label' => 'Reset Password', 
-                   'url' => 'CHtml::normalizeUrl(array("user/changePassword", "id"=>$data->id))', 
-                      'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
-                   ),
-               ),
+                   'label' => 'Reset Password', 
+                   'options' => array(
+                            'confirm' => 'Are you sure you want to reset password?',
+                    ),
+                   'url' => 'CHtml::normalizeUrl(array("user/resetPassword", "id"=>$data->id))', 
+                   'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
+                ),
+            ),
 		),
 	),
 )); ?>

@@ -2891,3 +2891,80 @@ Stack trace:
 REQUEST_URI=/BIS/bis/index.php?r=sliderImages/admin
 HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=links
 ---
+2015/02/15 17:52:50 [error] [php] Undefined variable: data (C:\xampp\htdocs\BIS\bis\protected\views\user\admin.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): UserController->renderPartial()
+#2 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(164): UserController->render()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionAdmin()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/admin
+in C:\xampp\htdocs\BIS\bis\protected\views\user\admin.php (43)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (164)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/15 17:53:40 [error] [php] Undefined variable: data (C:\xampp\htdocs\BIS\bis\protected\views\user\admin.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): UserController->renderPartial()
+#2 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(164): UserController->render()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionAdmin()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/admin
+in C:\xampp\htdocs\BIS\bis\protected\views\user\admin.php (43)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (164)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/15 18:01:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "resetPassword".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('resetPassword')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('resetPassword')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/resetPassw...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/resetPassword&id=1
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/02/15 18:02:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "resetPassword".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('resetPassword')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('resetPassword')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/resetPassw...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/resetPassword&id=1
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/02/15 18:06:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "resetPassword".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('resetPassword')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('resetPassword')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/resetPassw...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/resetPassword&id=1
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---

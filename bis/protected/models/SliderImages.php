@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'slider_images':
  * @property integer $id
- * @property string $filepath
+ * @property string $filename
  * @property integer $is_active
  * @property string $posted_datetime
  * @property integer $user_id
@@ -31,12 +31,11 @@ class SliderImages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('filepath, posted_datetime, user_id', 'required'),
+			array('filename, posted_datetime, user_id', 'required'),
 			array('is_active, user_id', 'numerical', 'integerOnly'=>true),
-			array('filepath', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, filepath, is_active, posted_datetime, user_id', 'safe', 'on'=>'search'),
+			array('id, filename, is_active, posted_datetime, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +58,7 @@ class SliderImages extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'filepath' => 'Filepath',
+			'filename' => 'Filename',
 			'is_active' => 'Is Active',
 			'posted_datetime' => 'Posted Datetime',
 			'user_id' => 'User',
@@ -85,7 +84,7 @@ class SliderImages extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('filepath',$this->filepath,true);
+		$criteria->compare('filename',$this->filename,true);
 		$criteria->compare('is_active',$this->is_active);
 		$criteria->compare('posted_datetime',$this->posted_datetime,true);
 		$criteria->compare('user_id',$this->user_id);

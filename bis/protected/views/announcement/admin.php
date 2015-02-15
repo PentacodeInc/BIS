@@ -12,52 +12,54 @@ $this->menu=array(
 	array('label'=>'Create Announcement', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#announcement-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Manage Announcements</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'announcement-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'title',
-		'description',
+        array(
+            'name'=>'id',
+            'htmlOptions' => array('style' => 'width: 15px;'),
+        ),
+        array(
+            'name'=>'title',
+            'value' => 'CHtml::link($data->title,array("announcement/update", "id"=>$data->id))',
+            'type' => 'raw',
+        ),
         array(
             'name'=>'posted_datetime',
-            'htmlOptions' => array('style' => 'min-width: 70px;'),
+            'value'=>'Yii::app()->dateFormatter->format("MM-dd-yyyy",strtotime($data->posted_datetime))',
+            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'model'=>$model, 
+                'attribute'=>'posted_datetime', 
+                'language' => 'en-GB',
+                'htmlOptions' => array(
+                    'id' => 'datepicker_for_posted_datetime',
+                    'size' => '10',
+                ),
+                'options' => array(
+                    'dateFormat' => 'mm-dd-yy',
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                )
+            ), 
+            true),
         ),
 		array(
-            'name'=>'user_id',
-            'value'=>'$data->user->username'
+            'name'=>'user.username',
+            'filter' => CHtml::activeTextField($model, 'user_id'),
+            'value'=>'$data->user->username',
+            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
         ),
 		array(
 			'class'=>'CButtonColumn',
-            'template'=>'{update}{delete}',
+            'template'=>'{view}{delete}',
 		),
 	),
 )); ?>

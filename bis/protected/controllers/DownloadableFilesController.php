@@ -1,6 +1,6 @@
 <?php
 
-class ModuleController extends Controller
+class DownloadableFilesController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,7 @@ class ModuleController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','admin'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -62,14 +62,14 @@ class ModuleController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Module;
+		$model=new DownloadableFiles;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Module']))
+		if(isset($_POST['DownloadableFiles']))
 		{
-			$model->attributes=$_POST['Module'];
+			$model->attributes=$_POST['DownloadableFiles'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class ModuleController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Module']))
+		if(isset($_POST['DownloadableFiles']))
 		{
-			$model->attributes=$_POST['Module'];
+			$model->attributes=$_POST['DownloadableFiles'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class ModuleController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Module');
+		$dataProvider=new CActiveDataProvider('DownloadableFiles');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class ModuleController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Module('search');
+		$model=new DownloadableFiles('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Module']))
-			$model->attributes=$_GET['Module'];
+		if(isset($_GET['DownloadableFiles']))
+			$model->attributes=$_GET['DownloadableFiles'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class ModuleController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Module the loaded model
+	 * @return DownloadableFiles the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Module::model()->findByPk($id);
+		$model=DownloadableFiles::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class ModuleController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Module $model the model to be validated
+	 * @param DownloadableFiles $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='module-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='downloadable-files-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

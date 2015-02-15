@@ -37,14 +37,15 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, salt, first_name, middle_name, last_name', 'required'),
-			array('is_active', 'numerical', 'integerOnly'=>true),
-			array('username', 'length', 'max'=>20),
-			array('password, salt', 'length', 'max'=>50),
-			array('first_name, middle_name, last_name', 'length', 'max'=>35),
+			// array('username, password, salt, first_name, middle_name, last_name', 'required'),
+			array('first_name,middle_name,last_name','required'),
+			// array('is_active', 'numerical', 'integerOnly'=>true),
+			// array('username', 'length', 'max'=>20),
+			// array('password, salt', 'length', 'max'=>50),
+			// array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, salt, is_active, first_name, middle_name, last_name', 'safe', 'on'=>'search'),
+			// array('id, username, password, salt, is_active, first_name, middle_name, last_name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -130,4 +131,18 @@ class User extends CActiveRecord
             return "";
         }
 	}
+
+	public function beforeSave()
+    {       
+        if($this->isNewRecord) // only if adding new record
+        {
+        	$this->password = $this->username;
+	    	$salt = openssl_random_pseudo_bytes(22);
+			$salt = '$2a$%13$' . strtr(base64_encode($salt), array('_' => '.', '~' => '/'));
+			$password_hash = crypt($this->password, $salt); 
+			$this->password = $password_hash; 
+			$this->is_active = 1;
+        }
+ 		return parent::beforeSave();
+    }
 }

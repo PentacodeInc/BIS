@@ -20,30 +20,6 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'password'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'salt'); ?>
-		<?php echo $form->textField($model,'salt',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'salt'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'is_active'); ?>
-		<?php echo $form->textField($model,'is_active'); ?>
-		<?php echo $form->error($model,'is_active'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'first_name'); ?>
 		<?php echo $form->textField($model,'first_name',array('size'=>35,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'first_name'); ?>

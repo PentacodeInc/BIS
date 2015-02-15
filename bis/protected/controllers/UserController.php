@@ -104,11 +104,19 @@ class UserController extends Controller
 		));
 	}
     
-    public function actionChangePassword($id)
+    public function actionChangePassword($id,$reset = false)
     {      
-        $model = new User;
         $model = User::model()->findByAttributes(array('id'=>$id));
         $model->setScenario('changePwd');
+        if($reset){
+        	$password = $this->generateUsernameAndPassword($model->first_name,$model->middle_name,$model->last_name);
+        	$salt = openssl_random_pseudo_bytes(22);
+	        $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
+	        $password_hash = crypt($password, $salt);
+	        $model->password = $password_hash;
+        	if($model->save())
+        		 $this->redirect(array('admin','msg'=>'successfully changed password'));
+        }
 
         if(isset($_POST['User'])){
             $model->attributes = $_POST['User'];

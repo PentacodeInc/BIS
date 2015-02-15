@@ -56,11 +56,14 @@ class User extends CActiveRecord
             array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
 		);
 	}
-        
+
     public function findPasswords($attribute, $params)
     {
-        $user = User::model()->findByPk(Yii::app()->user->id);
-        if ($user->password != $this->old_password) //remove incription? or encrypt ung user->password
+        $user = User::model()->findByPk(Yii::app()->getRequest()->getParam('id'));
+        $salt = openssl_random_pseudo_bytes(22);
+        $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
+        $password_hash = crypt($this->old_password, $salt);
+        if ($password_hash !== $user->password) //remove incription? or encrypt ung user->password
             $this->addError($attribute, 'Old password is incorrect.');
     }
 

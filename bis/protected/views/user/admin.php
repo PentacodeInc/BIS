@@ -38,7 +38,7 @@ $this->menu=array(
             'buttons' => array(
                'reset' => array( //the name {reply} must be same
                  'label' => 'Reset Password', // text label of the button
-                   'url' => 'CHtml::normalizeUrl(array("user/changePassword", "id"=>$data->id))', 
+                   'url' => 'CHtml::normalizeUrl(array("user/changePassword", "id"=>$data->id,"reset"=>true))', 
                       'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
                    ),
                ),

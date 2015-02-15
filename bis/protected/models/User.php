@@ -21,6 +21,10 @@
  */
 class User extends CActiveRecord
 {
+    public $old_password;
+    public $new_password;
+    public $repeat_password;
+    
 	/**
 	 * @return string the associated database table name
 	 */
@@ -46,8 +50,18 @@ class User extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			// array('id, username, password, salt, is_active, first_name, middle_name, last_name', 'safe', 'on'=>'search'),
+            array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
+            array('old_password', 'findPasswords', 'on' => 'changePwd'),
+            array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
 		);
 	}
+    
+    public function findPasswords($attribute, $params)
+    {
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        if ($user->password != $this->old_password) //remove incription? or encrypt ung user->password
+            $this->addError($attribute, 'Old password is incorrect.');
+    }
 
 	/**
 	 * @return array relational rules.

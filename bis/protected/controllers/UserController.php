@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'changePassword'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -66,7 +66,7 @@ class UserController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+                
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
@@ -103,6 +103,26 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
+    
+    public function actionChangePassword($id)
+    {      
+        $model = new User;
+        $model = User::model()->findByAttributes(array('id'=>$id));
+        $model->setScenario('changePwd');
+
+        if(isset($_POST['User'])){
+            $model->attributes = $_POST['User'];
+            $valid = $model->validate();
+            if($valid){
+                $model->password = $model->new_password;
+                if($model->save())
+                    $this->redirect(array('changePassword','msg'=>'successfully changed password'));
+                else
+                    $this->redirect(array('changePassword','msg'=>'password not changed'));
+            }
+        }
+        $this->render('changePassword',array('model'=>$model)); 
+    }
 
 	/**
 	 * Deletes a particular model.

@@ -1396,3 +1396,33 @@ in C:\xampp\htdocs\BIS\bis\index.php (13)
 2015/02/15 09:41:49 [warning] [application] Failed to set unsafe attribute "FullName" of "User".
 in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (139)
 in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/15 10:04:12 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\BIS\bis\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\xampp\htdocs\BIS\yii\framework\web\CAssetManager.php:138
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\grid\CGridView.php(350): CAssetManager->publish('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(147): CGridView->init()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\BIS\bis\protected\views\user\admin.php(47): CBaseController->widget('zii.widgets.gri...', Array)
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(143): CController->render('admin', Array)
+#11 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionAdmin()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin')
+#22 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/create
+---

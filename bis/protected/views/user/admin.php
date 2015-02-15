@@ -23,7 +23,6 @@ $this->menu=array(
 	'columns'=>array(
         array(
             'name'=>'fullName',
-            'header'=>'Full Name',
             'value' => 'CHtml::link($data->getFullName(),array("user/update", "id"=>$data->id))',
             'type' => 'raw',
         ),

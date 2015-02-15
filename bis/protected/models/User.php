@@ -50,7 +50,7 @@ class User extends CActiveRecord
 			// array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			 array('username, is_active, first_name, middle_name, last_name, fullName', 'safe', 'on'=>'search'),
+            array('username, is_active, first_name, middle_name, last_name, fullName', 'safe', 'on'=>'search'),
             array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
             array('old_password', 'findPasswords', 'on' => 'changePwd'),
             array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
@@ -93,6 +93,7 @@ class User extends CActiveRecord
 			'first_name' => 'First Name',
 			'middle_name' => 'Middle Name',
 			'last_name' => 'Last Name',
+            'fullName'=>'Full Name',
 		);
 	}
 

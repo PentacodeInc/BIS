@@ -1,0 +1,22 @@
+2015/02/15 09:52:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in D:\Projects\PentaCode\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=links
+---
+2015/02/15 09:52:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in D:\Projects\PentaCode\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/bis/index.php?r=site/page&view=download
+---

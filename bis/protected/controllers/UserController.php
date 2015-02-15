@@ -70,6 +70,7 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+			$model->username = $this->generateUsernameAndPassword($model->first_name,$model->middle_name,$model->last_name);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -172,7 +173,10 @@ class UserController extends Controller
 	}
 
 
-	private function generateUsernameAngPassword($fname,$mname,$lname){
+	private function generateUsernameAndPassword($fname,$mname,$lname){
+		$fname = strtolower(preg_replace('/\s+/', '', $fname));
+		$mname = strtolower(preg_replace('/\s+/', '', $mname));
+		$lname = strtolower(preg_replace('/\s+/', '', $lname));
 		return $lname.$fname[0].$mname[0];
 	}
 }

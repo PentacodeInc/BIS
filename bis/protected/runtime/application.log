@@ -1387,3 +1387,12 @@ in C:\xampp\htdocs\BIS\bis\index.php (13)
 2015/02/15 09:34:30 [warning] [application] Failed to set unsafe attribute "FullName" of "User".
 in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (139)
 in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/15 09:41:44 [warning] [application] Failed to set unsafe attribute "FullName" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/15 09:41:46 [warning] [application] Failed to set unsafe attribute "FullName" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/15 09:41:49 [warning] [application] Failed to set unsafe attribute "FullName" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\BIS\bis\index.php (13)

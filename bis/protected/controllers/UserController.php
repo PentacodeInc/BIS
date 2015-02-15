@@ -172,6 +172,6 @@ class UserController extends Controller
 	}
 
 	private function generateUsernameAndPassword($fname,$mname,$lname){
-		return $lname.$fname[0].$mname[0];
+		return strtolower($lname.$fname[0].$mname[0]);
 	}
 }

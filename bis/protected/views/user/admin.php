@@ -22,7 +22,8 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
         array(
-            'name'=>'FullName',
+            'name'=>'last_name',
+            'header'=>'Full Name',
             'value'=>'$data->getFullName()',
         ),
 		'username',

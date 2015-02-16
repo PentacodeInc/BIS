@@ -16,8 +16,8 @@ $this->menu=array(
 
 <h1>Manage Users</h1>
 <?php if(Yii::app()->user->hasFlash('success')):?>
-    <div>
-        <?php echo Yii::app()->user->getFlash('success'); ?>
+    <div class="flash-success">
+       <?php echo Yii::app()->user->getFlash('success'); ?>
     </div>
 <?php endif; ?>
 

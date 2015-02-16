@@ -131,7 +131,7 @@ class UserController extends Controller
         $password_hash = crypt($password, $salt);
         $model->password = $password_hash;
     	if($model->save()){
-    		  Yii::app()->user->setFlash('success','Your have been successfully reset password! Username: '.$model->username.' Password: '.$model->username);
+    		  Yii::app()->user->setFlash('success','Your have been successfully reset password: <br/> <li><b>Username:</b> '.$model->username.' <li><b>Password:</b> '.$model->username);
     		  $this->redirect(array('admin','msg'=>'successfully changed password'));
     	}
     		 

@@ -219,7 +219,8 @@ div.view
 
 .annoucement .title,
 .event .title,
-.user .title{
+.user .title,
+.pictures .title{
     color:#333ea7;
     font-weight: bold;
     font-size: 25px;
@@ -228,6 +229,22 @@ div.view
 
 .annoucement .text{
     text-align: justify;
+}
+
+.album .pic{
+    background-color: #eee;
+    padding:10px;
+    width: 400px;
+}
+
+.album .pic img{
+    width: 400px;
+}
+
+.album .name{
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-weight: bold;
 }
         
 

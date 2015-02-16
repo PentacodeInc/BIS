@@ -13,8 +13,11 @@
 	'filter'=>$model,
 	'columns'=>array(
 		//'id',
-		'filename',
-		 array(
+        array(
+            'name'=>'filename',
+            'filter'=>''
+        ), 
+        array(
             'name'=>'is_active',
             'value' => '$data->is_active?Yii::t(\'app\',\'Yes\'):Yii::t(\'app\', \'No\')',
             'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),

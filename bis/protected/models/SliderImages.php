@@ -35,7 +35,7 @@ class SliderImages extends CActiveRecord
 			array('is_active, user_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, filename, is_active, posted_datetime, user_id', 'safe', 'on'=>'search'),
+			array('is_active', 'safe', 'on'=>'search'),
 		);
 	}
 

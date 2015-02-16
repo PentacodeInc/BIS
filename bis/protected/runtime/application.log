@@ -2142,3 +2142,25 @@ Stack trace:
 REQUEST_URI=/BIS/bis/index.php?r=downloadFiles
 HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=links
 ---
+2015/02/16 08:23:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=download
+---
+2015/02/16 08:45:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=pictures
+---

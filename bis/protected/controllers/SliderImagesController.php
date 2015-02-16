@@ -84,9 +84,9 @@ class SliderImagesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate()
 	{
-		$model=$this->loadModel($id);
+		/*$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -100,7 +100,15 @@ class SliderImagesController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
-		));
+		));*/
+	    $es = new EditableSaver('SliderImages');
+    	try {
+	        $es->update();
+	    } catch(CException $e) {
+	        echo CJSON::encode(array('success' => false, 'msg' => $e->getMessage()));
+	        return;
+	    }
+	    echo CJSON::encode(array('success' => true));
 	}
 
 	/**

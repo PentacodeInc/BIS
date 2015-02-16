@@ -30,7 +30,7 @@ $(function () {
     
     <div class="main">
         <h1>Announcements</h1>
-    
+        
     </div>
     
     <div class="sidebar">

@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update', 'resetPassword'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -104,20 +104,11 @@ class UserController extends Controller
 		));
 	}
     
-    public function actionChangePassword($id,$reset = false)
+    public function actionChangePassword($id)
     {      
         $model = User::model()->findByAttributes(array('id'=>$id));
         $model->setScenario('changePwd');
-        if($reset){
-        	$password = $this->generateUsernameAndPassword($model->first_name,$model->middle_name,$model->last_name);
-        	$salt = openssl_random_pseudo_bytes(22);
-	        $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
-	        $password_hash = crypt($password, $salt);
-	        $model->password = $password_hash;
-        	if($model->save())
-        		 $this->redirect(array('admin','msg'=>'successfully changed password'));
-        }
-
+  
         if(isset($_POST['User'])){
             $model->attributes = $_POST['User'];
             $valid = $model->validate();
@@ -130,6 +121,20 @@ class UserController extends Controller
             }
         }
         $this->render('changePassword',array('model'=>$model)); 
+    }
+
+    public function actionResetPassword($id){
+		$model = User::model()->findByAttributes(array('id'=>$id));
+		$password = $this->generateUsernameAndPassword($model->first_name,$model->middle_name,$model->last_name);
+    	$salt = openssl_random_pseudo_bytes(22);
+        $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
+        $password_hash = crypt($password, $salt);
+        $model->password = $password_hash;
+    	if($model->save()){
+    		  Yii::app()->user->setFlash('success','Your have been successfully reset password! Username: '.$model->username.' Password: '.$model->username);
+    		  $this->redirect(array('admin','msg'=>'successfully changed password'));
+    	}
+    		 
     }
 
 	/**

@@ -20,6 +20,10 @@ class Module extends CActiveRecord
 		return 'module';
 	}
 
+	public function getAll(){
+		return Module::model()->findAll();
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -95,4 +99,6 @@ class Module extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+
 }

@@ -15,7 +15,11 @@ $this->menu=array(
 ?>
 
 <h1>Manage Users</h1>
-
+<?php if(Yii::app()->user->hasFlash('success')):?>
+    <div>
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+<?php endif; ?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',

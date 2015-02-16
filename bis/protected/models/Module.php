@@ -15,13 +15,19 @@ class Module extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $user_id;
 	public function tableName()
 	{
 		return 'module';
 	}
 
-	public function getAll(){
-		return Module::model()->findAll();
+	public function getAll($id){
+		$criteria=new CDbCriteria;
+		$criteria->select = array("t.id","t.name", "A.user_id as user_id");
+		$criteria->join = "LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid";
+		$criteria->order = 't.name';
+		$criteria->params = array(':userid'=>$id);
+		return Module::model()->findAll($criteria);
 	}
 
 	/**

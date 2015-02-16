@@ -25,6 +25,7 @@ class User extends CActiveRecord
     public $new_password;
     public $repeat_password;
     public $fullName;
+    public $modules;
     
 	/**
 	 * @return string the associated database table name

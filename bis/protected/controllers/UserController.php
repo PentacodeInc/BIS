@@ -88,6 +88,7 @@ class UserController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$modules=Module::getAll($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -95,12 +96,25 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
-			if($model->save())
+			$keyValues = $_POST['User']['modules'];
+			if($model->save()){
+				Access::deleteAccess($model->id);
+				foreach ($keyValues as $key => $value) {
+					if($value){
+						$access=new Access;
+						$access->module_id = $key;
+						$access->user_id = $model->id;
+						$access->save();
+					}
+				}
 				$this->redirect(array('admin'));
+			}
+				
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'modules'=>$modules
 		));
 	}
     

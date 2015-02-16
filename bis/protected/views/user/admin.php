@@ -37,6 +37,7 @@ $this->menu=array(
             'value' => '$data->is_active?Yii::t(\'app\',\'Active\'):Yii::t(\'app\', \'Inactive\')',
             'filter' => array('0' => Yii::t('app', 'Inactive'), '1' => Yii::t('app', 'Active')),
         ),
+    
 		array(
 			'class'=>'CButtonColumn',
             'template'=>'{reset}',

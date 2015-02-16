@@ -37,6 +37,25 @@
 		<?php echo $form->error($model,'last_name'); ?>
 	</div>
 
+	<?php
+		if(isset($modules)){
+			foreach ($modules as $value) {
+				?> 
+				<div class="row"> 
+					<?php
+						if(!empty($value->user_id)){
+							echo $form->checkBox($model,'modules['.$value->id.']', array('checked'=>'çhecked'));
+						}else{
+							echo $form->checkBox($model,'modules['.$value->id.']');
+						}
+						echo $value->name; 
+					?>
+				</div>
+				<?php
+			}	
+		}
+	?>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

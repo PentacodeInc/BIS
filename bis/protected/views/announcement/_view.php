@@ -5,19 +5,32 @@
 
 <div class="view annoucement">
 
-	<div class="title"><?php echo CHtml::encode($data->title); ?></div>
-	<br />
-
-	<div class="text"><?php echo CHtml::decode($data->description); ?></div>
-	<br />
-
-    <div class="information">
-        <b><?php echo CHtml::encode($data->getAttributeLabel('posted_datetime')); ?>:</b>
-        <?php echo CHtml::encode(Yii::app()->dateFormatter->format("MM-dd-yyyy",strtotime($data->posted_datetime))); ?>
-        <br />
-
-        <b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
-        <?php echo CHtml::encode($data->user->username); ?>
+	<div class="title">
+        <?php $title=CHtml::encode($data->title); ?>
+        <?php echo CHtml::link($title,array("announcement/view", "id"=>$data->id)); ?>
     </div>
+    
+    <div class="information">
+        posted by <?php echo CHtml::encode($data->user->username); ?> on
+        <?php echo CHtml::encode(Yii::app()->dateFormatter->format("MMM-dd-yyyy",strtotime($data->posted_datetime))); ?>
+        
+    </div>
+
+	<div class="text">
+        <?php $string=CHtml::decode($data->description);
+            $isLong = false;
+            $string = $string;
+            if (strlen($string) > 1000) {
+                $isLong = true;
+                $stringCut = substr($string, 0, 1000);
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...'; 
+            }
+            echo $string;
+        ?>
+        <div class="readmore">
+            <?php if ($isLong) echo CHtml::link("Read More",array("announcement/view", "id"=>$data->id)) ?>
+        </div>
+    </div>
+	<br />
 
 </div>

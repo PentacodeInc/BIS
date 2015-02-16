@@ -1923,3 +1923,222 @@ Stack trace:
 REQUEST_URI=/bis/index.php?r=user/changePassword&id=4
 HTTP_REFERER=http://localhost/bis/index.php?r=site/login
 ---
+2015/02/16 04:35:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=officials
+---
+2015/02/16 04:35:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/ad...')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=personalInfo/dashboard
+---
+2015/02/16 04:35:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/ad...')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=personalInfo/admin
+---
+2015/02/16 04:36:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "downloadFiles".' in C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadFiles')
+#1 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloadFiles
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=links
+---
+2015/02/16 07:44:48 [error] [php] Undefined variable: model (C:\xampp\htdocs\BIS\bis\protected\views\announcement\_view.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CListView.php(291): AnnouncementController->renderFile()
+#1 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback()
+#4 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(135): CListView->renderContent()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(173): CListView->run()
+#6 C:\xampp\htdocs\BIS\bis\protected\views\announcement\index.php(20): AnnouncementController->widget()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): AnnouncementController->renderInternal()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): AnnouncementController->renderFile()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): AnnouncementController->renderPartial()
+#11 C:\xampp\htdocs\BIS\bis\protected\controllers\AnnouncementController.php(133): AnnouncementController->render()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): AnnouncementController->actionIndex()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): AnnouncementController->runAction()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): AnnouncementController->filterAccessControl()
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): AnnouncementController->runActionWithFilters()
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): AnnouncementController->run()
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=announcement
+in C:\xampp\htdocs\BIS\bis\protected\views\announcement\_view.php (11)
+in C:\xampp\htdocs\BIS\bis\protected\views\announcement\index.php (20)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\AnnouncementController.php (133)
+2015/02/16 08:02:28 [error] [exception.Exception] exception 'Exception' with message 'DateTime::__construct(): Failed to parse time string (02-18-2015) at position 0 (0): Unexpected character' in C:\xampp\htdocs\BIS\bis\protected\models\Announcement.php:94
+Stack trace:
+#0 C:\xampp\htdocs\BIS\bis\protected\models\Announcement.php(94): DateTime->__construct('02-18-2015')
+#1 C:\xampp\htdocs\BIS\bis\protected\views\announcement\admin.php(22): Announcement->search()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#6 C:\xampp\htdocs\BIS\bis\protected\controllers\AnnouncementController.php(148): CController->render('admin', Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): AnnouncementController->actionAdmin()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#17 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('announcement/ad...')
+#18 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/BIS/bis/index.php?Announcement%5Bid%5D=&Announcement%5Btitle%5D=&Announcement%5Bposted_datetime%5D=02-18-2015&Announcement%5Buser_id%5D=&Announcement_page=1&ajax=announcement-grid&r=announcement%2Fadmin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=announcement/admin
+---
+2015/02/16 08:02:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('dashboard')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/da...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/dashboard
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=about
+---
+2015/02/16 08:02:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/ad...')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=personalInfo/dashboard
+---
+2015/02/16 08:03:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "resetPassword".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('resetPassword')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('resetPassword')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/resetPassw...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/resetPassword&id=1
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/02/16 08:03:37 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('changePassword')
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changePass...')
+#10 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/changePassword/1
+---
+2015/02/16 08:04:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/ad...')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/02/16 08:05:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/ad...')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/changePassword&id=6
+---
+2015/02/16 08:14:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "downloadFiles".' in C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadFiles')
+#1 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloadFiles
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=links
+---
+2015/02/16 08:14:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "downloadFiles".' in C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadFiles')
+#1 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloadFiles
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=links
+---

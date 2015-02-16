@@ -195,9 +195,26 @@ div.view
     font-size:14px;
 }
 
+.annoucement{
+    border-bottom: #ccc dashed 1px;
+}
+
 .annoucement .information{
     font-size: 9px;
-    opacity: 0.8;    
+    opacity: 0.7;  
+    padding-bottom: 10px;
+}
+
+.annoucement .readmore{
+    font-size: 12px;
+}
+
+.annoucement .title a{
+    text-decoration: none;
+}
+
+.annoucement .title a:hover{
+    text-decoration: underline;
 }
 
 .annoucement .title,

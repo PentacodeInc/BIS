@@ -2,7 +2,9 @@
 /* @var $this SliderImagesController */
 /* @var $model SliderImages */
 
-//MAKE THIS ROW EDIT :)
+$this->menu=array(
+	array('label'=>'Add Slider Image Link', 'url'=>array('create')),
+);
 ?>
 
 <h1>Manage Slider Images</h1>

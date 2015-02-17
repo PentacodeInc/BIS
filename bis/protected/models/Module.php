@@ -30,6 +30,21 @@ class Module extends CActiveRecord
 		return Module::model()->findAll($criteria);
 	}
 
+	public function generateModuleColumns($id,$columns){
+		$modules = Module::getAll($id);
+		foreach ($modules as $key => $value) {
+			$result = Yii::t('app','"Y"');
+			if(empty($value->user_id)){
+				$result = Yii::t('app','"N"');
+			}
+			array_push($columns,array(
+					'header'=>$value->name,
+					'value'=>$result
+				));
+		}
+		return $columns;
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */

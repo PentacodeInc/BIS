@@ -25,33 +25,5 @@ $this->menu=array(
 	'id'=>'user-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'columns'=>array(
-        array(
-            'name'=>'fullName',
-            'value' => 'CHtml::link($data->getFullName(),array("user/update", "id"=>$data->id))',
-            'type' => 'raw',
-        ),
-		'username',
-        array(
-            'name'=>'is_active',
-            'value' => '$data->is_active?Yii::t(\'app\',\'Active\'):Yii::t(\'app\', \'Inactive\')',
-            'filter' => array('0' => Yii::t('app', 'Inactive'), '1' => Yii::t('app', 'Active')),
-        ),
-    
-		array(
-			'class'=>'CButtonColumn',
-            'template'=>'{reset}',
-            'buttons' => array(
-               'reset' => array(
-                   'label' => 'Reset Account', 
-                   'options' => array(
-                            'confirm' => 'Are you sure you want to reset password?',
-                    ),
-                   'url' => 'CHtml::normalizeUrl(array("user/resetPassword", "id"=>$data->id))', 
-                   'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
-                ),
-            ),
-
-		),
-	),
+	'columns'=>$model->getColumns()
 )); ?>

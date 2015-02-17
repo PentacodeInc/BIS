@@ -27,27 +27,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'filename'); ?>
-		<?php echo $form->textArea($model,'filename',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->fileField($model,'filename'); ?>
 		<?php echo $form->error($model,'filename'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'is_active'); ?>
-		<?php echo $form->textField($model,'is_active'); ?>
-		<?php echo $form->error($model,'is_active'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_update_datetime'); ?>
-		<?php echo $form->textField($model,'last_update_datetime'); ?>
-		<?php echo $form->error($model,'last_update_datetime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
-		<?php echo $form->error($model,'user_id'); ?>
-	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

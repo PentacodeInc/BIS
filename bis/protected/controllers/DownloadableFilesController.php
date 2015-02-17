@@ -70,8 +70,12 @@ class DownloadableFilesController extends Controller
 		if(isset($_POST['DownloadableFiles']))
 		{
 			$model->attributes=$_POST['DownloadableFiles'];
-			if($model->save())
+			$model->filename=CUploadedFile::getInstance($model,'filename');
+			if($model->save()){
+				$model->filename->saveAs(Yii::app()->basePath.'../uploads/');
 				$this->redirect(array('view','id'=>$model->id));
+			}
+				
 		}
 
 		$this->render('create',array(

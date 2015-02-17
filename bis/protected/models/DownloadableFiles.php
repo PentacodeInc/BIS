@@ -32,9 +32,10 @@ class DownloadableFiles extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, filename, last_update_datetime, user_id', 'required'),
-			array('is_active, user_id', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>100),
+			array('name', 'required'),
+			array('filename', 'file', 'types'=>'txt,doc'),
+			// array('is_active, user_id', 'numerical', 'integerOnly'=>true),
+			// array('name', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, filename, is_active, last_update_datetime, user_id', 'safe', 'on'=>'search'),
@@ -108,4 +109,15 @@ class DownloadableFiles extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function beforeSave()
+	{       
+        if($this->isNewRecord) // only if adding new record
+        {
+        	$this->last_update_datetime = new Date;
+        	$this->is_active = 1;
+        	$this->user_id = Yii::app()->user->id;
+        }
+        return parent::beforeSave();
+    }
 }

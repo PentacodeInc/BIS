@@ -21,12 +21,12 @@
  */
 class User extends CActiveRecord
 {
-    public $old_password;
-    public $new_password;
-    public $repeat_password;
-    public $fullName;
-    public $modules;
-    
+	public $old_password;
+	public $new_password;
+	public $repeat_password;
+	public $fullName;
+	public $modules;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -51,21 +51,21 @@ class User extends CActiveRecord
 			// array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-            array('username, is_active, first_name, middle_name, last_name, fullName', 'safe', 'on'=>'search'),
-            array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
-            array('old_password', 'findPasswords', 'on' => 'changePwd'),
-            array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
-		);
+			array('username, is_active, first_name, middle_name, last_name, fullName', 'safe', 'on'=>'search'),
+			array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
+			array('old_password', 'findPasswords', 'on' => 'changePwd'),
+			array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
+			);
 	}
 
-    public function findPasswords($attribute, $params)
-    {
-        $user = User::model()->findByPk(Yii::app()->getRequest()->getParam('id'));
-        $salt = openssl_random_pseudo_bytes(22);
-        $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
-        $password_hash = crypt($this->old_password, $salt);
+	public function findPasswords($attribute, $params)
+	{
+		$user = User::model()->findByPk(Yii::app()->getRequest()->getParam('id'));
+		$salt = openssl_random_pseudo_bytes(22);
+		$salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
+		$password_hash = crypt($this->old_password, $salt);
         if ($password_hash !== $user->password) //remove incription? or encrypt ung user->password
-            $this->addError($attribute, 'Old password is incorrect.');
+        $this->addError($attribute, 'Old password is incorrect.');
     }
 
 	/**
@@ -80,7 +80,7 @@ class User extends CActiveRecord
 			'announcements' => array(self::HAS_MANY, 'Announcement', 'user_id'),
 			'events' => array(self::HAS_MANY, 'Event', 'user_id'),
 			'sliderImages' => array(self::HAS_MANY, 'SliderImages', 'user_id'),
-		);
+			);
 	}
 
 	/**
@@ -97,8 +97,8 @@ class User extends CActiveRecord
 			'first_name' => 'First Name',
 			'middle_name' => 'Middle Name',
 			'last_name' => 'Last Name',
-            'fullName'=>'Full Name',
-		);
+			'fullName'=>'Full Name',
+			);
 	}
 
 	/**
@@ -124,12 +124,12 @@ class User extends CActiveRecord
 		$criteria->compare('first_name',$this->fullName,false, 'OR');
 		$criteria->compare('middle_name',$this->fullName,false, 'OR');
 		$criteria->compare('last_name',$this->fullName,false, 'OR');
-        $criteria->compare('concat(first_name, " ", last_name)', $this->fullName,false, 'OR');
-        $criteria->compare('concat(last_name, " ", first_name)', $this->fullName,false, 'OR');
+		$criteria->compare('concat(first_name, " ", last_name)', $this->fullName,false, 'OR');
+		$criteria->compare('concat(last_name, " ", first_name)', $this->fullName,false, 'OR');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-		));
+			));
 	}
 
 	/**
@@ -144,24 +144,66 @@ class User extends CActiveRecord
 	}
 
 	public function getFullname(){
-        if ($this->last_name && $this->first_name){
-            return ucwords($this->last_name).', '.ucwords($this->first_name).' '.ucwords($this->middle_name);
-        }else{
-            return "";
-        }
+		if ($this->last_name && $this->first_name){
+			return ucwords($this->last_name).', '.ucwords($this->first_name).' '.ucwords($this->middle_name);
+		}else{
+			return "";
+		}
 	}
 
 	public function beforeSave()
-    {       
+	{       
         if($this->isNewRecord) // only if adding new record
         {
         	$this->password = $this->username;
-	    	$salt = openssl_random_pseudo_bytes(22);
-			$salt = '$2a$%13$' . strtr(base64_encode($salt), array('_' => '.', '~' => '/'));
-			$password_hash = crypt($this->password, $salt); 
-			$this->password = $password_hash; 
-			$this->is_active = 1;
+        	$salt = openssl_random_pseudo_bytes(22);
+        	$salt = '$2a$%13$' . strtr(base64_encode($salt), array('_' => '.', '~' => '/'));
+        	$password_hash = crypt($this->password, $salt); 
+        	$this->password = $password_hash; 
+        	$this->is_active = 1;
         }
- 		return parent::beforeSave();
+        return parent::beforeSave();
+    }
+
+    public function getAll(){
+    	return User::model()->findAll();
+    }
+
+    public function getColumns(){
+    	$columns = array();
+    	array_push($columns,  
+    		array(
+	    		'name'=>'fullName',
+	    		'value' => 'CHtml::link($data->getFullName(),array("user/update", "id"=>$data->id))',
+	    		'type' => 'raw',
+	    		),
+    		'username',
+	    	array(
+	    		'name'=>'is_active',
+	    		'value' => '$data->is_active?Yii::t(\'app\',\'Active\'):Yii::t(\'app\', \'Inactive\')',
+	    		'filter' => array('0' => Yii::t('app', 'Inactive'), '1' => Yii::t('app', 'Active')),
+	    		)
+    	);
+    	foreach (User::getAll() as $value) {
+    		$columns = Module::generateModuleColumns($value->id,$columns);
+    	}
+
+    	array_push($columns, 
+	    		array(
+	    		'class'=>'CButtonColumn',
+	    		'template'=>'{reset}',
+	    		'buttons' => array(
+	    			'reset' => array(
+	    				'label' => 'Reset Account', 
+	    				'options' => array(
+	    					'confirm' => 'Are you sure you want to reset password?',
+	    					),
+	    				'url' => 'CHtml::normalizeUrl(array("user/resetPassword", "id"=>$data->id))', 
+	    				'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
+	    				)
+	    			)
+	    		)
+    		);
+    	return $columns;
     }
 }

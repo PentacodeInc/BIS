@@ -3890,3 +3890,9 @@ Stack trace:
 REQUEST_URI=/bis/index.php?r=sliderImages/update
 HTTP_REFERER=http://localhost/bis/index.php?r=sliderImages/admin
 ---
+2015/02/17 15:48:36 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/17 15:48:43 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)

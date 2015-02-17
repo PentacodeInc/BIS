@@ -43,7 +43,7 @@ $this->menu=array(
             'template'=>'{reset}',
             'buttons' => array(
                'reset' => array(
-                   'label' => 'Reset Password', 
+                   'label' => 'Reset Account', 
                    'options' => array(
                             'confirm' => 'Are you sure you want to reset password?',
                     ),

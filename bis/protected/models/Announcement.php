@@ -118,7 +118,7 @@ class Announcement extends CActiveRecord
         if(parent::beforeValidate())
         {
             $this->posted_datetime=date('YmdHis'); //iba ung date????
-            $this->user_id=Yii::app()->user->getId();
+            $this->user_id=Yii::app()->user->id;
             return true;
         }
         return false; 

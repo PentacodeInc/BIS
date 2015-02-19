@@ -16,3 +16,4 @@ $this->menu=array(
 <h1>Create SliderImages</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+

@@ -2,17 +2,17 @@
 /* @var $this SliderImagesController */
 /* @var $model SliderImages */
 
-$this->menu=array(
-	array('label'=>'Add Slider Image Link', 'url'=>array('create')),
-);
 ?>
 
 <h1>Manage Slider Images</h1>
 
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'slider-images-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
+    'htmlOptions'=>array('style'=>'margin:0;padding:0;'),
 	'columns'=>array(
 		//'id',
        array(
@@ -46,7 +46,14 @@ $this->menu=array(
 		//'user_id',
 		array(
 			'class'=>'CButtonColumn',
-            'template'=>'{delete}'
+            'template'=>'{view}{delete}',
+            'buttons' => array(
+                'view' => array(
+                    'label' => 'Show Image', 
+                    'url' => 'CHtml::normalizeUrl($data->filename)', 
+                    //'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
+                    )
+                )
 		),
 	),
 )); ?>

@@ -5335,3 +5335,132 @@ in D:\Projects\PentaCode\BIS\bis\index.php (13)
 2015/02/17 17:44:07 [warning] [application] Failed to set unsafe attribute "filename" of "DownloadableFiles".
 in D:\Projects\PentaCode\BIS\bis\protected\controllers\DownloadableFilesController.php (72)
 in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/02/19 04:00:01 [error] [php] Creating default object from empty value (C:\xampp\htdocs\BIS\bis\protected\controllers\SliderImagesController.php:146)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): SliderImagesController->runAction()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): SliderImagesController->filterAccessControl()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): SliderImagesController->runActionWithFilters()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): SliderImagesController->run()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=sliderImages/admin
+in C:\xampp\htdocs\BIS\bis\protected\controllers\SliderImagesController.php (146)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/19 04:17:26 [error] [exception.CException] exception 'CException' with message 'SliderImages and its behaviors do not have a method or closure named "getData".' in C:\xampp\htdocs\BIS\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(111): CActiveRecord->__call('getData', Array)
+#2 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(111): SliderImages->getData()
+#3 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(147): CGridView->init()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 C:\xampp\htdocs\BIS\bis\protected\views\sliderImages\admin.php(54): CBaseController->widget('zii.widgets.gri...', Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 C:\xampp\htdocs\BIS\bis\protected\controllers\SliderImagesController.php(165): CController->render('admin', Array)
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): SliderImagesController->actionAdmin()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sliderImages/ad...')
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/BIS/bis/index.php?r=sliderImages/admin
+---
+2015/02/19 04:18:27 [error] [exception.CException] exception 'CException' with message 'SliderImages and its behaviors do not have a method or closure named "getData".' in C:\xampp\htdocs\BIS\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(111): CActiveRecord->__call('getData', Array)
+#2 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(111): SliderImages->getData()
+#3 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(147): CGridView->init()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 C:\xampp\htdocs\BIS\bis\protected\views\sliderImages\admin.php(54): CBaseController->widget('zii.widgets.gri...', Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 C:\xampp\htdocs\BIS\bis\protected\controllers\SliderImagesController.php(165): CController->render('admin', Array)
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): SliderImagesController->actionAdmin()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sliderImages/ad...')
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/BIS/bis/index.php?r=sliderImages/admin
+---
+2015/02/19 04:19:42 [error] [exception.CException] exception 'CException' with message 'SliderImages and its behaviors do not have a method or closure named "getData".' in C:\xampp\htdocs\BIS\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(111): CActiveRecord->__call('getData', Array)
+#2 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\CBaseListView.php(111): SliderImages->getData()
+#3 C:\xampp\htdocs\BIS\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(147): CGridView->init()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 C:\xampp\htdocs\BIS\bis\protected\views\sliderImages\admin.php(54): CBaseController->widget('zii.widgets.gri...', Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 C:\xampp\htdocs\BIS\bis\protected\controllers\SliderImagesController.php(165): CController->render('admin', Array)
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): SliderImagesController->actionAdmin()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sliderImages/ad...')
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/BIS/bis/index.php?r=sliderImages/admin
+---
+2015/02/19 04:34:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sliderImages/de...')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?ajax=slider-images-grid&id=4&r=sliderImages%2Fdelete
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=sliderImages/admin
+---
+2015/02/19 04:49:58 [warning] [application] Failed to set unsafe attribute "filename" of "DownloadableFiles".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\DownloadableFilesController.php (72)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/19 04:50:05 [warning] [application] Failed to set unsafe attribute "filename" of "DownloadableFiles".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\DownloadableFilesController.php (72)
+in C:\xampp\htdocs\BIS\bis\index.php (13)

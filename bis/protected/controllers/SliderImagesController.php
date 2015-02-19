@@ -141,10 +141,20 @@ class SliderImagesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new SliderImages('search');
+        $model=new SliderImages;
+        
+        if(isset($_POST['SliderImages']))
+		{
+			$model->attributes=$_POST['SliderImages'];
+            $model->is_active=1;
+			if($model->save())
+				$this->redirect(array('admin'));
+		}        
+        
+		/*$model=new SliderImages('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['SliderImages']))
-			$model->attributes=$_GET['SliderImages'];
+			$model->attributes=$_GET['SliderImages'];*/
 
 		$this->render('admin',array(
 			'model'=>$model,

@@ -83,11 +83,11 @@ class SliderImages extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('filename',$this->filename,true);
-		$criteria->compare('is_active',$this->is_active);
-		$criteria->compare('posted_datetime',$this->posted_datetime,true);
-		$criteria->compare('user_id',$this->user_id);
+		//$criteria->compare('id',$this->id);
+		//$criteria->compare('filename',$this->filename,true);
+		//$criteria->compare('is_active',$this->is_active);
+		//$criteria->compare('posted_datetime',$this->posted_datetime,true);
+		//$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -104,4 +104,15 @@ class SliderImages extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    
+    public function beforeValidate()
+    {           
+        if(parent::beforeValidate())
+        {
+            $this->posted_datetime=date('YmdHis'); 
+            $this->user_id=Yii::app()->user->id;
+            return true;
+        }
+        return false; 
+    }
 }

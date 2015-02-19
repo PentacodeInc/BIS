@@ -61,8 +61,8 @@ class DownloadableFiles extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'filename' => 'Filename',
+			'name' => 'Description',
+			'filename' => 'File',
 			'is_active' => 'Is Active',
 			'last_update_datetime' => 'Update Date',
 			'user_id' => 'User',

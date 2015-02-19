@@ -75,8 +75,7 @@ class DownloadableFilesController extends Controller
 			if($model->save()){
 				$model->filename->saveAs(Yii::app()->basePath.'../uploads/');
 				$this->redirect(array('view','id'=>$model->id));
-			}
-				
+            }
 		}
 
 		$this->render('create',array(

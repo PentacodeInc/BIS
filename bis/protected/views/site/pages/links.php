@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
         //array('label'=>'Modules', 'url'=>array('/module/admin')),
         array('label'=>'Slide Show', 'url'=>array('/sliderImages/admin')),
         //array('label'=>'Event', 'url'=>array('/event')),
-        array('label'=>'Announcements', 'url'=>array('/announcement')),
+        array('label'=>'Announcements', 'url'=>array('/announcement/admin')),
         array('label'=>'Downloadable Files', 'url'=>array('/downloadableFiles/admin')),
     ),
     'htmlOptions'=>array('class'=>'link'),

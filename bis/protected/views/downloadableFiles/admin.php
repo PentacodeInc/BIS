@@ -22,7 +22,8 @@ $this->menu=array(
 	'columns'=>array(
         array(
             'class' =>'editable.EditableColumn',
-            'name' =>'name',
+            'name' =>'filename',
+            'filter'=>'',
             'editable' => array(
                 'type' => 'text',
                 'url' => $this->createUrl('downloadableFiles/update'), 
@@ -31,8 +32,7 @@ $this->menu=array(
         ),
         array(
             'class' =>'editable.EditableColumn',
-            'name' =>'filename',
-            'filter'=>'',
+            'name' =>'name',
             'editable' => array(
                 'type' => 'text',
                 'url' => $this->createUrl('downloadableFiles/update'), 

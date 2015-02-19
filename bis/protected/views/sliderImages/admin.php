@@ -70,6 +70,7 @@
                 'view' => array(
                     'label' => 'Show Image', 
                     'url' => 'CHtml::normalizeUrl($data->filename)', 
+                    'options'=>array('target'=>'_blank')
                     //'imageUrl' => Yii::app()->baseUrl . '/themes/images/reset.png',
                     )
                 )

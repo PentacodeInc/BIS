@@ -184,8 +184,11 @@ class User extends CActiveRecord
 	    		'filter' => array('0' => Yii::t('app', 'Inactive'), '1' => Yii::t('app', 'Active')),
 	    		)
     	);
-    	foreach (User::getAll() as $value) {
-    		$columns = Module::generateModuleColumns($value->id,$columns);
+    	foreach (Module::model()->findAll(array('order'=>'name')) as $value) {
+    		array_push($columns, array(
+    				'header'=>$value->name,
+    				'value'=>'Module::userHasAccess($data->id,'.$value->id.')'
+    			));
     	}
 
     	array_push($columns, 

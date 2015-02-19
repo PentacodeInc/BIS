@@ -30,19 +30,12 @@ class Module extends CActiveRecord
 		return Module::model()->findAll($criteria);
 	}
 
-	public function generateModuleColumns($id,$columns){
-		$modules = Module::getAll($id);
-		foreach ($modules as $key => $value) {
-			$result = Yii::t('app','"Y"');
-			if(empty($value->user_id)){
-				$result = Yii::t('app','"N"');
-			}
-			array_push($columns,array(
-					'header'=>$value->name,
-					'value'=>$result
-				));
-		}
-		return $columns;
+	public function userHasAccess($user_id,$module_id){
+		$access = Access::model()->find('user_id=:user_id AND module_id=:module_id',
+						array(':user_id'=>$user_id, 'module_id'=>$module_id));
+		if(empty($access))
+			return Yii::t('app','N');
+		return Yii::t('app','Y');
 	}
 
 	/**

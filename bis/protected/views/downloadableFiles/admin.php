@@ -32,6 +32,7 @@ $this->menu=array(
         array(
             'class' =>'editable.EditableColumn',
             'name' =>'filename',
+            'filter'=>'',
             'editable' => array(
                 'type' => 'text',
                 'url' => $this->createUrl('downloadableFiles/update'), 
@@ -49,6 +50,32 @@ $this->menu=array(
                 'url'      => $this->createUrl('downloadableFiles/update'),
                 'source'   => array( 1=>'Yes',0=>'No'),
             )
+        ),
+        array(
+            'name'=>'last_update_datetime',
+            'value'=>'Yii::app()->dateFormatter->format("MM/dd/yyyy",strtotime($data->last_update_datetime))',
+            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'model'=>$model, 
+                'attribute'=>'last_update_datetime', 
+                'language' => 'en-GB',
+                'htmlOptions' => array(
+                    'id' => 'datepicker_for_last_update_datetime',
+                    'size' => '10',
+                ),
+                'options' => array(
+                    'dateFormat' => 'mm/dd/yy',
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                )
+            ), 
+            true),
+        ),
+        array(
+            'name'=>'user.username',
+            'filter' => CHtml::activeTextField($model, 'user_id'),
+            'value'=>'$data->user->username',
+            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
         ),
         array(
             'class'=>'CButtonColumn',

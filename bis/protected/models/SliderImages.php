@@ -82,12 +82,19 @@ class SliderImages extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+        $criteria->with= array('user');
 
 		//$criteria->compare('id',$this->id);
 		//$criteria->compare('filename',$this->filename,true);
-		$criteria->compare('is_active',$this->is_active);
+		$criteria->compare('t.is_active',$this->is_active);
 		//$criteria->compare('posted_datetime',$this->posted_datetime,true);
 		//$criteria->compare('user_id',$this->user_id);
+        if ($this->posted_datetime){
+            $fromdate =  new DateTime($this->posted_datetime);
+            $search = $fromdate->format('Y-m-d');
+            $criteria->compare('t.posted_datetime',$search,true);
+        }
+		$criteria->compare('user.username',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -107,12 +114,8 @@ class SliderImages extends CActiveRecord
     
     public function beforeValidate()
     {           
-        if(parent::beforeValidate())
-        {
-            $this->posted_datetime=date('YmdHis');
-            $this->user_id=Yii::app()->user->id;
-            return true;
-        }
-        return false; 
+        $this->posted_datetime=date('YmdHis');
+        $this->user_id=Yii::app()->user->id;
+        return parent::beforeValidate(); 
     }
 }

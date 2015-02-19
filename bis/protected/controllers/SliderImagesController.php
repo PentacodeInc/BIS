@@ -101,9 +101,14 @@ class SliderImagesController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));*/
+        
 	    $es = new EditableSaver('SliderImages');
     	try {
-	        $es->update();
+            $es->onBeforeUpdate = function($event) {
+                $event->sender->setAttribute('posted_datetime', date('YmdHis'));
+                $event->sender->setAttribute('user_id', Yii::app()->user->id);
+            };
+            $es->update();
 	    } catch(CException $e) {
 	        echo CJSON::encode(array('success' => false, 'msg' => $e->getMessage()));
 	        return;

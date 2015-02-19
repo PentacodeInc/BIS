@@ -37,16 +37,35 @@
               'source'   => array( 1=>'Yes',0=>'No'),
              )
         ),
-       /*array(
-            'name'=>'is_active',
-            'value' => '$data->is_active?Yii::t(\'app\',\'Yes\'):Yii::t(\'app\', \'No\')',
-            'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
-        ),*/
-		//'posted_datetime',
-		//'user_id',
+        array(
+            'name'=>'posted_datetime',
+            'value'=>'Yii::app()->dateFormatter->format("MM/dd/yyyy",strtotime($data->posted_datetime))',
+            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'model'=>$model, 
+                'attribute'=>'posted_datetime', 
+                'language' => 'en-GB',
+                'htmlOptions' => array(
+                    'id' => 'datepicker_for_posted_datetime',
+                    'size' => '10',
+                ),
+                'options' => array(
+                    'dateFormat' => 'mm/dd/yy',
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                )
+            ), 
+            true),
+        ),
+		array(
+            'name'=>'user.username',
+            'filter' => CHtml::activeTextField($model, 'user_id'),
+            'value'=>'$data->user->username',
+            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+        ),
 		array(
 			'class'=>'CButtonColumn',
-            'template'=>'{view}{delete}',
+            'template'=>'{view}{delete}{update}',
             'buttons' => array(
                 'view' => array(
                     'label' => 'Show Image', 

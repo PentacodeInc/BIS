@@ -109,6 +109,10 @@ class DownloadableFilesController extends Controller
         
         $es = new EditableSaver('DownloadableFiles');
     	try {
+            $es->onBeforeUpdate = function($event) {
+                $event->sender->setAttribute('last_update_datetime', date('YmdHis'));
+                $event->sender->setAttribute('user_id', Yii::app()->user->id);
+            };
 	        $es->update();
 	    } catch(CException $e) {
 	        echo CJSON::encode(array('success' => false, 'msg' => $e->getMessage()));

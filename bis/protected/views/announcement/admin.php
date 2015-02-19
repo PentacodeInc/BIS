@@ -33,7 +33,7 @@ $this->menu=array(
         ),
         array(
             'name'=>'posted_datetime',
-            'value'=>'Yii::app()->dateFormatter->format("MM-dd-yyyy",strtotime($data->posted_datetime))',
+            'value'=>'Yii::app()->dateFormatter->format("MM/dd/yyyy",strtotime($data->posted_datetime))',
             'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
             'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 'model'=>$model, 
@@ -44,7 +44,7 @@ $this->menu=array(
                     'size' => '10',
                 ),
                 'options' => array(
-                    'dateFormat' => 'mm-dd-yy',
+                    'dateFormat' => 'mm/dd/yy',
                     'changeMonth' => true,
                     'changeYear' => true,
                 )

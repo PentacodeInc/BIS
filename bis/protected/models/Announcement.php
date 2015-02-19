@@ -84,10 +84,8 @@ class Announcement extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-        
         $criteria->with= array('user');
         
-		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
         if ($this->posted_datetime){
@@ -115,12 +113,8 @@ class Announcement extends CActiveRecord
     
     public function beforeValidate()
     {           
-        if(parent::beforeValidate())
-        {
-            $this->posted_datetime=date('YmdHis'); //iba ung date????
-            $this->user_id=Yii::app()->user->id;
-            return true;
-        }
-        return false; 
+        $this->posted_datetime=date('YmdHis');
+        $this->user_id=Yii::app()->user->id;
+        return parent::beforeValidate(); 
     }
 }

@@ -28,7 +28,7 @@ class DownloadableFilesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'admin'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -71,6 +71,7 @@ class DownloadableFilesController extends Controller
 		{
 			$model->attributes=$_POST['DownloadableFiles'];
 			$model->filename=CUploadedFile::getInstance($model,'filename');
+            $this->is_active = 1;
 			if($model->save()){
 				$model->filename->saveAs(Yii::app()->basePath.'../uploads/');
 				$this->redirect(array('view','id'=>$model->id));
@@ -88,14 +89,14 @@ class DownloadableFilesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate()
 	{
-		$model=$this->loadModel($id);
+		//$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['DownloadableFiles']))
+		/*if(isset($_POST['DownloadableFiles']))
 		{
 			$model->attributes=$_POST['DownloadableFiles'];
 			if($model->save())
@@ -104,7 +105,16 @@ class DownloadableFilesController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
-		));
+		));*/
+        
+        $es = new EditableSaver('DownloadableFiles');
+    	try {
+	        $es->update();
+	    } catch(CException $e) {
+	        echo CJSON::encode(array('success' => false, 'msg' => $e->getMessage()));
+	        return;
+	    }
+	    echo CJSON::encode(array('success' => true));
 	}
 
 	/**

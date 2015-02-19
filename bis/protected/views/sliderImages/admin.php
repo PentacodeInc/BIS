@@ -11,20 +11,20 @@
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'slider-images-grid',
 	'dataProvider'=>$model->search(),
-	//'filter'=>$model,
+	'filter'=>$model,
     'htmlOptions'=>array('style'=>'margin:0;padding:0;'),
 	'columns'=>array(
 		//'id',
        array(
 			'class' =>'editable.EditableColumn',
 			'name' =>'filename',
+            'filter'=>'',
 			'editable' => array(
 				'type' => 'text',
                  'url' => $this->createUrl('sliderImages/update'), 
 				'placement' => 'right',
 				)               
 		),
-
        array( 
           'class' => 'editable.EditableColumn',
           'name' => 'is_active',
@@ -36,7 +36,7 @@
               'url'      => $this->createUrl('sliderImages/update'),
               'source'   => array( 1=>'Yes',0=>'No'),
              )
-          ),
+        ),
        /*array(
             'name'=>'is_active',
             'value' => '$data->is_active?Yii::t(\'app\',\'Yes\'):Yii::t(\'app\', \'No\')',

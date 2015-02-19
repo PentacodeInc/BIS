@@ -109,15 +109,15 @@ class DownloadableFiles extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
-	public function beforeSave()
-	{       
-        if($this->isNewRecord) // only if adding new record
+    
+    public function beforeValidate()
+    {           
+        if(parent::beforeValidate())
         {
-        	$this->last_update_datetime = new Date;
-        	$this->is_active = 1;
-        	$this->user_id = Yii::app()->user->id;
+            $this->last_update_datetime=date('YmdHis');
+            $this->user_id=Yii::app()->user->id;
+            return true;
         }
-        return parent::beforeSave();
+        return false; 
     }
 }

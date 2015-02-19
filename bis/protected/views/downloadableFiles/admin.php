@@ -11,48 +11,48 @@ $this->menu=array(
 	array('label'=>'List DownloadableFiles', 'url'=>array('index')),
 	array('label'=>'Create DownloadableFiles', 'url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#downloadable-files-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Manage Downloadable Files</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'downloadable-files-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'name',
-		'filename',
-		'is_active',
-		'last_update_datetime',
-		'user_id',
-		array(
-			'class'=>'CButtonColumn',
-		),
+        array(
+            'class' =>'editable.EditableColumn',
+            'name' =>'name',
+            'editable' => array(
+                'type' => 'text',
+                'url' => $this->createUrl('downloadableFiles/update'), 
+                'placement' => 'right',
+            )               
+        ),
+        array(
+            'class' =>'editable.EditableColumn',
+            'name' =>'filename',
+            'editable' => array(
+                'type' => 'text',
+                'url' => $this->createUrl('downloadableFiles/update'), 
+                'placement' => 'right',
+            )               
+        ),
+        array( 
+            'class' => 'editable.EditableColumn',
+            'name' => 'is_active',
+            'value' => '$data->is_active?Yii::t(\'app\',\'Yes\'):Yii::t(\'app\', \'No\')',
+            'headerHtmlOptions' => array('style' => 'width: 100px'),
+            'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
+            'editable' => array(
+                'type'     => 'select',
+                'url'      => $this->createUrl('downloadableFiles/update'),
+                'source'   => array( 1=>'Yes',0=>'No'),
+            )
+        ),
+        array(
+            'class'=>'CButtonColumn',
+            'template'=>'{delete}',
+        ),
 	),
 )); ?>

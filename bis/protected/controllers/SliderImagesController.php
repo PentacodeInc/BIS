@@ -151,10 +151,10 @@ class SliderImagesController extends Controller
 				$this->redirect(array('admin'));
 		}        
         
-		/*$model=new SliderImages('search');
+		$model=new SliderImages('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['SliderImages']))
-			$model->attributes=$_GET['SliderImages'];*/
+			$model->attributes=$_GET['SliderImages'];
 
 		$this->render('admin',array(
 			'model'=>$model,

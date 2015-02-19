@@ -5464,3 +5464,134 @@ in C:\xampp\htdocs\BIS\bis\index.php (13)
 2015/02/19 04:50:05 [warning] [application] Failed to set unsafe attribute "filename" of "DownloadableFiles".
 in C:\xampp\htdocs\BIS\bis\protected\controllers\DownloadableFilesController.php (72)
 in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/19 04:53:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadableFil...')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloadableFiles/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=downloadableFiles/create
+---
+2015/02/19 05:00:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "downloableFiles/update".' in C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloableFiles...')
+#1 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloableFiles/update
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=downloadableFiles/admin
+---
+2015/02/19 05:00:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "downlodableFiles/update".' in C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downlodableFile...')
+#1 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downlodableFiles/update
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=downloadableFiles/admin
+---
+2015/02/19 05:01:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadableFil...')
+#10 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloadableFiles/update
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=downloadableFiles/admin
+---
+2015/02/19 05:02:14 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadableFil...')
+#10 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloadableFiles/update
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=downloadableFiles/admin
+---
+2015/02/19 05:02:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadableFil...')
+#10 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/BIS/bis/index.php?r=downloadableFiles/update
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=downloadableFiles/admin
+---
+2015/02/19 05:07:33 [error] [php] Object of class Date could not be converted to string (C:\xampp\htdocs\BIS\yii\framework\db\schema\CDbColumnSchema.php:146)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(806): SliderImages->insert()
+#1 C:\xampp\htdocs\BIS\bis\protected\controllers\SliderImagesController.php(150): SliderImages->save()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): SliderImagesController->actionAdmin()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): SliderImagesController->runAction()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): SliderImagesController->filterAccessControl()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): SliderImagesController->runActionWithFilters()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): SliderImagesController->run()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=sliderImages/admin
+in C:\xampp\htdocs\BIS\bis\protected\controllers\SliderImagesController.php (150)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/19 05:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "downloadableFiles".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('downloadableFil...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('downloadableFil...')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/downloadab...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=site/downloadableFiles
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=download
+---
+2015/02/19 05:10:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "downloadableFiles".' in C:\xampp\htdocs\BIS\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(270): CController->missingAction('downloadableFil...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('downloadableFil...')
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/downloadab...')
+#3 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/BIS/bis/index.php?r=site/downloadableFiles
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=site/page&view=download
+---

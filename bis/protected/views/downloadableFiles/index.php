@@ -25,7 +25,7 @@ $this->menu=array(
 	'columns'=>array(
         array(
             'name'=>'filename',
-            'value' => 'CHtml::link($data->filename,Yii::app()->request->baseUrl."/download/".$data->filename,array("target"=>"_blank"))',
+            'value' => 'CHtml::link($data->filename,Yii::app()->request->baseUrl."/images/downloadable/".$data->filename,array("target"=>"_blank"))',
             'type' => 'raw',
         ),
         //'filename',

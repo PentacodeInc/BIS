@@ -33,7 +33,7 @@ class DownloadableFiles extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('filename', 'file', 'types'=>'txt,doc'),
+			array('filename', 'file', 'types'=>'txt,doc,docx,xls,xlsx,pdf,ppt,pptx,jpg,png'),
 			// array('is_active, user_id', 'numerical', 'integerOnly'=>true),
 			// array('name', 'length', 'max'=>100),
 			// The following rule is used by search().
@@ -119,7 +119,7 @@ class DownloadableFiles extends CActiveRecord
     
     public function beforeValidate()
     {           
-        $this->posted_datetime=date('YmdHis');
+        $this->last_update_datetime=date('YmdHis');
         $this->user_id=Yii::app()->user->id;
         return parent::beforeValidate(); 
     }

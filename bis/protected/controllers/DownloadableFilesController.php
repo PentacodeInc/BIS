@@ -69,11 +69,13 @@ class DownloadableFilesController extends Controller
 
 		if(isset($_POST['DownloadableFiles']))
 		{
+            $_POST['Restaurants']['filename'] = $model->filename;
 			$model->attributes=$_POST['DownloadableFiles'];
 			$model->filename=CUploadedFile::getInstance($model,'filename');
-            $this->is_active = 1;
+            //$model->filename='test';
+            $model->is_active = 1;
 			if($model->save()){
-				$model->filename->saveAs(Yii::app()->basePath.'../uploads/');
+				$model->filename->saveAs(Yii::getPathOfAlias('webroot').'/images/downloadable');
 				$this->redirect(array('view','id'=>$model->id));
             }
 		}
@@ -90,12 +92,12 @@ class DownloadableFilesController extends Controller
 	 */
 	public function actionUpdate()
 	{
-		//$model=$this->loadModel($id);
+		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		/*if(isset($_POST['DownloadableFiles']))
+		if(isset($_POST['DownloadableFiles']))
 		{
 			$model->attributes=$_POST['DownloadableFiles'];
 			if($model->save())
@@ -104,9 +106,9 @@ class DownloadableFilesController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
-		));*/
+		));
         
-        $es = new EditableSaver('DownloadableFiles');
+        /*$es = new EditableSaver('DownloadableFiles');
     	try {
             $es->onBeforeUpdate = function($event) {
                 $event->sender->setAttribute('last_update_datetime', date('YmdHis'));
@@ -117,7 +119,7 @@ class DownloadableFilesController extends Controller
 	        echo CJSON::encode(array('success' => false, 'msg' => $e->getMessage()));
 	        return;
 	    }
-	    echo CJSON::encode(array('success' => true));
+	    echo CJSON::encode(array('success' => true));*/
 	}
 
 	/**

@@ -21,23 +21,35 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
         array(
+            //'class' =>'editable.EditableColumn',
             'name' =>'filename',
-            'filter'=>'',            
+            'filter'=>'',
+            /*'editable' => array(
+                'type' => 'text',
+                'url' => $this->createUrl('downloadableFiles/update'), 
+                'placement' => 'right',
+            ) */              
         ),
         array(
-            'name' =>'name',             
+            //'class' =>'editable.EditableColumn',
+            'name' =>'name',
+            /*'editable' => array(
+                'type' => 'text',
+                'url' => $this->createUrl('downloadableFiles/update'), 
+                'placement' => 'right',
+            ) */              
         ),
         array( 
-            'class' => 'editable.EditableColumn',
+            //'class' => 'editable.EditableColumn',
             'name' => 'is_active',
             'value' => '$data->is_active?Yii::t(\'app\',\'Yes\'):Yii::t(\'app\', \'No\')',
             'headerHtmlOptions' => array('style' => 'width: 100px'),
             'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
-            'editable' => array(
+            /*'editable' => array(
                 'type'     => 'select',
-                'url'      => $this->createUrl('downloadableFiles/updateStatus'),
+                'url'      => $this->createUrl('downloadableFiles/update'),
                 'source'   => array( 1=>'Yes',0=>'No'),
-            )
+            )*/
         ),
         array(
             'name'=>'last_update_datetime',

@@ -31,7 +31,7 @@
 		<?php echo $form->fileField($model,'filename'); ?>
 		<?php echo $form->error($model,'filename'); ?>
 	</div>
-    
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

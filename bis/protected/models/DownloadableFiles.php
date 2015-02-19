@@ -33,7 +33,7 @@ class DownloadableFiles extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('filename', 'file', 'types'=>'txt,doc,docx,xls,xlsx,pdf,ppt,pptx,jpg,png'),
+			array('filename', 'file', 'types'=>'txt,doc,docx,xls,xlsx,pdf,ppt,pptx,jpg,png,gif'),
 			// array('is_active, user_id', 'numerical', 'integerOnly'=>true),
 			// array('name', 'length', 'max'=>100),
 			// The following rule is used by search().

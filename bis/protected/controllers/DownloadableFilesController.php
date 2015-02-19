@@ -69,14 +69,12 @@ class DownloadableFilesController extends Controller
 
 		if(isset($_POST['DownloadableFiles']))
 		{
-            $_POST['Restaurants']['filename'] = $model->filename;
 			$model->attributes=$_POST['DownloadableFiles'];
 			$model->filename=CUploadedFile::getInstance($model,'filename');
-            //$model->filename='test';
             $model->is_active = 1;
 			if($model->save()){
-				$model->filename->saveAs(Yii::getPathOfAlias('webroot').'/images/downloadable');
-				$this->redirect(array('view','id'=>$model->id));
+				$model->filename->saveAs(Yii::getPathOfAlias('webroot').'/images/downloadable/'.$model->filename);
+				$this->redirect(array('admin'));
             }
 		}
 
@@ -90,7 +88,7 @@ class DownloadableFilesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate()
+	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
@@ -100,8 +98,11 @@ class DownloadableFilesController extends Controller
 		if(isset($_POST['DownloadableFiles']))
 		{
 			$model->attributes=$_POST['DownloadableFiles'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $model->filename=CUploadedFile::getInstance($model,'filename');
+			if($model->save()){
+                $model->filename->saveAs(Yii::getPathOfAlias('webroot').'/images/downloadable/'.$model->filename);
+				$this->redirect(array('admin'));
+            }
 		}
 
 		$this->render('update',array(
@@ -120,6 +121,22 @@ class DownloadableFilesController extends Controller
 	        return;
 	    }
 	    echo CJSON::encode(array('success' => true));*/
+	}
+    
+    public function actionUpdateStatus()
+	{        
+        $es = new EditableSaver('DownloadableFiles');
+    	try {
+            $es->onBeforeUpdate = function($event) {
+                $event->sender->setAttribute('last_update_datetime', date('YmdHis'));
+                $event->sender->setAttribute('user_id', Yii::app()->user->id);
+            };
+	        $es->update();
+	    } catch(CException $e) {
+	        echo CJSON::encode(array('success' => false, 'msg' => $e->getMessage()));
+	        return;
+	    }
+	    echo CJSON::encode(array('success' => true));
 	}
 
 	/**
@@ -141,7 +158,14 @@ class DownloadableFilesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DownloadableFiles');
+		$dataProvider=new CActiveDataProvider('DownloadableFiles', array(
+            'criteria'=>array(
+                'condition'=>'is_active=1',
+            ),
+            'pagination'=>array(
+                'pageSize'=>20,
+            ),
+        ));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

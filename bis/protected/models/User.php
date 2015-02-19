@@ -187,7 +187,8 @@ class User extends CActiveRecord
     	foreach (Module::model()->findAll(array('order'=>'name')) as $value) {
     		array_push($columns, array(
     				'header'=>$value->name,
-    				'value'=>'Module::userHasAccess($data->id,'.$value->id.')'
+    				'value'=>'Module::userHasAccess($data->id,'.$value->id.')',
+                    'htmlOptions' => array('style' => 'width: 50px;text-align:center;'),
     			));
     	}
 

@@ -28,11 +28,11 @@ class DownloadableFilesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'admin'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','rowUpdate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -123,7 +123,7 @@ class DownloadableFilesController extends Controller
 	    echo CJSON::encode(array('success' => true));*/
 	}
     
-    public function actionUpdateStatus()
+    public function actionRowUpdate()
 	{        
         $es = new EditableSaver('DownloadableFiles');
     	try {

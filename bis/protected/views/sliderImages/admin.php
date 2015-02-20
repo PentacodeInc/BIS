@@ -40,7 +40,7 @@
         array(
             'name'=>'posted_datetime',
             'value'=>'Yii::app()->dateFormatter->format("MM/dd/yyyy",strtotime($data->posted_datetime))',
-            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
             'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 'model'=>$model, 
                 'attribute'=>'posted_datetime', 
@@ -61,7 +61,7 @@
             'name'=>'user.username',
             'filter' => CHtml::activeTextField($model, 'user_id'),
             'value'=>'$data->user->username',
-            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
         ),
 		array(
 			'class'=>'CButtonColumn',

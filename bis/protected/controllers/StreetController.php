@@ -32,7 +32,7 @@ class StreetController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -84,9 +84,9 @@ class StreetController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate()
 	{
-		$model=$this->loadModel($id);
+		/*$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -100,7 +100,20 @@ class StreetController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
-		));
+		));*/
+        
+        $es = new EditableSaver('Street');
+    	try {
+            $es->onBeforeUpdate = function($event) {
+                $event->sender->setAttribute('last_update_datetime', date('YmdHis'));
+                $event->sender->setAttribute('user_id', Yii::app()->user->id);
+            };
+            $es->update();
+	    } catch(CException $e) {
+	        echo CJSON::encode(array('success' => false, 'msg' => $e->getMessage()));
+	        return;
+	    }
+	    echo CJSON::encode(array('success' => true));
 	}
 
 	/**
@@ -133,6 +146,16 @@ class StreetController extends Controller
 	 */
 	public function actionAdmin()
 	{
+        $model=new Street;
+
+        if(isset($_POST['Street']))
+		{
+			$model->attributes=$_POST['Street'];
+            $model->is_active=1;
+			if($model->save())
+				$this->redirect(array('admin'));
+		}
+
 		$model=new Street('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Street']))
@@ -170,4 +193,11 @@ class StreetController extends Controller
 			Yii::app()->end();
 		}
 	}
+    
+    public function beforeValidate()
+    {           
+        $this->last_update_datetime=date('YmdHis');
+        $this->user_id=Yii::app()->user->id;
+        return parent::beforeValidate(); 
+    }
 }

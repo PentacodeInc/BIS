@@ -64,7 +64,7 @@ class Street extends CActiveRecord
 			'name' => 'Name',
 			'remarks' => 'Remarks',
 			'is_active' => 'Is Active',
-			'last_update_datetime' => 'Last Update Datetime',
+			'last_update_datetime' => 'Update Date',
 			'user_id' => 'User',
 		);
 	}
@@ -86,13 +86,18 @@ class Street extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+        $criteria->with= array('user');
 
-		$criteria->compare('id',$this->id);
+		//$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('remarks',$this->remarks,true);
-		$criteria->compare('is_active',$this->is_active);
-		$criteria->compare('last_update_datetime',$this->last_update_datetime,true);
-		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('t.is_active',$this->is_active);
+		if ($this->last_update_datetime){
+            $fromdate =  new DateTime($this->last_update_datetime);
+            $search = $fromdate->format('Y-m-d');
+            $criteria->compare('t.last_update_datetime',$search,true);
+        }
+		$criteria->compare('user.username',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -109,4 +114,11 @@ class Street extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    
+    public function beforeValidate()
+    {           
+        $this->last_update_datetime=date('YmdHis');
+        $this->user_id=Yii::app()->user->id;
+        return parent::beforeValidate(); 
+    }
 }

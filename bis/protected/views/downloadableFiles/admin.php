@@ -21,12 +21,21 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
         array(
-            'name' =>'filename',
-            'filter'=>'',            
+            'name'=>'filename',
+            'value' => 'CHtml::link($data->filename,array("downloadableFiles/update", "id"=>$data->id))',
+            'type' => 'raw',
+            'filter'=>'',   
         ),
         array(
-            'name' =>'name',             
-        ),
+			'class' =>'editable.EditableColumn',
+			'name' =>'name',
+            'headerHtmlOptions' => array('style' => 'width: 600px'),
+			'editable' => array(
+				'type' => 'text',
+                 'url' => $this->createUrl('downloadableFiles/rowUpdate'), 
+				'placement' => 'right',
+				)               
+		),
         array( 
             'class' => 'editable.EditableColumn',
             'name' => 'is_active',
@@ -35,14 +44,14 @@ $this->menu=array(
             'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
             'editable' => array(
                 'type'     => 'select',
-                'url'      => $this->createUrl('downloadableFiles/updateStatus'),
+                'url'      => $this->createUrl('downloadableFiles/rowUpdate'),
                 'source'   => array( 1=>'Yes',0=>'No'),
             )
         ),
         array(
             'name'=>'last_update_datetime',
             'value'=>'Yii::app()->dateFormatter->format("MM/dd/yyyy",strtotime($data->last_update_datetime))',
-            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
             'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 'model'=>$model, 
                 'attribute'=>'last_update_datetime', 
@@ -63,11 +72,11 @@ $this->menu=array(
             'name'=>'user.username',
             'filter' => CHtml::activeTextField($model, 'user_id'),
             'value'=>'$data->user->username',
-            'htmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
         ),
         array(
             'class'=>'CButtonColumn',
-            'template'=>'{update}{delete}',
+            'template'=>'{delete}',
         ),
 	),
 )); ?>

@@ -15,8 +15,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
@@ -27,26 +25,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'remarks'); ?>
-		<?php echo $form->textArea($model,'remarks',array('rows'=>6, 'cols'=>50)); ?>
+        <?php echo $form->textField($model,'remarks',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'remarks'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'is_active'); ?>
-		<?php echo $form->textField($model,'is_active'); ?>
-		<?php echo $form->error($model,'is_active'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_update_datetime'); ?>
-		<?php echo $form->textField($model,'last_update_datetime'); ?>
-		<?php echo $form->error($model,'last_update_datetime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
-		<?php echo $form->error($model,'user_id'); ?>
 	</div>
 
 	<div class="row buttons">

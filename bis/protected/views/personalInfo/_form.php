@@ -17,7 +17,7 @@
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary(array($model,$employmentInfo,$governmentInfo)); ?>
+	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'barangay_id'); ?>
@@ -51,19 +51,31 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'gender'); ?>
-		<?php echo $form->dropDownList($model,'gender',$model->getGenders()); ?>
+		<?php echo $form->textField($model,'gender'); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'address'); ?>
-		<?php echo $form->textArea($model,'address',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'address'); ?>
+		<?php echo $form->labelEx($model,'house_num'); ?>
+		<?php echo $form->textField($model,'house_num',array('size'=>25,'maxlength'=>25)); ?>
+		<?php echo $form->error($model,'house_num'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'street'); ?>
+		<?php echo $form->textField($model,'street',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'street'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'provincial_address'); ?>
+		<?php echo $form->textArea($model,'provincial_address',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'provincial_address'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'is_head'); ?>
-		<?php echo $form->dropDownList($model,'is_head', $model->getIsHead()); ?>
+		<?php echo $form->textField($model,'is_head'); ?>
 		<?php echo $form->error($model,'is_head'); ?>
 	</div>
 
@@ -74,20 +86,14 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'provincial_address'); ?>
-		<?php echo $form->textField($model,'provincial_address',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'provincial_address'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'birthplace'); ?>
-		<?php echo $form->textField($model,'birthplace',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textArea($model,'birthplace',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'birthplace'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'civil_status'); ?>
-		<?php echo $form->dropDownList($model,'civil_status',$model->getCivilStatus()); ?>
+		<?php echo $form->textField($model,'civil_status'); ?>
 		<?php echo $form->error($model,'civil_status'); ?>
 	</div>
 
@@ -134,9 +140,39 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'residence_year'); ?>
-		<?php echo $form->textField($model,'residence_year'); ?>
-		<?php echo $form->error($model,'residence_year'); ?>
+		<?php echo $form->labelEx($model,'photo_filename'); ?>
+		<?php echo $form->textField($model,'photo_filename',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'photo_filename'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'residency_start'); ?>
+		<?php echo $form->textField($model,'residency_start'); ?>
+		<?php echo $form->error($model,'residency_start'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'residency_end'); ?>
+		<?php echo $form->textField($model,'residency_end'); ?>
+		<?php echo $form->error($model,'residency_end'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'residency_type'); ?>
+		<?php echo $form->textField($model,'residency_type'); ?>
+		<?php echo $form->error($model,'residency_type'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'last_update_datetime'); ?>
+		<?php echo $form->textField($model,'last_update_datetime'); ?>
+		<?php echo $form->error($model,'last_update_datetime'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
+		<?php echo $form->error($model,'user_id'); ?>
 	</div>
 
 	<div class="row">

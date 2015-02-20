@@ -247,6 +247,25 @@ div.view
     font-weight: bold;
 }
     
+#links{
+    margin-left: 50px;
+}
+    #links .link a{
+        transition: all 1s;
+        -moz-transition: all 1s;
+        -webkit-transition: all 1s;
+        -o-transition: all 1s; 
+        
+        padding: 10px;
+        text-decoration: none;
+        font-size: 50px;
+        /*color:#656db7;*/
+    }
+
+    #links .link a:hover{        
+        color:#aaa;
+    }
+
 
 
 div.flash-error, div.flash-notice, div.flash-success

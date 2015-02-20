@@ -56,12 +56,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'first_name',
-		'middle_name',
-		'last_name',
-        'is_head',
-        'household_id',
-		/*
+		'fullName',
+        'gender',
+        'civil_status',
+        'residency_type',
+        'street',
+        /*'household_id',
+		
         'birthdate',
 		'gender',
 		'address',

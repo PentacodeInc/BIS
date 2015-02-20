@@ -11,10 +11,11 @@
  * @property string $last_name
  * @property string $birthdate
  * @property integer $gender
- * @property string $address
+ * @property string $house_num
+ * @property string $street
+ * @property string $provincial_address
  * @property integer $is_head
  * @property integer $household_id
- * @property string $provincial_address
  * @property string $birthplace
  * @property integer $civil_status
  * @property string $spouse_name
@@ -24,7 +25,12 @@
  * @property string $religion
  * @property string $contact_num
  * @property string $email_address
- * @property string $residence_year
+ * @property string $photo_filename
+ * @property string $residency_start
+ * @property string $residency_end
+ * @property string $residency_type
+ * @property string $last_update_datetime
+ * @property integer $user_id
  *
  * The followings are the available model relations:
  * @property EducationalInfo[] $educationalInfos
@@ -32,10 +38,13 @@
  * @property FamilyInfo[] $familyInfos
  * @property GovernmentInfo[] $governmentInfos
  * @property Household $household
+ * @property User $user
  */
 class PersonalInfo extends CActiveRecord
 {
-    public function getGenders(){
+	public $fullName;
+	
+	public function getGenders(){
 		return array(0 => 'Female', 1 => 'Male');
 	}
 
@@ -46,7 +55,14 @@ class PersonalInfo extends CActiveRecord
 	public function getIsHead(){
 		return array(0 => 'No', 1 => 'Yes');
 	}
-	
+
+	public function getFullname(){
+		if ($this->last_name && $this->first_name){
+			return ucwords($this->last_name).', '.ucwords($this->first_name).' '.ucwords($this->middle_name);
+		}else{
+			return "";
+		}
+	}
 	/**
 	 * @return string the associated database table name
 	 */
@@ -63,17 +79,20 @@ class PersonalInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, middle_name, last_name, birthdate, address, household_id, birthplace, height, weight, citizenship, religion, contact_num, residence_year', 'required'),
-			array('barangay_id, gender, is_head, household_id, civil_status, height, weight', 'numerical', 'integerOnly'=>true),
+			array('first_name, middle_name, last_name, birthdate, house_num, street, household_id, birthplace, height, weight, citizenship, religion, contact_num, residency_start, residency_type, last_update_datetime, user_id', 'required'),
+			array('barangay_id, gender, is_head, household_id, civil_status, height, weight, user_id', 'numerical', 'integerOnly'=>true),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),
-			array('provincial_address, birthplace', 'length', 'max'=>200),
+			array('house_num', 'length', 'max'=>25),
+			array('street, citizenship, religion', 'length', 'max'=>100),
 			array('spouse_name', 'length', 'max'=>120),
-			array('citizenship, religion', 'length', 'max'=>100),
 			array('contact_num', 'length', 'max'=>45),
 			array('email_address', 'length', 'max'=>254),
+			array('photo_filename', 'length', 'max'=>200),
+			array('residency_type', 'length', 'max'=>10),
+			array('provincial_address, residency_end', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, address, is_head, household_id, provincial_address, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, residence_year', 'safe', 'on'=>'search'),
+			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, house_num, street, provincial_address, is_head, household_id, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, photo_filename, residency_start, residency_end, residency_type, last_update_datetime, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -90,6 +109,7 @@ class PersonalInfo extends CActiveRecord
 			'familyInfos' => array(self::HAS_MANY, 'FamilyInfo', 'personal_info_id'),
 			'governmentInfos' => array(self::HAS_MANY, 'GovernmentInfo', 'personal_info_id'),
 			'household' => array(self::BELONGS_TO, 'Household', 'household_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -106,10 +126,11 @@ class PersonalInfo extends CActiveRecord
 			'last_name' => 'Last Name',
 			'birthdate' => 'Birthdate',
 			'gender' => 'Gender',
-			'address' => 'Address',
+			'house_num' => 'House Num',
+			'street' => 'Street',
+			'provincial_address' => 'Provincial Address',
 			'is_head' => 'Is Head',
 			'household_id' => 'Household',
-			'provincial_address' => 'Provincial Address',
 			'birthplace' => 'Birthplace',
 			'civil_status' => 'Civil Status',
 			'spouse_name' => 'Spouse Name',
@@ -119,7 +140,12 @@ class PersonalInfo extends CActiveRecord
 			'religion' => 'Religion',
 			'contact_num' => 'Contact Num',
 			'email_address' => 'Email Address',
-			'residence_year' => 'Residence Year',
+			'photo_filename' => 'Photo Filename',
+			'residency_start' => 'Residency Start',
+			'residency_end' => 'Residency End',
+			'residency_type' => 'Residency Type',
+			'last_update_datetime' => 'Last Update Datetime',
+			'user_id' => 'User',
 		);
 	}
 
@@ -148,10 +174,11 @@ class PersonalInfo extends CActiveRecord
 		$criteria->compare('last_name',$this->last_name,true);
 		$criteria->compare('birthdate',$this->birthdate,true);
 		$criteria->compare('gender',$this->gender);
-		$criteria->compare('address',$this->address,true);
+		$criteria->compare('house_num',$this->house_num,true);
+		$criteria->compare('street',$this->street,true);
+		$criteria->compare('provincial_address',$this->provincial_address,true);
 		$criteria->compare('is_head',$this->is_head);
 		$criteria->compare('household_id',$this->household_id);
-		$criteria->compare('provincial_address',$this->provincial_address,true);
 		$criteria->compare('birthplace',$this->birthplace,true);
 		$criteria->compare('civil_status',$this->civil_status);
 		$criteria->compare('spouse_name',$this->spouse_name,true);
@@ -161,7 +188,12 @@ class PersonalInfo extends CActiveRecord
 		$criteria->compare('religion',$this->religion,true);
 		$criteria->compare('contact_num',$this->contact_num,true);
 		$criteria->compare('email_address',$this->email_address,true);
-		$criteria->compare('residence_year',$this->residence_year,true);
+		$criteria->compare('photo_filename',$this->photo_filename,true);
+		$criteria->compare('residency_start',$this->residency_start,true);
+		$criteria->compare('residency_end',$this->residency_end,true);
+		$criteria->compare('residency_type',$this->residency_type,true);
+		$criteria->compare('last_update_datetime',$this->last_update_datetime,true);
+		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

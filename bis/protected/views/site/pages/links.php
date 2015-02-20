@@ -20,4 +20,7 @@ $this->breadcrumbs=array(
     <div class="link">
         <?php echo CHtml::link('<i class="fa fa-download"></i> Downloadable Files</a>', array('/downloadableFiles/admin')); ?>
     </div>
+    <div class="link">
+        <?php echo CHtml::link('<i class="fa fa-download"></i> Streets</a>', array('/street/admin')); ?>
+    </div>
 </div>

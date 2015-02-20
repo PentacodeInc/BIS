@@ -1,9 +1,3 @@
-<div class="form">
-    
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'barangay_id'); ?>
 		<?php echo $form->textField($model,'barangay_id'); ?>
@@ -30,7 +24,7 @@
     
     <div class="row">
 		<?php echo $form->labelEx($model,'gender'); ?>
-		<?php echo $form->textField($model,'gender'); ?>
+		<?php echo $form->dropDownList($model,'gender',$model->getGenders()); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
     
@@ -42,7 +36,7 @@
     
     <div class="row">
 		<?php echo $form->labelEx($model,'is_head'); ?>
-		<?php echo $form->textField($model,'is_head'); ?>
+		<?php echo $form->dropDownList($model,'is_head',$model->getIsHead()); ?>
 		<?php echo $form->error($model,'is_head'); ?>
 	</div>
     
@@ -54,7 +48,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'street'); ?>
-		<?php echo $form->textField($model,'street',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->dropDownList($model,'street',Street::getAll()); ?>
 		<?php echo $form->error($model,'street'); ?>
 	</div>
 
@@ -78,7 +72,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'civil_status'); ?>
-		<?php echo $form->textField($model,'civil_status'); ?>
+		<?php echo $form->dropDownList($model,'civil_status',$model->getCivilStatus()); ?>
 		<?php echo $form->error($model,'civil_status'); ?>
 	</div>
 
@@ -165,6 +159,3 @@
 		<?php echo $form->textField($governmentInfo,'orange_card_num'); ?>
 		<?php echo $form->error($governmentInfo,'orange_card_num'); ?>
 	</div>
-
-
-</div><!-- form -->

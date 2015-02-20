@@ -24,6 +24,10 @@ class Street extends CActiveRecord
 		return 'street';
 	}
 
+	public function getAll(){
+		return Chtml::listData(Street::model()->findAll('is_active=1'),'id','name');
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */

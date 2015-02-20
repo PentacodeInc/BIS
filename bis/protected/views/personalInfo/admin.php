@@ -21,14 +21,14 @@ $this->menu=array(
 
 <div class="searchLetters">
 <?php foreach (range('A', 'Z') as $column){
-        echo CHtml::link($column,array("personalInfo/searchByLetter", "letter"=>$column));
+        echo CHtml::link($column,array("personalInfo/admin", "letter"=>$column));
         if ($column != 'Z') echo " | ";
 } ?>
 </div>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'personal-info-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search(isset($_GET['letter']) ? $_GET['letter'] : ""),
 	//'filter'=>$model,
 	'columns'=>array(
 		'fullName',
@@ -36,8 +36,7 @@ $this->menu=array(
         'civil_status',
         'residency_type',
         'street',
-        /*'household_id',
-		
+        /*'household_id',		
         'birthdate',
 		'gender',
 		'address',

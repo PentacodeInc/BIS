@@ -65,6 +65,8 @@ class PersonalInfoController extends Controller
 		$model=new PersonalInfo;
 		$employmentInfo=new EmploymentInfo;
 		$governmentInfo=new GovernmentInfo;
+		$educationalInfo=new EducationalInfo;
+		$familyInfo=new FamilyInfo;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -79,7 +81,9 @@ class PersonalInfoController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 			'employmentInfo'=>$employmentInfo,
-			'governmentInfo'=>$governmentInfo
+			'governmentInfo'=>$governmentInfo,
+			'educationalInfo'=>$educationalInfo,
+			'familyInfo'=>$familyInfo
 		));
 	}
 
@@ -135,15 +139,15 @@ class PersonalInfoController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionAdmin($letter = "")
 	{
 		$model=new PersonalInfo('search');
 		$model->unsetAttributes();  // clear any default values
         
-        if (isset($_GET['keyword']) && $_GET['keyword'] != ""){
+        /*if (isset($_GET['keyword']) && $_GET['keyword'] != ""){
             $keyword = trim($_GET['keyword']);
         } // get keyword wala pang code
-        
+        */
         if(isset($_GET['PersonalInfo']))
 			$model->attributes=$_GET['PersonalInfo'];
 

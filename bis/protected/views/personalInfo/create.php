@@ -16,20 +16,21 @@ $this->menu=array(
 <h1>Create PersonalInfo</h1>
 
 <div class="form">
-    
+<p class="note">Fields with <span class="required">*</span> are required.</p>    
 <?php $form=$this->beginWidget('CActiveForm', array( 
             'id'=>'default-parent-form', 
             'enableAjaxValidation'=>false, 
 ));?>
 
+    <?php echo $form->errorSummary(array($model,$familyInfo,$educationalInfo,$employmentInfo)); ?>
     <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
         'tabs' => array(
             'Personal Information'=>  $this->renderPartial('_form',array('form' => $form,'model' => $model,'governmentInfo'=>$governmentInfo),true),
             'Residency'=>  $this->renderPartial('_formRes',array('form' => $form,'model' => $model),true),
-            'Family'=>  $this->renderPartial('_formFam',array('form' => $form,'model' => $model),true),
-            'Education'=>  $this->renderPartial('_formEdu',array('form' => $form,'model' => $model),true),
-            'Employment'=>  $this->renderPartial('_formEmp',array('form' => $form,'model' => $employmentInfo),true),
-            'Household'=>  $this->renderPartial('_formHou',array('form' => $form,'model' => $model),true),
+            'Family'=>  $this->renderPartial('//familyInfo/_form',array('form' => $form,'model' => $familyInfo),true),
+            'Education'=>  $this->renderPartial('//educationalInfo/_form',array('form'=>$form,'model' => $educationalInfo),true),
+            'Employment'=>  $this->renderPartial('//employmentInfo/_form',array('form' => $form,'model' => $employmentInfo),true),
+            'Household'=>  $this->renderPartial('//household/_form',array('form' => $form,'model' => $model),true),
             'Photo'=>  $this->renderPartial('_formPic',array('form' => $form,'model' => $model),true),
         ),
     ));
@@ -40,5 +41,4 @@ $this->menu=array(
     </div>
     
 <?php $this->endWidget(); ?> 
-    
 </div>

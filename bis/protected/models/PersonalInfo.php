@@ -49,11 +49,19 @@ class PersonalInfo extends CActiveRecord
 	}
 
 	public function getCivilStatus(){
-		return array(0 => 'Single',	1 => 'Married', 2 => 'Widowed');
+		return array(0 => 'Single',	1 => 'Married', 2 => 'Divorced', 3 => 'Separated' ,4 => 'Widowed');
 	}
 
 	public function getIsHead(){
 		return array(0 => 'No', 1 => 'Yes');
+	}
+
+	public function getResidencyType(){
+		return array(0 => 'Renter', 1 => 'Owner');
+	}
+
+	public function getResidencyStatus(){
+		return empty($this->residency_end) ? 'Active' : 'Inactive';
 	}
 
 	public function getFullname(){
@@ -63,6 +71,7 @@ class PersonalInfo extends CActiveRecord
 			return "";
 		}
 	}
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -79,7 +88,7 @@ class PersonalInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, middle_name, last_name, birthdate, house_num, street, household_id, birthplace, height, weight, citizenship, religion, contact_num, residency_start, residency_type, last_update_datetime, user_id', 'required'),
+			array('first_name, middle_name, last_name, birthdate, house_num, street, household_id, birthplace, height, weight, citizenship, religion, contact_num, residency_type', 'required'),
 			array('barangay_id, gender, is_head, household_id, civil_status, height, weight, user_id', 'numerical', 'integerOnly'=>true),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			array('house_num', 'length', 'max'=>25),
@@ -161,40 +170,21 @@ class PersonalInfo extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($letter = "")
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('barangay_id',$this->barangay_id);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('middle_name',$this->middle_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
-		$criteria->compare('birthdate',$this->birthdate,true);
-		$criteria->compare('gender',$this->gender);
-		$criteria->compare('house_num',$this->house_num,true);
+		$criteria->compare('first_name',$this->fullName,false, 'OR');
+		$criteria->compare('middle_name',$this->fullName,false, 'OR');
+		$criteria->compare('last_name',$this->fullName,false, 'OR');
+		$criteria->compare('concat(first_name, " ", last_name)', $this->fullName,false, 'OR');
+		$criteria->compare('concat(last_name, " ", first_name)', $this->fullName,false, 'OR');
 		$criteria->compare('street',$this->street,true);
-		$criteria->compare('provincial_address',$this->provincial_address,true);
-		$criteria->compare('is_head',$this->is_head);
-		$criteria->compare('household_id',$this->household_id);
-		$criteria->compare('birthplace',$this->birthplace,true);
-		$criteria->compare('civil_status',$this->civil_status);
-		$criteria->compare('spouse_name',$this->spouse_name,true);
-		$criteria->compare('height',$this->height);
-		$criteria->compare('weight',$this->weight);
-		$criteria->compare('citizenship',$this->citizenship,true);
-		$criteria->compare('religion',$this->religion,true);
-		$criteria->compare('contact_num',$this->contact_num,true);
-		$criteria->compare('email_address',$this->email_address,true);
-		$criteria->compare('photo_filename',$this->photo_filename,true);
-		$criteria->compare('residency_start',$this->residency_start,true);
-		$criteria->compare('residency_end',$this->residency_end,true);
-		$criteria->compare('residency_type',$this->residency_type,true);
-		$criteria->compare('last_update_datetime',$this->last_update_datetime,true);
-		$criteria->compare('user_id',$this->user_id);
-
+		if(isset($letter))
+			$criteria->compare('last_name',$letter);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -210,4 +200,15 @@ class PersonalInfo extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function beforeSave()
+	{       
+        if($this->isNewRecord) // only if adding new record
+        {
+        	$this->user_id = Yii::app()->user->id;
+        	$timestamp=new DateTime();
+        	$this->last_update_datetime=$timestamp->format('Y-m-d H:i:s');;
+        }
+        return parent::beforeSave();
+    }
 }

@@ -6687,3 +6687,34 @@ Stack trace:
 REQUEST_URI=/bis/index.php?r=personalInfo/admin
 HTTP_REFERER=http://localhost/bis/index.php?r=user/admin
 ---
+2015/02/20 12:57:31 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "D:\Projects\PentaCode\BIS\bis\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in D:\Projects\PentaCode\BIS\yii\framework\web\CAssetManager.php:138
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('D:\Projects\Pen...')
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CClientScript.php(510): CAssetManager->publish('D:\Projects\Pen...')
+#3 D:\Projects\PentaCode\BIS\yii\framework\zii\widgets\jui\CJuiWidget.php(98): CClientScript->getCoreScriptUrl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\zii\widgets\jui\CJuiWidget.php(81): CJuiWidget->resolvePackagePath()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(147): CJuiWidget->init()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(166): CBaseController->createWidget('zii.widgets.jui...', Array)
+#7 D:\Projects\PentaCode\BIS\bis\protected\views\downloadableFiles\admin.php(60): CBaseController->widget('zii.widgets.jui...', Array, true)
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require('D:\Projects\Pen...')
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Projects\Pen...', Array, true)
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\Projects\Pen...', Array, true)
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 D:\Projects\PentaCode\BIS\bis\protected\controllers\DownloadableFilesController.php(186): CController->render('admin', Array)
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): DownloadableFilesController->actionAdmin()
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('downloadableFil...')
+#24 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/bis/index.php?r=downloadableFiles/admin
+---

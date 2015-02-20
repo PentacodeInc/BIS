@@ -34,7 +34,7 @@ class DownloadableFiles extends CActiveRecord
 		return array(
 			array('name', 'required'),
 			array('filename', 'file', 'types'=>'txt,doc,docx,xls,xlsx,pdf,ppt,pptx,jpg,png,gif'),
-			// array('is_active, user_id', 'numerical', 'integerOnly'=>true),
+			array('is_active, user_id', 'numerical', 'integerOnly'=>true),
 			// array('name', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

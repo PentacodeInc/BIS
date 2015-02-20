@@ -13,43 +13,18 @@ $this->menu=array(
     array('label'=>'Batch Add PersonalInfo', 'url'=>array('import')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#personal-info-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Residents Database</h1>
 
-<!--
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<?php $this->renderPartial('_search', array('model'=>$model)); ?>
 
-<?php /*echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); */?>
+<div class="searchLetters">
+<?php foreach (range('A', 'Z') as $column){
+        echo CHtml::link($column,array("personalInfo/searchByLetter", "letter"=>$column));
+        if ($column != 'Z') echo " | ";
+} ?>
 </div>
--->
-
-<!--search wala pang code-->
-<div class="form">
-    <form method="get">
-        <input type="text" name="keyword" placeholder="Search Member" style="width:300px;"/>
-         <span class="buttons"><input type="submit" value="Go" /></span>     
-    </form>
-</div> 
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'personal-info-grid',

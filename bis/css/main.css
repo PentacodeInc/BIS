@@ -266,6 +266,13 @@ div.view
         color:#aaa;
     }
 
+.searchLetters{
+    text-align: right;
+    font-size: 14px;
+}
+    .searchLetters a{
+        padding:3px;
+    }
 
 
 div.flash-error, div.flash-notice, div.flash-success

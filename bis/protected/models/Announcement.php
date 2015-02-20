@@ -60,8 +60,8 @@ class Announcement extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'description' => 'Description',
+			'title' => 'Subject',
+			'description' => 'Message',
 			'posted_datetime' => 'Date Posted',
 			'user_id' => 'Posted By',
 		);

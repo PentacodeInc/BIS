@@ -35,9 +35,3 @@
 			)); ?>
 		<?php echo $form->error($model,'end_date'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'personal_info_id'); ?>
-		<?php echo $form->textField($model,'personal_info_id'); ?>
-		<?php echo $form->error($model,'personal_info_id'); ?>
-	</div>

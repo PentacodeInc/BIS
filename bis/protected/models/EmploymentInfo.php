@@ -32,7 +32,7 @@ class EmploymentInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('position, employer, start_date, personal_info_id', 'required'),
+			array('position, employer', 'required'),
 			array('personal_info_id', 'numerical', 'integerOnly'=>true),
 			array('position, employer', 'length', 'max'=>100),
 			array('end_date', 'safe'),

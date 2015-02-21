@@ -33,7 +33,7 @@ class EducationalInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('level, school, start_date, personal_info_id', 'required'),
+			array('level, school', 'required'),
 			array('level, personal_info_id', 'numerical', 'integerOnly'=>true),
 			array('end_date, course', 'safe'),
 			// The following rule is used by search().

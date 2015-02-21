@@ -35,7 +35,6 @@ class GovernmentInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('personal_info_id', 'required'),
 			array('sss_num, philhealth_num, gsis_num, tin_num, voters_id, senior_citizen_num, orange_card_num, personal_info_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

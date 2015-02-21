@@ -19,6 +19,11 @@ class Household extends CActiveRecord
 		return 'household';
 	}
 
+	public function getAll(){
+
+		return CHtml::listData(Household::model()->findAll(),'id','name');
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */

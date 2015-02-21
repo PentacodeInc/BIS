@@ -37,7 +37,7 @@ class PersonalInfoController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('@'),
+				'users'=>array('adminaa'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -63,27 +63,55 @@ class PersonalInfoController extends Controller
 	public function actionCreate()
 	{
 		$model=new PersonalInfo;
-		$employmentInfo=new EmploymentInfo;
-		$governmentInfo=new GovernmentInfo;
 		$educationalInfo=new EducationalInfo;
+		$employmentInfo=new EmploymentInfo;
 		$familyInfo=new FamilyInfo;
+		$governmentInfo=new GovernmentInfo;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo));
 
-		if(isset($_POST['PersonalInfo']))
+		if(isset($_POST['PersonalInfo'],$_POST['EducationalInfo'],$_POST['EmploymentInfo'],$_POST['FamilyInfo'],$_POST['GovernmentInfo']))
 		{
 			$model->attributes=$_POST['PersonalInfo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$educationalInfo->attributes=$_POST['EducationalInfo'];
+			$employmentInfo->attributes=$_POST['EmploymentInfo'];
+			$familyInfo->attributes=$_POST['FamilyInfo'];
+			$governmentInfo->attributes=$_POST['GovernmentInfo'];
+			$valid = $model->validate();
+			$valid = $educationalInfo->validate() && $valid;
+			$valid = $employmentInfo->validate() && $valid;
+			$valid = $familyInfo->validate() && $valid;
+			$valid = $governmentInfo->validate() && $valid;
+				
+			if($valid){
+				if($model->save(false)){
+					$educationalInfo->personal_info_id = $model->id;
+					$employmentInfo->personal_info_id = $model->id;
+					for ($i=0; $i < 2; $i++) { 
+						$familyInfo= new FamilyInfo;
+						$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+						$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
+						$familyInfo->personal_info_id=$model->id;
+						$familyInfo->save(false);
+					}
+					$governmentInfo->personal_info_id = $model->id;
+					
+					$educationalInfo->save(false);
+					$employmentInfo->save(false);
+					$governmentInfo->save(false);
+					$this->redirect(array('view','id'=>$model->id));		
+				}
+					
+			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-			'employmentInfo'=>$employmentInfo,
-			'governmentInfo'=>$governmentInfo,
 			'educationalInfo'=>$educationalInfo,
-			'familyInfo'=>$familyInfo
+			'employmentInfo'=>$employmentInfo,
+			'familyInfo'=>$familyInfo,
+			'governmentInfo'=>$governmentInfo
 		));
 	}
 
@@ -139,12 +167,11 @@ class PersonalInfoController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin($letter = "")
+	public function actionAdmin()
 	{
 		$model=new PersonalInfo('search');
 		$model->unsetAttributes();  // clear any default values
-        
-        if(isset($_GET['PersonalInfo']))
+		if(isset($_GET['PersonalInfo']))
 			$model->attributes=$_GET['PersonalInfo'];
 
 		$this->render('admin',array(

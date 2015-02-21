@@ -15,34 +15,27 @@ $this->menu=array(
 
 <h1>Create PersonalInfo</h1>
 
+<?php $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'personal-info-form',
+    // Please note: When you enable ajax validation, make sure the corresponding
+    // controller action is handling ajax validation correctly.
+    // There is a call to performAjaxValidation() commented in generated controller code.
+    // See class documentation of CActiveForm for details on this.
+    'enableAjaxValidation'=>true,
+)); ?>
 <div class="form">
-       
-<?php $form=$this->beginWidget('CActiveForm', array( 
-            'id'=>'default-parent-form', 
-            'enableAjaxValidation'=>false, 
-));?>
-    
-    
-    <p class="note">Fields with <span class="required">*</span> are required.</p> 
-    <?php echo $form->errorSummary(array($model,$familyInfo,$educationalInfo,$employmentInfo)); ?>
-    
-    <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
-        'tabs' => array(
-            'Personal Information'=>  $this->renderPartial('_form',array('form' => $form,'model' => $model,'governmentInfo'=>$governmentInfo),true),
-            'Residency'=>  $this->renderPartial('_formRes',array('form' => $form,'model' => $model),true),
-            'Family'=>  $this->renderPartial('//familyInfo/_form',array('form' => $form,'model' => $familyInfo),true),
-            'Education'=>  $this->renderPartial('//educationalInfo/_form',array('form'=>$form,'model' => $educationalInfo),true),
-            'Employment'=>  $this->renderPartial('//employmentInfo/_form',array('form' => $form,'model' => $employmentInfo),true),
-            //'Household'=>  $this->renderPartial('//household/_form',array('form' => $form,'model' => $model),true),
-            'Household'=>  $this->renderPartial('_formHou',array('form' => $form,'model' => $model),true),
-            'Photo'=>  $this->renderPartial('_formPic',array('form' => $form,'model' => $model),true),
-        ),
-    ));
-    ?>
-    
+    <p class="note">Fields with <span class="required">*</span> are required.</p>
+
+    <?php echo $form->errorSummary(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo)); ?>
+
+    <?php $this->renderPartial('_form', array('form'=>$form,'model'=>$model)); ?>
+    <?php $this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo)); ?>
+    <?php $this->renderPartial('//household/_form', array('form'=>$form,'model'=>$model)); ?>
+    <?php $this->renderPartial('//employmentInfo/_form', array('form'=>$form,'model'=>$employmentInfo)); ?>
+    <?php $this->renderPartial('//familyInfo/_form', array('form'=>$form,'model'=>$familyInfo)); ?>
+    <?php $this->renderPartial('//governmentInfo/_form', array('form'=>$form,'model'=>$governmentInfo)); ?>
     <div class="row buttons">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
     </div>
-    
-<?php $this->endWidget(); ?> 
 </div>
+<?php $this->endWidget(); ?>

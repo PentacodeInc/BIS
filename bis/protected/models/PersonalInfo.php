@@ -207,7 +207,8 @@ class PersonalInfo extends CActiveRecord
         {
         	$this->user_id = Yii::app()->user->id;
         	$timestamp=new DateTime();
-        	$this->last_update_datetime=$timestamp->format('Y-m-d H:i:s');;
+        	$this->last_update_datetime=$timestamp->format('Y-m-d H:i:s');
+        	// $this->is_head = empty(Yii::app()->db->getLastInsertID()) ? 1 : 0; 
         }
         return parent::beforeSave();
     }

@@ -17,6 +17,8 @@
     </div>
 
 	<div class="text">
+        <?php //echo CHtml::decode($data->description); ?>
+        
         <?php $string=CHtml::decode($data->description);
             $isLong = false;
             $string = $string;

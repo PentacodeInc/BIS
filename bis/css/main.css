@@ -30,6 +30,7 @@ body
 {
 	padding: 10px;
 	margin: 0px;
+    margin-top:20px;
     opacity: 0.6;
 	font-size: 8px;
 	text-align: center;
@@ -162,7 +163,7 @@ h1, h2{
     color:#333ea7;
     font-weight: bold;
     font-size: 60px;
-    line-height: 30px;
+    line-height: 60px;
     text-align: left;
 }
 

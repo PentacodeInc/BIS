@@ -28,6 +28,16 @@
 <div class="container" id="page">
 
 	<div id="mainmenu">
+        <div id="logo">
+            <div class="logo">
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png">
+            </div>
+            <div class="name">
+                <b>Barangay 730, Zone 79</b><br/>
+                996 Pablo Ocampo Sr. Street Malate Manila
+            </div>
+        </div>
+        <div class="menu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
@@ -43,6 +53,7 @@
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
+        </div>
 	</div><!-- mainmenu -->
     
     <?php echo $content; ?>

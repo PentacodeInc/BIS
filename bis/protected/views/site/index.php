@@ -52,12 +52,13 @@ $(function () {
         $dataProvider=new CActiveDataProvider('Announcement', array(
             'criteria'=>$criteria,
             'pagination'=>array(
-                'pageSize'=>5,
+                'pageSize'=>3,
             ),
         ));
         $this->widget('zii.widgets.CListView', array(
             'dataProvider'=>$dataProvider,
             'itemView'=>'//announcement/_view',
+            'template'=>'{items} {pager}'
         ));?>
     </div>
     

@@ -8,8 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PersonalInfo', 'url'=>array('index')),
-	array('label'=>'Create PersonalInfo', 'url'=>array('create')),
+	//array('label'=>'List PersonalInfo', 'url'=>array('index')),
+    array('label'=>'Refresh', 'url'=>array('admin')),
+	array('label'=>'Add Resident', 'url'=>array('create')),
+    array('label'=>'Batch Add Residents', 'url'=>array('import')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -22,7 +24,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Personal Infos</h1>
+<h1>Residents Database</h1>
 
 <div class="search-form">
 <?php $this->renderPartial('_search',array(
@@ -45,40 +47,25 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		array(
             'name'=>'fullName',
-            'value' => 'CHtml::link($data->getFullName(),array("user/update", "id"=>$data->id))',
-            'type' => 'raw',
+            'value' => 'CHtml::link($data->getFullName(),array("personalInfo/view", "id"=>$data->id))',
+            'type' => 'raw'
         ),
 		'barangay_id',
+        'age',
         'house_num',
         'street',
-        'residency_type',
-		/*
-        'birthdate',
-		'gender',
-		'house_num',
-		'street',
-		'provincial_address',
-		'is_head',
-		'household_id',
-		'birthplace',
-		'civil_status',
-		'spouse_name',
-		'height',
-		'weight',
-		'citizenship',
-		'religion',
-		'contact_num',
-		'email_address',
-		'photo_filename',
-		'residency_start',
-		'residency_end',
-		'residency_type',
-		'last_update_datetime',
-		'user_id',
-		*/
-		array(
+        array(
+            'name'=>'residency_type',
+            'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+        ),
+        array(
+            'name'=>'residencyStatus',
+            'value'=>'$data->getResidencyStatus()',
+            'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+        ),
+		/*array(
 			'class'=>'CButtonColumn',
             'template'=>'{view}',
-		),
+		),*/
 	),
 )); ?>

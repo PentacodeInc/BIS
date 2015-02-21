@@ -176,13 +176,13 @@ class User extends CActiveRecord
 	    		'name'=>'fullName',
 	    		'value' => 'CHtml::link($data->getFullName(),array("user/update", "id"=>$data->id))',
 	    		'type' => 'raw',
-	    		),
+            ),
     		'username',
 	    	array(
 	    		'name'=>'is_active',
 	    		'value' => '$data->is_active?Yii::t(\'app\',\'Active\'):Yii::t(\'app\', \'Inactive\')',
 	    		'filter' => array('0' => Yii::t('app', 'Inactive'), '1' => Yii::t('app', 'Active')),
-	    		)
+            )
     	);
     	foreach (Module::model()->findAll(array('order'=>'name')) as $value) {
     		array_push($columns, array(

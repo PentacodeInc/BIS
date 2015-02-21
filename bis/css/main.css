@@ -267,7 +267,7 @@ div.view
     }
 
 .searchLetters{
-    text-align: right;
+    text-align: left;
     font-size: 14px;
 }
     .searchLetters a{

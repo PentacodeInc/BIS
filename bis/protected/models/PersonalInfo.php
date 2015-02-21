@@ -61,8 +61,13 @@ class PersonalInfo extends CActiveRecord
 	}
 
 	public function getResidencyStatus(){
-		return empty($this->residency_end) ? 'Active' : 'Inactive';
+        $date = $this->residency_end;
+		return (empty($date) || $date="0000-00-00") ? 'Active' : 'Inactive';
 	}
+    
+    public function getAge(){
+        return $age = date_diff(date_create($this->birthdate), date_create('now'))->y;
+    }
 
 	public function getFullname(){
 		if ($this->last_name && $this->first_name){
@@ -129,7 +134,7 @@ class PersonalInfo extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'barangay_id' => 'Barangay',
+			'barangay_id' => 'ID Number',
             'fullName'=> 'Full Name',
 			'first_name' => 'First Name',
 			'middle_name' => 'Middle Name',
@@ -156,6 +161,8 @@ class PersonalInfo extends CActiveRecord
 			'residency_type' => 'Residency Type',
 			'last_update_datetime' => 'Last Update Datetime',
 			'user_id' => 'User',
+            'age'=> 'Age',
+            'ResidencyStatus'=>'Residency Status'
 		);
 	}
 

@@ -101,7 +101,7 @@ class PersonalInfo extends CActiveRecord
 			array('provincial_address, residency_end', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, house_num, street, provincial_address, is_head, household_id, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, photo_filename, residency_start, residency_end, residency_type, last_update_datetime, user_id', 'safe', 'on'=>'search'),
+			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, house_num, street, provincial_address, is_head, household_id, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, photo_filename, residency_start, residency_end, residency_type, last_update_datetime, user_id, fullName', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -130,6 +130,7 @@ class PersonalInfo extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'barangay_id' => 'Barangay',
+            'fullName'=> 'Full Name',
 			'first_name' => 'First Name',
 			'middle_name' => 'Middle Name',
 			'last_name' => 'Last Name',
@@ -170,20 +171,22 @@ class PersonalInfo extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search($letter = "")
+	public function search($letter)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+        
 		$criteria->compare('first_name',$this->fullName,false, 'OR');
 		$criteria->compare('middle_name',$this->fullName,false, 'OR');
 		$criteria->compare('last_name',$this->fullName,false, 'OR');
 		$criteria->compare('concat(first_name, " ", last_name)', $this->fullName,false, 'OR');
 		$criteria->compare('concat(last_name, " ", first_name)', $this->fullName,false, 'OR');
+        
 		$criteria->compare('street',$this->street,true);
-		if(isset($letter))
-			$criteria->compare('last_name',$letter);
+        
+		if($letter != "")
+            $criteria->compare('last_name',$letter.'%',true,'AND', false);
 		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -200,7 +203,7 @@ class PersonalInfo extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
+    
 	public function beforeSave()
 	{       
         if($this->isNewRecord) // only if adding new record

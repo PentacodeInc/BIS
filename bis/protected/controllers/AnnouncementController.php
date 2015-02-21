@@ -55,6 +55,10 @@ class AnnouncementController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+    
+    public fucntion actionList(){
+        
+    }
 
 	/**
 	 * Creates a new model.

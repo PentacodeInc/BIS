@@ -65,7 +65,7 @@
         ),
 		array(
 			'class'=>'CButtonColumn',
-            'template'=>'{view}{delete}{update}',
+            'template'=>'{view}{update}{delete}',
             'buttons' => array(
                 'view' => array(
                     'label' => 'Show Image', 

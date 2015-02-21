@@ -102,21 +102,6 @@ body
         padding:50px;
     }
 
-    #home .main{
-        
-        margin-top:40px;
-        height: 500px;
-        width: 70%;
-        float: left;
-    }
-
-    #home .sidebar{
-        margin-top:40px;
-        height: 500px;
-        width: 29%;
-        float: right;
-    }
-
     #about, #home{
         font-size: 14px;
         line-height: 30px;
@@ -177,7 +162,7 @@ h1, h2{
     color:#333ea7;
     font-weight: bold;
     font-size: 60px;
-    line-height: 60px;
+    line-height: 30px;
     text-align: left;
 }
 
@@ -196,8 +181,33 @@ div.view
 }
 
 .annoucement{
-    border-bottom: #ccc dashed 1px;
+    /*border-bottom: #ccc dashed 1px;*/
 }
+
+.home .main{
+    margin-top:40px;
+    width: 68%;
+    float: left;
+}
+
+.home .sidebar{
+    margin-top:40px;
+    width: 29%;
+    float: right;
+}
+
+ul.archives{
+    margin-left:20px;
+}
+
+    ul.archives a{
+        text-decoration: underline;
+        color:#000;
+    }
+
+    ul.archives a:hover{
+        color:#aaa;
+    }
 
 .annoucement .information{
     font-size: 9px;

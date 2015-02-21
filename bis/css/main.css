@@ -168,7 +168,7 @@ h1, h2{
 }
 
 h2{
-    font-size: 30px!important;
+    font-size: 40px!important;
     line-height: 30px!important;
 }
 
@@ -187,23 +187,26 @@ div.view
 
 .home .main{
     margin-top:40px;
-    width: 68%;
+    width: 73%;
     float: left;
 }
 
 .home .sidebar{
     margin-top:40px;
-    width: 29%;
+    width: 23%;
     float: right;
+    border-left:#333ea7 solid 2px;
+    padding:10px;
+    padding-left:20px;
 }
 
 ul.archives{
-    margin-left:20px;
+    margin-left:5px;
 }
 
     ul.archives a{
         text-decoration: underline;
-        color:#000;
+        color:#333ea7;
     }
 
     ul.archives a:hover{

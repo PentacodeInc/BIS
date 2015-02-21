@@ -26,8 +26,17 @@ $(function () {
 
 <div class="home">
     
-    <div class="sidebar">        
-        <h1>Archives</h1>   
+    <div class="sidebar"> 
+        <h2><i class="fa fa-calendar-o"></i> Calendar</h2>
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker',
+            array(
+                'name'=>'inline_datepicker',
+                'flat' => true,
+                'language'=>'en-GB',
+            )
+        );?>
+        <br/><br/>
+        <h2><i class="fa fa-history"></i> Archives</h2>   
         <?php $this->renderPartial('//announcement/_list'); ?>
     </div>
     

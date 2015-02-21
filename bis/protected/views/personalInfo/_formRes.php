@@ -2,16 +2,13 @@
 		<?php echo $form->labelEx($model,'residency_start'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'name'=>'residency_start',
-			    'language'=>Yii::app()->language=='et' ? 'et' : null,
+			    'language'=>'en-GB',
 			    'options'=>array(
 			        'showAnim'=>'fold', // 'show' (the default), 'slideDown', 'fadeIn', 'fold'
-			        'showOn'=>'button', // 'focus', 'button', 'both'
-			        'buttonText'=>Yii::t('ui','Select form calendar'),
-			        // 'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.gif',
-			        // 'buttonImageOnly'=>true,
-			    ),
-			    'htmlOptions'=>array(
-			        'style'=>'width:80px;vertical-align:top'
+			        'showOn'=>'focus', // 'focus', 'button', 'both'
+			        //'buttonText'=>Yii::t('ui','Select form calendar'),
+			        //'buttonImage'=>Yii::app()->request->baseUrl.'/themes/images/cal.png',
+			        //'buttonImageOnly'=>true,
 			    ),
 			)); ?>
 		<?php echo $form->error($model,'residency_start'); ?>
@@ -21,16 +18,13 @@
 		<?php echo $form->labelEx($model,'residency_end'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'name'=>'residency_end',
-			    'language'=>Yii::app()->language=='et' ? 'et' : null,
+			    'language'=>'en-GB',
 			    'options'=>array(
 			        'showAnim'=>'fold', // 'show' (the default), 'slideDown', 'fadeIn', 'fold'
-			        'showOn'=>'button', // 'focus', 'button', 'both'
-			        'buttonText'=>Yii::t('ui','Select form calendar'),
-			        // 'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.gif',
-			        // 'buttonImageOnly'=>true,
-			    ),
-			    'htmlOptions'=>array(
-			        'style'=>'width:80px;vertical-align:top'
+			        'showOn'=>'focus', // 'focus', 'button', 'both'
+			        //'buttonText'=>Yii::t('ui','Select form calendar'),
+			        //'buttonImage'=>Yii::app()->request->baseUrl.'/themes/images/cal.png',
+			        //'buttonImageOnly'=>true,
 			    ),
 			)); ?>
 		<?php echo $form->error($model,'residency_end'); ?>

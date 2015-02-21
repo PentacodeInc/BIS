@@ -1,70 +1,67 @@
-	<div class="row">
+<div class="tabFrom">
+    
+    <div class="row1">
 		<?php echo $form->labelEx($model,'barangay_id'); ?>
 		<?php echo $form->textField($model,'barangay_id'); ?>
 		<?php echo $form->error($model,'barangay_id'); ?>
 	</div>
 
-    <div class="row">
+    <div class="row1">
 		<?php echo $form->labelEx($model,'last_name'); ?>
 		<?php echo $form->textField($model,'last_name',array('size'=>35,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'last_name'); ?>
 	</div>
     
-	<div class="row">
+	<div class="row1">
 		<?php echo $form->labelEx($model,'first_name'); ?>
 		<?php echo $form->textField($model,'first_name',array('size'=>35,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'first_name'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row1">
 		<?php echo $form->labelEx($model,'middle_name'); ?>
 		<?php echo $form->textField($model,'middle_name',array('size'=>35,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'middle_name'); ?>
 	</div>
     
-    <div class="row">
+    <div class="row1">
 		<?php echo $form->labelEx($model,'gender'); ?>
 		<?php echo $form->dropDownList($model,'gender',$model->getGenders()); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
     
-    <div class="row">
-		<?php echo $form->labelEx($model,'household_id'); ?>
-		<?php echo $form->textField($model,'household_id'); ?>
-		<?php echo $form->error($model,'household_id'); ?>
-	</div>
-    
-    <div class="row">
-		<?php echo $form->labelEx($model,'is_head'); ?>
-		<?php echo $form->dropDownList($model,'is_head',$model->getIsHead()); ?>
-		<?php echo $form->error($model,'is_head'); ?>
-	</div>
-    
-    <div class="row">
+    <div class="row2">
 		<?php echo $form->labelEx($model,'house_num'); ?>
 		<?php echo $form->textField($model,'house_num',array('size'=>25,'maxlength'=>25)); ?>
 		<?php echo $form->error($model,'house_num'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row2">
 		<?php echo $form->labelEx($model,'street'); ?>
 		<?php echo $form->dropDownList($model,'street',Street::getAll()); ?>
 		<?php echo $form->error($model,'street'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row2">
 		<?php echo $form->labelEx($model,'provincial_address'); ?>
 		<?php echo $form->textArea($model,'provincial_address',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'provincial_address'); ?>
 	</div>
     
-	<div class="row">
+	<div class="row3">
 		<?php echo $form->labelEx($model,'birthdate'); ?>
-		<?php echo $form->textField($model,'birthdate'); ?>
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'name'=>'birthdate',
+			    'language'=>'en-GB',
+			    'options'=>array(
+			        'showAnim'=>'fold',
+			        'showOn'=>'focus',
+			    )
+			)); ?>
 		<?php echo $form->error($model,'birthdate'); ?>
 	</div>
     
-    <div class="row">
+    <div class="row3">
 		<?php echo $form->labelEx($model,'birthplace'); ?>
 		<?php echo $form->textArea($model,'birthplace',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'birthplace'); ?>
@@ -159,3 +156,4 @@
 		<?php echo $form->textField($governmentInfo,'orange_card_num'); ?>
 		<?php echo $form->error($governmentInfo,'orange_card_num'); ?>
 	</div>
+</div>

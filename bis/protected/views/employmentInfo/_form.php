@@ -12,13 +12,27 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'start_date'); ?>
-		<?php echo $form->textField($model,'start_date'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'name'=>'start_date',
+			    'language'=>'en-GB',
+			    'options'=>array(
+			        'showAnim'=>'fold',
+			        'showOn'=>'focus',
+			    )
+			)); ?>
 		<?php echo $form->error($model,'start_date'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'end_date'); ?>
-		<?php echo $form->textField($model,'end_date'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'name'=>'end_date',
+			    'language'=>'en-GB',
+			    'options'=>array(
+			        'showAnim'=>'fold',
+			        'showOn'=>'focus',
+			    )
+			)); ?>
 		<?php echo $form->error($model,'end_date'); ?>
 	</div>
 

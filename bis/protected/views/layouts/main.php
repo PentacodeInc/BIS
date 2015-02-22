@@ -28,7 +28,7 @@
 <div class="container" id="page">
 
 	<div id="mainmenu">
-        <div id="logo">
+        <div id="logo" class="">
             <div class="logo">
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png">
             </div>
@@ -37,7 +37,7 @@
                 996 Pablo Ocampo Sr. Street Malate Manila
             </div>
         </div>
-        <div class="menu">
+        <div class="menu ">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
@@ -53,6 +53,7 @@
 			),
 		)); ?>
         </div>
+        <div class="clear"></div>
 	</div><!-- mainmenu -->
     
     <?php echo $content; ?>

@@ -27,18 +27,6 @@ $(function () {
 <div class="home">
     
     <div class="sidebar"> 
-        <h2><i class="fa fa-calendar-o"></i> Calendar</h2>
-        <?php $this->widget('zii.widgets.jui.CJuiDatePicker',
-            array(
-                'name'=>'inline_datepicker',
-                'flat' => true,
-                'language'=>'en-GB',
-            )
-        );?>
-        <br/><br/>
-        <h2><i class="fa fa-history"></i> Archives</h2>   
-        <?php $this->renderPartial('//announcement/_list'); ?>
-        <br/><br/>
         <?php if(!Yii::app()->user->isGuest){?>
         <h2><i class="fa fa-chevron-circle-down"></i> Menu</h2>
         <div id="links">
@@ -51,6 +39,21 @@ $(function () {
             <?php echo CHtml::link('<i class="fa fa-road"></i> Streets Maintenance</a>', array('/street/admin')); ?>
         </div>
         <?php } ?>
+        <br/><br/>
+        
+        <h2><i class="fa fa-calendar-o"></i> Calendar</h2>
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker',
+            array(
+                'name'=>'inline_datepicker',
+                'flat' => true,
+                'language'=>'en-GB',
+            )
+        );?>
+        <br/><br/>
+        
+        <h2><i class="fa fa-history"></i> Archives</h2>   
+        <?php $this->renderPartial('//announcement/_list'); ?>     
+        
     </div>
     
     <div class="main">

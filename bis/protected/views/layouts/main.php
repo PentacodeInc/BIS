@@ -43,12 +43,11 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
                 array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                 array('label'=>'Officials', 'url'=>array('/site/page', 'view'=>'officials')),
-                //array('label'=>'Photo Gallery', 'url'=>'https://www.facebook.com/pages/Barangay730zone79/515313718511386?sk=photos_stream&tab=photos_albums','linkOptions'=>array('target'=>'blank')),
                 array('label'=>'Photo Gallery', 'url'=>array('/site/page', 'view'=>'pictures')),
-                array('label'=>'Downloadble Files', 'url'=>array('/downloadableFiles')),
+                /*array('label'=>'Downloadble Files', 'url'=>array('/downloadableFiles')),
                 array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Residents Database', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Maintenance', 'url'=>array('/site/page', 'view'=>'links'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Maintenance', 'url'=>array('/site/page', 'view'=>'links'),'visible'=>!Yii::app()->user->isGuest),*/
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

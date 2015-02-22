@@ -226,6 +226,23 @@ ul.archives{
         color:#aaa;
     }
 
+#links{
+    margin-left:5px;
+    /*margin-left: 50px;*/
+}
+    #links a{
+        display:block;
+        /*padding: 10px;*/
+        text-decoration: none;
+        font-size: 14px;
+        /*color:#656db7;*/
+        color:#333ea7;
+    }
+
+    #links a:hover{        
+        color:#aaa;
+    }
+
 .annoucement .information{
     font-size: 9px;
     opacity: 0.7;  
@@ -258,39 +275,29 @@ ul.archives{
     text-align: justify;
 }
 
-.album .pic{
-    background-color: #eee;
-    padding:10px;
-    width: 400px;
+.album{
+    text-align: center;
 }
 
-.album .pic img{
-    width: 400px;
-}
-
-.album .name{
-    font-size: 18px;
-    padding-bottom: 10px;
-    font-weight: bold;
-}
-    
-#links{
-    margin-left: 50px;
-}
-    #links .link a{
-        transition: all 1s;
-        -moz-transition: all 1s;
-        -webkit-transition: all 1s;
-        -o-transition: all 1s; 
-        
-        padding: 10px;
-        text-decoration: none;
-        font-size: 50px;
-        /*color:#656db7;*/
+    .album .item{
+        display: inline-block;
+        margin:10px;
     }
 
-    #links .link a:hover{        
-        color:#aaa;
+    .album .pic{
+        background-color: #eee;
+        padding:10px;
+        width: 400px;
+    }
+
+    .album .pic img{
+        width:400px;
+    }
+
+    .album .name{
+        font-size: 18px;
+        padding-bottom: 10px;
+        font-weight: bold;
     }
 
 .searchLetters{

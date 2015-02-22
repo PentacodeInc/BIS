@@ -38,10 +38,23 @@ $(function () {
         <br/><br/>
         <h2><i class="fa fa-history"></i> Archives</h2>   
         <?php $this->renderPartial('//announcement/_list'); ?>
+        <br/><br/>
+        <?php if(!Yii::app()->user->isGuest){?>
+        <h2><i class="fa fa-chevron-circle-down"></i> Menu</h2>
+        <div id="links">
+            <?php echo CHtml::link('<i class="fa fa-area-chart"></i> Dashboard</a>', array('/personalInfo/dashboard')); ?>
+            <?php echo CHtml::link('<i class="fa fa-database"></i> Residents Database</a>', array('/personalInfo/admin')); ?>
+            <?php echo CHtml::link('<i class="fa fa-users"></i> User Maintenance</a>', array('/user/admin')); ?>
+            <?php echo CHtml::link('<i class="fa fa-picture-o"></i> Slide Show Maintenance</a>', array('/sliderImages/admin')); ?>
+            <?php echo CHtml::link('<i class="fa fa-bullhorn"></i> Announcements Maintenance', array('/announcement/admin')); ?>
+            <?php echo CHtml::link('<i class="fa fa-download"></i> Downloadable Files Maintenance</a>', array('/downloadableFiles/admin')); ?>
+            <?php echo CHtml::link('<i class="fa fa-road"></i> Streets Maintenance</a>', array('/street/admin')); ?>
+        </div>
+        <?php } ?>
     </div>
     
     <div class="main">
-        <h1>Announcements</h1>
+        <!--<h1>Announcements</h1>-->
 
         <?php $criteria=new CDbCriteria();
         $criteria->order='posted_datetime DESC';    

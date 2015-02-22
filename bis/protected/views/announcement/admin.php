@@ -23,10 +23,6 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
         array(
-            'name'=>'id',
-            'htmlOptions' => array('style' => 'width: 15px;'),
-        ),
-        array(
             'name'=>'title',
             'value' => 'CHtml::link($data->title,array("announcement/update", "id"=>$data->id))',
             'type' => 'raw',

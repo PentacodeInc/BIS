@@ -8,10 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'View Announcement', 'url'=>array('index')),
+	array('label'=>'List Announcement', 'url'=>array('index')),
 	//array('label'=>'Create Announcement', 'url'=>array('create')),
 	array('label'=>'Update Announcement', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Announcement', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	//array('label'=>'Delete Announcement', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Announcement', 'url'=>array('admin')),
 );
 ?>

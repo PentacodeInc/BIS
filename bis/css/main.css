@@ -77,7 +77,7 @@ body
 
     #mainmenu .menu{
         text-align: right;
-        margin-top:-30px;
+        margin-top:-20px;
     }
 
     #mainmenu ul
@@ -181,14 +181,14 @@ body
         }
 
 #links{
-    margin-left:5px;
-    /*margin-left: 50px;*/
+    /*margin-left:5px;*/
+    margin-left: 50px;
 }
     #links a{
         display:block;
         /*padding: 10px;*/
         text-decoration: none;
-        font-size: 14px;
+        font-size: 35px;
         /*color:#656db7;*/
         color:#333ea7;
     }

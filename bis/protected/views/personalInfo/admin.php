@@ -12,6 +12,7 @@ $this->menu=array(
     array('label'=>'Refresh', 'url'=>array('admin')),
 	array('label'=>'Add Resident', 'url'=>array('create')),
     array('label'=>'Batch Add Residents', 'url'=>array('import')),
+    array('label'=>'Dashboard', 'url'=>array('dashboard')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

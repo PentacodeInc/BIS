@@ -27,7 +27,7 @@ $(function () {
 <div class="home">
     
     <div class="sidebar"> 
-        <?php if(!Yii::app()->user->isGuest){?>
+        <!--<?php if(!Yii::app()->user->isGuest){?>
         <h2><i class="fa fa-chevron-circle-down"></i> Menu</h2>
         <div id="links">
             <?php echo CHtml::link('<i class="fa fa-area-chart"></i> Dashboard</a>', array('/personalInfo/dashboard')); ?>
@@ -38,8 +38,8 @@ $(function () {
             <?php echo CHtml::link('<i class="fa fa-download"></i> Downloadable Files Maintenance</a>', array('/downloadableFiles/admin')); ?>
             <?php echo CHtml::link('<i class="fa fa-road"></i> Streets Maintenance</a>', array('/street/admin')); ?>
         </div>
-        <?php } ?>
-        <br/><br/>
+        <?php } ?>-->
+        <!--<br/><br/>-->
         
         <h2><i class="fa fa-calendar-o"></i> Calendar</h2>
         <?php $this->widget('zii.widgets.jui.CJuiDatePicker',

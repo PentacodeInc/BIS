@@ -95,7 +95,8 @@ class SiteController extends Controller
 				if(Yii::app()->user->toChangePassword)
 					$this->redirect(array('user/changePassword', 'id'=>Yii::app()->user->id));
 				else
-					$this->redirect(Yii::app()->user->returnUrl);
+                    $this->redirect(array('site/page', 'view'=>'links'));
+					/*$this->redirect(Yii::app()->user->returnUrl);*/
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

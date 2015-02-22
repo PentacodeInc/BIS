@@ -44,10 +44,10 @@
                 array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                 array('label'=>'Officials', 'url'=>array('/site/page', 'view'=>'officials')),
                 array('label'=>'Photo Gallery', 'url'=>array('/site/page', 'view'=>'pictures')),
-                /*array('label'=>'Downloadble Files', 'url'=>array('/downloadableFiles')),
-                array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Residents Database', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Maintenance', 'url'=>array('/site/page', 'view'=>'links'),'visible'=>!Yii::app()->user->isGuest),*/
+                array('label'=>'Downloadble Files', 'url'=>array('/downloadableFiles/index')),
+                /*array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),*/
+				/*array('label'=>'Residents Database', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),*/
+                array('label'=>'Admin Menu', 'url'=>array('/site/page', 'view'=>'links'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

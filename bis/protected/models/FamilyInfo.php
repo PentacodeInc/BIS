@@ -30,9 +30,9 @@ class FamilyInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-		/*	array('member_name, relationship', 'required'),
-			array('id, relationship, personal_info_id', 'numerical', 'integerOnly'=>true),
-			array('member_name', 'length', 'max'=>120),*/
+			array('member_name, relationship', 'required'),
+			// array('id, relationship, personal_info_id', 'numerical', 'integerOnly'=>true),
+			// array('member_name', 'length', 'max'=>120),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, member_name, relationship, personal_info_id', 'safe', 'on'=>'search'),

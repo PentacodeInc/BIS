@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PersonalInfo', 'url'=>array('index')),
+	// array('label'=>'List PersonalInfo', 'url'=>array('index')),
 	array('label'=>'Create PersonalInfo', 'url'=>array('create')),
 	array('label'=>'Update PersonalInfo', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete PersonalInfo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
@@ -16,18 +16,16 @@ $this->menu=array(
 );
 ?>
 
-<h1>View PersonalInfo #<?php echo $model->id; ?></h1>
-
+<h1><?php echo $model->getFullName(); ?></h1>
+<h2><?php echo $model->barangay_id; ?></h2>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'barangay_id',
-		'first_name',
-		'middle_name',
-		'last_name',
 		'birthdate',
-		'gender',
+		array(
+			'name'=>'gender',
+			'value'=>$model->genderLabel
+			),
 		'address',
 		'is_head',
 		'household_id',

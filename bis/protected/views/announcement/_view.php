@@ -6,7 +6,7 @@
 <div class="view annoucement">
 
 	<div class="title">
-        <?php $title=CHtml::encode($data->title); ?>
+        <?php $title=CHtml::encode($data->subject); ?>
         <?php echo CHtml::link($title,array("announcement/view", "id"=>$data->id)); ?>
     </div>
     
@@ -19,7 +19,7 @@
 	<div class="text">
         <?php //echo CHtml::decode($data->description); ?>
         
-        <?php $string=CHtml::decode($data->description);
+        <?php $string=CHtml::decode($data->message);
             $isLong = false;
             $string = $string;
             if (strlen($string) > 1000) {

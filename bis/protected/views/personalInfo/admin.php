@@ -57,6 +57,7 @@ $('.search-form form').submit(function(){
         'street',
         array(
             'name'=>'residency_type',
+            'value'=>'$data->residency_type?Yii::t(\'app\',\'Owner\'):Yii::t(\'app\', \'Renter\')',
             'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
         ),
         array(

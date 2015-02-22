@@ -20,17 +20,17 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'title'); ?>
+		<?php echo $form->labelEx($model,'subject'); ?>
+		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'subject'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
+		<?php echo $form->labelEx($model,'message'); ?>
 		<?php //echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
         <?php $this->widget('application.extensions.cleditor.ECLEditor', array(
                 'model'=>$model,
-                'attribute'=>'description',
+                'attribute'=>'message',
                 'options'=>array(
                     'width'=>'600',
                     'height'=>250,
@@ -38,7 +38,7 @@
                 )
             ));
         ?>
-        <?php echo $form->error($model,'description'); ?>
+        <?php echo $form->error($model,'message'); ?>
 	</div>
 
 	<div class="row buttons">

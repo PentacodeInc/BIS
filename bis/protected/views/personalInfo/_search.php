@@ -18,8 +18,7 @@
     
 	<div class="row">
 		<?php echo $form->label($model,'street'); ?>
-        <?php $opts = CHtml::listData(Street::model()->findAll(),'name','name');
-              echo $form->dropDownList($model,'street',$opts,array('empty'=>'')); ?>
+        <?php echo $form->dropDownList($model,'street',Street::getAll(),array('empty'=>'')); ?>
 	</div>
 
 	<div class="row buttons">

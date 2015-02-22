@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Announcement', 'url'=>array('index')),
+	// array('label'=>'List Announcement', 'url'=>array('index')),
 	array('label'=>'Create Announcement', 'url'=>array('create')),
 );
 
@@ -22,11 +22,11 @@ $this->menu=array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-        array(
-            'name'=>'title',
-            'value' => 'CHtml::link($data->title,array("announcement/update", "id"=>$data->id))',
-            'type' => 'raw',
-        ),
+        // array(
+        //     'name'=>'title',
+        //     'value' => 'CHtml::link($data->title,array("announcement/update", "id"=>$data->id))',
+        //     'type' => 'raw',
+        // ),
         array(
             'name'=>'posted_datetime',
             'value'=>'Yii::app()->dateFormatter->format("MM/dd/yyyy",strtotime($data->posted_datetime))',

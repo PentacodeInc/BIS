@@ -24,13 +24,24 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'birthdate'); ?>
-		<?php echo $form->textField($model,'birthdate'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'attribute'=>'birthdate',
+			    'model'=>$model,
+			    'language'=>'en-GB',
+			    'options'=>array(
+			    	'changeMonth'=>'true', 
+                    'changeYear'=>'true', 
+                    'dateFormat'=>'yy-mm-dd',
+			        'showAnim'=>'fold',
+			        'showOn'=>'focus',
+			    )
+			)); ?>
 		<?php echo $form->error($model,'birthdate'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'gender'); ?>
-		<?php echo $form->dropDownList($model,'gender',$model->getGenders()); ?>
+		<?php echo $form->dropDownList($model,'gender',$model->getGenders(),array('empty'=>'')); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
 
@@ -42,7 +53,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'street'); ?>
-		<?php echo $form->dropDownList($model,'street',Street::getAll()); ?>
+		<?php echo $form->dropDownList($model,'street',Street::getAll(),array('empty'=>'')); ?>
 		<?php echo $form->error($model,'street'); ?>
 	</div>
 
@@ -60,7 +71,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'civil_status'); ?>
-		<?php echo $form->dropDownList($model,'civil_status',$model->getCivilStatus()); ?>
+		<?php echo $form->dropDownList($model,'civil_status',$model->getCivilStatus(),array('empty'=>'')); ?>
 		<?php echo $form->error($model,'civil_status'); ?>
 	</div>
 
@@ -126,6 +137,6 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'residency_type'); ?>
-		<?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType()); ?>
+		<?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType(),array('empty'=>'')); ?>
 		<?php echo $form->error($model,'residency_type'); ?>
 	</div>

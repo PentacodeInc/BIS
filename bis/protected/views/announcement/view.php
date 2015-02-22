@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Announcements'=>array('index'),
-	$model->title,
+	$model->subject,
 );
 
 $this->menu=array(
@@ -16,11 +16,11 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo $model->title; ?></h1>
+<h1><?php echo $model->subject; ?></h1>
 
 <div class="view annoucement">
 
-	<div class="text"><?php echo CHtml::decode($model->description); ?></div>
+	<div class="text"><?php echo CHtml::decode($model->message); ?></div>
 	<br />
 
     <div class="information">

@@ -13,9 +13,12 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'start_date'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'name'=>'start_date',
+			    'attribute'=>'start_date',
+			    'model'=>$model,
 			    'language'=>'en-GB',
 			    'options'=>array(
+			    	'changeMonth'=>'true', 
+                    'changeYear'=>'true', 
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
 			    )
@@ -26,9 +29,12 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'end_date'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'name'=>'end_date',
+			    'attribute'=>'end_date',
+			    'model'=>$model,
 			    'language'=>'en-GB',
 			    'options'=>array(
+			    	'changeMonth'=>'true', 
+                    'changeYear'=>'true', 
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
 			    )

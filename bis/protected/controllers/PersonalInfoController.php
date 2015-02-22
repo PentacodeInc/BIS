@@ -32,7 +32,7 @@ class PersonalInfoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','createHousehold'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -83,7 +83,7 @@ class PersonalInfoController extends Controller
 			$valid = $employmentInfo->validate() && $valid;
 			$valid = $familyInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-				
+			// echo $model->birthdate;
 			if($valid){
 				if($model->save(false)){
 					$educationalInfo->personal_info_id = $model->id;
@@ -95,14 +95,12 @@ class PersonalInfoController extends Controller
 						$familyInfo->personal_info_id=$model->id;
 						$familyInfo->save(false);
 					}
-					$governmentInfo->personal_info_id = $model->id;
-					
+					$governmentInfo->personal_info_id = $model->id;				
 					$educationalInfo->save(false);
 					$employmentInfo->save(false);
 					$governmentInfo->save(false);
-					$this->redirect(array('view','id'=>$model->id));		
+					$this->redirect(array('admin'));		
 				}
-					
 			}
 		}
 
@@ -206,5 +204,19 @@ class PersonalInfoController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionCreateHousehold(){
+		$householdName = $_POST['householdName'];
+		$houseHold= Household::model()->find('name=:name',array(':name'=>$householdName));
+		$status = false;
+		if(empty($houseHold)){
+			$houseHold=new Household;
+			$houseHold->name = $householdName;
+			$houseHold->save();
+			$status = true;
+		}
+	    header('Content-Type: application/json; charset="UTF-8"');
+	    echo CJSON::encode(array('success'=>$status,'houseHold'=>$houseHold));
 	}
 }

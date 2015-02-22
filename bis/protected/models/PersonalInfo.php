@@ -43,7 +43,14 @@
 class PersonalInfo extends CActiveRecord
 {
 	public $fullName;
-	
+	public $genderLabel;
+
+	public function getGenderLabel(){
+		
+	    return "Male";
+	}
+
+
 	public function getGenders(){
 		return array(0 => 'Female', 1 => 'Male');
 	}
@@ -217,6 +224,7 @@ class PersonalInfo extends CActiveRecord
         {
         	$this->user_id = Yii::app()->user->id;
         	$timestamp=new DateTime();
+        	// $this->birthdate = date('Y-m-d', strtotime($this->birthdate));
         	$this->last_update_datetime=$timestamp->format('Y-m-d H:i:s');
         	// $this->is_head = empty(Yii::app()->db->getLastInsertID()) ? 1 : 0; 
         }

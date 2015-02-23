@@ -133,6 +133,18 @@ div.form select.success
 	border-color: #C6D880;
 }
 
+div.form div.success [type=button]{
+    background: #333ea7;
+    color:#fff;
+    border: #a6adf0 1px solid;
+}
+
+div.form div.success [type=button]:hover{
+    background: #fff;
+    color:#333ea7;
+    border: #a6adf0 1px solid;
+}
+
 div.form div.success label
 {
 	color: inherit;

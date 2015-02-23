@@ -7,14 +7,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create PersonalInfo', 'url'=>array('create')),
-	array('label'=>'Manage PersonalInfo', 'url'=>array('admin')),
+	array('label'=>'Add Resident', 'url'=>array('create')),
+    array('label'=>'Batch Add Residents', 'url'=>array('import')),
+	//array('label'=>'Residents Database', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Personal Infos</h1>
+<h1>Dashboard</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<!--<?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-)); ?>
+)); ?>-->

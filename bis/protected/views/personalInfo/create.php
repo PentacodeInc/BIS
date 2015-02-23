@@ -43,6 +43,8 @@ $this->menu=array(
             'style'=>'width:500px;'
         ),
     ));*/ ?>
+        
+    <div></div>
     <?php $this->renderPartial('_form', array('form'=>$form,'model'=>$model)); ?>
     <?php $this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo)); ?>
     <?php $this->renderPartial('//household/_form', array('form'=>$form,'model'=>$model)); ?>
@@ -56,12 +58,17 @@ $this->menu=array(
 <?php $this->endWidget(); ?>
 <script type="text/javascript">
     $(document).ready(function(){
-
+         $('#saveHousehold').hide();
+        
         $('#addHousehold').click(function(){
-             $('#household').show();
+            $('#household').show();
+            $('#addHousehold').hide();
+            $('#saveHousehold').show();
         });
 
         $('#saveHousehold').click(function(){
+            $('#addHousehold').show();
+            $('#saveHousehold').hide();
             var household = $('#household').val();
             $.ajax({
                 'url' : '<?php echo Yii::app()->createUrl("personalInfo/createHousehold");?>',
@@ -76,7 +83,7 @@ $this->menu=array(
                          .text(output.houseHold.name)); 
                          $('#PersonalInfo_is_head').val(1);
                    }else{
-                     alert("Already Exist");
+                        alert("Already Exist");
                    }
                 }
             });

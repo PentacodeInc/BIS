@@ -36,11 +36,11 @@ class Announcement extends CActiveRecord
 			array('subject, message,posted_datetime, user_id', 'required'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('subject', 'length', 'max'=>100),
-			array('photo_filename', 'length', 'max'=>200),
-			array('photo_caption', 'safe'),
+			/*array('photo_filename', 'length', 'max'=>200),
+			array('photo_caption', 'safe'),*/
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, subject, message, posted_datetime, photo_filename, photo_caption, user_id', 'safe', 'on'=>'search'),
+			array('id, subject, message, posted_datetime, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,8 +66,8 @@ class Announcement extends CActiveRecord
 			'subject' => 'Subject',
 			'message' => 'Message',
 			'posted_datetime' => 'Posted Datetime',
-			'photo_filename' => 'Photo Filename',
-			'photo_caption' => 'Photo Caption',
+			//'photo_filename' => 'Photo Filename',
+			//'photo_caption' => 'Photo Caption',
 			'user_id' => 'User',
 		);
 	}
@@ -94,8 +94,8 @@ class Announcement extends CActiveRecord
 		$criteria->compare('subject',$this->subject,true);
 		$criteria->compare('message',$this->message,true);
 		$criteria->compare('posted_datetime',$this->posted_datetime,true);
-		$criteria->compare('photo_filename',$this->photo_filename,true);
-		$criteria->compare('photo_caption',$this->photo_caption,true);
+		//$criteria->compare('photo_filename',$this->photo_filename,true);
+		//$criteria->compare('photo_caption',$this->photo_caption,true);
 		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(

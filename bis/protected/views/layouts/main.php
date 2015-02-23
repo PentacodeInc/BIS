@@ -47,7 +47,7 @@
                 array('label'=>'Downloadble Files', 'url'=>array('/downloadableFiles/index')),
                 /*array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),*/
 				/*array('label'=>'Residents Database', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),*/
-                array('label'=>'Admin Menu', 'url'=>array('/site/page', 'view'=>'links'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Admin', 'url'=>array('/personalInfo'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

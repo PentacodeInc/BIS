@@ -5,7 +5,10 @@
 		<?php echo $form->error($model,'household_id'); ?>
 		<?php echo $form->hiddenField($model,'is_head',array('value'=>0)); ?>
 		<input type="text" id="household" style="display:none;">
-		<input type="button" id="addHousehold" value="Add">
-		<input type="button" id="saveHousehold" value="Save">
+        
+        <span class="row buttons">
+		  <input type="button" id="addHousehold" value="Add">
+		  <input type="button" id="saveHousehold" value="Save">
+        </span>
 	</div>
 	

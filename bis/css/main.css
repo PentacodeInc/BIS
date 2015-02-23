@@ -276,6 +276,7 @@ ul.archives{
 
     .album .pic img{
         width:400px;
+        height: 275px;
     }
 
     .album .name{
@@ -291,6 +292,40 @@ ul.archives{
     .searchLetters a{
         padding:3px;
     }
+
+.adminmenu{
+    border-left:#333ea7 solid 2px;
+    padding:10px;
+    padding-left: 20px;
+}
+
+.menu-header{
+    color:#333ea7;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul.menu-content{
+    text-align: left;
+}
+    ul.menu-content li{
+        list-style: none;
+        margin:2px 0px;
+        font-size: 13px;
+        padding:0px;
+    }
+
+    ul.menu-content li a{
+        text-align: left;
+        text-decoration: none;
+        /*color:#000;*/
+    }
+
+    ul.menu-content li a:hover{
+        color:#aaa;
+    }
+    
 
 h1, h2{
     color:#333ea7;
@@ -362,9 +397,7 @@ div.form .rememberMe label
 	display: inline;
 }
 
-
-
-div.breadcrumbs
+/*div.breadcrumbs
 {
 	font-size: 0.9em;
 	padding: 5px 20px;
@@ -373,7 +406,7 @@ div.breadcrumbs
 div.breadcrumbs span
 {
 	font-weight: bold;
-}
+}*/
 
 div.search-form
 {
@@ -383,7 +416,7 @@ div.search-form
 }
 
 
-.portlet
+/*.portlet
 {
 
 }
@@ -393,7 +426,7 @@ div.search-form
 	font-size:0.9em;
 	margin: 0;
 	padding: 5px 8px;
-	/*background:#efefff;*/
+	background:#efefff;
 }
 
 .portlet-content ul
@@ -403,15 +436,15 @@ div.search-form
 	list-style-type:none;
 	margin: 0;
 	padding: 0;
-    text-align: right;
+    text-align: left;
 }
 
 .portlet-content li
 {
 	padding: 2px 0 4px 0px;
-}
+}*/
 
-.operations
+/*.operations
 {
 	list-style-type: none;
 	margin: 0;
@@ -421,8 +454,8 @@ div.search-form
 .operations li
 {
 	padding-bottom: 2px;
-    text-align: right;
-    display: inline;
+    text-align: left;
+    display: block;
 }
 
 .operations li a
@@ -443,7 +476,7 @@ div.search-form
 .operations li a:hover
 {
     background: #E5F1F4;
-}
+}*/
 
 /*slideshow*/
 .jssora01l, .jssora01r, .jssora01ldn, .jssora01rdn

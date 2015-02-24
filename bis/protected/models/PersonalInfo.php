@@ -43,13 +43,12 @@
 class PersonalInfo extends CActiveRecord
 {
 	public $fullName;
-	public $genderLabel;
-
-	public function getGenderLabel(){
-		
+    public $age;
+    public $genderLabel;
+    
+    public function getGenderLabel(){
 	    return "Male";
 	}
-
 
 	public function getGenders(){
 		return array(0 => 'Female', 1 => 'Male');
@@ -74,6 +73,18 @@ class PersonalInfo extends CActiveRecord
     
     public function getAge(){
         return $age = date_diff(date_create($this->birthdate), date_create('now'))->y;
+    }
+    
+    public function getAgeList(){
+        return array(0 => 'Children  ',	1 => 'Minor', 2 => 'Adult', 3 => 'Senior Citizen');
+    }
+    
+    public function getCitizenship(){
+        return array('Filipino' => 'Filipino ','Dual' => 'Dual', 'Foreigner' => 'Foreigner');
+    }
+    
+    public function getPrecinctNo(){
+        return array(0 => '2830A ',	1 => '2830B', 2 => '2830C', 3 => '2831A', 4 => '2831B', 5 => '2832A', 6 => '2832B');
     }
 
 	public function getFullname(){
@@ -113,7 +124,7 @@ class PersonalInfo extends CActiveRecord
 			array('provincial_address, residency_end', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, house_num, street, provincial_address, is_head, household_id, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, photo_filename, residency_start, residency_end, residency_type, last_update_datetime, user_id, fullName', 'safe', 'on'=>'search'),
+			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, house_num, street, provincial_address, is_head, household_id, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, photo_filename, residency_start, residency_end, residency_type, last_update_datetime, user_id, fullName, age', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -198,9 +209,26 @@ class PersonalInfo extends CActiveRecord
 		$criteria->compare('concat(last_name, " ", first_name)', $this->fullName,false, 'OR');
         
 		$criteria->compare('street',$this->street,true);
+        $criteria->compare('gender',$this->gender);
+        $criteria->compare('civil_status',$this->civil_status);
+        $criteria->compare('citizenship',$this->citizenship,true);
+        $criteria->compare('residency_type',$this->residency_type);
+        //$criteria->compare('precinct_no',$this->precinct_no)
+        
+        if ($this->age != ""){
+            if($this->age == 0){
+                $criteria->addCondition('birthdate <= now() - INTERVAL 0 YEAR and birthdate > now() - INTERVAL 5 YEAR');
+            }else if($this->age == 1){
+                $criteria->addCondition('birthdate <= now() - INTERVAL 5 YEAR and birthdate > now() - INTERVAL 18 YEAR');
+            }else if($this->age == 2){
+                $criteria->addCondition('birthdate <= now() - INTERVAL 18 YEAR and birthdate > now() - INTERVAL 60 YEAR');
+            }else if($this->age == 3){
+                $criteria->addCondition('birthdate <= now() - INTERVAL 60 YEAR');
+            }
+        }
         
 		if($letter != "")
-            $criteria->compare('last_name',$letter.'%',true,'AND', false);
+            $criteria->compare('last_name',$letter.'%',true,'AND',false);
 		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

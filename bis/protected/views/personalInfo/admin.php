@@ -52,12 +52,21 @@ $('.search-form form').submit(function(){
             'type' => 'raw'
         ),
 		'barangay_id',
-        'age',
+        array(
+            'name'=>'age',
+            'value'=>'$data->getAge()',
+        ),
         'house_num',
         'street',
+        /*array(
+            'name'=>'gender',
+            'value'=>'$data->gender==0?Yii::t(\'app\',\'Female\'):Yii::t(\'app\', \'Male\')',
+        ),*/
+        /*'civil_status',
+        'citizenship',*/
         array(
             'name'=>'residency_type',
-            'value'=>'$data->residency_type?Yii::t(\'app\',\'Owner\'):Yii::t(\'app\', \'Renter\')',
+            'value'=>'$data->residency_type==0?Yii::t(\'app\',\'Renter\'):Yii::t(\'app\', \'Owner\')',
             'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
         ),
         array(

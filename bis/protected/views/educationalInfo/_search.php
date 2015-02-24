@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'school'); ?>
-		<?php echo $form->textField($model,'school',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textArea($model,'school',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
@@ -38,7 +38,12 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'course'); ?>
-		<?php echo $form->textField($model,'course',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textArea($model,'course',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'remarks'); ?>
+		<?php echo $form->textField($model,'remarks',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">

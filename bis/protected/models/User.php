@@ -1,3 +1,5 @@
+	
+
 <?php
 
 /**
@@ -7,17 +9,20 @@
  * @property integer $id
  * @property string $username
  * @property string $password
- * @property string $salt
  * @property integer $is_active
  * @property string $first_name
  * @property string $middle_name
  * @property string $last_name
+ * @property integer $is_admin
+ * @property string $salt
  *
  * The followings are the available model relations:
  * @property Access[] $accesses
  * @property Announcement[] $announcements
- * @property Event[] $events
+ * @property DownloadableFiles[] $downloadableFiles
+ * @property PersonalInfo[] $personalInfos
  * @property SliderImages[] $sliderImages
+ * @property Street[] $streets
  */
 class User extends CActiveRecord
 {
@@ -50,6 +55,7 @@ class User extends CActiveRecord
 			// array('password, salt', 'length', 'max'=>50),
 			// array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			// The following rule is used by search().
+			array('salt', 'length', 'max'=>45),
 			// @todo Please remove those attributes that should not be searched.
 			array('username, is_active, first_name, middle_name, last_name, fullName', 'safe', 'on'=>'search'),
 			array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
@@ -61,9 +67,9 @@ class User extends CActiveRecord
 	public function findPasswords($attribute, $params)
 	{
 		$user = User::model()->findByPk(Yii::app()->getRequest()->getParam('id'));
-		$salt = openssl_random_pseudo_bytes(22);
-		$salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
-		$password_hash = crypt($this->old_password, $salt);
+		// $salt = openssl_random_pseudo_bytes(22);
+		// $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
+		$password_hash = crypt($this->old_password, $user->salt);
         if ($password_hash !== $user->password) //remove incription? or encrypt ung user->password
         $this->addError($attribute, 'Old password is incorrect.');
     }
@@ -75,12 +81,21 @@ class User extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
+
 		return array(
 			'accesses' => array(self::HAS_MANY, 'Access', 'user_id'),
 			'announcements' => array(self::HAS_MANY, 'Announcement', 'user_id'),
-			'events' => array(self::HAS_MANY, 'Event', 'user_id'),
+			'downloadableFiles' => array(self::HAS_MANY,'DownloadableFiles', 'user_id'),
+			'personalInfos' => array(self::HAS_MANY, 'PersonalInfo', 'user_id'),
 			'sliderImages' => array(self::HAS_MANY, 'SliderImages', 'user_id'),
-			);
+			'streets' => array(self::HAS_MANY, 'Street', 'user_id'),
+		);
+		// return array(
+		// 	'accesses' => array(self::HAS_MANY, 'Access', 'user_id'),
+		// 	'announcements' => array(self::HAS_MANY, 'Announcement', 'user_id'),
+		// 	'events' => array(self::HAS_MANY, 'Event', 'user_id'),
+		// 	'sliderImages' => array(self::HAS_MANY, 'SliderImages', 'user_id'),
+		// 	);
 	}
 
 	/**
@@ -98,6 +113,7 @@ class User extends CActiveRecord
 			'middle_name' => 'Middle Name',
 			'last_name' => 'Last Name',
 			'fullName'=>'Full Name',
+			'salt' => 'Salt',
 			);
 	}
 
@@ -156,9 +172,9 @@ class User extends CActiveRecord
         if($this->isNewRecord) // only if adding new record
         {
         	$this->password = $this->username;
-        	$salt = openssl_random_pseudo_bytes(22);
-        	$salt = '$2a$%13$' . strtr(base64_encode($salt), array('_' => '.', '~' => '/'));
+        	$salt = uniqid(mt_rand(), true);
         	$password_hash = crypt($this->password, $salt); 
+        	$this->salt = $salt;
         	$this->password = $password_hash; 
         	$this->is_active = 1;
         }

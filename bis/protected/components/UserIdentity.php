@@ -18,10 +18,10 @@ class UserIdentity extends CUserIdentity
        
 	public function authenticate()
 	{   
+
 		$record=User::model()->findByAttributes(array('username'=>$this->username));
-        $salt = openssl_random_pseudo_bytes(22);
-        $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
-        $password_hash = crypt($this->password, $salt);
+		if(!empty($record))
+        	$password_hash = crypt($this->password, $record->salt);
         if($record===null)
             $this->errorCode=self::ERROR_USERNAME_INVALID;
         else if($record->password!==$password_hash)
@@ -30,6 +30,7 @@ class UserIdentity extends CUserIdentity
         {
         	$this->setState('id',$record->id);
         	$this->setState('toChangePassword',$record->username===$this->password);
+        	$this->setState('isAdmin',$record->is_admin);
        		$this->errorCode=self::ERROR_NONE;
    		}
         

@@ -27,6 +27,7 @@ $this->menu=array(
 		'start_date',
 		'end_date',
 		'course',
+		'remarks',
 		'personal_info_id',
 	),
 )); ?>

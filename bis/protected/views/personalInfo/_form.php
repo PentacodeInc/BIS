@@ -5,6 +5,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'precinct_no'); ?>
+		<?php echo $form->dropDownList($model,'precinct_no',$model->getPrecintNo(),array('empty'=>'')); ?>
+		<?php echo $form->error($model,'precinct_no'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'first_name'); ?>
 		<?php echo $form->textField($model,'first_name',array('size'=>35,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'first_name'); ?>

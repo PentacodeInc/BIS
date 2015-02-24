@@ -29,9 +29,15 @@
 	<?php echo CHtml::encode($data->course); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('remarks')); ?>:</b>
+	<?php echo CHtml::encode($data->remarks); ?>
+	<br />
+
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('personal_info_id')); ?>:</b>
 	<?php echo CHtml::encode($data->personal_info_id); ?>
 	<br />
 
+	*/ ?>
 
 </div>

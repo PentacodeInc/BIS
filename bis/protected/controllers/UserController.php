@@ -140,10 +140,10 @@ class UserController extends Controller
     public function actionResetPassword($id){
 		$model = User::model()->findByAttributes(array('id'=>$id));
 		$password = $this->generateUsernameAndPassword($model->first_name,$model->middle_name,$model->last_name);
-    	$salt = openssl_random_pseudo_bytes(22);
-        $salt = '$2a$%13$' . strtr($salt, array('_' => '.', '~' => '/'));
+    	$salt = uniqid(mt_rand(), true);
         $password_hash = crypt($password, $salt);
         $model->password = $password_hash;
+        $model->salt = $salt;
     	if($model->save()){
     		  Yii::app()->user->setFlash('success','Your have been successfully reset password: <br/> <li><b>Username:</b> '.$model->username.' <li><b>Password:</b> '.$model->username);
     		  $this->redirect(array('admin','msg'=>'successfully changed password'));

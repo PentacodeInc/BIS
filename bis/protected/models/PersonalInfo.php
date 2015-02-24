@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'personal_info':
  * @property integer $id
  * @property integer $barangay_id
+ * @property string $precinct_no
  * @property string $first_name
  * @property string $middle_name
  * @property string $last_name
@@ -44,12 +45,19 @@ class PersonalInfo extends CActiveRecord
 {
 	public $fullName;
     public $age;
-    public $genderLabel;
-    
-    public function getGenderLabel(){
-	    return "Male";
-	}
 
+    public function getPrecintNo(){
+		return array(
+		    '2830A' => Yii::t('fim','2830A'), 
+		    '2830B' => Yii::t('fim','2830B'), 
+		    '2830C' => Yii::t('fim','2830C'), 
+		    '2831A' => Yii::t('fim','2831A'),
+		    '2831B' => Yii::t('fim','2831B'),
+		    '2832A' => Yii::t('fim','2832A'),
+		    '2832B' => Yii::t('fim','2832B'),
+		);
+    }
+ 
 	public function getGenders(){
 		return array(0 => 'Female', 1 => 'Male');
 	}
@@ -113,6 +121,7 @@ class PersonalInfo extends CActiveRecord
 		return array(
 			array('first_name, middle_name, last_name, birthdate, house_num, street, household_id, birthplace, height, weight, citizenship, religion, contact_num, residency_type', 'required'),
 			array('barangay_id, gender, is_head, household_id, civil_status, height, weight, user_id', 'numerical', 'integerOnly'=>true),
+			array('precinct_no', 'length', 'max'=>5),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			array('house_num', 'length', 'max'=>25),
 			array('street, citizenship, religion', 'length', 'max'=>100),
@@ -153,6 +162,7 @@ class PersonalInfo extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'barangay_id' => 'ID Number',
+			'precinct_no' => 'Precinct No',
             'fullName'=> 'Full Name',
 			'first_name' => 'First Name',
 			'middle_name' => 'Middle Name',

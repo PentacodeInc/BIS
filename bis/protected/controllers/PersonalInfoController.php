@@ -32,7 +32,7 @@ class PersonalInfoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','createHousehold'),
+				'actions'=>array('create','update','createHousehold','import'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -159,6 +159,26 @@ class PersonalInfoController extends Controller
 		$dataProvider=new CActiveDataProvider('PersonalInfo');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	public function actionImport(){
+		$model= new ImportForm;
+		if(isset($_POST['ImportForm'])){
+			$file = CUploadedFile::getInstance($model,'csv_file');
+			$fp = fopen($file->tempName, 'r');
+			$first_time = true;
+	        while (($line = fgetcsv($fp)) != FALSE) {
+	        	if ($first_time == true) {
+	                $first_time = false;
+	                continue;
+	            }
+	        	
+	        }
+			fclose($fp);
+		}
+		$this->render('import',array(
+			'model'	=>$model
 		));
 	}
 

@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'household'); ?>
-		<?php echo $form->textField($model,'household',array('size'=>35,'maxlength'=>35)); ?>
+		<?php echo $form->textField($model,'household'); ?>
 		<?php echo $form->error($model,'household'); ?>
 	</div>
 

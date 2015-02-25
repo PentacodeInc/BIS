@@ -7,7 +7,8 @@ class ImportForm extends CFormModel
     public function rules()
     {
      return array(
-              array('csv_file',  'file', 'types' => 'csv', 'maxSize'=>5242880, 'allowEmpty' => true,'wrongType'=>'Only csv allowed.','tooLarge'=>'File too large! 5MB is the limit')
+              array('csv_file',  'file', 'types' => 'csv', 'maxSize'=>5242880, 'allowEmpty' => true,'wrongType'=>'Only csv allowed.','tooLarge'=>'File too large! 5MB is the limit'),
+              array('household','numerical','integerOnly'=>true)
         );
     }
 	   public function attributeLabels()

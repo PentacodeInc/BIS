@@ -1,30 +1,24 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'barangay_id'); ?>
-		<?php echo $form->textField($model,'barangay_id'); ?>
+		<?php echo $form->textField($model,'barangay_id',array('size'=>15)); ?>
 		<?php echo $form->error($model,'barangay_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'precinct_no'); ?>
-		<?php echo $form->dropDownList($model,'precinct_no',$model->getPrecintNo(),array('empty'=>'')); ?>
-		<?php echo $form->error($model,'precinct_no'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'first_name'); ?>
-		<?php echo $form->textField($model,'first_name',array('size'=>35,'maxlength'=>35)); ?>
+		<?php echo $form->textField($model,'first_name',array('size'=>25,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'first_name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'middle_name'); ?>
-		<?php echo $form->textField($model,'middle_name',array('size'=>35,'maxlength'=>35)); ?>
+		<?php echo $form->textField($model,'middle_name',array('size'=>25,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'middle_name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'last_name'); ?>
-		<?php echo $form->textField($model,'last_name',array('size'=>35,'maxlength'=>35)); ?>
+		<?php echo $form->textField($model,'last_name',array('size'=>25,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'last_name'); ?>
 	</div>
 
@@ -45,35 +39,44 @@
 		<?php echo $form->error($model,'birthdate'); ?>
 	</div>
 
+    <div class="row">
+		<?php echo $form->labelEx($model,'birthplace'); ?>
+		<?php //echo $form->textArea($model,'birthplace',array('rows'=>6, 'cols'=>50)); ?>
+        <?php echo $form->textField($model,'birthplace',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'birthplace'); ?>
+	</div>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'gender'); ?>
 		<?php echo $form->dropDownList($model,'gender',$model->getGenders(),array('empty'=>'')); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
 
+    <div class="row">
+		<?php echo $form->labelEx($model,'precinct_no'); ?>
+		<?php echo $form->dropDownList($model,'precinct_no',$model->getPrecintNo(),array('empty'=>'')); ?>
+		<?php echo $form->error($model,'precinct_no'); ?>
+	</div>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'house_num'); ?>
-		<?php echo $form->textField($model,'house_num',array('size'=>25,'maxlength'=>25)); ?>
+		<?php echo $form->textField($model,'house_num',array('size'=>13,'maxlength'=>25)); ?>
 		<?php echo $form->error($model,'house_num'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'street'); ?>
-		<?php echo $form->dropDownList($model,'street',Street::getAll(),array('empty'=>'')); ?>
+		<?php echo $form->dropDownList($model,'street',Street::getAll(),array('empty'=>'','style'=>'width:230px')); ?>
 		<?php echo $form->error($model,'street'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'provincial_address'); ?>
-		<?php echo $form->textArea($model,'provincial_address',array('rows'=>6, 'cols'=>50)); ?>
+		<?php //echo $form->textArea($model,'provincial_address',array('rows'=>6, 'cols'=>50)); ?>
+        <?php echo $form->textField($model,'provincial_address',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'provincial_address'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'birthplace'); ?>
-		<?php echo $form->textArea($model,'birthplace',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'birthplace'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'civil_status'); ?>
@@ -107,7 +110,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'religion'); ?>
-		<?php echo $form->textField($model,'religion',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'religion',array('size'=>30,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'religion'); ?>
 	</div>
 
@@ -123,11 +126,7 @@
 		<?php echo $form->error($model,'email_address'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'photo_filename'); ?>
-		<?php echo $form->textField($model,'photo_filename',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'photo_filename'); ?>
-	</div>
+    <div class="form-title">Residency</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'residency_start'); ?>
@@ -143,6 +142,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'residency_type'); ?>
-		<?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType(),array('empty'=>'')); ?>
+		<?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType(),array('empty'=>'','style'=>'width:230px')); ?>
 		<?php echo $form->error($model,'residency_type'); ?>
+	</div>
+
+    <div class="form-title">Photo</div>
+
+    <div class="row">
+		<?php echo $form->labelEx($model,'photo_filename'); ?>
+		<?php echo $form->fileField($model,'photo_filename',array('style'=>'width:500px')); ?>
+		<?php echo $form->error($model,'photo_filename'); ?>
 	</div>

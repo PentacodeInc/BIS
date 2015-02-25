@@ -78,6 +78,7 @@ class PersonalInfoController extends Controller
 			$employmentInfo->attributes=$_POST['EmploymentInfo'];
 			$familyInfo->attributes=$_POST['FamilyInfo'];
 			$governmentInfo->attributes=$_POST['GovernmentInfo'];
+            $model->filename=CUploadedFile::getInstance($model,'photo_filename');
 			$valid = $model->validate();
 			$valid = $educationalInfo->validate() && $valid;
 			$valid = $employmentInfo->validate() && $valid;
@@ -86,6 +87,7 @@ class PersonalInfoController extends Controller
 			// echo $model->birthdate;
 			if($valid){
 				if($model->save(false)){
+                    $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);
 					$educationalInfo->personal_info_id = $model->id;
 					$employmentInfo->personal_info_id = $model->id;
 					for ($i=0; $i < 2; $i++) { 

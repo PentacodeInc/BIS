@@ -36,6 +36,7 @@
 
 div.form
 {
+    text-align: left;
 }
 
 div.form input,
@@ -133,13 +134,15 @@ div.form select.success
 	border-color: #C6D880;
 }
 
-div.form div.success [type=button]{
+div.form div.success [type=button],
+div.form div.error [type=button]{
     background: #333ea7;
     color:#fff;
     border: #a6adf0 1px solid;
 }
 
-div.form div.success [type=button]:hover{
+div.form div.success [type=button]:hover,
+div.form div.error [type=button]:hover{
     background: #fff;
     color:#333ea7;
     border: #a6adf0 1px solid;
@@ -195,4 +198,10 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 {
 	clear: left;
 	padding-left: 110px;
+}
+
+.form-title{
+    font-size: 30px;
+    color:#333ea7;
+    border-bottom:#333ea7 4px solid;
 }

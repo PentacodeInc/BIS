@@ -90,10 +90,6 @@ class PersonalInfo extends CActiveRecord
     public function getCitizenship(){
         return array('Filipino' => 'Filipino ','Dual' => 'Dual', 'Foreigner' => 'Foreigner');
     }
-    
-    public function getPrecinctNo(){
-        return array(0 => '2830A ',	1 => '2830B', 2 => '2830C', 3 => '2831A', 4 => '2831B', 5 => '2832A', 6 => '2832B');
-    }
 
 	public function getFullname(){
 		if ($this->last_name && $this->first_name){
@@ -131,6 +127,7 @@ class PersonalInfo extends CActiveRecord
 			array('photo_filename', 'length', 'max'=>200),
 			array('residency_type', 'length', 'max'=>10),
 			array('provincial_address, residency_end', 'safe'),
+            array('photo_filename', 'file', 'types'=>'jpg,png,gif'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, house_num, street, provincial_address, is_head, household_id, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, photo_filename, residency_start, residency_end, residency_type, last_update_datetime, user_id, fullName, age', 'safe', 'on'=>'search'),

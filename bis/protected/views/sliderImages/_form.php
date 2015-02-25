@@ -19,7 +19,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'filename'); ?>
-		<?php echo $form->fileField($model,'filename',array('style'=>'width:500px')); ?>
+		<?php echo $form->textField($model,'filename',array('style'=>'width:500px')); ?>
 		<?php echo $form->error($model,'filename'); ?>
         
         <span class="row buttons">

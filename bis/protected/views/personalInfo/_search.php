@@ -46,10 +46,10 @@
         <?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType(),array('empty'=>'All')); ?>
 	</div>
     
-    <!--<div class="row">
-		<?php //echo $form->label($model,'precinct_no'); ?>
-        <?php //echo $form->dropDownList($model,'precinct_no',$model->getPrecinctNo(),array('empty'=>'')); ?>
-	</div>-->
+    <div class="row">
+		<?php echo $form->label($model,'precinct_no'); ?>
+        <?php echo $form->dropDownList($model,'precinct_no',$model->getPrecintNo(),array('empty'=>'All')); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

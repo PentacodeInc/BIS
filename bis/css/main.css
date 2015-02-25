@@ -327,6 +327,18 @@ ul.menu-content{
     }
     
 
+.personalInfo .row{
+    display: inline-block;
+    padding-right:15px;
+    vertical-align: top;
+}
+.personalInfo .mainlabel{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
 h1, h2{
     color:#333ea7;
     font-weight: bold;

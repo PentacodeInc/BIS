@@ -243,9 +243,9 @@ class PersonalInfoController extends Controller
 	        	$this->createFamilyInfo($line,$personalInfo->id);
 	        	$this->createEmploymentInfo($line,$personalInfo->id);
 	        	$this->createEducationalInfo($line,$personalInfo->id);
-	        	$this->redirect(array('admin'));
 	        }
 			fclose($fp);
+			$this->redirect(array('admin'));
 		}
 		$this->render('import',array(
 			'model'	=>$model

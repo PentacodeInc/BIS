@@ -208,6 +208,11 @@ class PersonalInfo extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+        $criteria->with= array('educationalInfos');
+        $criteria->with= array('employmentInfos');
+        $criteria->with= array('familyInfos');
+        $criteria->with= array('governmentInfos');
+        $criteria->with= array('household');
         
 		$criteria->compare('first_name',$this->fullName,false, 'OR');
 		$criteria->compare('middle_name',$this->fullName,false, 'OR');

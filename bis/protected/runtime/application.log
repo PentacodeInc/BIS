@@ -12922,3 +12922,38 @@ Stack trace:
 REQUEST_URI=/bis/index.php?r=announcement/view&id=1
 HTTP_REFERER=http://localhost/bis/index.php?r=announcement/index
 ---
+2015/02/25 13:03:10 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\BIS\bis\protected\controllers\PersonalInfoController.php:169)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=personalInfo/import
+in C:\xampp\htdocs\BIS\bis\protected\controllers\PersonalInfoController.php (169)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/02/25 15:40:43 [error] [php] include(DownloadbleFiles.php): failed to open stream: No such file or directory (C:\xampp\htdocs\BIS\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\bis\protected\views\site\pages\download.php(2): spl_autoload_call()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): SiteController->renderFile()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\actions\CViewAction.php(140): SiteController->render()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CViewAction->runWithParams()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=site/page&view=download
+in C:\xampp\htdocs\BIS\bis\protected\views\site\pages\download.php (2)
+in C:\xampp\htdocs\BIS\bis\index.php (13)

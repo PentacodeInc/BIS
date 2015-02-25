@@ -1,25 +1,3 @@
-<script>
-$(function() {
-
-    var $sidebar   = $(".adminmenu"), 
-        $window    = $(window),
-        offset     = $sidebar.offset(),
-        topPadding = 15;
-
-    $window.scroll(function() {
-        if ($window.scrollTop() > offset.top) {
-            $sidebar.stop().animate({
-                marginTop: $window.scrollTop() - offset.top + topPadding
-            });
-        } else {
-            $sidebar.stop().animate({
-                marginTop: 0
-            });
-        }
-    });
-    
-});
-</script>
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
 <div id="content">
@@ -27,6 +5,7 @@ $(function() {
 		<?php echo $content; ?>
 	</div>
     
+    <?php if (!Yii::app()->user->isGuest){ ?>
     <div class="span-26 floatright adminmenu">
         <?php if(!Yii::app()->user->isGuest){?>
         <div class="menu-header"><i class="fa fa-chevron-circle-down"></i> Menu</div>
@@ -53,6 +32,7 @@ $(function() {
         ?>
         <?php } ?>
     </div>
+    <?php } ?>
     
 </div>
 

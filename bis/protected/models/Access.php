@@ -22,6 +22,15 @@ class Access extends CActiveRecord
 		return 'access';
 	}
 
+	public function hasAccess($module){
+		$criteria=new CDbCriteria;
+		$criteria->select = 't.user_id';
+		$criteria->with = 'module';
+		$criteria->condition = 't.user_id=:user_id AND module.name=:name';
+		$criteria->params = array(':user_id'=>Yii::app()->user->id,':name'=>$module);
+		return !empty(Access::model()->find($criteria));
+	}
+
 	public function deleteAccess($user_id){
 		$command = Yii::app()->db->createCommand();
 		$command->delete('access', 'user_id=:id', array(':id'=>$user_id));

@@ -58,20 +58,32 @@ class PersonalInfo extends CActiveRecord
 		);
     }
  
-	public function getGenders(){
-		return array(0 => 'Female', 1 => 'Male');
+	public function getGenders($i = ""){
+		$item=array(0 => 'Female', 1 => 'Male');
+		if(empty($i))
+			return $item;
+		return $item[$i];
 	}
 
-	public function getCivilStatus(){
-		return array(0 => 'Single',	1 => 'Married', 2 => 'Divorced', 3 => 'Separated' ,4 => 'Widowed');
+	public function getCivilStatus($i = ""){
+		$item=array(0 => 'Single',	1 => 'Married', 2 => 'Divorced', 3 => 'Separated' ,4 => 'Widowed');
+		if(empty($i))
+			return $item;
+		return $item[$i];
 	}
 
-	public function getIsHead(){
-		return array(0 => 'No', 1 => 'Yes');
+	public function getIsHead($i = ""){
+		$item=array(0 => 'No', 1 => 'Yes');
+		if(empty($i))
+			return $item;
+		return $item[$i];
 	}
 
-	public function getResidencyType(){
-		return array(0 => 'Renter', 1 => 'Owner');
+	public function getResidencyType($i = ""){
+		$item=array(0 => 'Renter', 1 => 'Owner');
+		if(empty($i))
+			return $item;
+		return $item[$i];
 	}
 
 	public function getResidencyStatus(){
@@ -270,4 +282,6 @@ class PersonalInfo extends CActiveRecord
         }
         return parent::beforeSave();
     }
+
+    
 }

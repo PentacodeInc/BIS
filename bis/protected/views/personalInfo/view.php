@@ -24,7 +24,7 @@ $this->menu=array(
 		'birthdate',
 		array(
 			'name'=>'gender',
-			'value'=>$model->genderLabel
+			'value'=>PersonalInfo::getGenders($model->gender)
 			),
 		'address',
 		'is_head',

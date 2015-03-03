@@ -40,7 +40,7 @@ $('.search-form form').submit(function(){
 } ?>
 </div>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $gridWidget = $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'personal-info-grid',
 	//'dataProvider'=>$model->search(),
     'dataProvider'=>$model->search(isset($_GET['letter']) ? $_GET['letter'] : ""),
@@ -80,3 +80,4 @@ $('.search-form form').submit(function(){
 		),*/
 	),
 )); ?>
+<?php $this->renderExportGridButton($gridWidget,'Export Grid Results',array('class'=>'btn btn-info pull-right'));?>

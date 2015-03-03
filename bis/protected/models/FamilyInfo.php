@@ -21,7 +21,19 @@ class FamilyInfo extends CActiveRecord
 	{
 		return 'family_info';
 	}
+	public function getFatherName($personal_info_id){
+		 $fam =FamilyInfo::model()->find('personal_info_id=:id AND relationship=1',array(':id'=>$personal_info_id));
+		 if(!empty($fam))
+		 	return $fam->member_name;
+		 return "";
+	}
 
+	public function getMotherName($personal_info_id){
+		$fam= FamilyInfo::model()->find('personal_info_id=:id AND relationship=0',array(':id'=>$personal_info_id));
+		 if(!empty($fam))
+		 	return $fam->member_name;
+		 return "";
+	}
 	/**
 	 * @return array validation rules for model attributes.
 	 */

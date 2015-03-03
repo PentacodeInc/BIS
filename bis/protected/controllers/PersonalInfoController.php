@@ -19,6 +19,13 @@ class PersonalInfoController extends Controller
 		);
 	}
 
+	 public function behaviors() {
+		  return array(
+			'exportableGrid' => array(
+				'class' => 'application.components.ExportableGridBehavior',
+		  ));
+	  }
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -32,12 +39,12 @@ class PersonalInfoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','createHousehold','import'),
+				'actions'=>array('create','update','createHousehold','import','export'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('adminaa'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -165,7 +172,7 @@ class PersonalInfoController extends Controller
 	}
 
 /*	
-	0 barangay_id	 
+	0  barangay_id	 
 	1  precinct_no	 
 	2  first_name
 	3  middle_name	 
@@ -187,10 +194,8 @@ class PersonalInfoController extends Controller
 	19 residency_start	 
 	20 residency_end	 
 	21 residency_type	
-
 	22 father name
 	23 mother name
-
 	24 sss_num	 
 	25 philhealth_num	 
 	26 gsis_num	 
@@ -198,33 +203,30 @@ class PersonalInfoController extends Controller
 	28 voters_id	 
 	29 senior_citizen_num	 
 	30 orange_card_num		
-
 	31 position	 
 	32 employer	 
 	33 start_date	 
 	34 end_date	
-
 	35 elementary_school	
 	36 elementary_startd_date	
 	37 elementary_end_date	
 	38 elementary_remarks	
-
 	39 secondary_school	
 	40 secondary_start_date	
 	41 secondary_end_date	
 	42 secondary_remarks	
- 
 	43 tertiary_school	
 	44 tertiary_start_date	
 	45 tertiary_end_date	
 	46 tertiary_course	
 	47 tertiary_remarks	
-
 	48 vocational_school	
 	49 vocational_start_date	
 	50 vocational_end_date	
 	51 vocation_course	
-	52 vocational_remarks*/
+	52 vocational_remarks
+
+*/
 
 
 	public function actionImport(){
@@ -367,6 +369,74 @@ class PersonalInfoController extends Controller
 		return $model;
 	}
 
+	public function actionExport($criteria){
+		$data = array();
+		foreach (PersonalInfo::model()->findAll($criteria) as $key => $value) {
+			$governmentInfo=GovernmentInfo::model()->findByAttributes(array('personal_info_id'=>$value->id));
+			$employmentInfo=EmploymentInfo::model()->findByAttributes(array('personal_info_id'=>$value->id));
+			$elemSchool=EducationalInfo::getDetails($value->id,0);
+			$secondarySchool=EducationalInfo::getDetails($value->id,1);
+			$tertiarySchool=EducationalInfo::getDetails($value->id,2);
+			$vocationalSchool=EducationalInfo::getDetails($value->id,3);
+			array_push($data, array(
+				'barangay_id'=>$value->barangay_id,
+				'precinct_no'=>$value->precinct_no,
+				'first_name'=>$value->first_name,
+				'middle_name'=>$value->middle_name,
+				'last_name'=>$value->last_name,
+				'birthdate'=>$value->birthdate,
+				'gender'=>PersonalInfo::getGenders($value->gender),
+				'house_num'=>$value->house_num,
+				'street'=>$value->street,
+				'provincial_address'=>$value->provincial_address,
+				'birthplace'=>$value->birthplace,
+				'civil_status'=>PersonalInfo::getCivilStatus($value->civil_status),
+				'spouse_name'=>$value->spouse_name,
+				'height'=>$value->height,
+				'weight'=>$value->weight,
+				'citizenship'=>$value->citizenship,
+				'religion'=>$value->religion,
+				'contact_num'=>$value->contact_num,
+				'email_address'=>$value->email_address,
+				'residency_start'=>$value->residency_start,
+				'residency_end'=>$value->residency_end,
+				'residency_type	'=>PersonalInfo::getResidencyType($value->residency_type),
+				'father name'=>FamilyInfo::getFatherName($value->id),
+				'mother name'=>FamilyInfo::getMotherName($value->id),
+				'sss_num'=>empty($governmentInfo) ? "" : $governmentInfo->sss_num,
+				'philhealth_num'=>empty($governmentInfo) ? "" : $governmentInfo->philhealth_num,
+				'gsis_num'=>empty($governmentInfo) ? "" : $governmentInfo->gsis_num,
+				'tin_num'=>empty($governmentInfo) ? "" : $governmentInfo->tin_num,
+				'voters_id'=>empty($governmentInfo) ? "" : $governmentInfo->voters_id,
+				'senior_citizen_num'=>empty($governmentInfo) ? "" : $governmentInfo->senior_citizen_num,
+				'orange_card_num'=>empty($governmentInfo) ? "" : $governmentInfo->orange_card_num,
+				'position'=>empty($employmentInfo) ? "" : $employmentInfo->position,
+				'employer'=>empty($employmentInfo) ? "" : $employmentInfo->employer,
+				'start_date'=>empty($employmentInfo) ? "" : $employmentInfo->start_date,
+				'end_date'=>empty($employmentInfo) ? "" : $employmentInfo->end_date,
+				'elementary_school'=>empty($elemSchool) ? "" : $elemSchool->school,
+				'elementary_start_date'=>empty($elemSchool) ? "" : $elemSchool->start_date,
+				'elementary_end_date'=>empty($elemSchool) ? "" : $elemSchool->end_date,
+				'elementary_remarks'=>empty($elemSchool) ? "" : $elemSchool->remarks,
+				'secondary_school'=>empty($secondarySchool) ? "" : $secondarySchool->school,
+				'secondary_start_date'=>empty($secondarySchool) ? "" : $secondarySchool->start_date,
+				'secondary_end_date'=>empty($secondarySchool) ? "" : $secondarySchool->end_date,
+				'secondary_remarks'=>empty($secondarySchool) ? "" : $secondarySchool->remarks,
+				'tertiary_school'=>empty($tertiarySchool) ? "" : $tertiarySchool->school,
+				'tertiary_start_date'=>empty($tertiarySchool) ? "" : $tertiarySchool->start_date,
+				'tertiary_end_date'=>empty($tertiarySchool) ? "" : $tertiarySchool->end_date,
+				'tertiary_course'=>empty($tertiarySchool) ? "" : $tertiarySchool->course,
+				'tertiary_remarks'=>empty($tertiarySchool) ? "" : $tertiarySchool->remarks,
+				'vocational_school'=>empty($vocationalSchool) ? "" : $vocationalSchool->school,
+				'vocational_start_date'=>empty($vocationalSchool) ? "" : $vocationalSchool->start_date,
+				'vocational_end_date'=>empty($vocationalSchool) ? "" : $vocationalSchool->end_date,
+				'vocation_course'=>empty($vocationalSchool) ? "" : $vocationalSchool->course,
+				'vocational_remarks'=>empty($vocationalSchool) ? "" : $vocationalSchool->remarks
+			));
+		}	 
+		return $data;
+	}
+
 	/**
 	 * Manages all models.
 	 */
@@ -377,6 +447,48 @@ class PersonalInfoController extends Controller
         
 		if(isset($_GET['PersonalInfo']))
 			$model->attributes=$_GET['PersonalInfo'];
+
+		if ($this->isExportRequest()) {
+			$criteria=new CDbCriteria;
+			if(isset($_GET['PersonalInfo'])){
+				$fullName=$_GET['PersonalInfo']['fullName'];
+				$street=$_GET['PersonalInfo']['street'];
+				$gender=$_GET['PersonalInfo']['gender'];
+				$civil_status=$_GET['PersonalInfo']['civil_status'];
+				$residency_type=$_GET['PersonalInfo']['residency_type'];
+				$age=$_GET['PersonalInfo']['age'];
+				$citizenship=$_GET['PersonalInfo']['citizenship'];
+				$criteria->compare('first_name',$fullName,false, 'OR');
+				$criteria->compare('middle_name',$fullName,false, 'OR');
+				$criteria->compare('last_name',$fullName,false, 'OR');
+				$criteria->compare('concat(first_name, " ", last_name)', $fullName,false, 'OR');
+				$criteria->compare('concat(last_name, " ", first_name)', $fullName,false, 'OR');
+				$criteria->compare('street',$street,true);
+		        $criteria->compare('gender',$gender);
+		        $criteria->compare('civil_status',$civil_status);
+		        $criteria->compare('citizenship',$citizenship,true);
+		        $criteria->compare('residency_type',$residency_type);
+
+		        if ($age != ""){
+		            if($age == 0){
+		                $criteria->addCondition('birthdate <= now() - INTERVAL 0 YEAR and birthdate > now() - INTERVAL 5 YEAR');
+		            }else if($age == 1){
+		                $criteria->addCondition('birthdate <= now() - INTERVAL 5 YEAR and birthdate > now() - INTERVAL 18 YEAR');
+		            }else if($age == 2){
+		                $criteria->addCondition('birthdate <= now() - INTERVAL 18 YEAR and birthdate > now() - INTERVAL 60 YEAR');
+		            }else if($age == 3){
+		                $criteria->addCondition('birthdate <= now() - INTERVAL 60 YEAR');
+		            }
+		        }
+			}
+			if(isset($_GET['letter'])){
+				$criteria->compare('last_name',$_GET['letter'].'%',true,'AND',false);
+			}
+
+            $this->exportCSV($this->actionExport($criteria), array('barangay_id', 'precinct_no', 'first_name', 'middle_name', 'last_name', 'birthdate', 'gender', 'house_num', 'street', 'provincial_address', 'birthplace', 'civil_status', 'spouse_name', 'height', 'weight', 'citizenship', 'religion', 'contact_num', 'email_address', 'residency_start', 'residency_end', 'residency_type','father name','mother name','sss_num', 'philhealth_num', 'gsis_num', 'tin_num', 'voters_id', 'senior_citizen_num', 'orange_card_num','position', 'employer', 'start_date', 'end_date','elementary_school','elementary_start_date','elementary_end_date','elementary_remarks','secondary_school','secondary_start_date','secondary_end_date','secondary_remarks','tertiary_school','tertiary_start_date','tertiary_end_date','tertiary_course','tertiary_remarks','vocational_school','vocational_start_date','vocational_end_date','vocation_course','vocational_remarks'));
+        }
+		
+			
 
 		$this->render('admin',array(
 			'model'=>$model,

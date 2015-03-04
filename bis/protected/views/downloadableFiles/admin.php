@@ -13,7 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Manage Downloadable Files</h1>
+<h1>Maintain Downloadable Files</h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'downloadable-files-grid',
@@ -29,7 +29,7 @@ $this->menu=array(
         array(
 			'class' =>'editable.EditableColumn',
 			'name' =>'name',
-            'headerHtmlOptions' => array('style' => 'width: 600px'),
+            'headerHtmlOptions' => array('style' => 'width: 350px'),
 			'editable' => array(
 				'type' => 'text',
                  'url' => $this->createUrl('downloadableFiles/rowUpdate'), 

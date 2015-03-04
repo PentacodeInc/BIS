@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update</h1>
+<h1>Edit Announcement</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Manage Streets</h1>
+<h1>Maintain Streets</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
 

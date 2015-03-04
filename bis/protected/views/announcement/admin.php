@@ -14,7 +14,7 @@ $this->menu=array(
 
 ?>
 
-<h1>Manage Announcements</h1>
+<h1>Maintain Announcements</h1>
 
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(

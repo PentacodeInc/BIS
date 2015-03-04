@@ -15,18 +15,18 @@ $this->breadcrumbs=array(
         <?php echo CHtml::link('<i class="fa fa-database"></i> Residents Database</a>', array('/personalInfo/admin')); ?>
     </div>
     <div class="link">
-        <?php echo CHtml::link('<i class="fa fa-users"></i> User Maintenance', array('/user/admin')); ?>
+        <?php echo CHtml::link('<i class="fa fa-users"></i> Maintain User', array('/user/admin')); ?>
     </div>
     <div class="link">
-        <?php echo CHtml::link('<i class="fa fa-picture-o"></i> Slide Show Maintenance', array('/sliderImages/admin')); ?>
+        <?php echo CHtml::link('<i class="fa fa-picture-o"></i> Maintain Slide Show', array('/sliderImages/admin')); ?>
     </div>
     <div class="link">
-        <?php echo CHtml::link('<i class="fa fa-bullhorn"></i> Announcements Maintenance', array('/announcement/admin')); ?>
+        <?php echo CHtml::link('<i class="fa fa-bullhorn"></i> Maintain Announcements', array('/announcement/admin')); ?>
     </div>
     <div class="link">
-        <?php echo CHtml::link('<i class="fa fa-download"></i> Downloadable Files Maintenance', array('/downloadableFiles/admin')); ?>
+        <?php echo CHtml::link('<i class="fa fa-download"></i> Maintain Downloadable Files', array('/downloadableFiles/admin')); ?>
     </div>
     <div class="link">
-        <?php echo CHtml::link('<i class="fa fa-road"></i> Streets Maintenance', array('/street/admin')); ?>
+        <?php echo CHtml::link('<i class="fa fa-road"></i> Maintain Streets', array('/street/admin')); ?>
     </div>
 </div>

@@ -4,7 +4,7 @@
 
 ?>
 
-<h1>Manage Slider Images</h1>
+<h1>Maintain Slideshow</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
 
@@ -65,7 +65,7 @@
         ),
 		array(
 			'class'=>'CButtonColumn',
-            'template'=>'{view}{update}{delete}',
+            'template'=>'{view}{delete}',
             'buttons' => array(
                 'view' => array(
                     'label' => 'Show Image', 

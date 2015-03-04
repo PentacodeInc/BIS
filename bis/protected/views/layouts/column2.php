@@ -12,11 +12,11 @@
         <ul class="menu-content">
             <li><?php echo CHtml::link('<i class="fa fa-area-chart"></i> Dashboard</a>', array('/personalInfo/index')); ?>
             <li><?php echo CHtml::link('<i class="fa fa-database"></i> Residents Database</a>', array('/personalInfo/admin')); ?>
-            <li><?php echo CHtml::link('<i class="fa fa-users"></i> User Maintenance</a>', array('/user/admin')); ?>
-            <li><?php echo CHtml::link('<i class="fa fa-picture-o"></i> Slide Show Maintenance</a>', array('/sliderImages/admin')); ?>
-            <li><?php echo CHtml::link('<i class="fa fa-bullhorn"></i> Announcements Maintenance', array('/announcement/admin')); ?>
-            <li><?php echo CHtml::link('<i class="fa fa-download"></i> Downloadable Files Maintenance</a>', array('/downloadableFiles/admin')); ?>
-            <li><?php echo CHtml::link('<i class="fa fa-road"></i> Streets Maintenance</a>', array('/street/admin')); ?>
+            <li><?php echo CHtml::link('<i class="fa fa-users"></i> Maintain User</a>', array('/user/admin')); ?>
+            <li><?php echo CHtml::link('<i class="fa fa-picture-o"></i> Maintain Slideshow</a>', array('/sliderImages/admin')); ?>
+            <li><?php echo CHtml::link('<i class="fa fa-bullhorn"></i> Maintain Announcements', array('/announcement/admin')); ?>
+            <li><?php echo CHtml::link('<i class="fa fa-download"></i> Maintain Downloadable Files</a>', array('/downloadableFiles/admin')); ?>
+            <li><?php echo CHtml::link('<i class="fa fa-road"></i> Maintain Streets</a>', array('/street/admin')); ?>
         </ul>
         <?php } ?>
         

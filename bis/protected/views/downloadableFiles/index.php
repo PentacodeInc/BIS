@@ -12,7 +12,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Downloadable Files</h1>
+<div id="about" class="pictures">
+    <div id="white">
+        <div class="aboutTitle">Downloadable Files</div>
+    </div>
+</div>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'downloadable-files-grid',

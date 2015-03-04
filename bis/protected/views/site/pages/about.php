@@ -34,7 +34,7 @@
     </div>
 
     <div id="white">
-        <div class="aboutTitle">Contanct Us.</div>
+        <div class="aboutTitle">Contact Us.</div>
 
         <div class="aboutDesc">
             

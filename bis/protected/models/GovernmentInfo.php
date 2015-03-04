@@ -61,13 +61,13 @@ class GovernmentInfo extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'sss_num' => 'Sss Num',
-			'philhealth_num' => 'Philhealth Num',
-			'gsis_num' => 'Gsis Num',
-			'tin_num' => 'Tin Num',
+			'sss_num' => 'Sss No',
+			'philhealth_num' => 'Philhealth No',
+			'gsis_num' => 'Gsis No',
+			'tin_num' => 'Tin Np',
 			'voters_id' => 'Voters',
-			'senior_citizen_num' => 'Senior Citizen Num',
-			'orange_card_num' => 'Orange Card Num',
+			'senior_citizen_num' => 'Senior Citizen No',
+			'orange_card_num' => 'Orange Card No',
 			'personal_info_id' => 'Personal Info',
 		);
 	}

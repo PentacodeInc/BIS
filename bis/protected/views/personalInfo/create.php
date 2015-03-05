@@ -46,19 +46,22 @@ $this->menu=array(
         ),
     ));*/ ?>
         
-    <div class="form-title">Personal</div>
-    <?php $this->renderPartial('_form', array('form'=>$form,'model'=>$model)); ?>
-    <div class="form-title">Government</div>
-    <?php $this->renderPartial('//governmentInfo/_form', array('form'=>$form,'model'=>$governmentInfo)); ?>
-    <div class="form-title">Educational</div>
-    <?php $this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo)); ?>
-    <div class="form-title">Household</div>
-    <?php $this->renderPartial('//household/_form', array('form'=>$form,'model'=>$model)); ?>
-    <div class="form-title">Employment</div>
-    <?php $this->renderPartial('//employmentInfo/_form', array('form'=>$form,'model'=>$employmentInfo)); ?>
-    <div class="form-title">Family</div>
-    <?php $this->renderPartial('//familyInfo/_form', array('form'=>$form,'model'=>$familyInfo)); ?>
+
     
+
+    <div class="form-title">Personal</div>
+    <div><?php $this->renderPartial('_form', array('form'=>$form,'model'=>$model)); ?></div>
+    <div class="form-title">Government</div>
+    <div><?php $this->renderPartial('//governmentInfo/_form', array('form'=>$form,'model'=>$governmentInfo)); ?></div>
+    <div class="form-title">Educational</div>
+    <div><?php $this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo)); ?></div>
+    <div class="form-title">Household</div>
+    <div><?php $this->renderPartial('//household/_form', array('form'=>$form,'model'=>$model)); ?></div>
+    <div class="form-title">Employment</div>
+    <div><?php $this->renderPartial('//employmentInfo/_form', array('form'=>$form,'model'=>$employmentInfo)); ?></div>
+    <div class="form-title">Family</div>
+    <div><?php $this->renderPartial('//familyInfo/_form', array('form'=>$form,'model'=>$familyInfo)); ?></div>
+   
     <div class="clear"></div>
     <div class="row buttons">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

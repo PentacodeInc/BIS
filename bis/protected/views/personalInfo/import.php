@@ -17,15 +17,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'household'); ?>
-		<?php echo $form->dropDownList($model,'household',Household::getAll(),array('empty'=>'','style'=>'width:230px'));?>
-		<?php echo $form->error($model,'household'); ?>
-		<input type="text" id="household" style="display:none;">
-        
-        <span class="row buttons">
-		  <input type="button" id="addHousehold" value="Add">
-		  <input type="button" id="saveHousehold" value="Save">
-        </span>
+		<?php echo $form->labelEx($model,'street'); ?>
+		<?php echo $form->dropDownList($model,'street',Street::getAll(),array('empty'=>'','style'=>'width:230px'));?>
+		<?php echo $form->error($model,'street'); ?>
 	</div>
 		
 
@@ -42,40 +36,3 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-<script type="text/javascript">
-    $(document).ready(function(){
-         $('#saveHousehold').hide();
-        
-        $('#addHousehold').click(function(){
-            $('#household').show();
-            $('#addHousehold').hide();
-            $('#saveHousehold').show();
-        });
-
-        $('#saveHousehold').click(function(){
-            $('#addHousehold').show();
-            $('#saveHousehold').hide();
-            var household = $('#household').val();
-            console.log(household);
-            $.ajax({
-                'url' : '<?php echo Yii::app()->createUrl("personalInfo/createHousehold");?>',
-                'data' : { 'householdName' : household},
-                'type' : 'POST',
-                'success' : function (output){
-                	console.log(output);
-                   if(output.success){
-                      $('#ImportForm_household')
-                         .append($("<option></option>")
-                         .attr("value",output.houseHold.id)
-                         .attr("selected","selected")
-                         .text(output.houseHold.name)); 
-                   }else{
-                        alert("Already Exist");
-                   }
-                }
-            });
-          $('#household').val("");
-          $('#household').hide();
-        });
-    });
-</script>

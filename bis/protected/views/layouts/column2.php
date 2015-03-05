@@ -28,7 +28,7 @@
             <?php if (Access::hasAccess('maintain slideshow')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-picture-o"></i> Maintain Slideshow</a>', array('/sliderImages/admin')); ?>
             <?php } ?>
-            <?php if (Access::hasAccess('maintain accouncements')){?>
+            <?php if (Access::hasAccess('maintain announcements')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-bullhorn"></i> Maintain Announcements', array('/announcement/admin')); ?>
             <?php } ?>
             <?php if (Access::hasAccess('maintain downloadable files')){?>

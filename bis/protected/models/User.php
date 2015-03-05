@@ -31,6 +31,13 @@ class User extends CActiveRecord
 	public $repeat_password;
 	public $fullName;
 	public $modules;
+    
+    public function getStatus($i = ""){
+		$item=array(0 => 'Inactive', 1 => 'Active');
+		if(empty($i))
+			return $item;
+		return $item[$i];
+	}
 
 	/**
 	 * @return string the associated database table name

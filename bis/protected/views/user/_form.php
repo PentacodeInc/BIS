@@ -36,20 +36,26 @@
 		<?php echo $form->textField($model,'last_name',array('size'=>35,'maxlength'=>35)); ?>
 		<?php echo $form->error($model,'last_name'); ?>
 	</div>
+    
+    <div class="row">
+		<?php echo $form->labelEx($model,'is_active'); ?>
+        <?php echo $form->dropDownList($model,'is_active',$model->getStatus(), array('empty'=>'')); ?>
+		<?php echo $form->error($model,'is_active'); ?>
+	</div>
 
 	<?php
-		if(isset($modules)){
-			foreach ($modules as $value) {
+		if(isset($modules)){?>
+            <label>Modules</label>
+			<?php foreach ($modules as $value) {
 				?> 
-				<div class="row"> 
+				<div class="row checkbox"> 
 					<?php
 						if(!empty($value->user_id)){
-							echo $form->checkBox($model,'modules['.$value->id.']', array('checked'=>'çhecked'));
+							echo $form->checkBox($model,'modules['.$value->id.']', array('checked'=>'çhecked', 'id'=>$value->name));
 						}else{
-							echo $form->checkBox($model,'modules['.$value->id.']');
-						}
-						echo $value->name; 
-					?>
+							echo $form->checkBox($model,'modules['.$value->id.']', array('id'=>$value->name));
+						} ?>
+						<label for="<?php echo $value->name?>"><?php echo $value->name; ?></label>
 				</div>
 				<?php
 			}	

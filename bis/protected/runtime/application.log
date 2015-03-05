@@ -15439,3 +15439,538 @@ REQUEST_URI=/BIS/bis/index.php?r=household/create
 in C:\xampp\htdocs\BIS\bis\protected\views\household\_form.php (3)
 in C:\xampp\htdocs\BIS\bis\protected\views\household\create.php (21)
 in C:\xampp\htdocs\BIS\bis\protected\controllers\HouseholdController.php (79)
+2015/03/05 14:34:29 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "getCivilStatus".' in C:\xampp\htdocs\BIS\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getCivilStatus', Array)
+#1 C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php(42): CActiveRecord->__call('getCivilStatus', Array)
+#2 C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php(42): User->getCivilStatus()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\BIS\bis\protected\views\user\update.php(21): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#11 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(118): CController->render('update', Array)
+#12 [internal function]: UserController->actionUpdate('1')
+#13 C:\xampp\htdocs\BIS\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#24 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/update')
+#25 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/update&id=1
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/03/05 14:36:02 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:36:02 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:37:15 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:37:15 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:43:22 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:43:22 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:44:01 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:44:01 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:45:40 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:45:40 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:45:46 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:45:46 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:47:53 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (72)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:48:00 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:48:00 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (99)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:49:34 [error] [php] Undefined variable: id (C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (66)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:49:44 [error] [php] Missing argument 1 for Module::getAll(), called in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php on line 66 and defined (C:\xampp\htdocs\BIS\bis\protected\models\Module.php:24)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+in C:\xampp\htdocs\BIS\bis\protected\models\Module.php (24)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (66)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:50:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name.
+in C:\xampp\htdocs\BIS\bis\protected\models\Module.php (31)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (66)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:50:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name' in C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\BIS\bis\protected\models\Module.php(31): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(66): Module->getAll()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#16 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/03/05 14:51:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name.
+in C:\xampp\htdocs\BIS\bis\protected\models\Module.php (31)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (66)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:51:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name' in C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\BIS\bis\protected\models\Module.php(31): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(66): Module->getAll()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#16 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/03/05 14:51:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name.
+in C:\xampp\htdocs\BIS\bis\protected\models\Module.php (32)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (66)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:51:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name' in C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\BIS\bis\protected\models\Module.php(32): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(66): Module->getAll()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#16 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/03/05 14:52:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name.
+in C:\xampp\htdocs\BIS\bis\protected\models\Module.php (32)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (66)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:52:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT t.id, t.name, A.user_id as user_id FROM `module` `t` LEFT OUTER JOIN ACCESS A ON A.module_id = t.id AND A.user_id =:userid ORDER BY t.name' in C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\BIS\bis\protected\models\Module.php(32): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(66): Module->getAll()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#16 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/admin
+---
+2015/03/05 15:00:13 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:00:13 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:00:13 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:00:13 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:00:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'sdfasdfasdffa' for key 'username_UNIQUE'. The SQL statement executed was: INSERT INTO `user` (`is_active`, `is_admin`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `salt`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (76)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:00:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'sdfasdfasdffa' for key 'username_UNIQUE'. The SQL statement executed was: INSERT INTO `user` (`is_active`, `is_admin`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `salt`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(76): CActiveRecord->save()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#14 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/create
+---
+2015/03/05 15:00:23 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:00:23 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:01:29 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:01:29 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:01:29 [error] [php] Undefined variable: keyValues (C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (78)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:01:49 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:01:49 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:01:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'kjljlj' for key 'username_UNIQUE'. The SQL statement executed was: INSERT INTO `user` (`is_active`, `is_admin`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `salt`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (77)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:01:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'kjljlj' for key 'username_UNIQUE'. The SQL statement executed was: INSERT INTO `user` (`is_active`, `is_admin`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `salt`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(77): CActiveRecord->save()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#14 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/create
+---
+2015/03/05 15:02:00 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:00 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:26 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:26 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:26 [error] [php] Uninitialized string offset: 0 (C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php:241)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (241)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (75)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:42 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:42 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'adminaa' for key 'username_UNIQUE'. The SQL statement executed was: INSERT INTO `user` (`is_active`, `is_admin`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `salt`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (77)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:02:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'adminaa' for key 'username_UNIQUE'. The SQL statement executed was: INSERT INTO `user` (`is_active`, `is_admin`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `salt`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\BIS\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\BIS\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(77): CActiveRecord->save()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#14 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/BIS/bis/index.php?r=user/create
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=user/create
+---
+2015/03/05 15:03:05 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:03:05 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (73)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:04:20 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\BIS\yii\framework\web\helpers\CHtml.php:2325)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php(42): CActiveForm->dropDownList()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#4 C:\xampp\htdocs\BIS\bis\protected\views\user\update.php(21): UserController->renderPartial()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): UserController->renderPartial()
+#9 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(133): UserController->render()
+#10 unknown(0): UserController->actionUpdate()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/update&id=10
+in C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php (42)
+in C:\xampp\htdocs\BIS\bis\protected\views\user\update.php (21)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (133)
+2015/03/05 15:04:29 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\BIS\yii\framework\web\helpers\CHtml.php:2325)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php(42): CActiveForm->dropDownList()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#4 C:\xampp\htdocs\BIS\bis\protected\views\user\update.php(21): UserController->renderPartial()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): UserController->renderPartial()
+#9 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(133): UserController->render()
+#10 unknown(0): UserController->actionUpdate()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/update&id=6
+in C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php (42)
+in C:\xampp\htdocs\BIS\bis\protected\views\user\update.php (21)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (133)
+2015/03/05 15:04:42 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\BIS\yii\framework\web\helpers\CHtml.php:2325)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php(42): CActiveForm->dropDownList()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#4 C:\xampp\htdocs\BIS\bis\protected\views\user\update.php(21): UserController->renderPartial()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): UserController->renderPartial()
+#9 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(133): UserController->render()
+#10 unknown(0): UserController->actionUpdate()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/update&id=6
+in C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php (42)
+in C:\xampp\htdocs\BIS\bis\protected\views\user\update.php (21)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (133)
+2015/03/05 15:04:43 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\BIS\yii\framework\web\helpers\CHtml.php:2325)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php(42): CActiveForm->dropDownList()
+#1 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#4 C:\xampp\htdocs\BIS\bis\protected\views\user\update.php(21): UserController->renderPartial()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): UserController->renderFile()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): UserController->renderPartial()
+#9 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(133): UserController->render()
+#10 unknown(0): UserController->actionUpdate()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#18 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#21 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#22 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/update&id=6
+in C:\xampp\htdocs\BIS\bis\protected\views\user\_form.php (42)
+in C:\xampp\htdocs\BIS\bis\protected\views\user\update.php (21)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (133)
+2015/03/05 15:05:21 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:05:21 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:05:26 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:05:26 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:06:12 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:06:12 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:07:32 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 15:07:32 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (112)
+in C:\xampp\htdocs\BIS\bis\index.php (13)

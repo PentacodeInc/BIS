@@ -337,6 +337,12 @@ ul.menu-content{
     font-weight: bold;
 }
 
+.checkbox label{
+    text-transform: capitalize;
+    display:inline-block!important;
+    font-weight: normal!important;
+}
+
 
 
 h1, h2{

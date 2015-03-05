@@ -63,6 +63,7 @@ class UserController extends Controller
 	public function actionCreate()
 	{
 		$model=new User;
+        $modules=Module::model()->findAll();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -70,13 +71,26 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+            $keyValues = $_POST['User']['modules'];
 			$model->username = $this->generateUsernameAndPassword($model->first_name,$model->middle_name,$model->last_name);
-			if($model->save())
-				$this->redirect(array('admin'));
+            //$model->is_active = 1;
+			if($model->save()){
+			    Access::deleteAccess($model->id);
+				foreach ($keyValues as $key => $value) {
+					if($value){
+						$access=new Access;
+						$access->module_id = $key;
+						$access->user_id = $model->id;
+						$access->save();
+					}
+				}
+                $this->redirect(array('admin'));
+            }
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+            'modules'=>$modules
 		));
 	}
 
@@ -107,7 +121,7 @@ class UserController extends Controller
 						$access->save();
 					}
 				}
-				$this->redirect(array('admin'));
+                $this->redirect(array('admin'));
 			}
 				
 		}

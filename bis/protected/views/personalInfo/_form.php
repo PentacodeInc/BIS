@@ -124,32 +124,4 @@
 		<?php echo $form->labelEx($model,'email_address'); ?>
 		<?php echo $form->textField($model,'email_address',array('size'=>60,'maxlength'=>254)); ?>
 		<?php echo $form->error($model,'email_address'); ?>
-	</div>
-
-    <div class="form-title">Residency</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'residency_start'); ?>
-		<?php echo $form->textField($model,'residency_start'); ?>
-		<?php echo $form->error($model,'residency_start'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'residency_end'); ?>
-		<?php echo $form->textField($model,'residency_end'); ?>
-		<?php echo $form->error($model,'residency_end'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'residency_type'); ?>
-		<?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType(),array('empty'=>'','style'=>'width:230px')); ?>
-		<?php echo $form->error($model,'residency_type'); ?>
-	</div>
-
-    <div class="form-title">Photo</div>
-
-    <div class="row">
-		<?php echo $form->labelEx($model,'photo_filename'); ?>
-		<?php echo $form->fileField($model,'photo_filename',array('style'=>'width:500px')); ?>
-		<?php echo $form->error($model,'photo_filename'); ?>
-	</div>
+	</div>	

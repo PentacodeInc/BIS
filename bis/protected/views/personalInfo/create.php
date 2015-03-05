@@ -26,38 +26,31 @@ $this->menu=array(
     'enableAjaxValidation'=>true,
 )); ?>
 <div class="form personalInfo">
+    
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo)); ?>
-   <?php /*$this->widget('zii.widgets.jui.CJuiTabs', array(
+    
+    <div class="row">
+		<?php echo $form->labelEx($model,'photo_filename'); ?>
+		<?php echo $form->fileField($model,'photo_filename',array('style'=>'width:500px')); ?>
+		<?php echo $form->error($model,'photo_filename'); ?>
+	</div>
+    
+    <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
         'tabs'=>array(
-            'Personal '=>$this->renderPartial('_form', array('form'=>$form,'model'=>$model),true),
-            'Educational'=>$this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo),true),
-            'Household' => $this->renderPartial('//household/_form', array('form'=>$form,'model'=>$model),true),
+            'Personal Information'=>$this->renderPartial('_form', array('form'=>$form,'model'=>$model),true),
+            'Government'=>$this->renderPartial('//governmentInfo/_form', array('form'=>$form,'model'=>$governmentInfo),true), 
+            'Residency'=>$this->renderPartial('_formRes', array('form'=>$form,'model'=>$model),true),
             'Family'=>$this->renderPartial('//familyInfo/_form', array('form'=>$form,'model'=>$familyInfo),true),
-            'Government'=>$this->renderPartial('//governmentInfo/_form', array('form'=>$form,'model'=>$governmentInfo),true)
+            'Educational'=>$this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo),true),
+            'Employment'=>$this->renderPartial('//employmentInfo/_form', array('form'=>$form,'model'=>$employmentInfo),true),
         ),
         'options'=>array(
             'collapsible'=>true,
             // 'selected'=>1,
-        ),
-        'htmlOptions'=>array(
-            'style'=>'width:500px;'
-        ),
-    ));*/ ?>
-        
-    <div class="form-title">Personal</div>
-    <?php $this->renderPartial('_form', array('form'=>$form,'model'=>$model)); ?>
-    <div class="form-title">Government</div>
-    <?php $this->renderPartial('//governmentInfo/_form', array('form'=>$form,'model'=>$governmentInfo)); ?>
-    <div class="form-title">Educational</div>
-    <?php $this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo)); ?>
-    <div class="form-title">Household</div>
-    <?php $this->renderPartial('//household/_form', array('form'=>$form,'model'=>$model)); ?>
-    <div class="form-title">Employment</div>
-    <?php $this->renderPartial('//employmentInfo/_form', array('form'=>$form,'model'=>$employmentInfo)); ?>
-    <div class="form-title">Family</div>
-    <?php $this->renderPartial('//familyInfo/_form', array('form'=>$form,'model'=>$familyInfo)); ?>
+        )
+    )); ?>
     
     <div class="clear"></div>
     <div class="row buttons">

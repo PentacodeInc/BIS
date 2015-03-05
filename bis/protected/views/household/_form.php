@@ -12,3 +12,16 @@
         </span>
 	</div>
 	
+	<?php 
+	$this->widget('ext.widgets.multiselects.XMultiSelects',array(
+    'leftTitle'=>'Citizen',
+    'leftName'=>'PersonalInfo[][]',
+    'leftList'=>PersonalInfo::model()->findUsers(),
+    'rightTitle'=>'Household Member',
+    'rightName'=>'Person[][]',
+    'rightList'=>PersonalInfo::model()->findUsers(),
+    'size'=>20,
+    'width'=>'200px',
+));
+
+	?>

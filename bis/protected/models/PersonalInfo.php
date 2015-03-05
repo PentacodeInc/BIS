@@ -111,6 +111,16 @@ class PersonalInfo extends CActiveRecord
 		}
 	}
 
+	public function findUsers()
+	{
+		// $criteria=array(
+		// 	'select'=>"id, firstname || ' ' || lastname AS firstname",
+		// 	'condition'=>'country_id='.$country_id,
+		// 	'order'=>'firstname, lastname',
+		// );
+	    return CHtml::listData($this->findAll(),'id','first_name');
+	}
+
 	/**
 	 * @return string the associated database table name
 	 */

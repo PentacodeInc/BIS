@@ -15308,3 +15308,134 @@ Stack trace:
 REQUEST_URI=/bis/index.php?r=personalInfo/view&id=3
 HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
 ---
+2015/03/05 13:57:45 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 13:58:34 [error] [php] Object of class Access could not be converted to string (C:\xampp\htdocs\BIS\bis\protected\views\layouts\column2.php:13)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(784): UserController->renderFile()
+#1 C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php(191): UserController->render()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): UserController->actionAdmin()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=user/admin
+in C:\xampp\htdocs\BIS\bis\protected\views\layouts\column2.php (13)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (191)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:01:13 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:01:32 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:02:30 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:12:15 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:13:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('household/admin')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=household/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=personalInfo/admin
+---
+2015/03/05 14:13:46 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:14:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('household/admin')
+#9 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\BIS\bis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/BIS/bis/index.php?r=household/admin
+HTTP_REFERER=http://localhost/BIS/bis/index.php?r=personalInfo/admin
+---
+2015/03/05 14:16:20 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:19:33 [error] [php] Undefined variable: form (C:\xampp\htdocs\BIS\bis\protected\views\household\_form.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#1 C:\xampp\htdocs\BIS\bis\protected\views\household\create.php(21): HouseholdController->renderPartial()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): HouseholdController->renderInternal()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): HouseholdController->renderPartial()
+#6 C:\xampp\htdocs\BIS\bis\protected\controllers\HouseholdController.php(79): HouseholdController->render()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): HouseholdController->actionCreate()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): HouseholdController->runAction()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): HouseholdController->filterAccessControl()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): HouseholdController->runActionWithFilters()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): HouseholdController->run()
+#17 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=household/create
+in C:\xampp\htdocs\BIS\bis\protected\views\household\_form.php (3)
+in C:\xampp\htdocs\BIS\bis\protected\views\household\create.php (21)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\HouseholdController.php (79)
+2015/03/05 14:20:05 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in C:\xampp\htdocs\BIS\bis\protected\controllers\UserController.php (98)
+in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 14:22:54 [error] [php] Undefined variable: form (C:\xampp\htdocs\BIS\bis\protected\views\household\_form.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#1 C:\xampp\htdocs\BIS\bis\protected\views\household\create.php(21): HouseholdController->renderPartial()
+#2 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\BIS\yii\framework\web\CBaseController.php(95): HouseholdController->renderInternal()
+#4 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#5 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(782): HouseholdController->renderPartial()
+#6 C:\xampp\htdocs\BIS\bis\protected\controllers\HouseholdController.php(79): HouseholdController->render()
+#7 C:\xampp\htdocs\BIS\yii\framework\web\actions\CInlineAction.php(49): HouseholdController->actionCreate()
+#8 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(133): HouseholdController->runAction()
+#10 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\BIS\yii\framework\web\filters\CInlineFilter.php(58): HouseholdController->filterAccessControl()
+#13 C:\xampp\htdocs\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\BIS\yii\framework\web\CController.php(265): HouseholdController->runActionWithFilters()
+#16 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(282): HouseholdController->run()
+#17 C:\xampp\htdocs\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/BIS/bis/index.php?r=household/create
+in C:\xampp\htdocs\BIS\bis\protected\views\household\_form.php (3)
+in C:\xampp\htdocs\BIS\bis\protected\views\household\create.php (21)
+in C:\xampp\htdocs\BIS\bis\protected\controllers\HouseholdController.php (79)

@@ -28,7 +28,12 @@ class Access extends CActiveRecord
 		$criteria->with = 'module';
 		$criteria->condition = 't.user_id=:user_id AND module.name=:name';
 		$criteria->params = array(':user_id'=>Yii::app()->user->id,':name'=>$module);
-		return !empty(Access::model()->find($criteria));
+//        if (!empty(Access::model()->find($criteria))){
+//            return "true";
+//        }else
+//            return "false";
+        
+        return !empty(Access::model()->find($criteria));
 	}
 
 	public function deleteAccess($user_id){

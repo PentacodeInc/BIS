@@ -10,8 +10,9 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	//array('label'=>'List PersonalInfo', 'url'=>array('index')),
     //array('label'=>'Refresh', 'url'=>array('admin')),
-	array('label'=>'Add Resident', 'url'=>array('create')),
-    array('label'=>'Batch Add Residents', 'url'=>array('import')),
+	array('label'=>'Add Resident', 'url'=>array('create'), 'visible'=>Access::hasAccess('add residents')),
+    array('label'=>'Batch Add Residents', 'url'=>array('import'), 'visible'=>Access::hasAccess('batch add')),
+    array('label'=>'Add Household', 'url'=>array('/household/create'), 'visible'=>Access::hasAccess('add residents')),
     //array('label'=>'Dashboard', 'url'=>array('dashboard')),
 );
 

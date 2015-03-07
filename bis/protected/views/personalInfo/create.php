@@ -60,7 +60,17 @@ $this->menu=array(
 <?php $this->endWidget(); ?>
 <script type="text/javascript">
     $(document).ready(function(){
+            
          $('#saveHousehold').hide();
+         $('#PersonalInfo_otherCitizenship').change();
+         
+         $('#PersonalInfo_citizenship').change(function(e){
+            if(this.value==='Dual'){
+               $('#PersonalInfo_otherCitizenship').show();
+            }else{
+                $('#PersonalInfo_otherCitizenship').hide();
+            }
+         });
         
         $('#addHousehold').click(function(){
             $('#household').show();

@@ -105,7 +105,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'citizenship'); ?>
 		<?php echo $form->dropDownList($model,'citizenship',$model->getCitizenship(),array('empty'=>'','style'=>'width:150px')); ?>
-        <?php //echo $form->textField($model,'citizenship',array('size'=>40,'maxlength'=>100)); ?>
+        <?php echo $form->textField($model,'otherCitizenship',array('size'=>40,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'citizenship'); ?>
 	</div>
 

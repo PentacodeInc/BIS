@@ -83,23 +83,14 @@ class PersonalInfoController extends Controller
 			
 			$model->attributes=$_POST['PersonalInfo'];
 			$model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
-			// $educationalInfo->attributes=$_POST['EducationalInfo'];
 			$employmentInfo->attributes=$_POST['EmploymentInfo'];
-			// $familyInfo->attributes=$_POST['FamilyInfo'];
 			$governmentInfo->attributes=$_POST['GovernmentInfo'];
 			$valid = $model->validate();
-			// $valid = $educationalInfo->validate() && $valid;
 			$valid = $employmentInfo->validate() && $valid;
-			// $valid = $familyInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-			// echo $model->birthdate;
-			// print_r();
-			/*$edu=$_POST['EducationalInfo'];
-			foreach ($edu as $key => $value) {
-				foreach ($value as $a => $some) {
-					echo $a . ' '.$some.'<br/>';
-				}
-			}*/
+			if($model->citizenship==='Dual'){
+				$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
+			}
 			if($valid){
 				if($model->save(false)){
                     $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);
@@ -151,16 +142,16 @@ class PersonalInfoController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$citizenship=explode(',', $model->citizenship);
+		if(count($citizenship) > 1){
+			$model->citizenship = "Dual";
+			$model->otherCitizenship=$citizenship[1];
+		}
 		$educationalInfo=EducationalInfo::model()->findAll('personal_info_id=:id',array('id'=>$id));
 		$employmentInfo=EmploymentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
 		$familyInfo=FamilyInfo::model()->findAll('personal_info_id=:id',array('id'=>$id));
 		$governmentInfo=GovernmentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
-        //change this jed :)
-/*        print_r($educationalInfo);
-        print_r($employmentInfo);
-        print_r($familyInfo);
-        print_r($governmentInfo);*/
+
 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo));
@@ -168,17 +159,17 @@ class PersonalInfoController extends Controller
 		if(isset($_POST['PersonalInfo'],$_POST['EducationalInfo'],$_POST['EmploymentInfo'],$_POST['FamilyInfo'],$_POST['GovernmentInfo']))
 		{
 			$model->attributes=$_POST['PersonalInfo'];
-			// $educationalInfo->attributes=$_POST['EducationalInfo'];
+			
 			$employmentInfo->attributes=$_POST['EmploymentInfo'];
-			// $familyInfo->attributes=$_POST['FamilyInfo'];
+			
 			$governmentInfo->attributes=$_POST['GovernmentInfo'];
             $model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
 			$valid = $model->validate();
-			// $valid = $educationalInfo->validate() && $valid;
 			$valid = $employmentInfo->validate() && $valid;
-			// $valid = $familyInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-			// echo $model->birthdate;
+			if($model->citizenship==='Dual'){
+				$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
+			}
 			if($valid){
 				if($model->save(false)){
 					if(isset($model->photo_filename)){

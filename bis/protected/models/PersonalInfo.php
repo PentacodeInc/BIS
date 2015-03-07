@@ -45,6 +45,7 @@ class PersonalInfo extends CActiveRecord
 {
 	public $fullName;
     public $age;
+    public $otherCitizenship;
 
     public function getPrecintNo(){
 		return array(

@@ -63,13 +63,15 @@ $this->menu=array(
             
          $('#saveHousehold').hide();
          $('#PersonalInfo_otherCitizenship').change();
-        citizenshipCheck($('#PersonalInfo_citizenship'));
+        citizenshipCheck(document.getElementById("PersonalInfo_citizenship"));
+        
              
          $('#PersonalInfo_citizenship').change(function(e){
             citizenshipCheck(this);
          });
         
         function citizenshipCheck(item){
+            console.log(item);
             if(item.value==='Dual' || item.value==='Foreigner'){
                document.getElementById("PersonalInfo_otherCitizenship").disabled  = false;
             }else{

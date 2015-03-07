@@ -62,13 +62,15 @@ $this->menu=array(
     $(document).ready(function(){
             
          $('#saveHousehold').hide();
-       
+
          $('#PersonalInfo_otherCitizenship').change();      
+        
          $('#PersonalInfo_citizenship').change(function(e){
-           if(this.value==='Dual'){
-              $('#PersonalInfo_otherCitizenship').show();
+            console.log(this.value);
+           if(this.value === 'Dual' || this.value === 'Foreigner'){
+             $('#PersonalInfo_otherCitizenship').prop('disabled',false);
            }else{
-            $('#PersonalInfo_otherCitizenship').hide();
+            $('#PersonalInfo_otherCitizenship').prop('disabled',true);
            }
          });
         
@@ -81,7 +83,6 @@ $this->menu=array(
             $('#sibbling_div').append("<input value='2' name='FamilyInfo[relationship]["+(counter+3)+"]' id='FamilyInfo_relationship_"+(counter+3)+"' type='hidden'>");
             $('#sibbling_div').append("<input type='button' value='Remove' id='btnRemoveSibbling' data="+(counter+3)+" name='remove"+(counter+3)+"' />");
          });
-
 
          $("#sibbling_div").delegate("[id^='btnRemoveSibbling']", "click", function() {
             var selected = $(this).attr('data');
@@ -96,7 +97,6 @@ $this->menu=array(
         });
       
        
-        
         $('#addHousehold').click(function(){
             $('#household').show();
             $('#addHousehold').hide();

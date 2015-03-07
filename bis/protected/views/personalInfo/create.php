@@ -62,8 +62,8 @@ $this->menu=array(
     $(document).ready(function(){
             
          $('#saveHousehold').hide();
-         $('#PersonalInfo_otherCitizenship').change();
-             
+       
+         $('#PersonalInfo_otherCitizenship').change();      
          $('#PersonalInfo_citizenship').change(function(e){
            if(this.value==='Dual'){
               $('#PersonalInfo_otherCitizenship').show();
@@ -75,14 +75,27 @@ $this->menu=array(
 
          $('#btnAddSibbling').click(function(){
             var counter = $('.txtsibbling').size();
+
             
-            // echo $form->textField(FamilyInfo::model(),"member_name",array('size'=>60, 'name'=> 'FamilyInfo[member_name][3]', 'class'=>'txtsibbling'));
-            // echo $form->hiddenField(FamilyInfo::model(),"relationship",array('value'=>2, 'name'=> 'FamilyInfo[relationship][3]'));
             $('#sibbling_div').append("<input size=60 name='FamilyInfo[member_name]["+(counter+3)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter+3)+"' type='text'>");
+            $('#sibbling_div').append("<input value='2' name='FamilyInfo[relationship]["+(counter+3)+"]' id='FamilyInfo_relationship_"+(counter+3)+"' type='hidden'>");
+            $('#sibbling_div').append("<input type='button' value='Remove' id='btnRemoveSibbling' data="+(counter+3)+" name='remove"+(counter+3)+"' />");
          });
 
-        }
 
+         $("#sibbling_div").delegate("[id^='btnRemoveSibbling']", "click", function() {
+            var selected = $(this).attr('data');
+            $('#FamilyInfo_member_name_'+selected).remove();
+            $('#FamilyInfo_relationship_'+selected).remove();
+            $(this).remove();
+            var counter = $('.txtsibbling').size();
+            console.log(counter);
+             $('#sibbling_div > input[id=btnAddSibbling]').each(function () { 
+                console.log($(this).attr('name'));
+             });
+        });
+      
+       
         
         $('#addHousehold').click(function(){
             $('#household').show();

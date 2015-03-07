@@ -91,7 +91,8 @@ class PersonalInfoController extends Controller
 			if($model->citizenship==='Dual'){
 				$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
 			}
-			if($valid){
+			print_r($_POST['FamilyInfo']);
+		/*	if($valid){
 				if($model->save(false)){
                     $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);
 					for ($i=0; $i < 4; $i++) { 
@@ -122,7 +123,7 @@ class PersonalInfoController extends Controller
 					$governmentInfo->save(false);
 					$this->redirect(array('admin'));		
 				}
-			}
+			}*/
 		}
 
 		$this->render('create',array(

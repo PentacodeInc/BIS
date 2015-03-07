@@ -336,12 +336,28 @@ ul.menu-content{
     font-size: 20px;
     font-weight: bold;
 }
-
 .checkbox label{
     text-transform: capitalize;
     display:inline-block!important;
     font-weight: normal!important;
 }
+
+.residentsInfo{
+    padding:10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border:2px #333ea7 dashed;
+}
+    .residentsInfo .resName{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .residentsInfo .resNumber{
+        
+    }
+    .residentsInfo .resStatus{
+        
+    }
 
 
 

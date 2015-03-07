@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[0]', array('size'=>60)); ?>
+        <?php echo $form->textField($model,'remarks[0]', array('size'=>87)); ?>
     </div>
 </div>
 
@@ -35,7 +35,7 @@
     
     <div class="row">
         <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[1]',array('size'=>60)); ?>
+        <?php echo $form->textField($model,'remarks[1]',array('size'=>87)); ?>
     </div>
 </div>
 
@@ -57,7 +57,7 @@
 
     <div class="row">
         <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[2]',array('size'=>60)); ?>
+        <?php echo $form->textField($model,'remarks[2]',array('size'=>87)); ?>
     </div>
 </div>
 
@@ -79,7 +79,7 @@
 
     <div class="row">
         <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[3]',array('size'=>60)); ?>
+        <?php echo $form->textField($model,'remarks[3]',array('size'=>87)); ?>
     </div>
 </div>
 

@@ -131,18 +131,57 @@ class PersonalInfoController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		//$model=new PersonalInfo;
+		$educationalInfo=new EducationalInfo;
+		$employmentInfo=new EmploymentInfo;
+		$familyInfo=new FamilyInfo;
+		$governmentInfo=new GovernmentInfo;
+        //change this jed :)
 
-		if(isset($_POST['PersonalInfo']))
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo));
+
+		if(isset($_POST['PersonalInfo'],$_POST['EducationalInfo'],$_POST['EmploymentInfo'],$_POST['FamilyInfo'],$_POST['GovernmentInfo']))
 		{
 			$model->attributes=$_POST['PersonalInfo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$educationalInfo->attributes=$_POST['EducationalInfo'];
+			$employmentInfo->attributes=$_POST['EmploymentInfo'];
+			$familyInfo->attributes=$_POST['FamilyInfo'];
+			$governmentInfo->attributes=$_POST['GovernmentInfo'];
+            $model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
+			$valid = $model->validate();
+			$valid = $educationalInfo->validate() && $valid;
+			$valid = $employmentInfo->validate() && $valid;
+			$valid = $familyInfo->validate() && $valid;
+			$valid = $governmentInfo->validate() && $valid;
+			// echo $model->birthdate;
+			if($valid){
+				if($model->save(false)){
+                    $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);
+					$educationalInfo->personal_info_id = $model->id;
+					$employmentInfo->personal_info_id = $model->id;
+					for ($i=0; $i < 2; $i++) { 
+						$familyInfo= new FamilyInfo;
+						$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+						$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
+						$familyInfo->personal_info_id=$model->id;
+						$familyInfo->save(false);
+					}
+					$governmentInfo->personal_info_id = $model->id;				
+					$educationalInfo->save(false);
+					$employmentInfo->save(false);
+					$governmentInfo->save(false);
+					$this->redirect(array('admin'));		
+				}
+			}
 		}
 
-		$this->render('update',array(
+		$this->render('create',array(
 			'model'=>$model,
+			'educationalInfo'=>$educationalInfo,
+			'employmentInfo'=>$employmentInfo,
+			'familyInfo'=>$familyInfo,
+			'governmentInfo'=>$governmentInfo
 		));
 	}
 

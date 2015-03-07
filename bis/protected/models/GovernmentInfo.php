@@ -64,7 +64,7 @@ class GovernmentInfo extends CActiveRecord
 			'sss_num' => 'Sss No',
 			'philhealth_num' => 'Philhealth No',
 			'gsis_num' => 'Gsis No',
-			'tin_num' => 'Tin Np',
+			'tin_num' => 'Tin No',
 			'voters_id' => 'Voters',
 			'senior_citizen_num' => 'Senior Citizen No',
 			'orange_card_num' => 'Orange Card No',

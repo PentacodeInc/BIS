@@ -1,6 +1,6 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'barangay_id'); ?>
-		<?php echo $form->textField($model,'barangay_id',array('size'=>15)); ?>
+		<?php echo $form->textField($model,'barangay_id',array('size'=>20)); ?>
 		<?php echo $form->error($model,'barangay_id'); ?>
 	</div>
 
@@ -86,7 +86,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'spouse_name'); ?>
-		<?php echo $form->textField($model,'spouse_name',array('size'=>60,'maxlength'=>120)); ?>
+		<?php echo $form->textField($model,'spouse_name',array('size'=>98,'maxlength'=>120)); ?>
 		<?php echo $form->error($model,'spouse_name'); ?>
 	</div>
 
@@ -104,24 +104,25 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'citizenship'); ?>
-		<?php echo $form->textField($model,'citizenship',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->dropDownList($model,'citizenship',$model->getCitizenship(),array('empty'=>'','style'=>'width:150px')); ?>
+        <?php echo $form->textField($model,'citizenship',array('size'=>40,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'citizenship'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'religion'); ?>
-		<?php echo $form->textField($model,'religion',array('size'=>30,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'religion',array('size'=>25,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'religion'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'contact_num'); ?>
-		<?php echo $form->textField($model,'contact_num',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'contact_num',array('size'=>20,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'contact_num'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email_address'); ?>
-		<?php echo $form->textField($model,'email_address',array('size'=>60,'maxlength'=>254)); ?>
+		<?php echo $form->textField($model,'email_address',array('size'=>57,'maxlength'=>254)); ?>
 		<?php echo $form->error($model,'email_address'); ?>
 	</div>	

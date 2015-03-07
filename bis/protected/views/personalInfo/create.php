@@ -15,7 +15,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create PersonalInfo</h1>
+<h1>Add Residents</h1>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'personal-info-form',
@@ -27,15 +27,17 @@ $this->menu=array(
 )); ?>
 <div class="form personalInfo">
     
+    <?php if(!$model->isNewRecord){ ?>
+    <div class="residentsInfo">
+        <div class="resName"><?php echo $model->getFullName(); ?></div>
+        <div class="resNumber"><?php if($model->barangay_id) echo $model->barangay_id; else ""; ?></div>
+        <div class="resStatus"><?php echo $model->getResidencyStatus(); ?></div>
+    </div>
+    <?php } ?>
+    
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo)); ?>
-    
-    <div class="row">
-		<?php echo $form->labelEx($model,'photo_filename'); ?>
-		<?php echo $form->fileField($model,'photo_filename',array('style'=>'width:500px')); ?>
-		<?php echo $form->error($model,'photo_filename'); ?>
-	</div>
     
     <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
         'tabs'=>array(
@@ -45,10 +47,7 @@ $this->menu=array(
             'Family'=>$this->renderPartial('//familyInfo/_form', array('form'=>$form,'model'=>$familyInfo),true),
             'Educational'=>$this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo),true),
             'Employment'=>$this->renderPartial('//employmentInfo/_form', array('form'=>$form,'model'=>$employmentInfo),true),
-        ),
-        'options'=>array(
-            'collapsible'=>true,
-            // 'selected'=>1,
+            'Photo'=>$this->renderPartial('_formPic', array('form'=>$form,'model'=>$model),true),
         )
     )); ?>
     

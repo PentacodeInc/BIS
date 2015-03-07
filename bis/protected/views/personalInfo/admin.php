@@ -49,7 +49,7 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		array(
             'name'=>'fullName',
-            'value' => 'CHtml::link($data->getFullName(),array("personalInfo/view", "id"=>$data->id))',
+            'value' => 'CHtml::link($data->getFullName(),array("personalInfo/update", "id"=>$data->id))',
             'type' => 'raw'
         ),
 		'barangay_id',

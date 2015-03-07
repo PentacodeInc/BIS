@@ -1,0 +1,33 @@
+dashboard
+search
+batch add
+add residents
+maintain users
+maintain announcements
+maintain streets
+maintain downloadable files
+maintain slideshow
+
+users
++admin
++create
+
+residents
++create
++admin
++batch add
++household
+
+announcements
++create
++admin
++view - for all
+
+streets
++admin
+
+download
++admin
+
+slideshow
++admin

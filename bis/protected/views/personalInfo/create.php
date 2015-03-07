@@ -63,18 +63,21 @@ $this->menu=array(
             
          $('#saveHousehold').hide();
 
-         $('#PersonalInfo_otherCitizenship').change();      
+         $('#PersonalInfo_otherCitizenship').change(); 
+         citizenshipFormCheck(document.getElementById("PersonalInfo_citizenship"));
         
          $('#PersonalInfo_citizenship').change(function(e){
-            console.log(this.value);
-           if(this.value === 'Dual' || this.value === 'Foreigner'){
-             $('#PersonalInfo_otherCitizenship').prop('disabled',false);
-           }else{
-            $('#PersonalInfo_otherCitizenship').prop('disabled',true);
-           }
+           citizenshipFormCheck(this);
          });
         
-
+        function citizenshipFormCheck(item){
+           if(item.value === 'Dual' || item.value === 'Foreigner'){
+             $('#PersonalInfo_otherCitizenship').prop('disabled',false);
+           }else{
+             $('#PersonalInfo_otherCitizenship').prop('disabled',true);
+           }
+        }
+        
          $('#btnAddSibbling').click(function(){
             var counter = $('.txtsibbling').size();
 

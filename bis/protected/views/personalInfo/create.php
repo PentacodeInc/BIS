@@ -63,14 +63,19 @@ $this->menu=array(
             
          $('#saveHousehold').hide();
          $('#PersonalInfo_otherCitizenship').change();
-         
+        citizenshipCheck($('#PersonalInfo_citizenship'));
+             
          $('#PersonalInfo_citizenship').change(function(e){
-            if(this.value==='Dual'){
-               $('#PersonalInfo_otherCitizenship').show();
-            }else{
-                $('#PersonalInfo_otherCitizenship').hide();
-            }
+            citizenshipCheck(this);
          });
+        
+        function citizenshipCheck(item){
+            if(item.value==='Dual' || item.value==='Foreigner'){
+               document.getElementById("PersonalInfo_otherCitizenship").disabled  = false;
+            }else{
+               document.getElementById("PersonalInfo_otherCitizenship").disabled  = true;
+            }
+        }
         
         $('#addHousehold').click(function(){
             $('#household').show();

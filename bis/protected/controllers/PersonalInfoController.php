@@ -88,11 +88,13 @@ class PersonalInfoController extends Controller
 			$valid = $model->validate();
 			$valid = $employmentInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-			if($model->citizenship==='Dual'){
-				$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
-			}
-			print_r($_POST['FamilyInfo']);
-		/*	if($valid){
+			
+			// print_r(count($_POST['FamilyInfo']['member_name']));
+			// print_r($_POST['FamilyInfo']['member_name']);
+			if($valid){
+				if($model->citizenship==='Dual' || $model->citizenship ==='Foreigner'){
+					$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
+				}
 				if($model->save(false)){
                     $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);
 					for ($i=0; $i < 4; $i++) { 
@@ -108,7 +110,7 @@ class PersonalInfoController extends Controller
 
 					}
 				
-					for ($i=0; $i < 2; $i++) { 
+					for ($i=0; $i < count($_POST['FamilyInfo']['member_name']); $i++) { 
 						if(!empty($_POST['FamilyInfo']['member_name'][$i])){
 							$familyInfo= new FamilyInfo;
 							$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
@@ -123,7 +125,7 @@ class PersonalInfoController extends Controller
 					$governmentInfo->save(false);
 					$this->redirect(array('admin'));		
 				}
-			}*/
+			}
 		}
 
 		$this->render('create',array(
@@ -168,10 +170,11 @@ class PersonalInfoController extends Controller
 			$valid = $model->validate();
 			$valid = $employmentInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-			if($model->citizenship==='Dual'){
-				$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
-			}
+			print_r($_POST['FamilyInfo']);
 			if($valid){
+				if($model->citizenship==='Dual'){
+					$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
+				}
 				if($model->save(false)){
 					if(isset($model->photo_filename)){
 						$model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);	
@@ -193,15 +196,21 @@ class PersonalInfoController extends Controller
 						$educationalInfo->save(false);
 					}
 
-					for ($i=0; $i < 2; $i++) { 
+
+					for ($i=0; $i < count($_POST['FamilyInfo']['id']); $i++) { 
 						if(!empty($_POST['FamilyInfo']['id'][$i])){
 							$familyInfo=FamilyInfo::model()->findByPk($_POST['FamilyInfo']['id'][$i]);
-							$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+							if(!empty($_POST['FamilyInfo']['member_name'][$i]))
+								$familyInfo->member_name=$_POST['FamilyInfo']['member_name'][$i];
+							else
+								$familyInfo->delete();
 						}else{
-							$familyInfo= new FamilyInfo;
-							$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
-							$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
-							$familyInfo->personal_info_id=$model->id;
+							if(!empty($_POST['FamilyInfo']['member_name'][$i])){
+								$familyInfo= new FamilyInfo;
+								$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+								$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
+								$familyInfo->personal_info_id=$model->id;
+							}
 						}
 						$familyInfo->save(false);
 					}
@@ -211,7 +220,7 @@ class PersonalInfoController extends Controller
 					$educationalInfo->save(false);
 					$employmentInfo->save(false);
 					$governmentInfo->save(false);
-					$this->redirect(array('admin'));		
+					$this->redirect(array('update','id'=>$model->id));		
 				}
 			}
 		}

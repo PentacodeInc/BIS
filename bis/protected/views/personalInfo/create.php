@@ -59,14 +59,11 @@ $this->menu=array(
 </div>
 <?php $this->endWidget(); ?>
 <script type="text/javascript">
-    $(document).ready(function(){
-            
+    $(document).ready(function(e){
+       
          $('#saveHousehold').hide();
-
-         $('#PersonalInfo_otherCitizenship').change();      
         
-         $('#PersonalInfo_citizenship').change(function(e){
-            console.log(this.value);
+        $('#PersonalInfo_citizenship').change(function(){
            if(this.value === 'Dual' || this.value === 'Foreigner'){
              $('#PersonalInfo_otherCitizenship').prop('disabled',false);
            }else{
@@ -74,25 +71,39 @@ $this->menu=array(
            }
          });
         
-
+        $('#PersonalInfo_citizenship').trigger('change');  
          $('#btnAddSibbling').click(function(){
-            var counter = $('.txtsibbling').size();
-
-            
-            $('#sibbling_div').append("<input size=60 name='FamilyInfo[member_name]["+(counter+3)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter+3)+"' type='text'>");
-            $('#sibbling_div').append("<input value='2' name='FamilyInfo[relationship]["+(counter+3)+"]' id='FamilyInfo_relationship_"+(counter+3)+"' type='hidden'>");
-            $('#sibbling_div').append("<input type='button' value='Remove' id='btnRemoveSibbling' data="+(counter+3)+" name='remove"+(counter+3)+"' />");
+            var counter = $('.txtsibbling').size() + 2;
+            $('#sibbling_div').append("<input size=60 name='FamilyInfo[member_name]["+(counter)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter)+"' type='text'>");
+            $('#sibbling_div').append("<input value='2' name='FamilyInfo[relationship]["+(counter)+"]' id='FamilyInfo_relationship_"+(counter)+"' type='hidden'>");
+            $('#sibbling_div').append("<input value='' name='FamilyInfo[id]["+(counter)+"]' id='FamilyInfo_id_"+(counter)+"' type='hidden'>");
+            $('#sibbling_div').append("<input type='button' value='Remove' id='btnRemoveSibbling' data-counter="+(counter)+" />");
          });
 
          $("#sibbling_div").delegate("[id^='btnRemoveSibbling']", "click", function() {
-            var selected = $(this).attr('data');
+            var selected = $(this).data('counter');
             $('#FamilyInfo_member_name_'+selected).remove();
             $('#FamilyInfo_relationship_'+selected).remove();
             $(this).remove();
-            var counter = $('.txtsibbling').size();
-            console.log(counter);
-             $('#sibbling_div > input[id=btnAddSibbling]').each(function () { 
-                console.log($(this).attr('name'));
+            var counter = 3;
+            $('#btnAddSibbling').nextAll().each(function () { 
+                var name = $(this).attr('name');
+                var id = $(this).attr('id');
+                var type = $(this).attr('type');
+                if(name){
+                    if(!name.contains('FamilyInfo[id]'))
+                     $(this).prop('name', name.replace(/\d+/,counter));
+                }
+
+                if(id){
+                    if(!id.contains('FamilyInfo_id'))
+                     $(this).prop('id', id.replace(/\d+/,counter));
+                }
+                  
+                if(type ==='button'){
+                     $(this).attr('data-counter',counter);
+                     counter += 1;
+                } 
              });
         });
       

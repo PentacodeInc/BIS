@@ -63,15 +63,20 @@ $this->menu=array(
             
          $('#saveHousehold').hide();
          $('#PersonalInfo_otherCitizenship').change();
+         citizenshipCheck(document.getElementById("PersonalInfo_citizenship"));
              
          $('#PersonalInfo_citizenship').change(function(e){
-           if(this.value==='Dual'){
-              $('#PersonalInfo_otherCitizenship').show();
-           }else{
-            $('#PersonalInfo_otherCitizenship').hide();
-           }
+            citizenshipCheck(this);
          });
         
+         function citizenshipCheck(item){
+            console.log(item);
+            if(item.value==='Dual' || item.value==='Foreigner'){
+               document.getElementById("PersonalInfo_otherCitizenship").disabled  = false;
+            }else{
+               document.getElementById("PersonalInfo_otherCitizenship").disabled  = true;
+            }
+        };
 
          $('#btnAddSibbling').click(function(){
             var counter = $('.txtsibbling').size();
@@ -81,9 +86,6 @@ $this->menu=array(
             $('#sibbling_div').append("<input size=60 name='FamilyInfo[member_name]["+(counter+3)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter+3)+"' type='text'>");
          });
 
-        }
-
-        
         $('#addHousehold').click(function(){
             $('#household').show();
             $('#addHousehold').hide();

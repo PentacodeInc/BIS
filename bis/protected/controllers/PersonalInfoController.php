@@ -70,9 +70,9 @@ class PersonalInfoController extends Controller
 	public function actionCreate()
 	{
 		$model=new PersonalInfo;
-		$educationalInfo=new EducationalInfo;
+		$educationalInfo=array(new EducationalInfo,new EducationalInfo,new EducationalInfo,new EducationalInfo);
 		$employmentInfo=new EmploymentInfo;
-		$familyInfo=new FamilyInfo;
+		$familyInfo=array(new FamilyInfo, new FamilyInfo);
 		$governmentInfo=new GovernmentInfo;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -80,32 +80,53 @@ class PersonalInfoController extends Controller
 
 		if(isset($_POST['PersonalInfo'],$_POST['EducationalInfo'],$_POST['EmploymentInfo'],$_POST['FamilyInfo'],$_POST['GovernmentInfo']))
 		{
+			
 			$model->attributes=$_POST['PersonalInfo'];
-			$educationalInfo->attributes=$_POST['EducationalInfo'];
+			$model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
+			// $educationalInfo->attributes=$_POST['EducationalInfo'];
 			$employmentInfo->attributes=$_POST['EmploymentInfo'];
-			$familyInfo->attributes=$_POST['FamilyInfo'];
+			// $familyInfo->attributes=$_POST['FamilyInfo'];
 			$governmentInfo->attributes=$_POST['GovernmentInfo'];
-            $model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
 			$valid = $model->validate();
-			$valid = $educationalInfo->validate() && $valid;
+			// $valid = $educationalInfo->validate() && $valid;
 			$valid = $employmentInfo->validate() && $valid;
-			$valid = $familyInfo->validate() && $valid;
+			// $valid = $familyInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
 			// echo $model->birthdate;
+			// print_r();
+			/*$edu=$_POST['EducationalInfo'];
+			foreach ($edu as $key => $value) {
+				foreach ($value as $a => $some) {
+					echo $a . ' '.$some.'<br/>';
+				}
+			}*/
 			if($valid){
 				if($model->save(false)){
                     $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);
-					$educationalInfo->personal_info_id = $model->id;
-					$employmentInfo->personal_info_id = $model->id;
-					for ($i=0; $i < 2; $i++) { 
-						$familyInfo= new FamilyInfo;
-						$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
-						$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
-						$familyInfo->personal_info_id=$model->id;
-						$familyInfo->save(false);
+					for ($i=0; $i < 4; $i++) { 
+						if(!empty($_POST['EducationalInfo']['school'][$i])){
+							$educationalInfo=new EducationalInfo;
+							$educationalInfo->level=$_POST['EducationalInfo']['level'][$i];
+							$educationalInfo->school=$_POST['EducationalInfo']['school'][$i];
+							$educationalInfo->remarks=$_POST['EducationalInfo']['remarks'][$i];
+							$educationalInfo->graduation_date=$_POST['EducationalInfo']['graduation_date'][$i];
+							$educationalInfo->personal_info_id=$model->id;
+							$educationalInfo->save(false);
+						}
+
 					}
+				
+					for ($i=0; $i < 2; $i++) { 
+						if(!empty($_POST['FamilyInfo']['member_name'][$i])){
+							$familyInfo= new FamilyInfo;
+							$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+							$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
+							$familyInfo->personal_info_id=$model->id;
+							$familyInfo->save(false);	
+						}
+					}
+					$employmentInfo->personal_info_id = $model->id;	
 					$governmentInfo->personal_info_id = $model->id;				
-					$educationalInfo->save(false);
 					$employmentInfo->save(false);
 					$governmentInfo->save(false);
 					$this->redirect(array('admin'));		
@@ -131,12 +152,15 @@ class PersonalInfoController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		//$model=new PersonalInfo;
-		$educationalInfo=new EducationalInfo;
-		$employmentInfo=new EmploymentInfo;
-		$familyInfo=new FamilyInfo;
-		$governmentInfo=new GovernmentInfo;
+		$educationalInfo=EducationalInfo::model()->findAll('personal_info_id=:id',array('id'=>$id));
+		$employmentInfo=EmploymentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
+		$familyInfo=FamilyInfo::model()->findAll('personal_info_id=:id',array('id'=>$id));
+		$governmentInfo=GovernmentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
         //change this jed :)
+/*        print_r($educationalInfo);
+        print_r($employmentInfo);
+        print_r($familyInfo);
+        print_r($governmentInfo);*/
 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo));
@@ -144,30 +168,54 @@ class PersonalInfoController extends Controller
 		if(isset($_POST['PersonalInfo'],$_POST['EducationalInfo'],$_POST['EmploymentInfo'],$_POST['FamilyInfo'],$_POST['GovernmentInfo']))
 		{
 			$model->attributes=$_POST['PersonalInfo'];
-			$educationalInfo->attributes=$_POST['EducationalInfo'];
+			// $educationalInfo->attributes=$_POST['EducationalInfo'];
 			$employmentInfo->attributes=$_POST['EmploymentInfo'];
-			$familyInfo->attributes=$_POST['FamilyInfo'];
+			// $familyInfo->attributes=$_POST['FamilyInfo'];
 			$governmentInfo->attributes=$_POST['GovernmentInfo'];
             $model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
 			$valid = $model->validate();
-			$valid = $educationalInfo->validate() && $valid;
+			// $valid = $educationalInfo->validate() && $valid;
 			$valid = $employmentInfo->validate() && $valid;
-			$valid = $familyInfo->validate() && $valid;
+			// $valid = $familyInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
 			// echo $model->birthdate;
 			if($valid){
 				if($model->save(false)){
-                    $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);
-					$educationalInfo->personal_info_id = $model->id;
-					$employmentInfo->personal_info_id = $model->id;
+					if(isset($model->photo_filename)){
+						$model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);	
+					}
+					for ($i=0; $i < 4; $i++) { 
+						if(!empty($_POST['EducationalInfo']['id'][$i])){
+							$educationalInfo=EducationalInfo::model()->findByPk($_POST['EducationalInfo']['id'][$i]);
+							$educationalInfo->school=$_POST['EducationalInfo']['school'][$i];
+							$educationalInfo->remarks=$_POST['EducationalInfo']['remarks'][$i];
+							$educationalInfo->graduation_date=$_POST['EducationalInfo']['graduation_date'][$i];
+						}else{
+							$educationalInfo=new EducationalInfo;
+							$educationalInfo->level=$_POST['EducationalInfo']['level'][$i];
+							$educationalInfo->school=$_POST['EducationalInfo']['school'][$i];
+							$educationalInfo->remarks=$_POST['EducationalInfo']['remarks'][$i];
+							$educationalInfo->graduation_date=$_POST['EducationalInfo']['graduation_date'][$i];
+							$educationalInfo->personal_info_id=$model->id;
+						}
+						$educationalInfo->save(false);
+					}
+
 					for ($i=0; $i < 2; $i++) { 
-						$familyInfo= new FamilyInfo;
-						$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
-						$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
-						$familyInfo->personal_info_id=$model->id;
+						if(!empty($_POST['FamilyInfo']['id'][$i])){
+							$familyInfo=FamilyInfo::model()->findByPk($_POST['FamilyInfo']['id'][$i]);
+							$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+						}else{
+							$familyInfo= new FamilyInfo;
+							$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+							$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
+							$familyInfo->personal_info_id=$model->id;
+						}
 						$familyInfo->save(false);
 					}
-					$governmentInfo->personal_info_id = $model->id;				
+					
+					$governmentInfo->personal_info_id = $model->id;
+					$employmentInfo->personal_info_id = $model->id;				
 					$educationalInfo->save(false);
 					$employmentInfo->save(false);
 					$governmentInfo->save(false);

@@ -1,18 +1,16 @@
-	<div class="row">
-		<?php //echo "Father's Name"; ?>
-        <?php echo $form->labelEx($model,'Father\'s Name'); ?>
-		<?php echo $form->textField($model,'member_name[0]',array('size'=>60,'maxlength'=>120)); ?>
-		<?php echo $form->error($model,'member_name[0]'); ?>
-	</div>
+	<?php 
+		$labels = array('Monther\'s Name','Father\'s Name');
+		for ($i=0; $i < 2; $i++) { 
+			if(empty($model[$i]))
+				$model[$i]=new FamilyInfo;
+			echo "<div class='row'>";
+			echo $form->labelEx($model[$i],$labels[$i]);
+			echo $form->textField($model[$i],"member_name",array('size'=>60, 'name'=> 'FamilyInfo[member_name]['.$i.']'));
+			echo "</div>";
+			echo $form->hiddenField($model[$i],"relationship",array('value'=>$i, 'name'=> 'FamilyInfo[relationship]['.$i.']'));
+			if(!empty($model[$i]->id)){
+		       echo $form->hiddenField($model[$i],'id', array('value'=>$model[$i]->id,'name'=>'FamilyInfo[id]['.$i.']'));
+		    }
 
-	<div class="row">
-		<?php //echo "Mother's Name"; ?>
-        <?php echo $form->labelEx($model,'Monther\'s Name'); ?>
-		<?php echo $form->textField($model,'member_name[1]',array('size'=>60,'maxlength'=>120)); ?>
-		<?php echo $form->error($model,'member_name[1]'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->hiddenField($model,'relationship[0]',array('value'=>1)); ?>
-		<?php echo $form->hiddenField($model,'relationship[1]',array('value'=>0)); ?>
-	</div>
+		}
+	?>

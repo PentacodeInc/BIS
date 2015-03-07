@@ -24,6 +24,7 @@ $this->menu=array(
     // There is a call to performAjaxValidation() commented in generated controller code.
     // See class documentation of CActiveForm for details on this.
     'enableAjaxValidation'=>true,
+    'htmlOptions'=>array('enctype' => 'multipart/form-data')
 )); ?>
 <div class="form personalInfo">
     
@@ -37,7 +38,7 @@ $this->menu=array(
     
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
-    <?php echo $form->errorSummary(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo)); ?>
+    <?php echo $form->errorSummary(array($model,$governmentInfo,$employmentInfo)); ?>
     
     <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
         'tabs'=>array(
@@ -47,7 +48,7 @@ $this->menu=array(
             'Family'=>$this->renderPartial('//familyInfo/_form', array('form'=>$form,'model'=>$familyInfo),true),
             'Educational'=>$this->renderPartial('//educationalInfo/_form', array('form'=>$form,'model'=>$educationalInfo),true),
             'Employment'=>$this->renderPartial('//employmentInfo/_form', array('form'=>$form,'model'=>$employmentInfo),true),
-            'Photo'=>$this->renderPartial('_formPic', array('form'=>$form,'model'=>$model),true),
+            'Photo'=>$this->renderPartial('_formPic', array('form'=>$form,'model'=>$model),true)
         )
     )); ?>
     

@@ -146,10 +146,11 @@ class PersonalInfo extends CActiveRecord
 			array('spouse_name', 'length', 'max'=>120),
 			array('contact_num', 'length', 'max'=>45),
 			array('email_address', 'length', 'max'=>254),
-			array('photo_filename', 'length', 'max'=>200),
+			// array('photo_filename', 'length', 'max'=>200)
 			array('residency_type', 'length', 'max'=>10),
 			array('provincial_address, residency_end', 'safe'),
-            array('photo_filename', 'file', 'types'=>'jpg,png,gif'),
+			array('photo_filename', 'file', 'types'=>'jpg,png,gif', 'allowEmpty'=>false, 'on' => 'insert'),
+			array('photo_filename', 'file', 'allowEmpty'=>true, 'on' => 'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, house_num, street, provincial_address, is_head, household_id, birthplace, civil_status, spouse_name, height, weight, citizenship, religion, contact_num, email_address, photo_filename, residency_start, residency_end, residency_type, last_update_datetime, user_id, fullName, age', 'safe', 'on'=>'search'),
@@ -286,7 +287,8 @@ class PersonalInfo extends CActiveRecord
         {
         	$this->user_id = Yii::app()->user->id;
         	$timestamp=new DateTime();
-        	// $this->birthdate = date('Y-m-d', strtotime($this->birthdate));
+        	$this->birthdate = date('Y-m-d', strtotime($this->birthdate));
+        	$this->residency_start=date('Y-m-d', strtotime($this->residency_start));
         	$this->last_update_datetime=$timestamp->format('Y-m-d H:i:s');
         	// $this->is_head = empty(Yii::app()->db->getLastInsertID()) ? 1 : 0; 
         }

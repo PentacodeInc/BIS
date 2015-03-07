@@ -40,8 +40,7 @@ class EducationalInfo extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			// array('level, school, personal_info_id', 'required'),
-			array('level, personal_info_id', 'numerical', 'integerOnly'=>true),
-			array('remarks', 'length', 'max'=>45),
+			array('personal_info_id', 'numerical', 'integerOnly'=>true),
 			array('graduation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

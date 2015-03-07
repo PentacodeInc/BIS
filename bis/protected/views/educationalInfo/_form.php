@@ -1,85 +1,28 @@
-<div class="form education">
-    <div class="row mainlabel">
-        <?php echo $form->labelEx($model,'Elementary'); ?>
-        <?php echo $form->hiddenField($model,'level[0]', array('value'=>0)); ?>
-    </div>
-    <div class="clear"></div>
-    <div class="row">
-        <?php echo $form->labelEx($model,'school'); ?>
-        <?php echo $form->textField($model,'school[0]',array('size'=>60)); ?>
-    </div>
-    <div class="row">
-        <?php echo $form->labelEx($model,'graduation_date'); ?>
-        <?php echo $form->textField($model,'graduation_date[0]'); ?>
-    </div>
-    <div class="row">
-        <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[0]', array('size'=>87)); ?>
-    </div>
-</div>
+<?php 
+    $levels = array('Elementary','Secondary','Tertiary','Vocational');
+    for ($i=0; $i < 4 ; $i++) { 
+       if(empty($model[$i])) 
+            $model[$i] = new EducationalInfo;
+       echo "<div class='form education'>";
+       echo "<div class='row mainlabel'>";
+       echo $form->labelEx($model[$i],$levels[$i]);
+       echo $form->hiddenField($model[$i],'level', array('value'=>$i,'name'=>'EducationalInfo[level]['.$i.']'));
+       if(!empty($model[$i]->id)){
+        echo $form->hiddenField($model[$i],'id', array('value'=>$model[$i]->id,'name'=>'EducationalInfo[id]['.$i.']'));
+       }
+       echo "</div><div class='clear'></div>";
+       echo "<div class='row'>";
+       echo $form->labelEx($model[$i],'school');
+       echo $form->textField($model[$i],'school',array('size'=>60,'name'=>'EducationalInfo[school]['.$i.']'));
+       echo "</div>";
+       echo "<div class='row'>";
+       echo $form->labelEx($model[$i],'graduation_date');
+       echo $form->textField($model[$i],'graduation_date',array('name'=>'EducationalInfo[graduation_date]['.$i.']'));
+       echo "</div>";
+       echo "<div class='row'>";
+       echo $form->labelEx($model[$i],'remarks');
+       echo $form->textField($model[$i],'remarks',array('size'=>60,'name'=>'EducationalInfo[remarks]['.$i.']'));
+       echo "</div></div>";
 
-<div class="form education">
-    <div class="row mainlabel">
-        <?php echo $form->labelEx($model,'Secondary'); ?>
-        <?php echo $form->hiddenField($model,'level[1]', array('value'=>1)); ?>
-    </div>
-     <div class="clear"></div>
-    <div class="row">
-        <?php echo $form->labelEx($model,'school'); ?>
-        <?php echo $form->textField($model,'school[1]',array('size'=>60)); ?>
-    </div>
-     <div class="row">
-        <?php echo $form->labelEx($model,'graduation_date'); ?>
-        <?php echo $form->textField($model,'graduation_date[1]'); ?>
-    </div>
-    
-    <div class="row">
-        <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[1]',array('size'=>87)); ?>
-    </div>
-</div>
-
-<div class="form education">
-    <div class="row mainlabel">
-        <?php echo $form->labelEx($model,'Tertiary'); ?>
-        <?php echo $form->hiddenField($model,'level[2]', array('value'=>2)); ?>
-    </div>
-     <div class="clear"></div>
-    <div class="row ">
-        <?php echo $form->labelEx($model,'school'); ?>
-        <?php echo $form->textField($model,'school[2]',array('size'=>60)); ?>
-    </div>
-
- <div class="row">
-        <?php echo $form->labelEx($model,'graduation_date'); ?>
-        <?php echo $form->textField($model,'graduation_date[2]'); ?>
-    </div>
-
-    <div class="row">
-        <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[2]',array('size'=>87)); ?>
-    </div>
-</div>
-
-<div class="form education">
-    <div class="row mainlabel">
-        <?php echo $form->labelEx($model,'Vocational'); ?>
-        <?php echo $form->hiddenField($model,'level[3]', array('value'=>3)); ?>
-    </div>
-     <div class="clear"></div>
-    <div class="row">
-        <?php echo $form->labelEx($model,'school'); ?>
-        <?php echo $form->textField($model,'school[3]',array('size'=>60)); ?>
-    </div>
-
-    <div class="row">
-        <?php echo $form->labelEx($model,'graduation_date'); ?>
-        <?php echo $form->textField($model,'graduation_date[3]'); ?>
-    </div>
-
-    <div class="row">
-        <?php echo $form->labelEx($model,'remarks'); ?>
-        <?php echo $form->textField($model,'remarks[3]',array('size'=>87)); ?>
-    </div>
-</div>
-
+   }
+?>

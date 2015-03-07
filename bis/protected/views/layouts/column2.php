@@ -7,34 +7,28 @@
     
     <?php if (!Yii::app()->user->isGuest){ ?>
     <div class="span-26 floatright adminmenu">
-        <?php if(!Yii::app()->user->isGuest){?>
+        <?php if(Access::hasAccess('')){?>
         <div class="menu-header"><i class="fa fa-chevron-circle-down"></i> Menu</div>
         <ul class="menu-content">
-            <?php if (Access::hasAccess('dashboard')){?>
+            <?php if (Access::hasAccess('Dashboard')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-area-chart"></i> Dashboard</a>', array('/personalInfo/index')); ?>
             <?php } ?>
-            <?php if (Access::hasAccess('search')){?>
+            <?php if (Access::hasAccess('Search')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-database"></i> Residents Database</a>', array('/personalInfo/admin')); ?>
             <?php } ?>
-            <!--<?php if (Access::hasAccess('add residents')){?>
-                <li><?php echo CHtml::link('<i class="fa fa-database"></i> Add Residents</a>', array('/personalInfo/admin')); ?>
-            <?php } ?>
-            <?php if (Access::hasAccess('add residents')){?>
-                <li><?php echo CHtml::link('<i class="fa fa-home"></i> Maintain Household</a>', array('/household/admin')); ?>
-            <?php } ?>-->
-            <?php if (Access::hasAccess('maintain users')){?>
+            <?php if (Access::hasAccess('Maintain Users')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-users"></i> Maintain User</a>', array('/user/admin')); ?>
             <?php } ?>
-            <?php if (Access::hasAccess('maintain slideshow')){?>
+            <?php if (Access::hasAccess('Maintain Slideshow')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-picture-o"></i> Maintain Slideshow</a>', array('/sliderImages/admin')); ?>
             <?php } ?>
-            <?php if (Access::hasAccess('maintain announcements')){?>
+            <?php if (Access::hasAccess('Maintain Announcements')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-bullhorn"></i> Maintain Announcements', array('/announcement/admin')); ?>
             <?php } ?>
-            <?php if (Access::hasAccess('maintain downloadable files')){?>
+            <?php if (Access::hasAccess('Maintain Downloadable Files')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-download"></i> Maintain Downloadable Files</a>', array('/downloadableFiles/admin')); ?>
             <?php } ?>
-            <?php if (Access::hasAccess('maintain streets')){?>
+            <?php if (Access::hasAccess('Maintain Streets')){?>
                 <li><?php echo CHtml::link('<i class="fa fa-road"></i> Maintain Streets</a>', array('/street/admin')); ?>
             <?php } ?>
         </ul>

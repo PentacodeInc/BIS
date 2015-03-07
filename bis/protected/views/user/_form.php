@@ -44,7 +44,7 @@
 	</div>
 
 	<?php
-		if(isset($modules)){?>
+		if(count($modules) != 0){?>
             <label>Modules</label>
 			<?php foreach ($modules as $value) {
 				?> 

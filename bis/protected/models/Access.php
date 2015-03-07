@@ -26,13 +26,12 @@ class Access extends CActiveRecord
 		$criteria=new CDbCriteria;
 		$criteria->select = 't.user_id';
 		$criteria->with = 'module';
-		$criteria->condition = 't.user_id=:user_id AND module.name=:name';
-		$criteria->params = array(':user_id'=>Yii::app()->user->id,':name'=>$module);
-//        if (!empty(Access::model()->find($criteria))){
-//            return "true";
-//        }else
-//            return "false";
-        
+		$criteria->condition = 't.user_id=:user_id';
+        $criteria->params = array(':user_id'=>Yii::app()->user->id);
+        if ($module != ""){
+          $criteria->addCondition('module.name=:name');
+		  $criteria->params = array(':user_id'=>Yii::app()->user->id,':name'=>$module);
+        }
         return !empty(Access::model()->find($criteria));
 	}
 

@@ -17,27 +17,17 @@
 	<?php echo CHtml::encode($data->school); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('start_date')); ?>:</b>
-	<?php echo CHtml::encode($data->start_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('end_date')); ?>:</b>
-	<?php echo CHtml::encode($data->end_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('course')); ?>:</b>
-	<?php echo CHtml::encode($data->course); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('graduation_date')); ?>:</b>
+	<?php echo CHtml::encode($data->graduation_date); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('remarks')); ?>:</b>
 	<?php echo CHtml::encode($data->remarks); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('personal_info_id')); ?>:</b>
 	<?php echo CHtml::encode($data->personal_info_id); ?>
 	<br />
 
-	*/ ?>
 
 </div>

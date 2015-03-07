@@ -7,9 +7,7 @@
  * @property integer $id
  * @property integer $level
  * @property string $school
- * @property string $start_date
- * @property string $end_date
- * @property string $course
+ * @property string $graduation_date
  * @property string $remarks
  * @property integer $personal_info_id
  *
@@ -41,13 +39,13 @@ class EducationalInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			// array('level, school, start_date, personal_info_id', 'required'),
+			// array('level, school, personal_info_id', 'required'),
 			array('level, personal_info_id', 'numerical', 'integerOnly'=>true),
 			array('remarks', 'length', 'max'=>45),
-			array('end_date, course', 'safe'),
+			array('graduation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, level, school, start_date, end_date, course, remarks, personal_info_id', 'safe', 'on'=>'search'),
+			array('id, level, school, graduation_date, remarks, personal_info_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,9 +70,7 @@ class EducationalInfo extends CActiveRecord
 			'id' => 'ID',
 			'level' => 'Level',
 			'school' => 'School',
-			'start_date' => 'Start Date',
-			'end_date' => 'End Date',
-			'course' => 'Course',
+			'graduation_date' => 'Date Graduated',
 			'remarks' => 'Remarks',
 			'personal_info_id' => 'Personal Info',
 		);
@@ -101,9 +97,7 @@ class EducationalInfo extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('level',$this->level);
 		$criteria->compare('school',$this->school,true);
-		$criteria->compare('start_date',$this->start_date,true);
-		$criteria->compare('end_date',$this->end_date,true);
-		$criteria->compare('course',$this->course,true);
+		$criteria->compare('graduation_date',$this->graduation_date,true);
 		$criteria->compare('remarks',$this->remarks,true);
 		$criteria->compare('personal_info_id',$this->personal_info_id);
 

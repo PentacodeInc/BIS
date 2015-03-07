@@ -137,7 +137,7 @@ class PersonalInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, middle_name, last_name, birthdate, house_num, street, household_id, birthplace, height, weight, citizenship, religion, contact_num, residency_type', 'required'),
+			array('first_name, middle_name, last_name, birthdate, house_num, street, birthplace, height, weight, citizenship, religion, contact_num, residency_type', 'required'),
 			array('barangay_id, gender, is_head, household_id, civil_status, height, weight, user_id', 'numerical', 'integerOnly'=>true),
 			array('precinct_no', 'length', 'max'=>5),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),

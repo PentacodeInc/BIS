@@ -27,18 +27,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'start_date'); ?>
-		<?php echo $form->textField($model,'start_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'end_date'); ?>
-		<?php echo $form->textField($model,'end_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'course'); ?>
-		<?php echo $form->textArea($model,'course',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->label($model,'graduation_date'); ?>
+		<?php echo $form->textField($model,'graduation_date'); ?>
 	</div>
 
 	<div class="row">

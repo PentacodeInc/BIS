@@ -70,8 +70,9 @@ class HouseholdController extends Controller
 		if(isset($_POST['Household']))
 		{
 			$model->attributes=$_POST['Household'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			print_r($model);
+			/*if($model->save())
+				$this->redirect(array('view','id'=>$model->id));*/
 		}
 
 		$this->render('create',array(

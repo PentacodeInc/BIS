@@ -348,12 +348,12 @@ class PersonalInfoController extends Controller
 		$model->middle_name	= $line[3];
 		$model->last_name = $line[4];
 		$model->birthdate = $line[5];
-		$model->gender	  = $line[6];
+		$model->gender	  =  array_search($line[6], PersonalInfo::getGenders());
 		$model->house_num = $line[7];
 		$model->street	  = $street;
 		$model->provincial_address = $line[8];
 		$model->birthplace	  = $line[9];
-		$model->civil_status	  = $line[10];
+		$model->civil_status	  = array_search($line[10], PersonalInfo::getCivilStatus());
 		$model->spouse_name	  = $line[11];
 		$model->height	  = $line[12];
 		$model->weight	  = $line[13];
@@ -363,7 +363,7 @@ class PersonalInfoController extends Controller
 		$model->email_address	  = $line[17];
 		$model->residency_start	  = $line[18];
 		$model->residency_end	  = $line[19];
-		$model->residency_type	 = $line[20];
+		$model->residency_type	 = array_search($line[20], PersonalInfo::getResidencyType());
 		$model->save(false);
 		return $model;
 	}

@@ -10,7 +10,7 @@
 		<?php echo $form->error($model,'employer'); ?>
 	</div>
 
-	<div class="row">
+<!-- 	<div class="row">
 		<?php echo $form->labelEx($model,'start_date'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'attribute'=>'start_date',
@@ -41,4 +41,4 @@
 			    )
 			)); ?>
 		<?php echo $form->error($model,'end_date'); ?>
-	</div>
+	</div> -->

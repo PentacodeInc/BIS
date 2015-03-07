@@ -71,20 +71,24 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
-            $keyValues = $_POST['User']['modules'];
+            
 			$model->username = $this->generateUsernameAndPassword($model->first_name,$model->middle_name,$model->last_name);
             //$model->is_active = 1;
 			if($model->save()){
-			    Access::deleteAccess($model->id);
-				foreach ($keyValues as $key => $value) {
-					if($value){
-						$access=new Access;
-						$access->module_id = $key;
-						$access->user_id = $model->id;
-						$access->save();
+				if(isset($_POST['User']['modules'])){
+					$keyValues = $_POST['User']['modules'];
+					Access::deleteAccess($model->id);
+					foreach ($keyValues as $key => $value) {
+						if($value){
+							$access=new Access;
+							$access->module_id = $key;
+							$access->user_id = $model->id;
+							$access->save();
+						}
 					}
+
 				}
-                $this->redirect(array('admin'));
+			    $this->redirect(array('admin'));
             }
 		}
 

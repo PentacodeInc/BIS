@@ -16033,3 +16033,566 @@ in C:\xampp\htdocs\BIS\bis\index.php (13)
 2015/03/05 16:06:13 [warning] [application] Failed to set unsafe attribute "start_date" of "EmploymentInfo".
 in C:\xampp\htdocs\BIS\bis\protected\controllers\PersonalInfoController.php (85)
 in C:\xampp\htdocs\BIS\bis\index.php (13)
+2015/03/05 16:25:55 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (73)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 16:25:55 [error] [php] Undefined index: modules (D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php:74)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): UserController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=user/create
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (74)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 16:33:37 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (73)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 16:45:55 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (116)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 16:45:55 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (116)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 16:47:19 [error] [exception.CException] exception 'CException' with message 'Property "EducationalInfo.start_date" is not defined.' in D:\Projects\PentaCode\BIS\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('start_date')
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\helpers\CHtml.php(2518): CActiveRecord->__get('start_date')
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(EducationalInfo), 'start_date[0]')
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(EducationalInfo), 'start_date[0]', Array)
+#4 D:\Projects\PentaCode\BIS\yii\framework\zii\widgets\jui\CJuiDatePicker.php(84): CHtml::activeTextField(Object(EducationalInfo), 'start_date[0]', Array)
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(173): CJuiDatePicker->run()
+#6 D:\Projects\PentaCode\BIS\bis\protected\views\educationalInfo\_form.php(25): CBaseController->widget('zii.widgets.jui...', Array)
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require('D:\Projects\Pen...')
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Projects\Pen...', Array, true)
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\Projects\Pen...', Array, true)
+#10 D:\Projects\PentaCode\BIS\bis\protected\views\personalInfo\create.php(46): CController->renderPartial('//educationalIn...', Array, true)
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require('D:\Projects\Pen...')
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Projects\Pen...', Array, true)
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\Projects\Pen...', Array, true)
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(122): CController->render('create', Array)
+#16 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionCreate()
+#17 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#26 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/cr...')
+#27 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/create
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
+---
+2015/03/05 17:00:27 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (83)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:00:27 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (83)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:00:57 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (83)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:00:57 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (83)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:00:57 [warning] [application] Failed to set unsafe attribute "school" of "EducationalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (84)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:08 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:08 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:08 [warning] [application] Failed to set unsafe attribute "school" of "EducationalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:18 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:18 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:18 [warning] [application] Failed to set unsafe attribute "school" of "EducationalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:20 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:20 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:20 [warning] [application] Failed to set unsafe attribute "school" of "EducationalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:40 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (83)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:40 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (83)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:40 [warning] [application] Failed to set unsafe attribute "school" of "EducationalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (84)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:46 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:46 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:46 [warning] [application] Failed to set unsafe attribute "school" of "EducationalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:48 [warning] [application] Failed to set unsafe attribute "photo_filename" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:48 [warning] [application] Failed to set unsafe attribute "residency_start" of "PersonalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:48 [warning] [application] Failed to set unsafe attribute "school" of "EducationalInfo".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (520)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (79)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:01:56 [error] [php] Undefined variable: form (D:\Projects\PentaCode\BIS\bis\protected\views\household\_form.php:3)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#1 D:\Projects\PentaCode\BIS\bis\protected\views\household\create.php(21): HouseholdController->renderPartial()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): HouseholdController->renderInternal()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(782): HouseholdController->renderPartial()
+#6 D:\Projects\PentaCode\BIS\bis\protected\controllers\HouseholdController.php(79): HouseholdController->render()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): HouseholdController->actionCreate()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): HouseholdController->runAction()
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): HouseholdController->filterAccessControl()
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): HouseholdController->runActionWithFilters()
+#16 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): HouseholdController->run()
+#17 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=household/create
+in D:\Projects\PentaCode\BIS\bis\protected\views\household\_form.php (3)
+in D:\Projects\PentaCode\BIS\bis\protected\views\household\create.php (21)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\HouseholdController.php (79)
+2015/03/05 17:02:19 [error] [php] Undefined variable: form (D:\Projects\PentaCode\BIS\bis\protected\views\household\_form.php:3)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#1 D:\Projects\PentaCode\BIS\bis\protected\views\household\create.php(21): HouseholdController->renderPartial()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): HouseholdController->renderInternal()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): HouseholdController->renderFile()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(782): HouseholdController->renderPartial()
+#6 D:\Projects\PentaCode\BIS\bis\protected\controllers\HouseholdController.php(79): HouseholdController->render()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): HouseholdController->actionCreate()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): HouseholdController->runAction()
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): HouseholdController->filterAccessControl()
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): HouseholdController->runActionWithFilters()
+#16 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): HouseholdController->run()
+#17 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=household/create
+in D:\Projects\PentaCode\BIS\bis\protected\views\household\_form.php (3)
+in D:\Projects\PentaCode\BIS\bis\protected\views\household\create.php (21)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\HouseholdController.php (79)
+2015/03/05 17:31:22 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:33:03 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:33:34 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:46:45 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:47:02 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:47:04 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bis`.`personal_info`, CONSTRAINT `fk_citizen_household1` FOREIGN KEY (`household_id`) REFERENCES `household` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `personal_info` (`gender`, `is_head`, `civil_status`, `barangay_id`, `precinct_no`, `first_name`, `middle_name`, `last_name`, `birthdate`, `house_num`, `street`, `provincial_address`, `birthplace`, `spouse_name`, `height`, `weight`, `citizenship`, `religion`, `contact_num`, `email_address`, `residency_start`, `residency_end`, `residency_type`, `user_id`, `last_update_datetime`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24).
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (367)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (243)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:47:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bis`.`personal_info`, CONSTRAINT `fk_citizen_household1` FOREIGN KEY (`household_id`) REFERENCES `household` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `personal_info` (`gender`, `is_head`, `civil_status`, `barangay_id`, `precinct_no`, `first_name`, `middle_name`, `last_name`, `birthdate`, `house_num`, `street`, `provincial_address`, `birthplace`, `spouse_name`, `height`, `weight`, `citizenship`, `religion`, `contact_num`, `email_address`, `residency_start`, `residency_end`, `residency_type`, `user_id`, `last_update_datetime`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24)' in D:\Projects\PentaCode\BIS\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(367): CActiveRecord->save(false)
+#3 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(243): PersonalInfoController->createPersonalInfo(Array, 'San Francisco')
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionImport()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('import')
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/im...')
+#15 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/import
+---
+2015/03/05 17:50:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bis`.`personal_info`, CONSTRAINT `fk_citizen_household1` FOREIGN KEY (`household_id`) REFERENCES `household` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `personal_info` (`gender`, `is_head`, `civil_status`, `barangay_id`, `precinct_no`, `first_name`, `middle_name`, `last_name`, `birthdate`, `house_num`, `street`, `provincial_address`, `birthplace`, `spouse_name`, `height`, `weight`, `citizenship`, `religion`, `contact_num`, `email_address`, `residency_start`, `residency_end`, `residency_type`, `user_id`, `last_update_datetime`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24).
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (367)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (243)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:50:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bis`.`personal_info`, CONSTRAINT `fk_citizen_household1` FOREIGN KEY (`household_id`) REFERENCES `household` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `personal_info` (`gender`, `is_head`, `civil_status`, `barangay_id`, `precinct_no`, `first_name`, `middle_name`, `last_name`, `birthdate`, `house_num`, `street`, `provincial_address`, `birthplace`, `spouse_name`, `height`, `weight`, `citizenship`, `religion`, `contact_num`, `email_address`, `residency_start`, `residency_end`, `residency_type`, `user_id`, `last_update_datetime`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24)' in D:\Projects\PentaCode\BIS\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(367): CActiveRecord->save(false)
+#3 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(243): PersonalInfoController->createPersonalInfo(Array, 'San Francisco')
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionImport()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('import')
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/im...')
+#15 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/import
+---
+2015/03/05 17:55:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.street' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `street`.
+in D:\Projects\PentaCode\BIS\bis\protected\models\Street.php (28)
+in D:\Projects\PentaCode\BIS\bis\protected\views\personalInfo\import.php (21)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (254)
+2015/03/05 17:55:01 [error] [exception.CDbException] exception 'CDbException' with message 'The table "street" for active record class "Street" cannot be found in the database.' in D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Street))
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#4 D:\Projects\PentaCode\BIS\bis\protected\models\Street.php(28): CActiveRecord->findAll('is_active=1')
+#5 D:\Projects\PentaCode\BIS\bis\protected\views\personalInfo\import.php(21): Street->getAll()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require('D:\Projects\Pen...')
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Projects\Pen...', Array, true)
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\Projects\Pen...', Array, true)
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(782): CController->renderPartial('import', Array, true)
+#10 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(254): CController->render('import', Array)
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionImport()
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('import')
+#21 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/im...')
+#22 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/index
+---
+2015/03/05 17:55:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.personal_info' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `personal_info`.
+in D:\Projects\PentaCode\BIS\bis\protected\views\personalInfo\index.php (21)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (171)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:55:03 [error] [exception.CDbException] exception 'CDbException' with message 'The table "personal_info" for active record class "PersonalInfo" cannot be found in the database.' in D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(PersonalInfo))
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(1601): CActiveRecord->getTableSchema()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#7 D:\Projects\PentaCode\BIS\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#8 D:\Projects\PentaCode\BIS\yii\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(147): CListView->init()
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#11 D:\Projects\PentaCode\BIS\bis\protected\views\personalInfo\index.php(21): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require('D:\Projects\Pen...')
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Projects\Pen...', Array, true)
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\Projects\Pen...', Array, true)
+#15 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(171): CController->render('index', Array)
+#17 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionIndex()
+#18 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#27 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/in...')
+#28 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/index
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/create
+---
+2015/03/05 17:55:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.personal_info' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `personal_info`.
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (72)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:55:05 [error] [exception.CDbException] exception 'CDbException' with message 'The table "personal_info" for active record class "PersonalInfo" cannot be found in the database.' in D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(PersonalInfo))
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(72): CActiveRecord->__construct()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionCreate()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/cr...')
+#14 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/create
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
+---
+2015/03/05 17:55:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.personal_info' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `personal_info`.
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (444)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:55:06 [error] [exception.CDbException] exception 'CDbException' with message 'The table "personal_info" for active record class "PersonalInfo" cannot be found in the database.' in D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(PersonalInfo))
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(444): CActiveRecord->__construct('search')
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionAdmin()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/ad...')
+#14 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/admin
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
+---
+2015/03/05 17:55:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.personal_info' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `personal_info`.
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (72)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:55:07 [error] [exception.CDbException] exception 'CDbException' with message 'The table "personal_info" for active record class "PersonalInfo" cannot be found in the database.' in D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(PersonalInfo))
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php(72): CActiveRecord->__construct()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): PersonalInfoController->actionCreate()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('personalInfo/cr...')
+#14 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bis/index.php?r=personalInfo/create
+HTTP_REFERER=http://localhost/bis/index.php?r=personalInfo/admin
+---
+2015/03/05 17:55:11 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bis.slider_images' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `slider_images`.
+in D:\Projects\PentaCode\BIS\bis\protected\views\site\index.php (16)
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\SiteController.php (32)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 17:55:11 [error] [exception.CDbException] exception 'CDbException' with message 'The table "slider_images" for active record class "SliderImages" cannot be found in the database.' in D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(SliderImages))
+#1 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 D:\Projects\PentaCode\BIS\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#4 D:\Projects\PentaCode\BIS\bis\protected\views\site\index.php(16): CActiveRecord->findAll(Array)
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(126): require('D:\Projects\Pen...')
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Projects\Pen...', NULL, true)
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\Projects\Pen...', NULL, true)
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#9 D:\Projects\PentaCode\BIS\bis\protected\controllers\SiteController.php(32): CController->render('index')
+#10 D:\Projects\PentaCode\BIS\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#11 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): CController->run('')
+#15 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#16 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\Projects\PentaCode\BIS\bis\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/bis/index.php?
+---
+2015/03/05 18:08:27 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (73)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 18:08:27 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (73)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 18:08:42 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 18:09:17 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/05 18:09:19 [error] [php] Trying to get property of non-object (D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php:236)
+Stack trace:
+#0 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(133): PersonalInfoController->runAction()
+#1 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CInlineFilter.php(58): PersonalInfoController->filterAccessControl()
+#4 D:\Projects\PentaCode\BIS\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Projects\PentaCode\BIS\yii\framework\web\CController.php(265): PersonalInfoController->runActionWithFilters()
+#7 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(282): PersonalInfoController->run()
+#8 D:\Projects\PentaCode\BIS\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\Projects\PentaCode\BIS\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Projects\PentaCode\BIS\bis\index.php(13): CWebApplication->run()
+REQUEST_URI=/bis/index.php?r=personalInfo/import
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\PersonalInfoController.php (236)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)

@@ -14,6 +14,7 @@
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
                     'dateFormat'=>'yy-mm-dd',
+                    'yearRange'=>'-100:+0',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
 			    )
@@ -31,6 +32,7 @@
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
                     'dateFormat'=>'yy-mm-dd',
+                    'yearRange'=>'-70:+5',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
 			    )

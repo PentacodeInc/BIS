@@ -71,6 +71,14 @@ $this->menu=array(
                 $('#PersonalInfo_otherCitizenship').hide();
             }
          });
+
+         $('#btnAddSibbling').click(function(){
+            var counter = $('.txtsibbling').size();
+            
+            // echo $form->textField(FamilyInfo::model(),"member_name",array('size'=>60, 'name'=> 'FamilyInfo[member_name][3]', 'class'=>'txtsibbling'));
+            // echo $form->hiddenField(FamilyInfo::model(),"relationship",array('value'=>2, 'name'=> 'FamilyInfo[relationship][3]'));
+            $('#sibbling_div').append("<input size=60 name='FamilyInfo[member_name]["+(counter+3)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter+3)+"' type='text'>");
+         });
         
         $('#addHousehold').click(function(){
             $('#household').show();

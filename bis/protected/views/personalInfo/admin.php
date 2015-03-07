@@ -35,6 +35,7 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <div class="searchLetters">
+<?php echo CHtml::link('All',array("personalInfo/admin", "letter"=>'')); ?> | 
 <?php foreach (range('A', 'Z') as $column){
         echo CHtml::link($column,array("personalInfo/admin", "letter"=>$column));
         if ($column != 'Z') echo " | ";

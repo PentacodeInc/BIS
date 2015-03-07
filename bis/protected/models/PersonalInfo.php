@@ -46,6 +46,13 @@ class PersonalInfo extends CActiveRecord
 	public $fullName;
     public $age;
     public $otherCitizenship;
+    
+    public $streetCount;
+    public $precinctCount;
+    public $ageCount;
+    public $genderCount;
+    public $cStatusCount;
+    public $resTypeCount;
 
     public function getPrecintNo(){
 		return array(
@@ -68,7 +75,7 @@ class PersonalInfo extends CActiveRecord
 
 	public function getCivilStatus($i = ""){
 		$item=array(0 => 'Single',	1 => 'Married', 2 => 'Divorced', 3 => 'Separated' ,4 => 'Widowed');
-		if(empty($i))
+		if($i == "")
 			return $item;
 		return $item[$i];
 	}

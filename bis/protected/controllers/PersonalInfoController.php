@@ -250,12 +250,42 @@ class PersonalInfoController extends Controller
 
 	/**
 	 * Lists all models.
+        public $streetCount;
+        public $precinctCount;
+        public $ageCount;
+        public $genderCount;
+        public $cStatusCount;
+        public $resTypeCount;
 	 */
 	public function actionIndex()
 	{
+        $str = []; $age = []; $prct = []; $sex = []; $stat = []; $type = [];
 		$dataProvider=new CActiveDataProvider('PersonalInfo');
+        
+        $streets = PersonalInfo::model()->findAll(array('group'=>'street','select'=>'street, count(*) AS streetCount'));
+        foreach($streets as $a){ $str[$a->street] = $a->streetCount; }
+        $precincts = PersonalInfo::model()->findAll(array('group'=>'precinct_no','select'=>'precinct_no, count(*) AS precinctCount'));
+        foreach($precincts as $a){ $prct[$a->precinct_no] = $a->precinctCount; }
+        $gender = PersonalInfo::model()->findAll(array('group'=>'gender','select'=>'gender, count(*) AS genderCount'));
+        foreach($gender as $a){ $sex[$a->gender==0? 'Female' : 'Male'] = $a->genderCount; }
+        $status = PersonalInfo::model()->findAll(array('group'=>'civil_status','select'=>'civil_status, count(*) AS cStatusCount'));
+        foreach($status as $a){ $val = PersonalInfo::getCivilStatus($a->civil_status);
+            $stat[$val] = $a->cStatusCount; }
+        $residents = PersonalInfo::model()->findAll(array('group'=>'residency_type','select'=>'residency_type, count(*) AS resTypeCount'));
+        foreach($residents as $a){ $type[$a->residency_type==0? 'Renter' : 'Owner'] = $a->resTypeCount; }        
+        $age['Children'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 0 YEAR and birthdate > now() - INTERVAL 5 YEAR');
+        $age['Minor'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 5 YEAR and birthdate > now() - INTERVAL 18 YEAR');
+        $age['Adult'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 18 YEAR and birthdate > now() - INTERVAL 60 YEAR');
+        $age['Senio Citizen'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 60 YEAR');
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+            'street'=>$str,
+            'precinct'=> $prct,
+            'gender'=> $sex,
+            'cStatus'=> $stat,
+            'resType'=>$type,
+            'age'=>$age
 		));
 	}
 

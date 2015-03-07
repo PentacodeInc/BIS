@@ -62,16 +62,17 @@ $this->menu=array(
     $(document).ready(function(e){
        
          $('#saveHousehold').hide();
-        
-        $('#PersonalInfo_citizenship').change(function(){
-           if(this.value === 'Dual' || this.value === 'Foreigner'){
+
+         $('#PersonalInfo_citizenship').change(function(e){
+            if(this.value === 'Dual' || this.value === 'Foreigner'){
              $('#PersonalInfo_otherCitizenship').prop('disabled',false);
            }else{
-            $('#PersonalInfo_otherCitizenship').prop('disabled',true);
+             $('#PersonalInfo_otherCitizenship').prop('disabled',true);
            }
          });
-        
+  
         $('#PersonalInfo_citizenship').trigger('change');  
+
          $('#btnAddSibbling').click(function(){
             var counter = $('.txtsibbling').size() + 2;
             $('#sibbling_div').append("<input size=60 name='FamilyInfo[member_name]["+(counter)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter)+"' type='text'>");

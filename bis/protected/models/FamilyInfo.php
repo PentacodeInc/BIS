@@ -29,10 +29,23 @@ class FamilyInfo extends CActiveRecord
 	}
 
 	public function getMotherName($personal_info_id){
-		$fam= FamilyInfo::model()->find('personal_info_id=:id AND relationship=0',array(':id'=>$personal_info_id));
+		$fam=FamilyInfo::model()->find('personal_info_id=:id AND relationship=0',array(':id'=>$personal_info_id));
 		 if(!empty($fam))
 		 	return $fam->member_name;
 		 return "";
+	}
+
+	public function getSibblings($personal_info_id){
+		$fam=FamilyInfo::model()->findAll('personal_info_id=:id AND relationship=2',array(':id'=>$personal_info_id));
+		if(!empty($fam)){
+			$name=array();
+			foreach ($fam as $key => $value) {
+				array_push($name, $value->member_name);
+			}
+			return implode(',',$name);
+		}
+
+		return "";
 	}
 	/**
 	 * @return array validation rules for model attributes.

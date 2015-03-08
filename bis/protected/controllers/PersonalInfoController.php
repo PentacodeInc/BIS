@@ -387,8 +387,7 @@ class PersonalInfoController extends Controller
 	}
 
 	private function createEducationalInfo($line,$personalInfoId){
-		$elemSchool= $line[34];
-		$counter=33;
+		$counter=28;
 		for ($i=0; $i <4 ; $i++) { 
 			$school=$line[++$counter];
 			if(!empty($school)){
@@ -406,35 +405,54 @@ class PersonalInfoController extends Controller
 	private function createEmploymentInfo($line,$personalInfoId){
 		$employmentInfo= new EmploymentInfo;
 		$employmentInfo->personal_info_id = $personalInfoId;
-		$employmentInfo->position = $line[30];
-		$employmentInfo->employer	  = $line[31];
-		$employmentInfo->start_date	  = $line[32];
-		$employmentInfo->end_date	 = $line[33];
+		$employmentInfo->position = $line[41];
+		$employmentInfo->employer	  = $line[40];
 		$employmentInfo->save(false);
 	}
 
 	private function createFamilyInfo($line,$personalInfoId){
-		$counter=20;
-		for ($i=0; $i <2 ; $i++) { 
+		$counter=24;
+		for ($i=0; $i <3 ; $i++) { 
 			$name=$line[++$counter];
 			if(!empty($name)){
 				$fam=new FamilyInfo;
-				$fam->relationship=$i;
-				$fam->personal_info_id=$personalInfoId;
-				$fam->save(false);
+				switch ($i) {
+					case 0:
+						$fam->relationship=1;
+						break;
+					case 1:
+						$fam->relationship=0;
+						break;
+					default:
+						$fam->relationship=$i;
+				}
+				if(strpos($name,',') !== false){
+					$name=explode(",", $name);
+					foreach ($name as $key => $value) {
+						$fam=new FamilyInfo;
+						$fam->relationship=$i;
+						$fam->member_name=$value;
+						$fam->personal_info_id=$personalInfoId;
+						$fam->save(false);
+					}
+				}else{
+					$fam->member_name=$name;
+					$fam->personal_info_id=$personalInfoId;
+					$fam->save(false);
+				}		
 			}
 		}
 	}
 
 	private function createGovernmentInfo($line,$personalInfoId){
 		$model=new GovernmentInfo;
-		$model->sss_num	  = $line[23];
-		$model->philhealth_num	  = $line[24];
-		$model->gsis_num	  = $line[25];
-		$model->tin_num	  = $line[26];
-		$model->voters_id	  = $line[27];
-		$model->senior_citizen_num	  = $line[28];
-		$model->orange_card_num		 = $line[29];
+		$model->sss_num	  = $line[15];
+		$model->philhealth_num	  = $line[16];
+		$model->gsis_num	  = $line[17];
+		$model->tin_num	  = $line[18];
+		$model->voters_id	  = $line[19];
+		$model->senior_citizen_num	  = $line[20];
+		$model->orange_card_num		 = $line[21];
 		$model->personal_info_id = $personalInfoId;
 		$model->save(false);
 		// return $model;
@@ -442,28 +460,25 @@ class PersonalInfoController extends Controller
 
 	private function createPersonalInfo($line,$street){
 		$model=new PersonalInfo;
-		$model->barangay_id = $line[0];
-		$model->precinct_no = $line[1];
-		$model->first_name = $line[2];
-		$model->middle_name	= $line[3];
-		$model->last_name = $line[4];
-		$model->birthdate = $line[5];
-		$model->gender	  =  array_search($line[6], PersonalInfo::getGenders());
-		$model->house_num = $line[7];
 		$model->street	  = $street;
-		$model->provincial_address = $line[8];
-		$model->birthplace	  = $line[9];
-		$model->civil_status	  = array_search($line[10], PersonalInfo::getCivilStatus());
-		$model->spouse_name	  = $line[11];
-		$model->height	  = $line[12];
-		$model->weight	  = $line[13];
-		$model->citizenship	  = $line[14];
-		$model->religion	  = $line[15];
-		$model->contact_num	  = $line[16];
-		$model->email_address	  = $line[17];
-		$model->residency_start	  = $line[18];
-		$model->residency_end	  = $line[19];
-		$model->residency_type	 = array_search($line[20], PersonalInfo::getResidencyType());
+		$model->last_name = $line[0];
+		$model->first_name = $line[1];
+		$model->middle_name = $line[2];
+		$model->house_num	= $line[3];
+		$model->provincial_address = $line[4];
+		$model->birthdate = $line[5];
+		$model->birthplace	  = $line[6];
+		$model->civil_status = array($line[7],PersonalInfo::getCivilStatus());
+		$model->height = $line[8];
+		$model->weight	  = $line[9];
+		$model->gender	  = array_search($line[10], PersonalInfo::getGenders());
+		$model->citizenship	  = $line[11];
+		$model->religion	  = $line[12];
+		$model->contact_num	  = $line[13];
+		$model->email_address	  = $line[14];
+		$model->residency_start	  = $line[23];
+		$model->residency_end	  = $line[24];
+		$model->residency_type	 = array_search($line[22], PersonalInfo::getResidencyType());
 		$model->save(false);
 		return $model;
 	}
@@ -478,29 +493,21 @@ class PersonalInfoController extends Controller
 			$tertiarySchool=EducationalInfo::getDetails($value->id,2);
 			$vocationalSchool=EducationalInfo::getDetails($value->id,3);
 			array_push($data, array(
-				'barangay_id'=>$value->barangay_id,
-				'precinct_no'=>$value->precinct_no,
+				'last_name'=>$value->last_name,
 				'first_name'=>$value->first_name,
 				'middle_name'=>$value->middle_name,
-				'last_name'=>$value->last_name,
-				'birthdate'=>$value->birthdate,
-				'gender'=>PersonalInfo::getGenders($value->gender),
 				'house_num'=>$value->house_num,
 				'provincial_address'=>$value->provincial_address,
+				'birthdate'=>$value->birthdate,
 				'birthplace'=>$value->birthplace,
 				'civil_status'=>PersonalInfo::getCivilStatus($value->civil_status),
-				'spouse_name'=>$value->spouse_name,
 				'height'=>$value->height,
 				'weight'=>$value->weight,
+				'gender'=>PersonalInfo::getGenders($value->gender),
 				'citizenship'=>$value->citizenship,
 				'religion'=>$value->religion,
 				'contact_num'=>$value->contact_num,
 				'email_address'=>$value->email_address,
-				'residency_start'=>$value->residency_start,
-				'residency_end'=>$value->residency_end,
-				'residency_type	'=>PersonalInfo::getResidencyType($value->residency_type),
-				'mother name'=>FamilyInfo::getMotherName($value->id),
-				'father name'=>FamilyInfo::getFatherName($value->id),
 				'sss_num'=>empty($governmentInfo) ? "" : $governmentInfo->sss_num,
 				'philhealth_num'=>empty($governmentInfo) ? "" : $governmentInfo->philhealth_num,
 				'gsis_num'=>empty($governmentInfo) ? "" : $governmentInfo->gsis_num,
@@ -508,10 +515,12 @@ class PersonalInfoController extends Controller
 				'voters_id'=>empty($governmentInfo) ? "" : $governmentInfo->voters_id,
 				'senior_citizen_num'=>empty($governmentInfo) ? "" : $governmentInfo->senior_citizen_num,
 				'orange_card_num'=>empty($governmentInfo) ? "" : $governmentInfo->orange_card_num,
-				'position'=>empty($employmentInfo) ? "" : $employmentInfo->position,
-				'employer'=>empty($employmentInfo) ? "" : $employmentInfo->employer,
-				'start_date'=>empty($employmentInfo) ? "" : $employmentInfo->start_date,
-				'end_date'=>empty($employmentInfo) ? "" : $employmentInfo->end_date,
+				'residency_type	'=>PersonalInfo::getResidencyType($value->residency_type),
+				'residency_start'=>$value->residency_start,
+				'residency_end'=>$value->residency_end,
+				'father name'=>FamilyInfo::getFatherName($value->id),
+				'mother name'=>FamilyInfo::getMotherName($value->id),
+				'sibblins'=>FamilyInfo::getSibblings($value->id),
 				'elementary_school'=>empty($elemSchool) ? "" : $elemSchool->school,
 				'elementary_graduation_year'=>empty($elemSchool) ? "" : $elemSchool->graduation_date,
 				'elementary_remarks'=>empty($elemSchool) ? "" : $elemSchool->remarks,
@@ -523,7 +532,9 @@ class PersonalInfoController extends Controller
 				'tertiary_remarks'=>empty($tertiarySchool) ? "" : $tertiarySchool->remarks,
 				'vocational_school'=>empty($vocationalSchool) ? "" : $vocationalSchool->school,
 				'vocational_graduation_year'=>empty($vocationalSchool) ? "" : $vocationalSchool->graduation_date,
-				'vocational_remarks'=>empty($vocationalSchool) ? "" : $vocationalSchool->remarks
+				'vocational_remarks'=>empty($vocationalSchool) ? "" : $vocationalSchool->remarks,
+				'employer'=>empty($employmentInfo) ? "" : $employmentInfo->employer,
+				'position'=>empty($employmentInfo) ? "" : $employmentInfo->position
 			));
 		}	 
 		return $data;
@@ -576,7 +587,7 @@ class PersonalInfoController extends Controller
 			if(isset($_GET['letter'])){
 				$criteria->compare('last_name',$_GET['letter'].'%',true,'AND',false);
 			}
-            $this->exportCSV($this->actionExport($criteria), array('barangay_id','precinct_no','first_name','middle_name','last_name','birthdate','gender','house_num','provincial_address','birthplace','civil_status','spouse_name','height','weight','citizenship','religion','contact_num','email_address','residency_start','residency_end','residency_type','mother name','father name','sss_num','philhealth_num','gsis_num','tin_num','voters_id','senior_citizen_num','orange_card_num','position','employer','start_date','end_date','elementary_school','elementary_graduation_year','elementary_remarks','secondary_school','secondary_graduation_year','secondary_remarks','tertiary_school','tertiary_graduation_year','tertiary_remarks','vocational_school','vocational_graduation_year','vocational_remarks'));
+            $this->exportCSV($this->actionExport($criteria), array('LASTNAME','FIRSTNAME','MIDDLENAME','HOUSENO.','PROVADDRESS','DATEOFBIRTH','PLACEOFBIRTH','CIVILSTATUS','HEIGHT','WEIGHT','GENDER','CITIZENSHIP','RELIGION','CONTACTNO','EADD','SSS','PAGIBIG','GSIS','TIN','VOTERS','SERNIOR','ORANGEC','RESIDENCYTYPE','STARTDATEOFRESIDENCY','ENDDATEOFRESIDENCY','FATHERNAME','MOTHERNAME','SIBBLINGS','ELEMNAME','ELAMYEAR','ELEMREMARKS','SECONNAME','SECONDYEAR','SECONDREMARKS','TERTNAME','TERTYEAR','TERTREMARKS','VOCANAME','VOCAYEAR','VOCAREMARKS','EMPLOYER','POSITION'));
             
         }
 		

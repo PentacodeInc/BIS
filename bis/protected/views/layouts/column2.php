@@ -1,7 +1,11 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
 <div id="content">
+    <?php if (!Yii::app()->user->isGuest){ ?>
 	<div class="span-25 floatleft">
+    <?php }else{ ?>
+    <div class="span-100">
+    <?php } ?>
 		<?php echo $content; ?>
 	</div>
     

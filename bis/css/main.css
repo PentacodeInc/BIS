@@ -359,6 +359,19 @@ ul.menu-content{
         
     }
 
+.charts{
+    text-align: center;
+}
+    .charts img{
+        /*border: #333ea7 solid 3px;*/
+        margin:10px;
+        padding:5px;
+    }
+    .charts .title{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
 
 
 h1, h2{

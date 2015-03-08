@@ -88,7 +88,8 @@ class PersonalInfoController extends Controller
 			$valid = $model->validate();
 			$valid = $employmentInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-			
+			if(!empty($_POST['PersonalInfo']['otherCitizenship']))
+				$model->otherCitizenship=$_POST['PersonalInfo']['otherCitizenship'];
 			// print_r(count($_POST['FamilyInfo']['member_name']));
 			// print_r($_POST['FamilyInfo']['member_name']);
 			if($valid){

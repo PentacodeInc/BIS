@@ -60,8 +60,9 @@ class HouseholdController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
+        //where id is id ng ctzen to be head
 		$model=new Household;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -77,6 +78,7 @@ class HouseholdController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+            'headName'=>'LastName, First Name MI.',
 		));
 	}
 
@@ -87,6 +89,7 @@ class HouseholdController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+        //where id id the household id
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -101,6 +104,7 @@ class HouseholdController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+            'headName'=>'LastName, First Name MI.',
 		));
 	}
 

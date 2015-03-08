@@ -9,13 +9,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Household', 'url'=>array('index')),
+	/*array('label'=>'List Household', 'url'=>array('index')),
 	array('label'=>'Create Household', 'url'=>array('create')),
 	array('label'=>'View Household', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Household', 'url'=>array('admin')),
+	array('label'=>'Manage Household', 'url'=>array('admin')),*/
 );
 ?>
 
-<h1>Update Household <?php echo $model->id; ?></h1>
+<h1>Update Household</h1>
+<h3>(<?php echo $headName ?>)</h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

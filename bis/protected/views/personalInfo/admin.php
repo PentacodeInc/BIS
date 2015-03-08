@@ -12,7 +12,7 @@ $this->menu=array(
     //array('label'=>'Refresh', 'url'=>array('admin')),
 	array('label'=>'Add Resident', 'url'=>array('create'), 'visible'=>Access::hasAccess('add residents')),
     array('label'=>'Batch Add Residents', 'url'=>array('import'), 'visible'=>Access::hasAccess('batch add')),
-    array('label'=>'Add Household', 'url'=>array('/household/create'), 'visible'=>Access::hasAccess('add residents')),
+    //array('label'=>'Add Household', 'url'=>array('/household/create'), 'visible'=>Access::hasAccess('add residents')),
     //array('label'=>'Dashboard', 'url'=>array('dashboard')),
 );
 
@@ -60,12 +60,6 @@ $('.search-form form').submit(function(){
         ),
         'house_num',
         'street',
-        /*array(
-            'name'=>'gender',
-            'value'=>'$data->gender==0?Yii::t(\'app\',\'Female\'):Yii::t(\'app\', \'Male\')',
-        ),*/
-        /*'civil_status',
-        'citizenship',*/
         array(
             'name'=>'residency_type',
             'value'=>'$data->residency_type==0?Yii::t(\'app\',\'Renter\'):Yii::t(\'app\', \'Owner\')',
@@ -75,6 +69,12 @@ $('.search-form form').submit(function(){
             'name'=>'residencyStatus',
             'value'=>'$data->getResidencyStatus()',
             'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+        ),
+        array(
+            'name'=>'household_id',
+            'value'=>'$data->household_id==0?CHtml::link(\'Create Household\',array("household/create", "id"=>$data->id)):CHtml::link(\'Edit Household\',array("household/update", "id"=>$data->household_id))',
+            'headerHtmlOptions' => array('style' => 'width: 100px;text-align:center;'),
+            'type' => 'raw'
         ),
 		/*array(
 			'class'=>'CButtonColumn',

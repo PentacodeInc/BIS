@@ -15,19 +15,19 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<!--<p class="note">Fields with <span class="required">*</span> are required.</p>-->
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<?php 	$this->widget('ext.widgets.multiselects.XMultiSelects',array(
 		    'leftTitle'=>'Citizen',
 		    'leftName'=>'PersonalInfo[][]',
-		    'leftList'=>PersonalInfo::model()->findUsers(),
+		    'leftList'=>PersonalInfo::model()->findUsers(), //without household_id please show fullname
 		    'rightTitle'=>'Household Member',
 		    'rightName'=>'Person[][]',
-		    'rightList'=>PersonalInfo::model()->findUsers(),
+		    'rightList'=>PersonalInfo::model()->findUsers(), //with household_id of the head ctzen please show fullname
 		    'size'=>20,
-		    'width'=>'200px',
+		    'width'=>'100%',
 		));
 	?>
 

@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Household', 'url'=>array('index')),
-	array('label'=>'Manage Household', 'url'=>array('admin')),
+	/*array('label'=>'List Household', 'url'=>array('index')),
+	array('label'=>'Manage Household', 'url'=>array('admin')),*/
 );
 ?>
 
 <h1>Create Household</h1>
+<h3>(<?php echo $headName ?>)</h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

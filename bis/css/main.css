@@ -376,9 +376,14 @@ ul.menu-content{
         font-weight: bold;
     }
 
+.headname{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
 
 
-h1, h2{
+
+h1, h2, h3{
     color:#333ea7;
     font-weight: bold;
     font-size: 40px;
@@ -389,6 +394,11 @@ h1, h2{
 h2{
     font-size: 30px!important;
     line-height: 30px!important;
+}
+
+h3{
+    font-size: 20px!important;
+    line-height: 20px!important;
 }
 
 .center{text-align: center;}

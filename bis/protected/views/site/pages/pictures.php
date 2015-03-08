@@ -25,13 +25,13 @@
             <div class="pic"><a href="https://www.facebook.com/media/set/?set=a.515688941807197.1073741834.515313718511386&type=3" target="_blank">
                 <img src="https://scontent-hkg.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/563446_515689245140500_1917775984_n.jpg?oh=16b6c65399ccbbae31e85353b50cc78a&oe=554A506A"/></a>
             </div>
-            <div class="name">Coastal Clean Up:Manila Bay</div>
+            <div class="name">Coastal Clean Up: Manila Bay</div>
             </div>
             <div class="item">
             <div class="pic"><a href="https://www.facebook.com/media/set/?set=a.515677391808352.1073741831.515313718511386&type=3" target="_blank">
                 <img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn2/v/t1.0-9/63277_515679481808143_2112862807_n.jpg?oh=2b883e3c4599452120f64460b7d78edc&oe=55558ECA&__gda__=1435069060_01f1d631148bd58febf326a52a9c6213"/></a>
             </div>
-            <div class="name">Street Rehabilitation:Vito Cruz and Dominga St.</div>
+            <div class="name">Street Rehabilitation: Vito Cruz and Dominga St.</div>
             </div>
         </div>
         

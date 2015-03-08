@@ -8,7 +8,7 @@
 Yii::setPathOfAlias('editable', dirname(__FILE__).'/../extensions/x-editable');
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Barangay 730, Zone 79',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

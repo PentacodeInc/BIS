@@ -14,7 +14,7 @@
 	}
 
 	echo "<div class='row' id='sibbling_div'>";
-	echo $form->labelEx(FamilyInfo::model(),'Sibblings');
+	echo $form->labelEx(FamilyInfo::model(),'Siblings');
 	if(count($model) > 2){
 		for ($i=2; $i < count($model); $i++) { 
 			echo $form->textField($model[$i],"member_name",array('size'=>60,'class'=>'txtsibbling' ,'name'=> 'FamilyInfo[member_name]['.$i.']'));

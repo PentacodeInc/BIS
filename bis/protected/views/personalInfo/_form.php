@@ -32,7 +32,7 @@
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
                     'yearRange'=>'-70:+0',
-                    'dateFormat'=>'yy-mm-dd',
+                    'dateFormat'=>'mm-dd-yy',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
 			    )
@@ -105,7 +105,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'citizenship'); ?>
-		<?php echo $form->dropDownList($model,'citizenship',$model->getCitizenship(),array('empty'=>'','style'=>'width:150px')); ?>
+		<?php echo $form->dropDownList($model,'citizenship',$model->getCitizenship(),array('empty'=>'','style'=>'width:150px','options'=>array('Filipino' =>array('selected'=>true)))); ?>
         <?php echo $form->textField($model,'otherCitizenship',array('size'=>40,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'citizenship'); ?>
 	</div>

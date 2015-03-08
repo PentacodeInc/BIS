@@ -336,6 +336,10 @@ ul.menu-content{
     font-size: 20px;
     font-weight: bold;
 }
+#btnAddSibbling,
+#btnRemoveSibbling{
+    margin-left:10px;
+}
 .checkbox label{
     text-transform: capitalize;
     display:inline-block!important;

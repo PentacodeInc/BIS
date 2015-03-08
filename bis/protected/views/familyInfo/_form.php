@@ -5,7 +5,7 @@
 			$model[$i]=new FamilyInfo;
 		echo "<div class='row'>";
 		echo $form->labelEx($model[$i],$labels[$i]);
-		echo $form->textField($model[$i],"member_name",array('size'=>60, 'name'=> 'FamilyInfo[member_name]['.$i.']'));
+		echo $form->textField($model[$i],"member_name",array('size'=>55, 'name'=> 'FamilyInfo[member_name]['.$i.']'));
 		echo "</div>";
 		echo $form->hiddenField($model[$i],"relationship",array('value'=>$i, 'name'=> 'FamilyInfo[relationship]['.$i.']'));
 		if(!empty($model[$i]->id)){
@@ -17,7 +17,7 @@
 	echo $form->labelEx(FamilyInfo::model(),'Siblings');
 	if(count($model) > 2){
 		for ($i=2; $i < count($model); $i++) { 
-			echo $form->textField($model[$i],"member_name",array('size'=>60,'class'=>'txtsibbling' ,'name'=> 'FamilyInfo[member_name]['.$i.']'));
+			echo $form->textField($model[$i],"member_name",array('size'=>55,'class'=>'txtsibbling' ,'name'=> 'FamilyInfo[member_name]['.$i.']'));
 			echo $form->hiddenField($model[$i],"relationship",array('value'=>2, 'name'=> 'FamilyInfo[relationship]['.$i.']'));
 			if(!empty($model[$i]->id)){
 	       		echo $form->hiddenField($model[$i],'id', array('value'=>$model[$i]->id,'name'=>'FamilyInfo[id]['.$i.']'));

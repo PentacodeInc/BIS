@@ -1,6 +1,6 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'residency_type'); ?>
-		<?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType(),array('empty'=>'','style'=>'width:230px')); ?>
+		<?php echo $form->dropDownList($model,'residency_type',$model->getResidencyType(),array('empty'=>'','style'=>'width:150px','options'=>array(0 =>array('selected'=>true)))); ?>
 		<?php echo $form->error($model,'residency_type'); ?>
 	</div>
 
@@ -13,7 +13,7 @@
 			    'options'=>array(
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
-                    'dateFormat'=>'yy-mm-dd',
+                    'dateFormat'=>'mm-dd-yy',
                     'yearRange'=>'-100:+0',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
@@ -31,7 +31,7 @@
 			    'options'=>array(
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
-                    'dateFormat'=>'yy-mm-dd',
+                    'dateFormat'=>'mm-dd-yy',
                     'yearRange'=>'-70:+5',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',

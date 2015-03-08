@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	// array('label'=>'List DownloadableFiles', 'url'=>array('index')),
-	array('label'=>'Create DownloadableFiles', 'url'=>array('create')),
+	array('label'=>'Create Downloadable Files', 'url'=>array('create')),
 );
 ?>
 

@@ -94,7 +94,7 @@ class PersonalInfoController extends Controller
 			// print_r($_POST['FamilyInfo']['member_name']);
 			if($valid){
 				if($model->citizenship==='Dual' || $model->citizenship ==='Foreigner'){
-					$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
+					$model->citizenship=$model->citizenship.','.$_POST['PersonalInfo']['otherCitizenship'];
 				}
 				if($model->save(false)){
                     $model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);

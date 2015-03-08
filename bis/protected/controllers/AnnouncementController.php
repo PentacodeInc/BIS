@@ -71,7 +71,7 @@ class AnnouncementController extends Controller
 		{
 			$model->attributes=$_POST['Announcement'];
 			if($model->save())
-				$this->redirect(array('index'));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class AnnouncementController extends Controller
 		{
 			$model->attributes=$_POST['Announcement'];
 			if($model->save())
-				$this->redirect(array('index'));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

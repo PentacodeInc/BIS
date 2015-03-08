@@ -72,6 +72,14 @@ $this->menu=array(
        
          $('#saveHousehold').hide();
 
+         $('#PersonalInfo_civil_status').change(function(e){
+            if(this.value != '0'){
+                $('#PersonalInfo_spouse_name').prop('disabled',false);
+            }else{
+                $('#PersonalInfo_spouse_name').prop('disabled',true);
+            }
+         });
+
          $('#PersonalInfo_citizenship').change(function(e){
             if(this.value === 'Dual' || this.value === 'Foreigner'){
              $('#PersonalInfo_otherCitizenship').prop('disabled',false);
@@ -81,11 +89,12 @@ $this->menu=array(
            }
          });
   
-        $('#PersonalInfo_citizenship').trigger('change');  
+        $('#PersonalInfo_citizenship').trigger('change');
+        $('#PersonalInfo_civil_status').trigger('change');  
 
          $('#btnAddSibbling').click(function(){
             var counter = $('.txtsibbling').size() + 2;
-            $('#sibbling_div').append("<input size=60 name='FamilyInfo[member_name]["+(counter)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter)+"' type='text'>");
+            $('#sibbling_div').append("<input size=55 name='FamilyInfo[member_name]["+(counter)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter)+"' type='text'>");
             $('#sibbling_div').append("<input value='2' name='FamilyInfo[relationship]["+(counter)+"]' id='FamilyInfo_relationship_"+(counter)+"' type='hidden'>");
             $('#sibbling_div').append("<input value='' name='FamilyInfo[id]["+(counter)+"]' id='FamilyInfo_id_"+(counter)+"' type='hidden'>");
             $('#sibbling_div').append("<input type='button' value='Remove' id='btnRemoveSibbling' data-counter="+(counter)+" />");

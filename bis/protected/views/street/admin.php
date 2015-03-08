@@ -29,7 +29,7 @@ $this->breadcrumbs=array(
 			'editable' => array(
 				'type' => 'text',
                  'url' => $this->createUrl('street/update'), 
-				'placement' => 'right',
+				 'placement' => 'right',
 				)               
 		),
         array(
@@ -38,7 +38,7 @@ $this->breadcrumbs=array(
 			'editable' => array(
 				'type' => 'text',
                  'url' => $this->createUrl('street/update'), 
-				'placement' => 'right',
+				 'placement' => 'right',
 				)               
 		),
        array( 
@@ -81,6 +81,7 @@ $this->breadcrumbs=array(
         ),
 		array(
 			'class'=>'CButtonColumn',
+            'template'=>'{delete}'
 		),
 	),
 )); ?>

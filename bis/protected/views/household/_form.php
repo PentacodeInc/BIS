@@ -21,16 +21,16 @@
 
 	<?php 	$this->widget('ext.widgets.multiselects.XMultiSelects',array(
 		    'leftTitle'=>'Citizen',
-		    'leftName'=>'PersonalInfo[][]',
-		    'leftList'=>PersonalInfo::model()->findUsers(), //without household_id please show fullname
+		    'leftName'=>'Household[out][]',
+		    'leftList'=>PersonalInfo::model()->findUserWithoutHousehold($head->id), //without household_id please show fullname
 		    'rightTitle'=>'Household Member',
-		    'rightName'=>'Person[][]',
-		    'rightList'=>PersonalInfo::model()->findUsers(), //with household_id of the head ctzen please show fullname
+		    'rightName'=>'Household[in][]',
+		    'rightList'=>PersonalInfo::model()->findUserWithinHousehold($model->id), //with household_id of the head ctzen please show fullname
 		    'size'=>20,
 		    'width'=>'100%',
 		));
 	?>
-
+	<?php echo $form->hiddenField($head,'id'); ?>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

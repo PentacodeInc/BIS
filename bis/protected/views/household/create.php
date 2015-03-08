@@ -14,6 +14,6 @@ $this->menu=array(
 ?>
 
 <h1>Create Household</h1>
-<h3>(<?php echo $headName ?>)</h3>
+<h3>(<?php echo $head->getFullName(); ?>)</h3>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'head'=>$head)); ?>

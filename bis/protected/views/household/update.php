@@ -17,6 +17,6 @@ $this->menu=array(
 ?>
 
 <h1>Update Household</h1>
-<h3>(<?php echo $headName ?>)</h3>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<h3>(<?php echo $head->getFullName(); ?>)</h3>
+<?php echo CHtml::button('Delete', array('submit' => array('household/delete','id'=>$model->id))); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'head'=>$head)); ?>

@@ -68,28 +68,28 @@ class PersonalInfo extends CActiveRecord
  
 	public function getGenders($i = ""){
 		$item=array(0 => 'Female', 1 => 'Male');
-		if(empty($i))
+		if($i === "")
 			return $item;
 		return $item[$i];
 	}
 
 	public function getCivilStatus($i = ""){
 		$item=array(0 => 'Single',	1 => 'Married', 2 => 'Divorced', 3 => 'Separated' ,4 => 'Widowed');
-		if($i == "")
+		if($i === "")
 			return $item;
 		return $item[$i];
 	}
 
 	public function getIsHead($i = ""){
 		$item=array(0 => 'No', 1 => 'Yes');
-		if(empty($i))
+		if($i === "")
 			return $item;
 		return $item[$i];
 	}
 
 	public function getResidencyType($i = ""){
 		$item=array(0 => 'Renter', 1 => 'Owner');
-		if(empty($i))
+		if($i === "")
 			return $item;
 		return $item[$i];
 	}
@@ -119,14 +119,12 @@ class PersonalInfo extends CActiveRecord
 		}
 	}
 
-	public function findUsers()
-	{
-		// $criteria=array(
-		// 	'select'=>"id, firstname || ' ' || lastname AS firstname",
-		// 	'condition'=>'country_id='.$country_id,
-		// 	'order'=>'firstname, lastname',
-		// );
-	    return CHtml::listData($this->findAll(),'id','first_name');
+	public function findUserWithinHousehold($household_id){
+	    return CHtml::listData($this->findAll('household_id=:id AND is_head=0',array(':id'=>$household_id)),'id','FullName');
+	}
+
+	public function findUserWithoutHousehold($headid){
+		return CHtml::listData($this->findAll('household_id is null AND id !=:id',array(':id'=>$headid)),'id','FullName');
 	}
 
 	/**

@@ -32,11 +32,11 @@ class HouseholdController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -64,21 +64,35 @@ class HouseholdController extends Controller
 	{
         //where id is id ng ctzen to be head
 		$model=new Household;
-
+		$head=PersonalInfo::model()->findByPk($id);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Household']))
 		{
 			$model->attributes=$_POST['Household'];
-			print_r($model);
-			/*if($model->save())
-				$this->redirect(array('view','id'=>$model->id));*/
+			if($model->save()){
+				foreach ($_POST['Household']['in'] as $key => $value) {
+					$lower=PersonalInfo::model()->findByPk($value);
+					$lower->household_id=$model->id;
+					$lower->save(false);
+				}
+				foreach ($_POST['Household']['out'] as $key => $value) {
+					$lower=PersonalInfo::model()->findByPk($value);
+					$lower->household_id=NULL;
+					$lower->save(false);
+				}
+				$head=PersonalInfo::model()->findByPk($_POST['PersonalInfo']['id']);
+				$head->is_head=1;
+				$head->household_id=$model->id;
+				$head->save(false);
+				$this->redirect(array('personalInfo/admin'));
+			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-            'headName'=>'LastName, First Name MI.',
+            'head'=>$head,
 		));
 	}
 
@@ -92,19 +106,36 @@ class HouseholdController extends Controller
         //where id id the household id
 		$model=$this->loadModel($id);
 
+		$head=PersonalInfo::model()->findByAttributes(array('household_id'=>$id,'is_head'=>1));
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Household']))
 		{
 			$model->attributes=$_POST['Household'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+				if(!empty($_POST['Household']['in'])){
+					foreach ($_POST['Household']['in'] as $key => $value) {
+						$lower=PersonalInfo::model()->findByPk($value);
+						$lower->household_id=$model->id;
+						$lower->save(false);
+					}
+				}
+				if(!empty($_POST['Household']['out'])){
+					foreach ($_POST['Household']['out'] as $key => $value) {
+						$lower=PersonalInfo::model()->findByPk($value);
+						$lower->household_id=NULL;
+						$lower->save(false);
+					}
+				}
+				$this->redirect(array('personalInfo/admin'));
+			}
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-            'headName'=>'LastName, First Name MI.',
+            'head'=>$head,
 		));
 	}
 
@@ -115,11 +146,16 @@ class HouseholdController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		foreach (PersonalInfo::model()->findAll('household_id=:id',array(':id'=>$id)) as $key => $value) {
+			$value->household_id=NULL;
+			$value->is_head=0;
+			$value->save(false);
+		}
 		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		$this->redirect(array('personalInfo/admin'));
+		/*// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
 	}
 
 	/**

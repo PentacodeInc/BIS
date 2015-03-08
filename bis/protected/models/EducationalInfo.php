@@ -25,10 +25,10 @@ class EducationalInfo extends CActiveRecord
 	}
 
 	public function getDetails($user_id,$level){
-		$criteria=new CDbCriteria;
+		/*$criteria=new CDbCriteria;
 		$criteria->condition = 'personal_info_id=:user_id AND level=:level';
-		$criteria->params = array(':user_id'=>$user_id,':level'=>$level);
-		return EducationalInfo::model()->findAll($criteria);
+		$criteria->params = array(':user_id'=>$user_id,':level'=>$level);*/
+		return EducationalInfo::model()->findByAttributes(array('personal_info_id'=>$user_id, 'level'=>$level));
 	}
 
 	/**

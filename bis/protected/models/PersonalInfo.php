@@ -96,7 +96,8 @@ class PersonalInfo extends CActiveRecord
 
 	public function getResidencyStatus(){
         $date = $this->residency_end;
-		return (empty($date) || $date="0000-00-00") ? 'Active' : 'Inactive';
+        if ($date == "0000-00-00"){ $date=""; }
+		return (empty($date)) ? 'Active' : 'Inactive';
 	}
     
     public function getAge(){
@@ -154,6 +155,7 @@ class PersonalInfo extends CActiveRecord
 			array('spouse_name', 'length', 'max'=>120),
 			array('contact_num', 'length', 'max'=>45),
 			array('email_address', 'length', 'max'=>254),
+            array('email_address', 'email'),
 			// array('photo_filename', 'length', 'max'=>200)
 			array('residency_type', 'length', 'max'=>10),
 			array('provincial_address, residency_end', 'safe'),

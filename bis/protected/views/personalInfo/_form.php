@@ -32,7 +32,7 @@
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
                     'yearRange'=>'-70:+0',
-                    'dateFormat'=>'mm-dd-yy',
+                    'dateFormat'=>'yy-dd-mm',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
 			    )

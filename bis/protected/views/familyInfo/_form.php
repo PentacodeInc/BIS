@@ -8,9 +8,7 @@
 		echo $form->textField($model[$i],"member_name",array('size'=>55, 'name'=> 'FamilyInfo[member_name]['.$i.']'));
 		echo "</div>";
 		echo $form->hiddenField($model[$i],"relationship",array('value'=>$i, 'name'=> 'FamilyInfo[relationship]['.$i.']'));
-		if(!empty($model[$i]->id)){
-	       echo $form->hiddenField($model[$i],'id', array('value'=>$model[$i]->id,'name'=>'FamilyInfo[id]['.$i.']'));
-	    }
+		echo $form->hiddenField($model[$i],'id', array('value'=>$model[$i]->id,'name'=>'FamilyInfo[id]['.$i.']'));
 	}
 
 	echo "<div class='row' id='sibbling_div'>";
@@ -20,9 +18,9 @@
             echo "<div class='perSibblings'>";
 			echo $form->textField($model[$i],"member_name",array('size'=>55,'class'=>'txtsibbling' ,'name'=> 'FamilyInfo[member_name]['.$i.']'));
 			echo $form->hiddenField($model[$i],"relationship",array('value'=>2, 'name'=> 'FamilyInfo[relationship]['.$i.']'));
-			if(!empty($model[$i]->id)){
+			// if(!empty($model[$i]->id)){
 	       		echo $form->hiddenField($model[$i],'id', array('value'=>$model[$i]->id,'name'=>'FamilyInfo[id]['.$i.']'));
-	    	}
+	    	// }
 			if($i===2){
 				echo "<input type='button' id='btnAddSibbling' value='Add'/>";
 			}else{

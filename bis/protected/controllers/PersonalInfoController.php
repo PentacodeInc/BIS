@@ -184,7 +184,7 @@ class PersonalInfoController extends Controller
 			$valid = $model->validate();
 			$valid = $employmentInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-			print_r($_POST['FamilyInfo']);
+			
 			if($valid){
 				if($model->citizenship!=='Filipino'){
 					$model->citizenship= $model->citizenship.','.$_POST['PersonalInfo']['otherCitizenship'];
@@ -210,24 +210,30 @@ class PersonalInfoController extends Controller
 						$educationalInfo->save(false);
 					}
 
-
-					for ($i=0; $i < count($_POST['FamilyInfo']['id']); $i++) { 
-						if(!empty($_POST['FamilyInfo']['id'][$i])){
-							$familyInfo=FamilyInfo::model()->findByPk($_POST['FamilyInfo']['id'][$i]);
-							if(!empty($_POST['FamilyInfo']['member_name'][$i]))
-								$familyInfo->member_name=$_POST['FamilyInfo']['member_name'][$i];
-							else
-								$familyInfo->delete();
-						}else{
-							if(!empty($_POST['FamilyInfo']['member_name'][$i])){
-								$familyInfo= new FamilyInfo;
-								$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
-								$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
-								$familyInfo->personal_info_id=$model->id;
+					if(!empty($_POST['FamilyInfo']['id'])){
+						for ($i=0; $i < count($_POST['FamilyInfo']['id']); $i++) { 
+							if(!empty($_POST['FamilyInfo']['id'][$i])){
+								$familyInfo=FamilyInfo::model()->findByPk($_POST['FamilyInfo']['id'][$i]);
+								if(!empty($_POST['FamilyInfo']['member_name'][$i]))
+									$familyInfo->member_name=$_POST['FamilyInfo']['member_name'][$i];
+								else
+									$familyInfo->delete();
+							}else{
+								if(!empty($_POST['FamilyInfo']['member_name'][$i])){
+									$familyInfo= new FamilyInfo;
+									$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+									$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
+									$familyInfo->personal_info_id=$model->id;
+									$familyInfo->save(false);
+								}	
 							}
+
+							
+													
 						}
-						$familyInfo->save(false);
 					}
+
+					
 					
 					$governmentInfo->personal_info_id = $model->id;
 					$employmentInfo->personal_info_id = $model->id;				
@@ -302,64 +308,6 @@ class PersonalInfoController extends Controller
             'age'=>$age
 		));
 	}
-
-/*	
-0  barangay_id
-1  precinct_no
-2  first_name
-3  middle_name
-4  last_name
-5  birthdate
-6  gender
-7  house_num
-8  provincial_address
-9  birthplace
-10 civil_status
-11 spouse_name
-12 height
-13 weight
-14 citizenship
-15 religion
-16 contact_num
-17 email_address
-18 residency_start
-19 residency_end
-20 residency_type
-21 father name
-22 mother name
-23 sss_num
-24 philhealth_num
-25 gsis_num
-26 tin_num
-27 voters_id
-28 senior_citizen_num
-29 orange_card_num
-30 position
-31 employer
-32 start_date
-33 end_date
-34 elementary_school
-35 elementary_start_date
-36 elementary_end_date
-37 elementary_remarks
-38 secondary_school
-39 secondary_start_date
-40 secondary_end_date
-41 secondary_remarks
-42 tertiary_school
-43 tertiary_start_date
-44 tertiary_end_date
-45 tertiary_course
-46 tertiary_remarks
-47 vocational_school
-48 vocational_start_date
-49 vocational_end_date
-50 vocation_course
-51 vocational_remarks
-
-*/
-
-
 
 	public function actionImport(){
 		$model= new ImportForm;

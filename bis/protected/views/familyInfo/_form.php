@@ -17,6 +17,7 @@
 	echo $form->labelEx(FamilyInfo::model(),'Siblings');
 	if(count($model) > 2){
 		for ($i=2; $i < count($model); $i++) { 
+            echo "<div class='perSibblings'>";
 			echo $form->textField($model[$i],"member_name",array('size'=>55,'class'=>'txtsibbling' ,'name'=> 'FamilyInfo[member_name]['.$i.']'));
 			echo $form->hiddenField($model[$i],"relationship",array('value'=>2, 'name'=> 'FamilyInfo[relationship]['.$i.']'));
 			if(!empty($model[$i]->id)){
@@ -27,11 +28,15 @@
 			}else{
 				echo "<input type='button' value='Remove' id='btnRemoveSibbling' data-counter='{$i}' />";
 			}
+            echo "</div>";	
+            
 		}
 	}else{
-		echo $form->textField(FamilyInfo::model(),"member_name",array('size'=>60, 'name'=> 'FamilyInfo[member_name][2]', 'class'=>'txtsibbling'));
+        echo "<div class='perSibblings'>";
+		echo $form->textField(FamilyInfo::model(),"member_name",array('size'=>55, 'name'=> 'FamilyInfo[member_name][2]', 'class'=>'txtsibbling'));
 		echo $form->hiddenField(FamilyInfo::model(),"relationship",array('value'=>2, 'name'=> 'FamilyInfo[relationship][2]'));
 		echo "<input type='button' id='btnAddSibbling' value='Add'/>";
+        echo "</div>";	
 	}
 	echo "</div>";	
 ?>

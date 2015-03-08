@@ -145,16 +145,25 @@ class PersonalInfoController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+        $picture = $model->photo_filename;
 		$citizenship=explode(',', $model->citizenship);
 		if(count($citizenship) > 1){
-			$model->citizenship = "Dual";
+			$model->citizenship=$citizenship[0];
 			$model->otherCitizenship=$citizenship[1];
 		}
+        
 		$educationalInfo=EducationalInfo::model()->findAll('personal_info_id=:id',array('id'=>$id));
 		$employmentInfo=EmploymentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
 		$familyInfo=FamilyInfo::model()->findAll('personal_info_id=:id',array('id'=>$id));
 		$governmentInfo=GovernmentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
-
+        
+        if ($model->residency_end=="0000-00-00") { $model->residency_end=""; }
+        if ($model->residency_start=="0000-00-00") { $model->residency_start=""; }
+        if ($model->birthdate=="0000-00-00") { $model->birthdate=""; }
+        foreach($educationalInfo as $edu){
+            if ($edu->graduation_date=="0000") { $edu->graduation_date=""; }
+        }
+        
 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation(array($model,$educationalInfo,$employmentInfo,$familyInfo,$governmentInfo));
@@ -166,17 +175,21 @@ class PersonalInfoController extends Controller
 			$employmentInfo->attributes=$_POST['EmploymentInfo'];
 			
 			$governmentInfo->attributes=$_POST['GovernmentInfo'];
-            $model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
+            if (!empty(CUploadedFile::getInstance($model,'photo_filename'))){
+                $model->photo_filename=CUploadedFile::getInstance($model,'photo_filename');
+            }else{
+                $model->photo_filename=$picture;
+            }
 			$valid = $model->validate();
 			$valid = $employmentInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
 			print_r($_POST['FamilyInfo']);
 			if($valid){
-				if($model->citizenship==='Dual'){
-					$model->citizenship='Filipino,'.$_POST['PersonalInfo']['otherCitizenship'];
+				if($model->citizenship!=='Filipino'){
+					$model->citizenship= $model->citizenship.','.$_POST['PersonalInfo']['otherCitizenship'];
 				}
 				if($model->save(false)){
-					if(isset($model->photo_filename)){
+					if(isset($model->photo_filename) && !empty(CUploadedFile::getInstance($model,'photo_filename'))){
 						$model->photo_filename->saveAs(Yii::getPathOfAlias('webroot').'/images/userimage/'.$model->photo_filename);	
 					}
 					for ($i=0; $i < 4; $i++) { 

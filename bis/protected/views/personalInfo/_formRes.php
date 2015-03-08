@@ -13,7 +13,7 @@
 			    'options'=>array(
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
-                    'dateFormat'=>'mm-dd-yy',
+                    'dateFormat'=>'yy-dd-mm',
                     'yearRange'=>'-100:+0',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
@@ -31,7 +31,7 @@
 			    'options'=>array(
 			    	'changeMonth'=>'true', 
                     'changeYear'=>'true', 
-                    'dateFormat'=>'mm-dd-yy',
+                    'dateFormat'=>'yy-dd-mm',
                     'yearRange'=>'-70:+5',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',

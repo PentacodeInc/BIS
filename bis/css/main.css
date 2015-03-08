@@ -340,6 +340,9 @@ ul.menu-content{
 #btnRemoveSibbling{
     margin-left:10px;
 }
+.perSibblings{
+    display:block;
+}
 .checkbox label{
     text-transform: capitalize;
     display:inline-block!important;
@@ -350,8 +353,12 @@ ul.menu-content{
     padding:10px;
     margin-bottom: 20px;
     font-size: 14px;
-    border:2px #333ea7 dashed;
+    display: table;
 }
+    .residentsInfo .resDetails{
+        display: table-cell;
+        vertical-align:middle;
+    }
     .residentsInfo .resName{
         font-weight: bold;
         font-size: 20px;
@@ -361,6 +368,10 @@ ul.menu-content{
     }
     .residentsInfo .resStatus{
         
+    }
+    .residentsInfo .resPic{
+        float: left;
+        margin-right: 20px;
     }
 
 .charts{

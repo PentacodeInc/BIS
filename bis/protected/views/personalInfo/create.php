@@ -30,10 +30,19 @@ $this->menu=array(
     
     <?php if(!$model->isNewRecord){ ?>
     <div class="residentsInfo">
-        <div class="resName"><?php echo $model->getFullName(); ?></div>
-        <div class="resNumber"><?php if($model->barangay_id) echo $model->barangay_id; else ""; ?></div>
-        <div class="resStatus"><?php echo $model->getResidencyStatus(); ?></div>
+        <?php if(!empty($model->photo_filename)) {?>
+        <div class="resPic"><img src="<?php echo Yii::app()->request->baseUrl.'/images/userimage/'.$model->photo_filename?>" width="100"/></div>
+        <?php } ?>
+        <div class="resDetails">
+            <div class="resName"><?php echo $model->getFullName(); ?></div>
+            <?php if(!empty($model->barangay_id)) {?>
+            <div class="resNumber"><i>Barangay ID: </i><?php if($model->barangay_id) echo $model->barangay_id; else ""; ?></div>
+            <?php } ?>
+            <div class="resStatus"><i>Status: </i><?php echo $model->getResidencyStatus(); ?></div>
+        </div>
+        <div class="clear"></div>
     </div>
+    
     <?php } ?>
     
     <p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -67,6 +76,7 @@ $this->menu=array(
             if(this.value === 'Dual' || this.value === 'Foreigner'){
              $('#PersonalInfo_otherCitizenship').prop('disabled',false);
            }else{
+             document.getElementById("PersonalInfo_otherCitizenship").value="";
              $('#PersonalInfo_otherCitizenship').prop('disabled',true);
            }
          });

@@ -27,12 +27,15 @@
 		    'rightName'=>'Household[in][]',
 		    'rightList'=>PersonalInfo::model()->findUserWithinHousehold($model->id), //with household_id of the head ctzen please show fullname
 		    'size'=>20,
-		    'width'=>'100%',
+		    'width'=>'420px',
 		));
 	?>
 	<?php echo $form->hiddenField($head,'id'); ?>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+        <?php if(!$model->isNewRecord){ ?>
+        <?php echo CHtml::button('Delete Household', array('submit' => array('household/delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this household. This will remove the household for the upper and lower level?')); ?>
+        <?php } ?>
 	</div>
 
 <?php $this->endWidget(); ?>

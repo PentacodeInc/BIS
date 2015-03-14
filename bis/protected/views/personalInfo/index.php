@@ -22,59 +22,175 @@ $this->menu=array(
 
 <h1>Dashboard</h1>
 
-<div class="charts">
-<div class="chart">
-    <div class="title">Street Population</div>
-    <?php $image = $this->widget('ext.widgets.google.XGoogleChart',array(
-        'type'=>'bar-vertical',
-        'data'=>$street,
-        'size'=>array(800,300),
-        'color'=>array('333ea7'),
-        'barsSize'=>array('a'),
-        'axes'=>array('x','y'),
-    )); ?>
-</div>
-
-    
-<div class="title">Precinct Number</div>
-<?php $this->widget('ext.widgets.google.XGoogleChart',array(
-    'type'=>'bar-vertical',
-    'data'=>$precinct,
-    'size'=>array(800,300),
-    'color'=>array('333ea7'),
-    'barsSize'=>array('a'),
-    'axes'=>array('x','y'),
-)); ?>
-
-<!--<div class="title">Gender</div> -->
-<?php $this->widget('ext.widgets.google.XGoogleChart',array(
-    'type'=>'pie',
-    'title'=>'Gender',
-    'data'=>$gender,
-    'size'=>array(400,300),
-    'color'=>array('333ea7'),
-)); ?>
-
-<?php $this->widget('ext.widgets.google.XGoogleChart',array(
-    'type'=>'pie',
-    'title'=>'Civil Status',
-    'data'=>$cStatus,
-    'size'=>array(400,300),
-    'color'=>array('333ea7'),
+<?php 
+$streetSeries = array();
+foreach ($street as $key => $value) {
+  array_push($streetSeries, 
+    array(
+      'type'=>'column',
+      'name'=> $key,
+      'data'=>array(intval($value)),
+    )
+  );
+}
+$this->widget('ext.highcharts.HighchartsWidget', array(
+    'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => 'Precinct Number'
+        ),
+        'xAxis' => array(
+            'categories'=> array('Population')
+        ),
+        'series' => $streetSeries
+    )
 ));
-$this->widget('ext.widgets.google.XGoogleChart',array(
-    'type'=>'pie',
-    'title'=>'Residenty Type',
-    'data'=>$resType,
-    'size'=>array(400,300),
-    'color'=>array('333ea7'),
+// print_r($precinct);
+$precinctSeries=array();
+foreach ($precinct as $key => $value) {
+  array_push($precinctSeries, 
+      array(
+        'type'=>'column',
+        'name'=>$key,
+        'data'=>array(intval($value))
+      )
+  );
+}
+
+
+$this->widget('ext.highcharts.HighchartsWidget', array(
+    'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => 'Precinct Number'
+        ),
+        'xAxis' => array(
+            'categories'=> array('Population')
+        ),
+        'series' => $precinctSeries
+    )
 ));
-$this->widget('ext.widgets.google.XGoogleChart',array(
-    'type'=>'pie',
-    'title'=>'Age',
-    'data'=>$age,
-    'size'=>array(400,300),
-    'color'=>array('333ea7'),
+
+$genderSeries=array();
+foreach ($gender as $key => $value) {
+  array_push($genderSeries, 
+    array(
+      'name'=>$key,
+      'y' => intval($value),
+      'color' => 'js:Highcharts.getOptions().colors['.$value.']'
+    )
+  );
+}
+
+$civilStatusSeries=array();
+foreach ($cStatus as $key => $value) {
+  array_push($civilStatusSeries, 
+    array(
+      'name'=>$key,
+      'y' => intval($value),
+      'color' => 'js:Highcharts.getOptions().colors['.$value.']'
+    )
+  );
+}
+
+
+$this->widget('ext.highcharts.HighchartsWidget', array(
+    'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => '',
+        ),
+
+        'series' => array(
+            array(
+                'type' => 'pie',
+                'name' => 'Gender',
+                'data' => $genderSeries,
+                'center' => array(200, 150),
+                'size' => 300,
+                'showInLegend' => false,
+                'dataLabels' => array(
+                    'enabled' => true,
+                ),
+            ),
+            array(
+                'type' => 'pie',
+                'name' => 'Civil Status',
+                'data' => $civilStatusSeries,
+                'center' => array(600, 150),
+                'size' => 300,
+                'showInLegend' => false,
+                'dataLabels' => array(
+                    'enabled' => true,
+                ),
+            ),
+        ),
+    )
+));
+$resTypeSeries=array();
+foreach ($resType as $key => $value) {
+   array_push($resTypeSeries, 
+    array(
+      'name'=>$key,
+      'y' => intval($value),
+      'color' => 'js:Highcharts.getOptions().colors['.$value.']'
+    )
+  );
+}
+
+$ageSeries=array();
+foreach ($age as $key => $value) {
+   array_push($ageSeries, 
+    array(
+      'name'=>$key,
+      'y' => intval($value),
+      'color' => 'js:Highcharts.getOptions().colors['.$value.']'
+    )
+  );
+}
+$this->widget('ext.highcharts.HighchartsWidget', array(
+    'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => '',
+        ),
+
+        'series' => array(
+            array(
+                'type' => 'pie',
+                'name' => 'Gender',
+                'data' => $resTypeSeries,
+                'center' => array(200, 150),
+                'size' => 300,
+                'showInLegend' => false,
+                'dataLabels' => array(
+                    'enabled' => true,
+                ),
+            ),
+            array(
+                'type' => 'pie',
+                'name' => 'Civil Status',
+                'data' => $ageSeries,
+                'center' => array(600, 150),
+                'size' => 300,
+                'showInLegend' => false,
+                'dataLabels' => array(
+                    'enabled' => true,
+                ),
+            ),
+        ),
+    )
 ));
 ?>
-</div>

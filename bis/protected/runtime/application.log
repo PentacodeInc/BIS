@@ -20221,3 +20221,9 @@ in D:\Projects\PentaCode\BIS\bis\index.php (13)
 2015/03/08 16:20:46 [warning] [application] Failed to set unsafe attribute "in" of "Household".
 in D:\Projects\PentaCode\BIS\bis\protected\controllers\HouseholdController.php (116)
 in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/14 17:47:55 [warning] [application] Failed to set unsafe attribute "is_active" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (73)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)
+2015/03/14 17:47:55 [warning] [application] Failed to set unsafe attribute "modules" of "User".
+in D:\Projects\PentaCode\BIS\bis\protected\controllers\UserController.php (73)
+in D:\Projects\PentaCode\BIS\bis\index.php (13)

@@ -1,6 +1,6 @@
 <?php
-/* @var $this EventController */
-/* @var $model Event */
+/* @var $this OfficialController */
+/* @var $model Official */
 /* @var $form CActiveForm */
 ?>
 
@@ -18,22 +18,22 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>120)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->label($model,'position'); ?>
+		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'start_datetime'); ?>
-		<?php echo $form->textField($model,'start_datetime'); ?>
+		<?php echo $form->label($model,'level'); ?>
+		<?php echo $form->textField($model,'level'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'end_datetime'); ?>
-		<?php echo $form->textField($model,'end_datetime'); ?>
+		<?php echo $form->label($model,'about'); ?>
+		<?php echo $form->textArea($model,'about',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">

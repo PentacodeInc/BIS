@@ -1,13 +1,13 @@
 <?php
-/* @var $this EventController */
-/* @var $model Event */
+/* @var $this OfficialController */
+/* @var $model Official */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'event-form',
+	'id'=>'official-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -21,26 +21,26 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>120)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'description'); ?>
+		<?php echo $form->labelEx($model,'position'); ?>
+		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'position'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'start_datetime'); ?>
-		<?php echo $form->textField($model,'start_datetime'); ?>
-		<?php echo $form->error($model,'start_datetime'); ?>
+		<?php echo $form->labelEx($model,'level'); ?>
+		<?php echo $form->textField($model,'level'); ?>
+		<?php echo $form->error($model,'level'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'end_datetime'); ?>
-		<?php echo $form->textField($model,'end_datetime'); ?>
-		<?php echo $form->error($model,'end_datetime'); ?>
+		<?php echo $form->labelEx($model,'about'); ?>
+		<?php echo $form->textArea($model,'about',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'about'); ?>
 	</div>
 
 	<div class="row">

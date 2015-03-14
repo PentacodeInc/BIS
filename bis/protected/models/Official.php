@@ -1,31 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "citizen".
+ * This is the model class for table "official".
  *
- * The followings are the available columns in table 'citizen':
+ * The followings are the available columns in table 'official':
  * @property integer $id
- * @property integer $barangay_id
- * @property string $first_name
- * @property string $middle_name
- * @property string $last_name
- * @property string $birthdate
- * @property integer $gender
- * @property string $address
- * @property integer $is_head
- * @property integer $household_id
+ * @property string $name
+ * @property string $position
+ * @property integer $level
+ * @property string $about
+ * @property integer $user_id
  *
  * The followings are the available model relations:
- * @property Household $household
+ * @property User $user
  */
-class Citizen extends CActiveRecord
+class Official extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'citizen';
+		return 'official';
 	}
 
 	/**
@@ -36,14 +32,14 @@ class Citizen extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('barangay_id, first_name, middle_name, last_name, birthdate, address, household_id', 'required'),
-			array('barangay_id, gender, is_head, household_id', 'numerical', 'integerOnly'=>true),
-			array('first_name, middle_name, last_name', 'length', 'max'=>35),
-			array('birthdate', 'length', 'max'=>12),
-			array('address', 'length', 'max'=>200),
+			array('name, position, user_id', 'required'),
+			array('level, user_id', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>120),
+			array('position', 'length', 'max'=>100),
+			array('about', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, barangay_id, first_name, middle_name, last_name, birthdate, gender, address, is_head, household_id', 'safe', 'on'=>'search'),
+			array('id, name, position, level, about, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,7 +51,7 @@ class Citizen extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'household' => array(self::BELONGS_TO, 'Household', 'household_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -66,15 +62,11 @@ class Citizen extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'barangay_id' => 'Barangay',
-			'first_name' => 'First Name',
-			'middle_name' => 'Middle Name',
-			'last_name' => 'Last Name',
-			'birthdate' => 'Birthdate',
-			'gender' => 'Gender',
-			'address' => 'Address',
-			'is_head' => 'Is Head',
-			'household_id' => 'Household',
+			'name' => 'Name',
+			'position' => 'Position',
+			'level' => 'Level',
+			'about' => 'About',
+			'user_id' => 'User',
 		);
 	}
 
@@ -97,15 +89,11 @@ class Citizen extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('barangay_id',$this->barangay_id);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('middle_name',$this->middle_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
-		$criteria->compare('birthdate',$this->birthdate,true);
-		$criteria->compare('gender',$this->gender);
-		$criteria->compare('address',$this->address,true);
-		$criteria->compare('is_head',$this->is_head);
-		$criteria->compare('household_id',$this->household_id);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('position',$this->position,true);
+		$criteria->compare('level',$this->level);
+		$criteria->compare('about',$this->about,true);
+		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -116,7 +104,7 @@ class Citizen extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Citizen the static model class
+	 * @return Official the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

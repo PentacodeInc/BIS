@@ -1,18 +1,18 @@
 <?php
-/* @var $this EventController */
+/* @var $this OfficialController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Events',
+	'Officials',
 );
 
 $this->menu=array(
-	array('label'=>'Create Event', 'url'=>array('create')),
-	array('label'=>'Manage Event', 'url'=>array('admin')),
+	array('label'=>'Create Official', 'url'=>array('create')),
+	array('label'=>'Manage Official', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Events</h1>
+<h1>Officials</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -240,7 +240,7 @@ class PersonalInfoController extends Controller
 					$educationalInfo->save(false);
 					$employmentInfo->save(false);
 					$governmentInfo->save(false);
-					$this->redirect(array('update','id'=>$model->id));		
+					$this->redirect(array('admin'));		
 				}
 			}
 		}

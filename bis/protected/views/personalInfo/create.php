@@ -14,9 +14,9 @@ $this->menu=array(
     //array('label'=>'Add Household', 'url'=>array('/household/create'), 'visible'=>Access::hasAccess('add residents')),
 );
 ?>
-
+<?php if($model->isNewRecord) : ?>
 <h1>Add Residents</h1>
-
+<?php endif; ?>
 <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'personal-info-form',
     // Please note: When you enable ajax validation, make sure the corresponding

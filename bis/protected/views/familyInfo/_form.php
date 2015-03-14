@@ -33,6 +33,7 @@
         echo "<div class='perSibblings'>";
 		echo $form->textField(FamilyInfo::model(),"member_name",array('size'=>55, 'name'=> 'FamilyInfo[member_name][2]', 'class'=>'txtsibbling'));
 		echo $form->hiddenField(FamilyInfo::model(),"relationship",array('value'=>2, 'name'=> 'FamilyInfo[relationship][2]'));
+        echo $form->hiddenField(FamilyInfo::model(),'id', array('value'=>'','name'=>'FamilyInfo[id][2]'));
 		echo "<input type='button' id='btnAddSibbling' value='Add'/>";
         echo "</div>";	
 	}

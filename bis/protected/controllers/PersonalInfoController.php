@@ -70,9 +70,9 @@ class PersonalInfoController extends Controller
 	public function actionCreate()
 	{
 		$model=new PersonalInfo;
-		$educationalInfo=array(new EducationalInfo,new EducationalInfo,new EducationalInfo,new EducationalInfo);
+		$educationalInfo=array();
 		$employmentInfo=new EmploymentInfo;
-		$familyInfo=array(new FamilyInfo, new FamilyInfo);
+		$familyInfo=array();
 		$governmentInfo=new GovernmentInfo;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -157,7 +157,34 @@ class PersonalInfoController extends Controller
 		$employmentInfo=EmploymentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
 		$familyInfo=FamilyInfo::model()->findAll('personal_info_id=:id',array('id'=>$id));
 		$governmentInfo=GovernmentInfo::model()->findByAttributes(array('personal_info_id'=>$id));
-        
+
+		if(count($familyInfo) < 3){
+			for ($i=0; $i <= 3; $i++) { 
+				if(!empty($familyInfo[$i]) && !empty($familyInfo[$i]->relationship)){
+					if($familyInfo[$i]->relationship !== $i){
+						for ($j=0; $j < ($familyInfo[$i]->relationship - $i); $j++) { 
+							array_unshift($familyInfo, new FamilyInfo);						
+						}
+					}
+				}
+			}
+		}
+		
+
+		if(count($educationalInfo) < 3){
+			for ($i=0; $i <= 3; $i++) { 
+				if(!empty($educationalInfo[$i]) && !empty($educationalInfo[$i]->level)){
+					if($educationalInfo[$i]->level !== $i){
+						for ($j=0; $j < ($educationalInfo[$i]->level - $i); $j++) { 
+							array_unshift($educationalInfo, new EducationalInfo);						
+						}
+					}
+				}
+			}
+		}
+
+
+
         if ($model->residency_end=="0000-00-00") { $model->residency_end=""; }
         if ($model->residency_start=="0000-00-00") { $model->residency_start=""; }
         if ($model->birthdate=="0000-00-00") { $model->birthdate=""; }
@@ -184,7 +211,7 @@ class PersonalInfoController extends Controller
 			$valid = $model->validate();
 			$valid = $employmentInfo->validate() && $valid;
 			$valid = $governmentInfo->validate() && $valid;
-			
+	
 			if($valid){
 				if($model->citizenship!=='Filipino'){
 					$model->citizenship= $model->citizenship.','.$_POST['PersonalInfo']['otherCitizenship'];
@@ -196,48 +223,51 @@ class PersonalInfoController extends Controller
 					for ($i=0; $i < 4; $i++) { 
 						if(!empty($_POST['EducationalInfo']['id'][$i])){
 							$educationalInfo=EducationalInfo::model()->findByPk($_POST['EducationalInfo']['id'][$i]);
-							$educationalInfo->school=$_POST['EducationalInfo']['school'][$i];
-							$educationalInfo->remarks=$_POST['EducationalInfo']['remarks'][$i];
-							$educationalInfo->graduation_date=$_POST['EducationalInfo']['graduation_date'][$i];
+							if(!empty($_POST['EducationalInfo']['school'][$i]) && !empty($_POST['EducationalInfo']['remarks'][$i]) && !empty($_POST['EducationalInfo']['graduation_date'][$i])){
+								$educationalInfo->school=$_POST['EducationalInfo']['school'][$i];
+								$educationalInfo->remarks=$_POST['EducationalInfo']['remarks'][$i];
+								$educationalInfo->graduation_date=$_POST['EducationalInfo']['graduation_date'][$i];
+								$educationalInfo->save(false);
+							}else{
+								$educationalInfo->delete();
+							}
 						}else{
-							$educationalInfo=new EducationalInfo;
-							$educationalInfo->level=$_POST['EducationalInfo']['level'][$i];
-							$educationalInfo->school=$_POST['EducationalInfo']['school'][$i];
-							$educationalInfo->remarks=$_POST['EducationalInfo']['remarks'][$i];
-							$educationalInfo->graduation_date=$_POST['EducationalInfo']['graduation_date'][$i];
-							$educationalInfo->personal_info_id=$model->id;
+							if(!empty($_POST['EducationalInfo']['school'][$i]) || !empty($_POST['EducationalInfo']['remarks'][$i]) || !empty($_POST['EducationalInfo']['graduation_date'][$i])){
+								$educationalInfo=new EducationalInfo;
+								$educationalInfo->level=$_POST['EducationalInfo']['level'][$i];
+								$educationalInfo->school=$_POST['EducationalInfo']['school'][$i];
+								$educationalInfo->remarks=$_POST['EducationalInfo']['remarks'][$i];
+								$educationalInfo->graduation_date=$_POST['EducationalInfo']['graduation_date'][$i];
+								$educationalInfo->personal_info_id=$model->id;
+								$educationalInfo->save(false);
+							}
 						}
-						$educationalInfo->save(false);
 					}
 
-					if(!empty($_POST['FamilyInfo']['id'])){
-						for ($i=0; $i < count($_POST['FamilyInfo']['id']); $i++) { 
-							if(!empty($_POST['FamilyInfo']['id'][$i])){
-								$familyInfo=FamilyInfo::model()->findByPk($_POST['FamilyInfo']['id'][$i]);
-								if(!empty($_POST['FamilyInfo']['member_name'][$i]))
-									$familyInfo->member_name=$_POST['FamilyInfo']['member_name'][$i];
-								else
-									$familyInfo->delete();
+					for ($i=0; $i < count($_POST['FamilyInfo']['id']); $i++) { 
+						if(!empty($_POST['FamilyInfo']['id'][$i])){
+							$familyInfo=FamilyInfo::model()->findByPk($_POST['FamilyInfo']['id'][$i]);
+							if(!empty($_POST['FamilyInfo']['member_name'][$i])){
+								$familyInfo->member_name=$_POST['FamilyInfo']['member_name'][$i];
+								$familyInfo->save(false);
 							}else{
-								if(!empty($_POST['FamilyInfo']['member_name'][$i])){
-									$familyInfo= new FamilyInfo;
-									$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
-									$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
-									$familyInfo->personal_info_id=$model->id;
-									$familyInfo->save(false);
-								}	
+								$familyInfo->delete();
 							}
 
-							
-													
-						}
+						}else{
+							if(!empty($_POST['FamilyInfo']['member_name'][$i])){
+								$familyInfo= new FamilyInfo;
+								$familyInfo->member_name= $_POST['FamilyInfo']['member_name'][$i];
+								$familyInfo->relationship= $_POST['FamilyInfo']['relationship'][$i];
+								$familyInfo->personal_info_id=$model->id;
+								$familyInfo->save(false);	
+							}
+						}							
 					}
+					
 
-					
-					
 					$governmentInfo->personal_info_id = $model->id;
 					$employmentInfo->personal_info_id = $model->id;				
-					$educationalInfo->save(false);
 					$employmentInfo->save(false);
 					$governmentInfo->save(false);
 					$this->redirect(array('update','id'=>$model->id));		

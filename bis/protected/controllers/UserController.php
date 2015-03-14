@@ -145,9 +145,12 @@ class UserController extends Controller
             $model->attributes = $_POST['User'];
             $valid = $model->validate();
             if($valid){
-                $model->password = $model->new_password;
+        		$salt = uniqid(mt_rand(), true);
+		        $password_hash = crypt($model->new_password, $salt);
+		        $model->password = $password_hash;
+		        $model->salt = $salt;
                 if($model->save())
-                    $this->redirect(array('changePassword','msg'=>'successfully changed password'));
+                    $this->redirect(array('site/index'));
                 else
                     $this->redirect(array('changePassword','msg'=>'password not changed'));
             }

@@ -1,4 +1,4 @@
-<h1>Reset Password</h1>
+<h1>Change Password</h1>
 
 <div class="form">
  

@@ -182,6 +182,7 @@ $this->widget('ext.highcharts.HighchartsWidget', array(
             array(
                 'type' => 'pie',
                 'name' => 'Civil Status',
+                'innerSize'=> '50%',
                 'data' => $ageSeries,
                 'center' => array(600, 150),
                 'size' => 300,

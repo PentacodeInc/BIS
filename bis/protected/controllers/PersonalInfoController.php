@@ -270,7 +270,7 @@ class PersonalInfoController extends Controller
 					$employmentInfo->personal_info_id = $model->id;				
 					$employmentInfo->save(false);
 					$governmentInfo->save(false);
-					$this->redirect(array('update','id'=>$model->id));		
+					$this->redirect(array('admin'));		
 				}
 			}
 		}

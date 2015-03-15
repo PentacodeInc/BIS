@@ -1,0 +1,13 @@
+INSERT INTO `module` (`id`, `name`) VALUES
+(4, 'Add Residents'),
+(3, 'Batch Add'),
+(1, 'Dashboard'),
+(6, 'Maintain Announcements'),
+(8, 'Maintain Downloadable Files'),
+(9, 'Maintain Slideshow'),
+(7, 'Maintain Streets'),
+(5, 'Maintain Users'),
+(2, 'Search');
+
+INSERT INTO `user` (`id`, `username`, `password`, `is_active`, `first_name`, `middle_name`, `last_name`, `is_admin`, `salt`) VALUES
+(1, 'adminaa', '1769s0ksxuegk', 1, 'admin', 'admin', 'admin', 0, '174893626054fc3e2e0e2b88.18254773');

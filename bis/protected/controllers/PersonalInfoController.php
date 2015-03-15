@@ -323,10 +323,14 @@ class PersonalInfoController extends Controller
             $stat[$val] = $a->cStatusCount; }
         $residents = PersonalInfo::model()->findAll(array('group'=>'residency_type','select'=>'residency_type, count(*) AS resTypeCount'));
         foreach($residents as $a){ $type[$a->residency_type==0? 'Renter' : 'Owner'] = $a->resTypeCount; }        
-        $age['Children'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 0 YEAR and birthdate > now() - INTERVAL 5 YEAR');
-        $age['Minor'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 5 YEAR and birthdate > now() - INTERVAL 18 YEAR');
-        $age['Adult'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 18 YEAR and birthdate > now() - INTERVAL 60 YEAR');
-        $age['Senio Citizen'] = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 60 YEAR');
+        $children = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 0 YEAR and birthdate > now() - INTERVAL 5 YEAR');
+        if ($children != 0) { $age['Children'] = $children; }
+        $minor = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 5 YEAR and birthdate > now() - INTERVAL 18 YEAR');
+        if ($minor != 0) {$age['Minor']  = $minor; }
+        $adult = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 18 YEAR and birthdate > now() - INTERVAL 60 YEAR');
+        if ($adult != 0) {$age['Adult'] = $adult; }
+        $senior = PersonalInfo::model()->count('birthdate <= now() - INTERVAL 60 YEAR');
+        if ($senior != 0) {$age['Senior Citizen'] = $senior; }
 
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

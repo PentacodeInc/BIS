@@ -386,6 +386,11 @@ ul.menu-content{
         font-size: 20px;
         font-weight: bold;
     }
+.chart-wrapper {
+    float: left;
+    position: relative;
+    width: 50%;
+}
 
 .headname{
     font-size: 25px;

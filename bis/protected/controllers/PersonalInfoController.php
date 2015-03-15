@@ -314,7 +314,7 @@ class PersonalInfoController extends Controller
         
         $streets = PersonalInfo::model()->findAll(array('group'=>'street','select'=>'street, count(*) AS streetCount'));
         foreach($streets as $a){ $str[$a->street] = $a->streetCount; }
-        $precincts = PersonalInfo::model()->findAll(array('group'=>'precinct_no','select'=>'precinct_no, count(*) AS precinctCount'));
+        $precincts = PersonalInfo::model()->findAll(array('group'=>'precinct_no','select'=>'precinct_no, count(*) AS precinctCount', 'condition'=>'precinct_no <>  "" AND precinct_no is not null'));
         foreach($precincts as $a){ $prct[$a->precinct_no] = $a->precinctCount; }
         $gender = PersonalInfo::model()->findAll(array('group'=>'gender','select'=>'gender, count(*) AS genderCount'));
         foreach($gender as $a){ $sex[$a->gender==0? 'Female' : 'Male'] = $a->genderCount; }

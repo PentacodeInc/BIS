@@ -40,7 +40,7 @@ $this->widget('ext.highcharts.HighchartsWidget', array(
     ),
     'options' => array(
         'title' => array(
-            'text' => 'Precinct Number'
+            'text' => 'Street Population'
         ),
         'xAxis' => array(
             'categories'=> array('Population')
@@ -99,7 +99,7 @@ foreach ($cStatus as $key => $value) {
   );
 }
 
-
+echo '<div class="chart-wrapper">';
 $this->widget('ext.highcharts.HighchartsWidget', array(
     'scripts' => array(
         'modules/exporting',
@@ -107,7 +107,7 @@ $this->widget('ext.highcharts.HighchartsWidget', array(
     ),
     'options' => array(
         'title' => array(
-            'text' => '',
+            'text' => 'Gender',
         ),
 
         'series' => array(
@@ -115,27 +115,42 @@ $this->widget('ext.highcharts.HighchartsWidget', array(
                 'type' => 'pie',
                 'name' => 'Gender',
                 'data' => $genderSeries,
-                'center' => array(200, 150),
                 'size' => 300,
                 'showInLegend' => false,
                 'dataLabels' => array(
                     'enabled' => true,
                 ),
-            ),
+            )
+        ),
+    )
+));
+echo '</div>';
+echo '<div class="chart-wrapper">';
+$this->widget('ext.highcharts.HighchartsWidget', array(
+    'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => 'Civil Status',
+        ),
+
+        'series' => array(
             array(
                 'type' => 'pie',
                 'name' => 'Civil Status',
                 'data' => $civilStatusSeries,
-                'center' => array(600, 150),
                 'size' => 300,
                 'showInLegend' => false,
                 'dataLabels' => array(
                     'enabled' => true,
                 ),
-            ),
+            )
         ),
     )
 ));
+echo '</div>';
 $resTypeSeries=array();
 foreach ($resType as $key => $value) {
    array_push($resTypeSeries, 
@@ -157,6 +172,7 @@ foreach ($age as $key => $value) {
     )
   );
 }
+echo '<div class="chart-wrapper">';
 $this->widget('ext.highcharts.HighchartsWidget', array(
     'scripts' => array(
         'modules/exporting',
@@ -164,27 +180,41 @@ $this->widget('ext.highcharts.HighchartsWidget', array(
     ),
     'options' => array(
         'title' => array(
-            'text' => '',
+            'text' => 'Resident Type',
         ),
 
         'series' => array(
             array(
                 'type' => 'pie',
-                'name' => 'Gender',
+                'name' => 'Resident Type',
                 'data' => $resTypeSeries,
-                'center' => array(200, 150),
                 'size' => 300,
                 'showInLegend' => false,
                 'dataLabels' => array(
                     'enabled' => true,
                 ),
-            ),
+            )
+        ),
+    )
+));
+echo '</div>';
+echo '<div class="chart-wrapper">';
+$this->widget('ext.highcharts.HighchartsWidget', array(
+    'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => 'Age',
+        ),
+
+        'series' => array(
             array(
                 'type' => 'pie',
-                'name' => 'Civil Status',
-                'innerSize'=> '50%',
+                'name' => 'Age',
+                //'innerSize'=> '50%',
                 'data' => $ageSeries,
-                'center' => array(600, 150),
                 'size' => 300,
                 'showInLegend' => false,
                 'dataLabels' => array(
@@ -194,4 +224,5 @@ $this->widget('ext.highcharts.HighchartsWidget', array(
         ),
     )
 ));
+echo '</div>';
 ?>

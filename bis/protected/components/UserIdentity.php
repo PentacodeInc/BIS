@@ -15,6 +15,7 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+	const ERROR_USERNAME_NOT_ACTIVE = 3;	
 
 	public function authenticate()
 	{   
@@ -26,6 +27,8 @@ class UserIdentity extends CUserIdentity
             $this->errorCode=self::ERROR_USERNAME_INVALID;
         else if($record->password!==$password_hash)
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
+        else if($record->isActive == 0)
+        	$this->errorCode=self::ERROR_USERNAME_NOT_ACTIVE;
         else
         {
         	$this->setState('id',$record->id);

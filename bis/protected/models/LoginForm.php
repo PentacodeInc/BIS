@@ -51,6 +51,8 @@ class LoginForm extends CFormModel
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
 				$this->addError('password','Incorrect username or password.');
+			else if($this->_identity->authenticate() === 3)
+           		$this->addError('username', 'Username is currently not active, please contact the system admin.');
 		}
 	}
 

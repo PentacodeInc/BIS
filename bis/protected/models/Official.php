@@ -8,6 +8,7 @@
  * @property string $name
  * @property string $position
  * @property integer $level
+ * @property string $picture
  * @property string $about
  * @property integer $user_id
  *
@@ -35,11 +36,11 @@ class Official extends CActiveRecord
 			array('name, position, user_id', 'required'),
 			array('level, user_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>120),
-			array('position', 'length', 'max'=>100),
+			array('position, picture', 'length', 'max'=>100),
 			array('about', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, position, level, about, user_id', 'safe', 'on'=>'search'),
+			array('id, name, position, level, picture, about, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +66,7 @@ class Official extends CActiveRecord
 			'name' => 'Name',
 			'position' => 'Position',
 			'level' => 'Level',
+			'picture' => 'Picture',
 			'about' => 'About',
 			'user_id' => 'User',
 		);
@@ -92,6 +94,7 @@ class Official extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('position',$this->position,true);
 		$criteria->compare('level',$this->level);
+		$criteria->compare('picture',$this->picture,true);
 		$criteria->compare('about',$this->about,true);
 		$criteria->compare('user_id',$this->user_id);
 

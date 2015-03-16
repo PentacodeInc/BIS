@@ -38,6 +38,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'picture'); ?>
+		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'picture'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'about'); ?>
 		<?php echo $form->textArea($model,'about',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'about'); ?>

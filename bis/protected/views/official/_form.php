@@ -30,29 +30,33 @@
 		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'position'); ?>
 	</div>
-
+    
+    <div class="row">
+		<?php echo $form->labelEx($model,'picture'); ?>
+		<?php echo $form->fileField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'picture'); ?>
+	</div>
+    
 	<div class="row">
+		<?php echo $form->labelEx($model,'about'); ?>
+		<?php //echo $form->textArea($model,'about',array('rows'=>10, 'cols'=>60)); ?>
+        <?php $this->widget('application.extensions.cleditor.ECLEditor', array(
+                'model'=>$model,
+                'attribute'=>'about',
+                'options'=>array(
+                    'width'=>'600',
+                    'height'=>250,
+                    'useCSS'=>true,
+                )
+            ));
+        ?>
+		<?php echo $form->error($model,'about'); ?>
+	</div>
+    
+    <div class="row">
 		<?php echo $form->labelEx($model,'level'); ?>
 		<?php echo $form->textField($model,'level'); ?>
 		<?php echo $form->error($model,'level'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'picture'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'about'); ?>
-		<?php echo $form->textArea($model,'about',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'about'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
-		<?php echo $form->error($model,'user_id'); ?>
 	</div>
 
 	<div class="row buttons">

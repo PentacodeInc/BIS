@@ -36,11 +36,12 @@ class Official extends CActiveRecord
 			array('name, position, user_id', 'required'),
 			array('level, user_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>120),
-			array('position, picture', 'length', 'max'=>100),
+			array('position', 'length', 'max'=>100),
+            array('picture', 'file', 'types'=>'jpg,png,gif', 'safe'=>true, 'allowEmpty'=>true, 'on' => 'insert'),
 			array('about', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, position, level, picture, about, user_id', 'safe', 'on'=>'search'),
+			array('id, name, position, level, about, picture, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -113,4 +114,10 @@ class Official extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    
+    public function beforeValidate()
+    {           
+        $this->user_id=Yii::app()->user->id;
+        return parent::beforeValidate(); 
+    }
 }

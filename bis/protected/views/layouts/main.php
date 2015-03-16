@@ -42,7 +42,7 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
                 array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
-                array('label'=>'Officials', 'url'=>array('/site/page', 'view'=>'officials')),
+                array('label'=>'Officials', 'url'=>array('/official/index')),
                 array('label'=>'Photo Gallery', 'url'=>array('/site/page', 'view'=>'pictures')),
                 array('label'=>'Downloadble Files', 'url'=>array('/downloadableFiles/index')),
                 /*array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),*/

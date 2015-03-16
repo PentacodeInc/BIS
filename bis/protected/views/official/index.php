@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Official', 'url'=>array('create')),
-	array('label'=>'Manage Official', 'url'=>array('admin')),
+	//array('label'=>'Manage Official', 'url'=>array('admin')),
 );
 ?>
 
@@ -23,7 +23,7 @@ foreach($data as $a){
          <div class="newlevel"></div>
     <?php } ?>
     <div class="officials">
-        <img src="<?php //echo $a->image; ?>">
+        <img src="<?php echo $a->picture; ?>">
         <h4><?php echo CHtml::link($a->name,array("view", "id"=>$a->id)) ?></h4>
         <h4><?php echo $a->position;?></h4>
     </div>

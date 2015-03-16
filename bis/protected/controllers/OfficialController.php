@@ -70,8 +70,11 @@ class OfficialController extends Controller
 		if(isset($_POST['Official']))
 		{
 			$model->attributes=$_POST['Official'];
-			if($model->save())
+            $model->picture=CUploadedFile::getInstance($model,'picture');
+			if($model->save()){
+                //$model->picture->saveAs(Yii::getPathOfAlias('webroot').'/images/officials/'.$model->picture);
 				$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -87,6 +90,7 @@ class OfficialController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+        $picture = $model->picture;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -94,8 +98,17 @@ class OfficialController extends Controller
 		if(isset($_POST['Official']))
 		{
 			$model->attributes=$_POST['Official'];
-			if($model->save())
+            if (!empty(CUploadedFile::getInstance($model,'picture'))){
+                $model->picture=CUploadedFile::getInstance($model,'picture');
+            }else{
+                $model->picture=$picture;
+            }
+			if($model->save()){
+                if(isset($model->picture) && !empty(CUploadedFile::getInstance($model,'picture'))){
+                    $model->picture->saveAs(Yii::getPathOfAlias('webroot').'/images/officials/'.$model->picture);	
+                }
 				$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(

@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Official', 'url'=>array('index')),
+	//array('label'=>'List Official', 'url'=>array('index')),
 	array('label'=>'Create Official', 'url'=>array('create')),
 	array('label'=>'View Official', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Official', 'url'=>array('admin')),
+	//array('label'=>'Manage Official', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Official <?php echo $model->id; ?></h1>
+<h1>Update</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

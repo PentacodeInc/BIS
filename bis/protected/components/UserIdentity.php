@@ -27,7 +27,7 @@ class UserIdentity extends CUserIdentity
             $this->errorCode=self::ERROR_USERNAME_INVALID;
         else if($record->password!==$password_hash)
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
-        else if($record->isActive == 0)
+        else if($record->is_active == 0)
         	$this->errorCode=self::ERROR_USERNAME_NOT_ACTIVE;
         else
         {

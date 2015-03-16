@@ -150,7 +150,7 @@ class UserController extends Controller
 		        $model->password = $password_hash;
 		        $model->salt = $salt;
                 if($model->save())
-                    $this->redirect(array('site/index'));
+                    $this->redirect(array('personalInfo'));
                 else
                     $this->redirect(array('changePassword','msg'=>'password not changed'));
             }

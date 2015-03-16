@@ -16,16 +16,10 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Official #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'name',
-		'position',
-		'level',
-		'about',
-		'user_id',
-	),
-)); ?>
+<h1><?php echo $model->name; ?></h1>
+<div class="floatleft">
+    <img src="<?php //echo $model->image; ?>">
+</div>
+<div class="official_info">
+    <?php echo $model->about; ?>
+</div>

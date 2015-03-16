@@ -14,7 +14,19 @@ $this->menu=array(
 
 <h1>Officials</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div class="allofficials">
+<?php
+$levelcnt ="";
+foreach($data as $a){
+    $level = $a->level;
+    if ($level != $levelcnt){?>
+         <div class="newlevel"></div>
+    <?php } ?>
+    <div class="officials">
+        <img src="<?php //echo $a->image; ?>">
+        <h4><?php echo CHtml::link($a->name,array("view", "id"=>$a->id)) ?></h4>
+        <h4><?php echo $a->position;?></h4>
+    </div>
+<?php $levelcnt = $level;
+} ?>
+</div>

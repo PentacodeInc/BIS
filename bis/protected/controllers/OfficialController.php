@@ -123,8 +123,10 @@ class OfficialController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Official');
+        $data = Official::model()->findAll(array('order'=>'level'));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+            'data'=>$data,
 		));
 	}
 

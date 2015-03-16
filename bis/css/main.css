@@ -397,9 +397,26 @@ ul.menu-content{
     margin-bottom: 10px;
 }
 
+.allofficials{
+    text-align: center;
+}
+    .officials{
+        display:inline-block;
+        text-align: center;
+        padding:30px;
+    }
+    .officials a{
+        text-decoration: none;
+    }
+    .newlevel{
+        display: block;
+    }
 
+.official_info{
+    font-size: 15px;
+}
 
-h1, h2, h3{
+h1, h2, h3, h4{
     color:#333ea7;
     font-weight: bold;
     font-size: 40px;
@@ -415,6 +432,12 @@ h2{
 h3{
     font-size: 20px!important;
     line-height: 20px!important;
+}
+
+h4{
+    font-size: 20px!important;
+    line-height: 5px!important;
+    text-align: center!important;
 }
 
 .center{text-align: center;}

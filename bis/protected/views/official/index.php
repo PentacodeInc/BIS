@@ -23,7 +23,7 @@ foreach($data as $a){
          <div class="newlevel"></div>
     <?php } ?>
     <div class="officials">
-        <img src="<?php echo $a->picture; ?>">
+        <img src="<?php echo Yii::app()->request->baseUrl.'/images/officials/'.$a->picture; ?>">
         <h4><?php echo CHtml::link($a->name,array("view", "id"=>$a->id)) ?></h4>
         <h4><?php echo $a->position;?></h4>
     </div>

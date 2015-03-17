@@ -28,16 +28,12 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('changePassword', 'admin'),
+				'actions'=>array('changePassword'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'resetPassword'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('create','update', 'resetPassword','admin'),
+				'users'=>array(implode(',', Access::getAllUserHasAccess('Maintain Users'))),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),

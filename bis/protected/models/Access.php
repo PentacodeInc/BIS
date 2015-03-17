@@ -22,6 +22,19 @@ class Access extends CActiveRecord
 		return 'access';
 	}
 
+	public function getAllUserHasAccess($module){
+		$criteria=new CDbCriteria;
+		$criteria->together = true; 
+		$criteria->with =array('module','user');
+		$criteria->condition = 'module.name IN (:name)';
+		$criteria->params =array(':name'=>$module);
+		$user = array();
+		foreach (Access::model()->findAll($criteria) as $key => $value) {
+			array_push($user, $value->user->username);
+		}
+		return $user;
+	}
+
 	public function hasAccess($module){
 		$criteria=new CDbCriteria;
 		$criteria->select = 't.user_id';

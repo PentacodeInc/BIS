@@ -18,7 +18,7 @@ $this->menu=array(
 
 <h1><?php echo $model->name; ?></h1>
 <div class="floatleft">
-    <img src="<?php echo $model->picture; ?>">
+    <img src="<?php echo Yii::app()->request->baseUrl.'/images/officials/'.$model->picture; ?>">
 </div>
 <div class="official_info">
     <?php echo $model->about; ?>

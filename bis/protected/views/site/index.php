@@ -25,7 +25,6 @@ $(function () {
 </div>  
 </div>
 <?php } ?>
-
 <div class="home">
     
     <div class="sidebar">         

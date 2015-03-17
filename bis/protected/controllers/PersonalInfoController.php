@@ -35,17 +35,25 @@ class PersonalInfoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'actions'=>array('index'),
+				'users'=>array(implode(',', Access::getAllUserHasAccess('Dashboard'))),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('admin','create'),
+				'users'=>array(implode(',', Access::getAllUserHasAccess('Add Residents'))),
+			),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('import','export'),
+				'users'=>array(implode(',', Access::getAllUserHasAccess('Batch Add'))),
+			),
+			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','createHousehold','import','export'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('@'),
-			),
+			),*/
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),

@@ -28,8 +28,12 @@ class DownloadableFilesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','update','admin','rowUpdate'),
+				'actions'=>array('create','update','admin','rowUpdate'),
 				'users'=>array(implode(',', Access::getAllUserHasAccess('Maintain Downloadable Files'))),
+			),
+			array('allow',
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
 			),
 
 			array('deny',  // deny all users

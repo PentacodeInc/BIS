@@ -28,11 +28,11 @@ class OfficialController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view','create','update','delete','admin'),
+				'actions'=>array('create','update','delete','admin'),
 				'users'=>array(implode(',', Access::getAllUserHasAccess('Maintain Officials'))),
 			),
 			array('allow',
-				'actions'=>array('index'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users

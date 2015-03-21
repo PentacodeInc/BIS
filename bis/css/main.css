@@ -408,8 +408,18 @@ ul.menu-content{
     .officials a{
         text-decoration: none;
     }
+    .officials a:hover{
+        text-decoration: underline;
+    }
     .newlevel{
         display: block;
+    }
+    .officials img{
+        margin:10px;
+        width:150px;
+    }
+    .officialImage{
+        margin-right:20px;
     }
 
 .official_info{

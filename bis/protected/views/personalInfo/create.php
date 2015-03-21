@@ -94,10 +94,12 @@ $this->menu=array(
 
          $('#btnAddSibbling').click(function(){
             var counter = $('.txtsibbling').size() + 2;
+            $('#sibbling_div').append("<div class='perSibblings'>");
             $('#sibbling_div').append("<input size=55 name='FamilyInfo[member_name]["+(counter)+"]' class='txtsibbling' id='FamilyInfo_member_name_"+(counter)+"' type='text'>");
             $('#sibbling_div').append("<input value='2' name='FamilyInfo[relationship]["+(counter)+"]' id='FamilyInfo_relationship_"+(counter)+"' type='hidden'>");
             $('#sibbling_div').append("<input value='' name='FamilyInfo[id]["+(counter)+"]' id='FamilyInfo_id_"+(counter)+"' type='hidden'>");
-            $('#sibbling_div').append("<input type='button' value='Remove' id='btnRemoveSibbling' data-counter="+(counter)+" />");
+            $('#sibbling_div').append("<input type='button' value='Remove' id='btnRemoveSibbling' data-counter="+(counter)+" /></div>");
+             $('#sibbling_div').append("</div'>");
          });
 
          $("#sibbling_div").delegate("[id^='btnRemoveSibbling']", "click", function() {

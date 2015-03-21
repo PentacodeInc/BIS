@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2015 at 06:08 AM
+-- Generation Time: Mar 21, 2015 at 03:57 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -19,19 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `bis`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `module`
---
-
-CREATE TABLE IF NOT EXISTS `module` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `module`

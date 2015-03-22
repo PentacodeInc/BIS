@@ -39,7 +39,7 @@ class PersonalInfoController extends Controller
 				'users'=>array(implode(',', Access::getAllUserHasAccess('Dashboard'))),
 			),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('admin','create'),
+				'actions'=>array('admin','create','update'),
 				'users'=>array(implode(',', Access::getAllUserHasAccess('Add Residents'))),
 			),
 			array('allow',  // allow all users to perform 'index' and 'view' actions

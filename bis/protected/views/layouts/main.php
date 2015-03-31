@@ -44,7 +44,7 @@
                 array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                 array('label'=>'Officials', 'url'=>array('/official/index')),
                 array('label'=>'Photo Gallery', 'url'=>array('/site/page', 'view'=>'pictures')),
-                array('label'=>'Downloadble Files', 'url'=>array('/downloadableFiles/index')),
+                array('label'=>'Downloadable Files', 'url'=>array('/downloadableFiles/index')),
                 /*array('label'=>'Dashboard', 'url'=>array('/personalInfo/dashboard'),'visible'=>!Yii::app()->user->isGuest),*/
 				/*array('label'=>'Residents Database', 'url'=>array('/personalInfo/admin'),'visible'=>!Yii::app()->user->isGuest),*/
                 array('label'=>'Admin', 'url'=>array('/personalInfo'),'visible'=>!Yii::app()->user->isGuest),

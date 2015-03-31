@@ -1,6 +1,6 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'barangay_id'); ?>
-		<?php echo $form->textField($model,'barangay_id',array('size'=>20)); ?>
+		<?php echo $form->textField($model,'barangay_id',array('size'=>15)); ?>
 		<?php echo $form->error($model,'barangay_id'); ?>
 	</div>
 
@@ -35,7 +35,10 @@
                     'dateFormat'=>'yy-dd-mm',
 			        'showAnim'=>'fold',
 			        'showOn'=>'focus',
-			    )
+			    ),
+                'htmlOptions' => array(
+                    'style'=>'width:140px;'
+                ),
 			)); ?>
 		<?php echo $form->error($model,'birthdate'); ?>
 	</div>
@@ -61,7 +64,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'house_num'); ?>
-		<?php echo $form->textField($model,'house_num',array('size'=>13,'maxlength'=>25)); ?>
+		<?php echo $form->textField($model,'house_num',array('size'=>10,'maxlength'=>25)); ?>
 		<?php echo $form->error($model,'house_num'); ?>
 	</div>
 
@@ -87,26 +90,26 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'spouse_name'); ?>
-		<?php echo $form->textField($model,'spouse_name',array('size'=>98,'maxlength'=>120)); ?>
+		<?php echo $form->textField($model,'spouse_name',array('size'=>92,'maxlength'=>120)); ?>
 		<?php echo $form->error($model,'spouse_name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'height'); ?>
-		<?php echo $form->textField($model,'height'); ?>
+		<?php echo $form->textField($model,'height',array('size'=>10)); ?>
 		<?php echo $form->error($model,'height'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'weight'); ?>
-		<?php echo $form->textField($model,'weight'); ?>
+		<?php echo $form->textField($model,'weight',array('size'=>10)); ?>
 		<?php echo $form->error($model,'weight'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'citizenship'); ?>
-		<?php echo $form->dropDownList($model,'citizenship',$model->getCitizenship(),array('empty'=>'','style'=>'width:150px','options'=>array('Filipino' =>array('selected'=>true)))); ?>
-        <?php echo $form->textField($model,'otherCitizenship',array('size'=>40,'maxlength'=>100)); ?>
+		<?php echo $form->dropDownList($model,'citizenship',$model->getCitizenship(),array('empty'=>'','style'=>'width:100px','options'=>array('Filipino' =>array('selected'=>true)))); ?>
+        <?php echo $form->textField($model,'otherCitizenship',array('size'=>30,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'citizenship'); ?>
 	</div>
 

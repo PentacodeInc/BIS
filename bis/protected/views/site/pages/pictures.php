@@ -7,7 +7,7 @@
 				// albums to be excluded
 				$exclude = ['Timeline Photos', 'Untitled Album', 'Profile Pictures', 'Cover Photos'];
 				
-				$foo = file_get_contents("http://graph.facebook.com/515313718511386/albums");
+				$foo = file_get_contents("http://graph.facebook.com/176802389183466/albums");
 				$albums = json_decode($foo, true);
 				
 				// loop albums
